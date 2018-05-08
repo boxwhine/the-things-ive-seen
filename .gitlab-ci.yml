@@ -1,4 +1,4 @@
-image: node:8.9.4
+image: node:8.11.1
 
 variables:
   GIT_STRATEGY: fetch
@@ -10,7 +10,7 @@ stages:
 
 .master-only: &master-only
   only:
-    - master@engineering/tmc-aa-frontend
+    - master
   except:
     - tags
     - schedules
@@ -42,15 +42,14 @@ unit_test:
 # =============================================
 deploy_app:
   stage: deploy
-  dependencies: []
   only:
-    - release@engineering/tmc-aa-frontend
+    - release
   except:
     - tags
     - schedules
     - triggers
   script:
-    - docker info
     # @TODO wire up to actual deploy script
+    # - docker info
     # - ./docker/scripts/docker_deploy.sh $ENVIRONMENT $CI_COMMIT_SHA
 
