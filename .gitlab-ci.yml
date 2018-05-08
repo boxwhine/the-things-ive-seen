@@ -1,0 +1,56 @@
+image: node:8.9.4
+
+variables:
+  GIT_STRATEGY: fetch
+
+stages:
+  - setup
+  - test
+  - deploy
+
+.master-only: &master-only
+  only:
+    - master@engineering/tmc-aa-frontend
+  except:
+    - tags
+    - schedules
+    - triggers
+
+npm:install:
+  stage: setup
+  script:
+    - npm i
+  artifacts:
+    expire_in: 1 day
+    name: "$CI_COMMIT_REF_NAME"
+    paths:
+      - node_modules/
+  cache:
+    key: "$CI_COMMIT_REF_NAME"
+    paths:
+      - node_modules/
+
+unit_test:
+  stage: test
+  script:
+    - npm test
+  # grabs code coverage (% of lines) from jest output
+  coverage: /Lines.*\s([\d\.]+)\%/
+
+# =============================================
+# DEPLOY
+# =============================================
+deploy_app:
+  stage: deploy
+  dependencies: []
+  only:
+    - release@engineering/tmc-aa-frontend
+  except:
+    - tags
+    - schedules
+    - triggers
+  script:
+    - docker info
+    # @TODO wire up to actual deploy script
+    # - ./docker/scripts/docker_deploy.sh $ENVIRONMENT $CI_COMMIT_SHA
+
