@@ -50,6 +50,7 @@ deploy_app:
     - triggers
   script:
     # @TODO wire up to actual deploy script
+    - echo 'Hello World'
     # - docker info
     # - ./docker/scripts/docker_deploy.sh $ENVIRONMENT $CI_COMMIT_SHA
 
