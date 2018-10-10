@@ -2,6 +2,7 @@ import React from 'react';
 import { push } from 'connected-react-router';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+
 import * as counterModule from '../../modules/counter';
 
 const Home = ({
@@ -14,7 +15,7 @@ const Home = ({
   isDecrementing,
   isIncrementing,
 }) => (
-  <div>
+  <section>
     <h1>Home</h1>
 
     <p>Count: {count}</p>
@@ -30,7 +31,7 @@ const Home = ({
     </p>
 
     <p><button type="button" onClick={() => changePage()}>Go to about page via redux</button></p>
-  </div>
+  </section>
 );
 
 const mapStateToProps = ({ counter }) => ({
