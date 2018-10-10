@@ -1,10 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
 
-// eslint-disable-next-line react/jsx-filename-extension
-ReactDOM.render(<App />, document.getElementById('root'));
+import store, { history } from './store';
+import App from './containers/app';
+import registerServiceWorker from './registerServiceWorker';
+import './index.css';
+
+render(
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <div>
+        <App />
+      </div>
+    </ConnectedRouter>
+  </Provider>,
+  document.getElementById('root'),
+);
 
 registerServiceWorker();
