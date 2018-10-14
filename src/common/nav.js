@@ -1,14 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
 export default () => (
   <header>
-    <Button component={Link} to="/">
+    <Button component={NavLink} to="/">
       Home
     </Button>
-    <Button component={Link} to="/about-us">
+    <Button component={NavLink} to="/about-us">
       About
+    </Button>
+    <Button component={NavLink} to="/venues">
+      Venues
+    </Button>
+    <Button component={NavLink} to="/events">
+      Events
     </Button>
   </header>
 );
