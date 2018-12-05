@@ -17,7 +17,6 @@ class Venues extends React.Component {
 
   componentDidMount() {
     const { fetchAll } = this.props;
-    console.log('props in Venues component', this.props);
     fetchAll();
   }
 
@@ -27,8 +26,6 @@ class Venues extends React.Component {
       venues,
       isLoading,
     } = this.props;
-
-    console.log('props in Venues render', this.props);
 
     return (
       <section>

@@ -17,7 +17,6 @@ class Events extends React.Component {
 
   componentDidMount() {
     const { fetchAll } = this.props;
-    console.log('props in Events component', this.props);
     fetchAll();
   }
 
@@ -27,8 +26,6 @@ class Events extends React.Component {
       events,
       isLoading,
     } = this.props;
-
-    console.log('props in Events render', this.props);
 
     return (
       <section>
