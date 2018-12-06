@@ -1,12 +1,12 @@
 import firebase from 'firebase';
 
 firebase.initializeApp({
-  apiKey: 'AIzaSyBa3EtaK4w6S8SsNX9OqSSQ6ROKl9fTFug',
-  authDomain: 'the-things-ive-seen.firebaseapp.com',
-  databaseURL: 'https://the-things-ive-seen.firebaseio.com',
-  messagingSenderId: '825365120723',
-  projectId: 'the-things-ive-seen',
-  storageBucket: 'the-things-ive-seen.appspot.com',
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DB_URL,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
 });
 
 export default firebase;
