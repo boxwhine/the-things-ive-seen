@@ -1,13 +1,29 @@
-# stage: 1
-FROM node:10 as react-build
-WORKDIR /src
-COPY . ./
-RUN npm i
-RUN npm run-script build
 
-# Stage 2 - the production environment
-FROM nginx:alpine
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=react-build /src/build /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+# Setup and build the client
+
+FROM node:9.4.0-alpine as client
+
+WORKDIR /usr/app/client/
+COPY client/package*.json ./
+RUN npm install -qy
+COPY client/ ./
+RUN npm run build
+
+
+# Setup the server
+
+FROM node:9.4.0-alpine
+
+WORKDIR /usr/app/
+COPY --from=client /usr/app/client/build/ ./client/build/
+
+WORKDIR /usr/app/server/
+COPY server/package*.json ./
+RUN npm install -qy
+COPY server/ ./
+
+ENV PORT 8000
+
+EXPOSE 8000
+
+CMD ["npm", "start"]

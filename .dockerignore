@@ -1,3 +1,5 @@
+.dockerignore
 .git
-node_modules
-build
+.gitignore
+.prettierrc
+**/node_modules

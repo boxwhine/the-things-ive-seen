@@ -7,7 +7,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import store, { history } from './store';
 import App from './containers/app';
 import registerServiceWorker from './registerServiceWorker';
-import './index.css';
+import './compiled/index.css';
 
 render(
   <Provider store={store}>
