@@ -1,4 +1,4 @@
-image: node:8.11.1
+image: node:10.14.1-alpine
 
 variables:
   GIT_STRATEGY: fetch
@@ -8,6 +8,10 @@ stages:
   - test
   - deploy
 
+##############################
+# Define yml anchors
+##############################
+
 .master-only: &master-only
   only:
     - master
@@ -16,23 +20,23 @@ stages:
     - schedules
     - triggers
 
-npm:install:
+ui:install:
+  <<: *master-only
   stage: setup
-  script:
-    - npm i
   artifacts:
     expire_in: 1 day
     name: "$CI_COMMIT_REF_NAME"
     paths:
-      - node_modules/
-  cache:
-    key: "$CI_COMMIT_REF_NAME"
-    paths:
-      - node_modules/
+      - client/node_modules/
+  script:
+    - cd client
+    - npm i
 
-unit_test:
+ui:unit_test:
+  <<: *master-only
   stage: test
   script:
+    - cd client
     - npm test
   # grabs code coverage (% of lines) from jest output
   coverage: /Lines.*\s([\d\.]+)\%/
