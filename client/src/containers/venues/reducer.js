@@ -16,12 +16,14 @@ const initialState = {
 export default (state = initialState, { payload, type }) => {
   switch (type) {
     case FETCH_VENUES_BEGIN:
+    case FETCH_VENUE_BEGIN:
       return {
         ...state,
         isLoading: true,
       };
 
     case FETCH_VENUES_SUCCESS:
+    case FETCH_VENUE_SUCCESS:
       return {
         ...state,
         data: payload,
@@ -30,6 +32,7 @@ export default (state = initialState, { payload, type }) => {
       };
 
     case FETCH_VENUES_FAILURE:
+    case FETCH_VENUE_FAILURE:
       return {
         ...state,
         data: [],

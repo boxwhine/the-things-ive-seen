@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -22,7 +22,7 @@ class Venues extends React.Component {
 
   render() {
     const {
-      error,
+      // error,
       venues,
       isLoading,
     } = this.props;

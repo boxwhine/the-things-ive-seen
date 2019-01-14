@@ -16,12 +16,14 @@ const initialState = {
 export default (state = initialState, { payload, type }) => {
   switch (type) {
     case FETCH_EVENTS_BEGIN:
+    case FETCH_EVENT_BEGIN:
       return {
         ...state,
         isLoading: true,
       };
 
     case FETCH_EVENTS_SUCCESS:
+    case FETCH_EVENT_SUCCESS:
       return {
         ...state,
         data: payload,
@@ -30,6 +32,7 @@ export default (state = initialState, { payload, type }) => {
       };
 
     case FETCH_EVENTS_FAILURE:
+    case FETCH_EVENT_FAILURE:
       return {
         ...state,
         data: [],

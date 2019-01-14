@@ -1,4 +1,4 @@
-import * as api from '../../modules/api';
+import api from '../../modules/api';
 import {
   FETCH_EVENTS_BEGIN,
   FETCH_EVENTS_SUCCESS,
@@ -13,7 +13,7 @@ export const fetchAll = () => (dispatch) => {
     type: FETCH_EVENTS_BEGIN,
   });
 
-  api.fetchEvents()
+  api.get('/events')
     .then((events) => {
       dispatch({
         payload: events,
@@ -34,8 +34,17 @@ export const fetch = ({ id }) => (dispatch) => {
     type: FETCH_EVENT_BEGIN,
   });
 
-  dispatch({
-    payload: {},
-    type: FETCH_EVENT_SUCCESS,
-  });
+  api.get(`/events/${id}`)
+    .then((venue) => {
+      dispatch({
+        payload: venue,
+        type: FETCH_EVENT_SUCCESS,
+      });
+    })
+    .catch((err) => {
+      dispatch({
+        payload: err,
+        type: FETCH_EVENT_FAILURE,
+      });
+    });
 };
