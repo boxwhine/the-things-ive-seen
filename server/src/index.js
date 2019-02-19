@@ -1,25 +1,47 @@
 const cors = require('cors');
 const express = require('express');
-const morgan = require('morgan');
+const morganBody = require('morgan-body');
+const bodyParser = require('body-parser');
 const path = require('path');
 const session = require('express-session')
+const { GraphQLServer } = require('graphql-yoga');
+
+const { startDB } = require('./db');
+const models = require('./db/models');
+const resolvers = require('./graphql/resolvers');
 
 require('dotenv').config();
 
-const routes = require('./routes');
-
 // Constants
-const PORT = process.env.PORT || 8080;
-const HOST = '0.0.0.0';
+const PORT = process.env.PORT || 4000;
 
-// App
-const app = express();
+const db = startDB({
+  db: process.env.DB_NAME,
+  options: (process.env.DB_OPTIONS || '').split('&'),
+  pwd: process.env.DB_PWD,
+  url: process.env.DB_URL,
+  user: process.env.DB_USER,
+});
 
-app.use(cors());
+const server = new GraphQLServer({
+  typeDefs: `${__dirname}/graphql/schema.graphql`,
+  resolvers,
+  context: {
+    models,
+    db,
+  },
+});
 
-// log HTTP requests
-app.use(morgan('combined'));
+server.express.use(cors());
 
+// Add logging
+
+// must parse body before morganBody as body will be logged
+server.express.use(bodyParser.json());
+// hook morganBody to express app
+morganBody(server.express);
+
+/*
 //sessions
 app.use(
   session({
@@ -33,9 +55,14 @@ app.use(
 //   console.log('## req.session\n', req.session, '\n');
 //   return next();
 // });
+*/
 
-// API endpoints
-app.use(routes);
+// options
+const opts = {
+  playground: '/playground',
+  port: PORT,
+};
 
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+server.start(opts, () => {
+  console.log(`Server is running on http://localhost:${opts.port}`);
+});

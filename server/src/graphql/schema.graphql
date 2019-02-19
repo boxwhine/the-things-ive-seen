@@ -1,0 +1,22 @@
+type Query {
+  events: [Event]
+  venues: [Venue]
+}
+
+type Event {
+  id: ID!
+  name: String!
+  date: String!
+  faceValue: Float
+  genre: String!
+  subGenre: String
+  venue: Venue
+  wasOpener: Boolean
+}
+
+type Venue {
+  id: ID!
+  city: String!
+  name: String!
+  state: String!
+}
