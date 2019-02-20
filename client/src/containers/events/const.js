@@ -1,7 +1,0 @@
-export const FETCH_EVENTS_BEGIN = 'events/FETCH_EVENTS_BEGIN';
-export const FETCH_EVENTS_SUCCESS = 'events/FETCH_EVENTS_SUCCESS';
-export const FETCH_EVENTS_FAILURE = 'events/FETCH_EVENTS_FAILURE';
-
-export const FETCH_EVENT_BEGIN = 'events/FETCH_EVENT_BEGIN';
-export const FETCH_EVENT_SUCCESS = 'events/FETCH_EVENT_SUCCESS';
-export const FETCH_EVENT_FAILURE = 'events/FETCH_EVENT_FAILURE';

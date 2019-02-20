@@ -1,7 +1,0 @@
-export const FETCH_VENUES_BEGIN = 'events/FETCH_VENUES_BEGIN';
-export const FETCH_VENUES_SUCCESS = 'events/FETCH_VENUES_SUCCESS';
-export const FETCH_VENUES_FAILURE = 'events/FETCH_VENUES_FAILURE';
-
-export const FETCH_VENUE_BEGIN = 'events/FETCH_VENUE_BEGIN';
-export const FETCH_VENUE_SUCCESS = 'events/FETCH_VENUE_SUCCESS';
-export const FETCH_VENUE_FAILURE = 'events/FETCH_VENUE_FAILURE';
