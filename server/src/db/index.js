@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { Event } = require('./models');
+const querystring = require('querystring');
  
 // Set up Mongoose Promises.
 mongoose.Promise = global.Promise;
@@ -19,11 +20,13 @@ const startDB = ({ user, pwd, url, db, options }) => {
     }, {}),
   };
   return mongoose.connect(
-    `mongodb://${user}:${pwd}@${url}/${db}`, opts)
+      `mongodb+srv://${querystring.escape(user)}:${querystring.escape(pwd)}@${url}/${db}`,
+      opts
+    )
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
 };
-  
+
 module.exports = {
   startDB,
 };

@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 4000;
 
 const db = startDB({
   db: process.env.DB_NAME,
-  options: (process.env.DB_OPTIONS || '').split('&'),
+  options: !!process.env.DB_OPTIONS ? process.env.DB_OPTIONS.split('&') : [],
   pwd: process.env.DB_PWD,
   url: process.env.DB_URL,
   user: process.env.DB_USER,
