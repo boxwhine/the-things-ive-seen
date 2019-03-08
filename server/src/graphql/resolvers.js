@@ -1,42 +1,28 @@
-// const resolvers = {
-//   Mutation: {
-//     createPost: async (parent, { title, desc, author }, { models }) => {
-//       const Post = await models.Post.findOne({ title });
-
-//       if (Post) {
-//         throw new Error('Please provide a unique title.');        
-//       }
-      
-//       // create a new post
-//       const newPost = new models.Post({
-//         title,
-//         desc,
-//         author
-//       });
-
-//       // save the post
-//       try {
-//         await newPost.save();
-//       } catch (e) {
-//         throw new Error('Cannot Save Post!!!');
-//       }
-
-//       return true;
-//     },
-//   },
-// };
-
 const resolvers = {
   Query: {
-    events: async (parent, args, { models }) => {
-      const events = await models.Event
-        .find({})
-        .populate('venue');
-      return events;
-    },
-    venues: async (parent, args, { models }) => {
-      const venues = await models.Venue.find({});
-      return venues;
+    events: async (parent, args, { models }) =>
+      await models.Event.find({}).populate('venue'),
+    venues: async (parent, args, { models }) => await models.Venue.find({}),
+  },
+  Mutation: {
+    createVenue: async (parent, { input }, { models }) => {
+      const { city, state, name } = input;
+      const existingVenue = await models.Venue.findOne({ name });
+
+      if (existingVenue) {
+        // @TODO may need to update this as same venue name could exist in different cities, etc.
+        throw new Error(`Venue with name "${name}" already exists.`);
+      }
+
+      const venue = new models.Venue({ city, state, name });
+
+      try {
+        const newVenue = await venue.save();
+        console.log('Saved new venue...', newVenue);
+        return newVenue;
+      } catch (err) {
+        throw new Error('Error creating venue...', err);
+      }
     },
   },
 };

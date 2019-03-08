@@ -3,6 +3,10 @@ type Query {
   venues: [Venue]
 }
 
+type Mutation {
+  createVenue(input: VenueInput): Venue
+}
+
 type Event {
   id: ID!
   name: String!
@@ -12,6 +16,12 @@ type Event {
   subGenre: String
   venue: Venue
   wasOpener: Boolean
+}
+
+input VenueInput {
+  city: String!
+  name: String!
+  state: String!
 }
 
 type Venue {

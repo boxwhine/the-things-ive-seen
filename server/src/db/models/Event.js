@@ -3,7 +3,6 @@ const { model, Schema } = require('mongoose');
 module.exports = model(
   'Event',
   new Schema({
-    _id: Schema.Types.ObjectId,
     date: {
       type: Date,
       null: true,
@@ -14,20 +13,20 @@ module.exports = model(
     },
     festivalName: {
       type: String,
-      default: "",
+      default: '',
       null: true,
     },
     genre: {
       type: String,
-      default: "",
+      default: '',
     },
     name: {
       type: String,
-      default: "",
+      default: '',
     },
     subGenre: {
       type: String,
-      default: "",
+      default: '',
       null: true,
     },
     venue: {
@@ -38,4 +37,5 @@ module.exports = model(
       type: Boolean,
       default: false,
     },
-}));
+  })
+);

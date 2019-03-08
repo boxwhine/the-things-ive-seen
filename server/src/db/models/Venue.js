@@ -3,20 +3,19 @@ const { model, Schema } = require('mongoose');
 module.exports = model(
   'Venue',
   new Schema({
-    _id: Schema.Types.ObjectId,
     city: {
       type: String,
-      default: "",
+      default: '',
       null: false,
     },
     name: {
       type: String,
-      default: "",
+      default: '',
       null: false,
     },
     state: {
       type: String,
-      default: "",
+      default: '',
       null: false,
     },
   })
