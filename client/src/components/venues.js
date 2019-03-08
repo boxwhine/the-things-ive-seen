@@ -1,18 +1,11 @@
 import React from 'react';
 import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
+import { Link } from 'react-router-dom';
 
-const getVenues = gql`
-  query getVenues {
-    venues {
-      id
-      name
-    }
-  }
-`;
+import { GET_VENUES } from '../grqphql/queries';
 
 export default () => (
-  <Query query={getVenues}>
+  <Query query={GET_VENUES}>
     {({ loading, error, data }) => {
       if (loading) {
         return <h1>Loading...</h1>;
@@ -23,11 +16,20 @@ export default () => (
       }
 
       return (
-        <ul>
-          {data.venues.map(venue => (
-            <li key={venue.id}>{venue.name}</li>
-          ))}
-        </ul>
+        <React.Fragment>
+          <Link to="/venues/new">Add Venue...</Link>
+
+          <ul>
+            {data.venues.map(({
+              city, id, name, state,
+            }) => (
+              <li key={id}>
+                <span className="venue-name">{name}</span>{' '}
+                (<span className="venue-location">{city}, {state}</span>)
+              </li>
+            ))}
+          </ul>
+        </React.Fragment>
       );
     }}
   </Query>

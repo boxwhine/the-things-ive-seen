@@ -6,6 +6,7 @@ import Home from './home';
 import About from './about';
 import Events from './events';
 import Venues from './venues';
+import AddVenue from './addVenue';
 
 const App = () => (
   <React.Fragment>
@@ -17,6 +18,7 @@ const App = () => (
         <Route exact path="/about-us" component={About} />
         <Route exact path="/events" component={Events} />
         <Route exact path="/venues" component={Venues} />
+        <Route exact path="/venues/new" component={AddVenue} />
       </Switch>
     </main>
   </React.Fragment>
