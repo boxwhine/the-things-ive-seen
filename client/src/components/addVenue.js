@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
 import { ADD_VENUE } from '../grqphql/mutations';
+import { GET_VENUES } from '../grqphql/queries';
 
 const formContainerStyle = {
   maxWidth: '40%',
@@ -17,14 +18,27 @@ const footerStyle = {
   flexDirection: 'row-reverse',
 };
 
+// we need to update the apollo client cache after adding a new venue
+const updateCache = (store, { data: { createVenue: newVenue } }) => {
+  const data = store.readQuery({ query: GET_VENUES });
+  data.venues.push(newVenue);
+  store.writeQuery({
+    query: GET_VENUES,
+    data,
+  });
+};
+
 export default () => {
-  // Init form state variables
   const [name, setName] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
 
   return (
-    <Mutation mutation={ADD_VENUE} variables={{ city, name, state }}>
+    <Mutation
+      mutation={ADD_VENUE}
+      update={updateCache}
+      variables={{ city, name, state }}
+    >
       {(createVenue, { loading, error, data }) => {
         if (loading) {
           return <h1>Loading...</h1>;
@@ -35,13 +49,7 @@ export default () => {
         }
 
         if (get(data, 'createVenue.id')) {
-          return (
-            <div>
-              <h2>New venue "{get(data, 'createVenue.name')}" created.</h2>
-
-              <p><Link to="/venues/new">Create another?</Link></p>
-            </div>
-          );
+          return <h2>New venue "{get(data, 'createVenue.name')}" created.</h2>;
         }
 
         return (
