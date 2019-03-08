@@ -5,6 +5,7 @@ type Query {
 
 type Mutation {
   createVenue(input: VenueInput): Venue
+  purgeVenues: Boolean
 }
 
 type Event {
