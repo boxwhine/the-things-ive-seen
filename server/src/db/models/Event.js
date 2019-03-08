@@ -37,5 +37,5 @@ module.exports = model(
       type: Boolean,
       default: false,
     },
-  })
+  }),
 );

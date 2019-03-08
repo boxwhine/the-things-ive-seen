@@ -18,5 +18,5 @@ module.exports = model(
       default: '',
       null: false,
     },
-  })
+  }),
 );
