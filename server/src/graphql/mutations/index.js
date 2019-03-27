@@ -1,9 +1,9 @@
 const createVenue = require('./createVenue');
 const createEvent = require('./createEvent');
-const purgeVenues = require('./purgeVenues');
+const purge = require('./purge');
 
 module.exports = {
   createEvent,
   createVenue,
-  purgeVenues,
+  purge,
 };
