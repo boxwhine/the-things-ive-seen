@@ -1,3 +1,7 @@
+scalar Date
+scalar DateTime
+scalar Time
+
 type Query {
   events: [Event]
   venues: [Venue]
@@ -10,7 +14,7 @@ type Mutation {
 }
 
 input EventInput {
-  date: String!
+  date: Date!
   faceValue: Float
   genre: String!
   name: String!
@@ -19,7 +23,7 @@ input EventInput {
 }
 
 type Event {
-  date: String!
+  date: Date!
   faceValue: Float
   genre: String!
   id: ID!
