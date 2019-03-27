@@ -6,8 +6,8 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
-import { ADD_VENUE } from '../grqphql/mutations';
-import { GET_VENUES } from '../grqphql/queries';
+import { ADD_VENUE } from '../graphql/mutations';
+import { GET_VENUES } from '../graphql/queries';
 
 const formContainerStyle = {
   maxWidth: '40%',
