@@ -4,16 +4,26 @@ type Query {
 }
 
 type Mutation {
+  createEvent(input: EventInput): Event
   createVenue(input: VenueInput): Venue
   purgeVenues: Boolean
 }
 
-type Event {
-  id: ID!
-  name: String!
+input EventInput {
   date: String!
   faceValue: Float
   genre: String!
+  name: String!
+  subGenre: String
+  wasOpener: Boolean
+}
+
+type Event {
+  date: String!
+  faceValue: Float
+  genre: String!
+  id: ID!
+  name: String!
   subGenre: String
   venue: Venue
   wasOpener: Boolean
@@ -26,8 +36,8 @@ input VenueInput {
 }
 
 type Venue {
-  id: ID!
   city: String!
+  id: ID!
   name: String!
   state: String!
 }

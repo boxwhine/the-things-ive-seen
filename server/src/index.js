@@ -3,7 +3,7 @@ const express = require('express');
 const morganBody = require('morgan-body');
 const bodyParser = require('body-parser');
 const path = require('path');
-const session = require('express-session')
+const session = require('express-session');
 const { GraphQLServer } = require('graphql-yoga');
 
 const { startDB } = require('./db');
