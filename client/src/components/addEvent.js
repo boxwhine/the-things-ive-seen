@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import ArrowBack from '@material-ui/icons/ArrowBack';
 
-import { ADD_VENUE } from '../graphql/mutations';
+import { ADD_EVENT } from '../graphql/mutations';
 import { GET_VENUES } from '../graphql/queries';
 
 const formContainerStyle = {
@@ -41,7 +41,7 @@ export default () => {
 
   return (
     <Mutation
-      mutation={ADD_VENUE}
+      mutation={ADD_EVENT}
       update={updateCache}
       variables={{ city, name, state }}
     >
@@ -60,7 +60,7 @@ export default () => {
 
         return (
           <React.Fragment>
-            <Link to="/venues" style={breadcrumbStyle}><ArrowBack fontSize="inherit" />Back to Venues page</Link>
+            <Link to="/events" style={breadcrumbStyle}><ArrowBack fontSize="inherit" />Back to Events page</Link>
 
             <section>
               <header>
@@ -110,7 +110,7 @@ export default () => {
                     <Button
                       component={Link}
                       size="small"
-                      to="/venues"
+                      to="/events"
                       variant="contained"
                     >
                       Cancel

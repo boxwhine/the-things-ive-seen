@@ -1,18 +1,11 @@
 import React from 'react';
 import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
+import { Link } from 'react-router-dom';
 
-const getEvents = gql`
-  query getEvents {
-    events {
-      id
-      name
-    }
-  }
-`;
+import { GET_EVENTS } from '../graphql/queries';
 
 export default () => (
-  <Query query={getEvents}>
+  <Query query={GET_EVENTS}>
     {({ loading, error, data }) => {
       if (loading) {
         return <h1>Loading...</h1>;
@@ -23,11 +16,15 @@ export default () => (
       }
 
       return (
-        <ul>
-          {data.events.map(event => (
-            <li key={event.id}>{event.name}</li>
-          ))}
-        </ul>
+        <React.Fragment>
+          <Link to="/events/new">Add Event...</Link>
+
+          <ul>
+            {data.events.map(event => (
+              <li key={event.id}>{event.name}</li>
+            ))}
+          </ul>
+        </React.Fragment>
       );
     }}
   </Query>
