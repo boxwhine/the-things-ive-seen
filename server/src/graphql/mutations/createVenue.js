@@ -1,13 +1,14 @@
 const createVenue = async (parent, { input }, { models }) => {
-  const { city, state, name } = input;
-  const existingVenue = await models.Venue.findOne({ name });
+  const { name, placeId } = input;
+  const existingVenue = await models.Venue.findOne({ placeId });
 
   if (existingVenue) {
-    // @TODO may need to update this as same venue name could exist in different cities, etc.
-    throw new Error(`Venue with name "${name}" already exists.`);
+    throw new Error(
+      `"${name}" venue already exists (Google Place ID: ${placeId})`,
+    );
   }
 
-  const venue = new models.Venue({ city, state, name });
+  const venue = new models.Venue({ ...input });
 
   try {
     const newVenue = await venue.save();

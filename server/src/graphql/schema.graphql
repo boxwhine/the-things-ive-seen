@@ -34,14 +34,22 @@ type Event {
 }
 
 input VenueInput {
+  address: String!
   city: String!
+  lat: Float!
+  lng: Float!
   name: String!
+  placeId: String!
   state: String!
 }
 
 type Venue {
+  address: String!
   city: String!
   id: ID!
+  lat: Float!
+  lng: Float!
   name: String!
+  placeId: String!
   state: String!
 }

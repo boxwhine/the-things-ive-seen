@@ -20,11 +20,11 @@
     "express-session": "^1.15.6",
     "graphql-iso-date": "^3.6.1",
     "graphql-yoga": "^1.17.4",
-    "mongoose": "^5.4.17",
+    "mongoose": "^5.4.21",
     "morgan-body": "^2.4.5"
   },
   "devDependencies": {
-    "eslint": "^5.15.0",
+    "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-prettier": "^3.0.1",
     "nodemon": "^1.18.10",
