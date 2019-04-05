@@ -4,14 +4,15 @@ import get from 'lodash/get';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 import ArrowBack from '@material-ui/icons/ArrowBack';
+
+import VenueSearch from './venueSearch';
 
 import { ADD_VENUE } from '../graphql/mutations';
 import { GET_VENUES } from '../graphql/queries';
 
 const formContainerStyle = {
-  maxWidth: '40%',
+  width: '600px',
 };
 
 const footerStyle = {
@@ -21,7 +22,7 @@ const footerStyle = {
 
 const breadcrumbStyle = {
   alignItems: 'center',
-  display: 'flex',
+  display: 'inline-flex',
 };
 
 // we need to update the apollo client cache after adding a new venue
@@ -36,14 +37,36 @@ const updateCache = (store, { data: { createVenue: newVenue } }) => {
 
 export default () => {
   const [name, setName] = useState('');
+  const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
+  const [placeId, setPlaceId] = useState('');
+  const [lat, setLat] = useState('');
+  const [lng, setLng] = useState('');
+
+  const handleVenueSelect = (place) => {
+    setName(place.name);
+    setAddress(place.formatted_address);
+    setPlaceId(place.place_id);
+    setLat(place.geometry.location.lat());
+    setLng(place.geometry.location.lng());
+
+    // get city
+    const cityObj = place.address_components.find(x => x.types.includes('locality'));
+    setCity(cityObj.short_name);
+
+    // get state
+    const stateObj = place.address_components.find(x => x.types.includes('administrative_area_level_1'));
+    setState(stateObj.short_name);
+  };
 
   return (
     <Mutation
       mutation={ADD_VENUE}
       update={updateCache}
-      variables={{ city, name, state }}
+      variables={{
+        address, city, lat, lng, name, state, placeId,
+      }}
     >
       {(createVenue, { loading, error, data }) => {
         if (loading) {
@@ -66,56 +89,40 @@ export default () => {
               <header>
                 <h1>Add a new venue</h1>
               </header>
+
               <form>
                 <Grid
                   container
-                  direction="column"
+                  direction="row"
+                  spacing={16}
                   style={formContainerStyle}
                 >
-                  <TextField
-                    id="venue-name"
-                    label="Name"
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                    margin="normal"
-                  />
+                  <Grid item xs={12}>
+                    <VenueSearch onVenueSelect={handleVenueSelect} />
+                  </Grid>
 
-                  <TextField
-                    id="venue-city"
-                    label="City"
-                    value={city}
-                    onChange={e => setCity(e.target.value)}
-                    margin="normal"
-                  />
+                  <Grid item xs={12}>
+                    <nav style={footerStyle}>
+                      <Button
+                        color="primary"
+                        disabled={!(name && city && state)}
+                        onClick={createVenue}
+                        size="small"
+                        variant="contained"
+                      >
+                        Save
+                      </Button>
 
-                  <TextField
-                    id="venue-state"
-                    label="State"
-                    value={state}
-                    onChange={e => setState(e.target.value)}
-                    margin="normal"
-                  />
-
-                  <nav style={footerStyle}>
-                    <Button
-                      color="primary"
-                      disabled={!(name && city && state)}
-                      onClick={createVenue}
-                      size="small"
-                      variant="contained"
-                    >
-                      Save
-                    </Button>
-
-                    <Button
-                      component={Link}
-                      size="small"
-                      to="/venues"
-                      variant="contained"
-                    >
-                      Cancel
-                    </Button>
-                  </nav>
+                      <Button
+                        component={Link}
+                        size="small"
+                        to="/venues"
+                        variant="contained"
+                      >
+                        Cancel
+                      </Button>
+                    </nav>
+                  </Grid>
                 </Grid>
               </form>
             </section>

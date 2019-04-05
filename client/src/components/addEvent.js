@@ -21,7 +21,7 @@ const footerStyle = {
 
 const breadcrumbStyle = {
   alignItems: 'center',
-  display: 'flex',
+  display: 'inline-flex',
 };
 
 // we need to update the apollo client cache after adding a new venue
