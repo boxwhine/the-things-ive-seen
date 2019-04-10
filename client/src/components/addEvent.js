@@ -6,9 +6,16 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import ArrowBack from '@material-ui/icons/ArrowBack';
+import { withStyles } from '@material-ui/core/styles';
 
 import { ADD_EVENT } from '../graphql/mutations';
 import { GET_VENUES } from '../graphql/queries';
+
+const styles = theme => ({
+  button: {
+    marginLeft: theme.spacing.unit,
+  },
+});
 
 const formContainerStyle = {
   maxWidth: '40%',
@@ -34,7 +41,7 @@ const updateCache = (store, { data: { createVenue: newVenue } }) => {
   });
 };
 
-export default () => {
+const AddEvent = ({ classes }) => {
   const [name, setName] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
@@ -98,6 +105,7 @@ export default () => {
 
                   <nav style={footerStyle}>
                     <Button
+                      className={classes.button}
                       color="primary"
                       disabled={!(name && city && state)}
                       onClick={createVenue}
@@ -108,6 +116,7 @@ export default () => {
                     </Button>
 
                     <Button
+                      className={classes.button}
                       component={Link}
                       size="small"
                       to="/events"
@@ -125,3 +134,5 @@ export default () => {
     </Mutation>
   );
 };
+
+export default withStyles(styles)(AddEvent);

@@ -5,11 +5,18 @@ import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import ArrowBack from '@material-ui/icons/ArrowBack';
+import { withStyles } from '@material-ui/core/styles';
 
 import VenueSearch from './venueSearch';
 
 import { ADD_VENUE } from '../graphql/mutations';
 import { GET_VENUES } from '../graphql/queries';
+
+const styles = theme => ({
+  button: {
+    marginLeft: theme.spacing.unit,
+  },
+});
 
 const formContainerStyle = {
   width: '600px',
@@ -35,7 +42,7 @@ const updateCache = (store, { data: { createVenue: newVenue } }) => {
   });
 };
 
-export default () => {
+const AddVenue = ({ classes }) => {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
@@ -104,6 +111,7 @@ export default () => {
                   <Grid item xs={12}>
                     <nav style={footerStyle}>
                       <Button
+                        className={classes.button}
                         color="primary"
                         disabled={!(name && city && state)}
                         onClick={createVenue}
@@ -114,6 +122,7 @@ export default () => {
                       </Button>
 
                       <Button
+                        className={classes.button}
                         component={Link}
                         size="small"
                         to="/venues"
@@ -132,3 +141,5 @@ export default () => {
     </Mutation>
   );
 };
+
+export default withStyles(styles)(AddVenue);
