@@ -32,16 +32,6 @@ const breadcrumbStyle = {
   display: 'inline-flex',
 };
 
-// we need to update the apollo client cache after adding a new venue
-const updateCache = (store, { data: { createVenue: newVenue } }) => {
-  const data = store.readQuery({ query: GET_VENUES });
-  data.venues.push(newVenue);
-  store.writeQuery({
-    query: GET_VENUES,
-    data,
-  });
-};
-
 const AddVenue = ({ classes }) => {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
@@ -70,7 +60,8 @@ const AddVenue = ({ classes }) => {
   return (
     <Mutation
       mutation={ADD_VENUE}
-      update={updateCache}
+      // update venues in client cache, post-mutate
+      refetchQueries={() => [{ query: GET_VENUES }]}
       variables={{
         address, city, lat, lng, name, state, placeId,
       }}
