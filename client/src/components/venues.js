@@ -16,7 +16,9 @@ export default () => (
       }
 
       return (
-        <React.Fragment>
+        <section>
+          <h1>Venues</h1>
+
           <Link to="/venues/new">Add Venue...</Link>
 
           <ul>
@@ -29,7 +31,7 @@ export default () => (
               </li>
             ))}
           </ul>
-        </React.Fragment>
+        </section>
       );
     }}
   </Query>

@@ -16,7 +16,9 @@ export default () => (
       }
 
       return (
-        <React.Fragment>
+        <section>
+          <h1>Events</h1>
+
           <Link to="/events/new">Add Event...</Link>
 
           <ul>
@@ -24,7 +26,7 @@ export default () => (
               <li key={event.id}>{event.name}</li>
             ))}
           </ul>
-        </React.Fragment>
+        </section>
       );
     }}
   </Query>
