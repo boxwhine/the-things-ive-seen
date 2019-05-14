@@ -80,7 +80,7 @@ const AddVenue = ({ classes }) => {
         }
 
         return (
-          <React.Fragment>
+          <>
             <Link to="/venues" style={breadcrumbStyle}><ArrowBack fontSize="inherit" />Back to Venues page</Link>
 
             <section>
@@ -126,7 +126,7 @@ const AddVenue = ({ classes }) => {
                 </Grid>
               </form>
             </section>
-          </React.Fragment>
+          </>
         );
       }}
     </Mutation>

@@ -10,7 +10,7 @@ import Nav from './nav';
 import Venues from './venues';
 
 const App = () => (
-  <React.Fragment>
+  <>
     <Nav />
 
     <main>
@@ -23,7 +23,7 @@ const App = () => (
         <Route exact path="/venues/new" component={AddVenue} />
       </Switch>
     </main>
-  </React.Fragment>
+  </>
 );
 
 export default App;

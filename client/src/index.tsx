@@ -18,12 +18,12 @@ const client = new ApolloClient({
 
 render(
   <BrowserRouter>
-    <React.Fragment>
+    <>
       <CssBaseline />
       <ApolloProvider client={client}>
         <App />
       </ApolloProvider>
-    </React.Fragment>
+    </>
   </BrowserRouter>,
   document.getElementById('root'),
 );

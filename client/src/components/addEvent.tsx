@@ -66,7 +66,7 @@ const AddEvent = ({ classes }) => {
         }
 
         return (
-          <React.Fragment>
+          <>
             <Link to="/events" style={breadcrumbStyle}><ArrowBack fontSize="inherit" />Back to Events page</Link>
 
             <section>
@@ -128,7 +128,7 @@ const AddEvent = ({ classes }) => {
                 </Grid>
               </form>
             </section>
-          </React.Fragment>
+          </>
         );
       }}
     </Mutation>
