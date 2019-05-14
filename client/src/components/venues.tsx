@@ -2,7 +2,7 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import { Link } from 'react-router-dom';
 
-import { GET_VENUES } from '../graphql/queries';
+import GET_VENUES from '../graphql/queries/getVenues';
 
 export default () => (
   <Query query={GET_VENUES}>
