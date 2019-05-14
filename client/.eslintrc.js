@@ -16,8 +16,15 @@ module.exports = {
     env: {
       jest: true,
     },
-    rules: {
-
-    }
+    rules: {}
   }],
+  plugins: ['import'],
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx']
+    },
+    'import/resolver': {
+      typescript: {},
+    }
+  }
 };
