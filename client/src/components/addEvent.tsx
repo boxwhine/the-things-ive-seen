@@ -2,18 +2,19 @@ import React, { useState } from 'react';
 import { Mutation } from 'react-apollo';
 import get from 'lodash/get';
 import { Link } from 'react-router-dom';
+import { createStyles, withStyles } from '@material-ui/core/styles';
+import { Theme } from '@material-ui/core/styles/createMuiTheme';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import ArrowBack from '@material-ui/icons/ArrowBack';
-import { withStyles } from '@material-ui/core/styles';
 
-import { ADD_EVENT } from '../graphql/mutations';
-import { GET_VENUES } from '../graphql/queries';
+import ADD_EVENT from '../graphql/mutations/addEvent';
+import GET_EVENTS, { Response } from '../graphql/queries/getEvents';
 
-const styles = theme => ({
+const styles = ({ spacing }: Theme) => createStyles({
   button: {
-    marginLeft: theme.spacing.unit,
+    marginLeft: spacing.unit,
   },
 });
 
@@ -31,12 +32,18 @@ const breadcrumbStyle = {
   display: 'inline-flex',
 };
 
+interface Variables {
+  city: string;
+  name: string;
+  state: string;
+};
+
 // we need to update the apollo client cache after adding a new venue
 const updateCache = (store, { data: { createVenue: newVenue } }) => {
-  const data = store.readQuery({ query: GET_VENUES });
+  const data = store.readQuery({ query: GET_EVENTS });
   data.venues.push(newVenue);
   store.writeQuery({
-    query: GET_VENUES,
+    query: GET_EVENTS,
     data,
   });
 };
@@ -47,7 +54,7 @@ const AddEvent = ({ classes }) => {
   const [state, setState] = useState('');
 
   return (
-    <Mutation
+    <Mutation<Response, Variables>
       mutation={ADD_EVENT}
       update={updateCache}
       variables={{ city, name, state }}

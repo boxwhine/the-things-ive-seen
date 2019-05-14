@@ -2,19 +2,20 @@ import React, { useState } from 'react';
 import { Mutation } from 'react-apollo';
 import get from 'lodash/get';
 import { Link } from 'react-router-dom';
+import { createStyles, withStyles } from '@material-ui/core/styles';
+import { Theme } from '@material-ui/core/styles/createMuiTheme';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import ArrowBack from '@material-ui/icons/ArrowBack';
-import { withStyles } from '@material-ui/core/styles';
+
+import ADD_VENUE from '../graphql/mutations/addVenue';
+import GET_VENUES, { Response } from '../graphql/queries/getVenues';
 
 import VenueSearch from './venueSearch';
 
-import { ADD_VENUE } from '../graphql/mutations';
-import { GET_VENUES } from '../graphql/queries';
-
-const styles = theme => ({
+const styles = ({ spacing }: Theme) => createStyles({
   button: {
-    marginLeft: theme.spacing.unit,
+    marginLeft: spacing.unit,
   },
 });
 
@@ -32,14 +33,24 @@ const breadcrumbStyle = {
   display: 'inline-flex',
 };
 
+interface Variables {
+  address: string;
+  city: string;
+  lat: number;
+  lng: number;
+  name: string;
+  placeId: string;
+  state: string;
+};
+
 const AddVenue = ({ classes }) => {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [placeId, setPlaceId] = useState('');
-  const [lat, setLat] = useState('');
-  const [lng, setLng] = useState('');
+  const [lat, setLat] = useState(-1);
+  const [lng, setLng] = useState(-1);
 
   const handleVenueSelect = (place) => {
     setName(place.name);
@@ -58,7 +69,7 @@ const AddVenue = ({ classes }) => {
   };
 
   return (
-    <Mutation
+    <Mutation<Response, Variables>
       mutation={ADD_VENUE}
       // update venues in client cache, post-mutate
       refetchQueries={() => [{ query: GET_VENUES }]}

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 import { Link } from 'react-router-dom';
+import get from 'lodash/get';
 
-import { GET_EVENTS } from '../graphql/queries';
+import GET_EVENTS, { Event, Response } from '../graphql/queries/getEvents';
 
 export default () => (
-  <Query query={GET_EVENTS}>
+  <Query<Response> query={GET_EVENTS}>
     {({ loading, error, data }) => {
       if (loading) {
         return <h1>Loading...</h1>;
@@ -15,6 +16,13 @@ export default () => (
         return <div>Error</div>;
       }
 
+      const events = get(data, 'events', []).map((event : Event, idx, arr) => (
+        <li key={event.id}>{event.name}</li>
+      ));
+      // const eventItems = get(data, 'events', []).map(({ id, name } : Event) => (
+      //   <li key={id}>{name}</li>
+      // ));
+
       return (
         <section>
           <h1>Events</h1>
@@ -22,9 +30,7 @@ export default () => (
           <Link to="/events/new">Add Event...</Link>
 
           <ul>
-            {data.events.map(event => (
-              <li key={event.id}>{event.name}</li>
-            ))}
+            {eventItems}
           </ul>
         </section>
       );
