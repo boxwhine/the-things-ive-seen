@@ -51,7 +51,7 @@
   "scripts": {
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm-run-all build-css build-js",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-css": "node-sass --include-path ./src --include-path ./node_modules src/ -o src/compiled",
     "watch-css": "npm run build-css && node-sass --include-path ./src --include-path ./node_modules src/ -o src/compiled/ --watch",
