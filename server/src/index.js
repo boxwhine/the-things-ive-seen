@@ -1,9 +1,7 @@
 const cors = require('cors');
-const express = require('express');
 const morganBody = require('morgan-body');
 const bodyParser = require('body-parser');
 const path = require('path');
-const session = require('express-session');
 const { GraphQLServer } = require('graphql-yoga');
 
 const { startDB } = require('./db');
@@ -40,22 +38,6 @@ server.express.use(cors());
 server.express.use(bodyParser.json());
 // hook morganBody to express app
 morganBody(server.express);
-
-/*
-//sessions
-app.use(
-  session({
-    resave: false,
-    saveUninitialized: false,
-    secret: process.env.SESSION_SECRET_KEY,
-  })
-);
-
-// app.use((req, res, next) => {
-//   console.log('## req.session\n', req.session, '\n');
-//   return next();
-// });
-*/
 
 // options
 const opts = {
