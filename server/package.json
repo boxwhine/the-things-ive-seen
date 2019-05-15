@@ -1,7 +1,7 @@
 {
-  "name": "things-ive-seen-api",
+  "name": "the-things-ive-seen-api",
   "version": "0.1.0",
-  "description": "API for The Things I've Seen",
+  "description": "GraphQL API for The Things I've Seen",
   "repository": "gitlab:boxwhine/the-things-ive-seen",
   "private": false,
   "author": "Jesse Rinehart",
