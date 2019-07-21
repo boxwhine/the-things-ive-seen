@@ -2,7 +2,11 @@
   "name": "the-things-ive-seen-api",
   "version": "0.1.0",
   "description": "GraphQL API for The Things I've Seen",
-  "repository": "gitlab:boxwhine/the-things-ive-seen",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/boxwhine/the-things-ive-seen.git",
+    "directory": "server/"
+  },
   "private": false,
   "author": "Jesse Rinehart",
   "license": "MIT",

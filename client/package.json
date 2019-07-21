@@ -2,7 +2,11 @@
   "name": "the-things-ive-seen-ui",
   "version": "0.1.0",
   "description": "UI for The Things I've Seen",
-  "repository": "gitlab:boxwhine/the-things-ive-seen",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/boxwhine/the-things-ive-seen.git",
+    "directory": "client/"
+  },
   "private": false,
   "author": "Jesse Rinehart",
   "license": "MIT",
