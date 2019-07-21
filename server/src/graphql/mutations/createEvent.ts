@@ -1,12 +1,13 @@
-const createEvent = async (parent, { input }, { models }) => {
+const createEvent = async (parent, args, { models }) => {
   const {
     date,
     faceValue = 0,
     genre,
     name,
     subGenre = null,
+    venue = null,
     wasOpener = false,
-  } = input;
+  } = args.input;
 
   const event = new models.Event({
     date,
@@ -15,7 +16,7 @@ const createEvent = async (parent, { input }, { models }) => {
     name,
     subGenre,
     // @TODO wire up with real venue selection
-    venue: '5c84197fcd8448b5102d2eca',
+    venue: venue || '5c84197fcd8448b5102d2eca',
     wasOpener,
   });
 
@@ -26,8 +27,8 @@ const createEvent = async (parent, { input }, { models }) => {
       _id: newEvent._id,
     }).populate('venue');
   } catch (err) {
-    throw new Error('Error creating event...', err);
+    throw new Error('Error creating event...');
   }
 };
 
-module.exports = createEvent;
+export default createEvent;

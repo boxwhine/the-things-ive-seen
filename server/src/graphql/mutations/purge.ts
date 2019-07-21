@@ -1,4 +1,4 @@
-const purge = async (parent, args, { models }) => {
+const purge = async (_: void, __: void, { models }) => {
   try {
     const allVenuesDeleted = await models.Venue.deleteMany({});
     console.log('Deleted all venues...', allVenuesDeleted);
@@ -6,8 +6,8 @@ const purge = async (parent, args, { models }) => {
     console.log('Deleted all events...', allEventsDeleted);
     return true;
   } catch (err) {
-    throw new Error('Error deleting all venues/events...', err);
+    throw new Error('Error deleting all venues/events...');
   }
 };
 
-module.exports = purge;
+export default purge;

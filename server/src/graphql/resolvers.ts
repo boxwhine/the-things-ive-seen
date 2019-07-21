@@ -1,12 +1,14 @@
-const {
+import {
   GraphQLDate,
   GraphQLDateTime,
   GraphQLTime,
-} = require('graphql-iso-date');
-const mutations = require('./mutations');
-const queries = require('./queries');
+} from 'graphql-iso-date';
+import { IResolvers } from 'graphql-tools';
 
-const resolvers = {
+import mutations from './mutations';
+import queries from './queries';
+
+const resolvers: IResolvers = {
   Query: {
     ...queries,
   },
@@ -19,4 +21,4 @@ const resolvers = {
   Time: GraphQLTime,
 };
 
-module.exports = resolvers;
+export default resolvers;

@@ -1,5 +1,9 @@
-const createVenue = async (parent, { input }, { models }) => {
-  const { name, placeId } = input;
+import { VenueInput } from '../types';
+
+const createVenue = async (parent, args: {
+  input: VenueInput;
+}, { models }) => {
+  const { name, placeId } = args.input;
   const existingVenue = await models.Venue.findOne({ placeId });
 
   if (existingVenue) {
@@ -8,15 +12,15 @@ const createVenue = async (parent, { input }, { models }) => {
     );
   }
 
-  const venue = new models.Venue({ ...input });
+  const venue = new models.Venue({ ...args.input });
 
   try {
     const newVenue = await venue.save();
     console.log('Saved new venue...', newVenue);
     return newVenue;
   } catch (err) {
-    throw new Error('Error creating venue...', err);
+    throw new Error('Error creating venue...');
   }
 };
 
-module.exports = createVenue;
+export default createVenue;

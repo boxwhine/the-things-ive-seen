@@ -1,6 +1,6 @@
-const { model, Schema } = require('mongoose');
+import { model, Types, Schema } from 'mongoose';
 
-module.exports = model(
+export default model(
   'Event',
   new Schema({
     date: {
@@ -30,7 +30,7 @@ module.exports = model(
       null: true,
     },
     venue: {
-      type: Schema.ObjectId,
+      type: Types.ObjectId,
       ref: 'Venue',
     },
     wasOpener: {
