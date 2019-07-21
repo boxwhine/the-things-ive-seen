@@ -1,14 +1,14 @@
-const cors = require('cors');
-const morganBody = require('morgan-body');
-const bodyParser = require('body-parser');
-const path = require('path');
-const { GraphQLServer } = require('graphql-yoga');
+import cors from 'cors';
+import morganBody from 'morgan-body';
+import bodyParser from 'body-parser';
+import { GraphQLServer } from 'graphql-yoga';
+import dotenv from 'dotenv';
 
-const { startDB } = require('./db');
-const models = require('./db/models');
-const resolvers = require('./graphql/resolvers');
+import { startDB } from './db';
+import models from './db/models';
+import resolvers from './graphql/resolvers';
 
-require('dotenv').config();
+dotenv.config();
 
 // Constants
 const PORT = process.env.PORT || 4000;
@@ -22,7 +22,7 @@ const db = startDB({
 });
 
 const server = new GraphQLServer({
-  typeDefs: `${__dirname}/graphql/schema.graphql`,
+  typeDefs: [`${__dirname}/graphql/schema.graphql`],
   resolvers,
   context: {
     models,

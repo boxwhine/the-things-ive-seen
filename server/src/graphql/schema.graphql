@@ -19,18 +19,30 @@ input EventInput {
   genre: String!
   name: String!
   subGenre: String
+  venue: ID
   wasOpener: Boolean
 }
 
+# type Event @entity {
+#   date: Date! @column
+#   faceValue: Float @column
+#   genre: String! @column
+#   id: ID! @id
+#   name: String! @column
+#   subGenre: String @column
+#   venue: Venue @embedded
+#   wasOpener: Boolean @column
+# }
+
 type Event {
-  date: Date!
-  faceValue: Float
-  genre: String!
-  id: ID!
-  name: String!
-  subGenre: String
-  venue: Venue
-  wasOpener: Boolean
+  date: Date! 
+  faceValue: Float 
+  genre: String! 
+  id: ID! 
+  name: String! 
+  subGenre: String 
+  venue: Venue 
+  wasOpener: Boolean 
 }
 
 input VenueInput {

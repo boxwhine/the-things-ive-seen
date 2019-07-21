@@ -1,11 +1,10 @@
-const mongoose = require('mongoose');
-const { Event } = require('./models');
-const querystring = require('querystring');
+import mongoose from 'mongoose';
+import querystring from 'querystring';
  
 // Set up Mongoose Promises.
 mongoose.Promise = global.Promise;
 
-const startDB = ({ user, pwd, url, db, options }) => {
+export const startDB = async ({ user, pwd, url, db, options }) => {
   const opts = {
     authSource: 'admin',
     retryWrites: true,
@@ -25,8 +24,4 @@ const startDB = ({ user, pwd, url, db, options }) => {
     )
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
-};
-
-module.exports = {
-  startDB,
 };
