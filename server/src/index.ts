@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 import { startDB } from './db';
 import models from './db/models';
 import resolvers from './graphql/resolvers';
+import schema from './graphql/schema';
 
 dotenv.config();
 
@@ -22,7 +23,7 @@ const db = startDB({
 });
 
 const server = new GraphQLServer({
-  typeDefs: [`${__dirname}/graphql/schema.graphql`],
+  typeDefs: schema,
   resolvers,
   context: {
     models,

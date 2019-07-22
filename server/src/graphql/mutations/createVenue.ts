@@ -1,8 +1,4 @@
-import { VenueInput } from '../types';
-
-const createVenue = async (parent, args: {
-  input: VenueInput;
-}, { models }) => {
+const createVenue = async (parent, args, { models }) => {
   const { name, placeId } = args.input;
   const existingVenue = await models.Venue.findOne({ placeId });
 
