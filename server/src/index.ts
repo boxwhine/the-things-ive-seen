@@ -7,22 +7,22 @@ import dotenv from 'dotenv';
 import { startDB } from './db';
 import models from './db/models';
 import resolvers from './graphql/resolvers';
+import schema from './graphql/schema';
 
 dotenv.config();
 
 // Constants
-const PORT = process.env.PORT || 4000;
-
 const db = startDB({
-  db: process.env.DB_NAME,
+  // Add '!' to let TS know it doesn't need to worry about possible undefined vals here
+  db: process.env.DB_NAME!,
   options: !!process.env.DB_OPTIONS ? process.env.DB_OPTIONS.split('&') : [],
-  pwd: process.env.DB_PWD,
-  url: process.env.DB_URL,
-  user: process.env.DB_USER,
+  pwd: process.env.DB_PWD!,
+  url: process.env.DB_URL!,
+  user: process.env.DB_USER!,
 });
 
 const server = new GraphQLServer({
-  typeDefs: [`${__dirname}/graphql/schema.graphql`],
+  typeDefs: schema,
   resolvers,
   context: {
     models,
@@ -42,7 +42,7 @@ morganBody(server.express);
 // options
 const opts = {
   playground: '/playground',
-  port: PORT,
+  port: process.env.PORT || 4000,
 };
 
 server.start(opts, () => {

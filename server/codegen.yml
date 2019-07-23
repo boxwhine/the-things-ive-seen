@@ -1,0 +1,12 @@
+overwrite: true
+schema: src/graphql/schema.ts
+config:
+  useIndexSignature: true
+  scalars:
+    Date: string
+    DateTime: string
+    Time: string
+generates:
+  src/graphql/types.gen.ts:
+    - typescript
+    - typescript-resolvers
