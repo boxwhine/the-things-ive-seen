@@ -2,6 +2,8 @@
 
 _Concert/event dashboard and visualization app_
 
+<img src="repo-icon.jpg" alt="Joey Ramone" title="Joey Ramone" width="225" align="left"></img>
+
 Just a hobby project I've been working on to demo various technologies using the concerts and events I've attended as a dataset.
 
 I've saved the ticket stubs from (almost) every concert I've been to since I was a teenager.  I thought it would be interesting to use this data as a dataset for creating a hobby code project using the latest technologies.
