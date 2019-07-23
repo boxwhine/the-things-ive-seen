@@ -1,22 +1,26 @@
-const createVenue = async (parent, args, { models }) => {
-  const { name, placeId } = args.input;
-  const existingVenue = await models.Venue.findOne({ placeId });
+import { MutationResolvers } from '../types.gen';
 
-  if (existingVenue) {
-    throw new Error(
-      `"${name}" venue already exists (Google Place ID: ${placeId})`,
-    );
-  }
+const Mutation: MutationResolvers = {
+  createVenue: async (parent, args, { models }) => {
+    const { name, placeId } = args.input;
+    const existingVenue = await models.Venue.findOne({ placeId });
 
-  const venue = new models.Venue({ ...args.input });
+    if (existingVenue) {
+      throw new Error(
+        `"${name}" venue already exists (Google Place ID: ${placeId})`,
+      );
+    }
 
-  try {
-    const newVenue = await venue.save();
-    console.log('Saved new venue...', newVenue);
-    return newVenue;
-  } catch (err) {
-    throw new Error('Error creating venue...');
-  }
+    const venue = new models.Venue({ ...args.input });
+
+    try {
+      const newVenue = await venue.save();
+      console.log('Saved new venue...', newVenue);
+      return newVenue;
+    } catch (err) {
+      throw new Error('Error creating venue...');
+    }
+  },
 };
 
-export default createVenue;
+export default Mutation.createVenue;

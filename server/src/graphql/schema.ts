@@ -11,8 +11,8 @@ export default gql`
   }
 
   type Mutation {
-    createEvent(input: EventInput): Event
-    createVenue(input: VenueInput): Venue
+    createEvent(input: EventInput!): Event
+    createVenue(input: VenueInput!): Venue
     purge: Boolean
   }
 

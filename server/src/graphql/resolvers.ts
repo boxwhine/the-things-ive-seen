@@ -3,18 +3,14 @@ import {
   GraphQLDateTime,
   GraphQLTime,
 } from 'graphql-iso-date';
-import { IResolvers } from 'graphql-tools';
-
+ 
+import { Resolvers } from './types.gen';
 import mutations from './mutations';
 import queries from './queries';
 
-const resolvers: IResolvers = {
-  Query: {
-    ...queries,
-  },
-  Mutation: {
-    ...mutations,
-  },
+const resolvers: Resolvers = {
+  Query: queries,
+  Mutation: mutations,
   // custom resolvers
   Date: GraphQLDate,
   DateTime: GraphQLDateTime,

@@ -6,3 +6,6 @@ npm-debug.log*
 .env
 
 build/
+
+# ignore generated files
+**/*.gen.*

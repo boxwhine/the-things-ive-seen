@@ -4,7 +4,20 @@ import querystring from 'querystring';
 // Set up Mongoose Promises.
 mongoose.Promise = global.Promise;
 
-export const startDB = async ({ user, pwd, url, db, options }) => {
+interface DbArgs {
+  user: string;
+  pwd: string;
+  url: string;
+  db: string;
+  /**
+   * an array of key value pair strings
+   * @example ["foo=bar"]
+   */
+  options: string[];
+}
+
+export const startDB = async (args: DbArgs) => {
+  const { user, pwd, url, db, options } = args;
   const opts = {
     authSource: 'admin',
     retryWrites: true,
@@ -18,10 +31,11 @@ export const startDB = async ({ user, pwd, url, db, options }) => {
       };
     }, {}),
   };
+
   return mongoose.connect(
       `mongodb+srv://${querystring.escape(user)}:${querystring.escape(pwd)}@${url}/${db}`,
       opts
     )
     .then(() => console.log('MongoDB connected'))
-    .catch(err => console.log(err));
+    .catch(err => console.error(err));
 };
