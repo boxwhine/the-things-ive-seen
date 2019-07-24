@@ -19,8 +19,8 @@ export default class EventResolver {
     return events.filter(event => event.name.includes(name));
   }
 
-  @FieldResolver()
-  venue(@Root() event: Event): Venue | undefined {
-    return venues.find(venue => venue.event_id === event.id);
-  }
+  // @FieldResolver()
+  // venue(@Root() event: Event): Venue | undefined {
+  //   return venues.find(venue => venue.event_id === event.id);
+  // }
 }

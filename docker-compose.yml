@@ -1,26 +1,56 @@
-version: '2'
+# this compose file is for orchestrating local development stack
+version: '3.1'
+
 services:
-  server:
-    build:
-      context: ./server/
-    command: npm start
+
+  ttis-db:
+    container_name: db
+    image: postgres:11.4-alpine
+    restart: on-failure
+    env_file: ./server/.env
     volumes:
-      - ./server/:/usr/app
-      - /usr/app/node_modules
+      - ttis-data:/var/lib/postgresql/data
     ports:
-      - "8080:8080"
-    # env_file: ./server/.env # TODO - uncomment this to auto-load your .env file!
+      - 5432:5432
+
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  ttis-api:
+    container_name: api
+    restart: on-failure
+    build:
+      context: ./server
+      dockerfile: Dockerfile.dev
     environment:
-      - NODE_ENV=development
-      - CHOKIDAR_USEPOLLING=true
-  client:
-    build:
-      context: ./client/
-    command: npm start
-    volumes:
-      - ./client/:/usr/app
-      - /usr/app/node_modules
+      # inject the hostname of the DB container
+      POSTGRES_HOST: ttis-db
     depends_on:
-      - server
+      - ttis-db
     ports:
-      - "3000:3000"
+      - 4000:4000
+    volumes:
+      - ./server:/usr/src/app:rw
+      # We don't want modules installed on host platform to be used on container,
+      # so we're effectively hiding node_modules from the host (must be in this order)
+      - ttis-api-node-modules:/usr/src/app/node_modules
+
+  # client:
+  #   build:
+  #     context: ./client/
+  #   command: npm start
+  #   volumes:
+  #     - ./client/:/usr/app
+  #     - /usr/app/node_modules
+  #   depends_on:
+  #     - server
+  #   ports:
+  #     - "3000:3000"
+
+volumes:
+  ttis-data:
+  ttis-api-node-modules:
