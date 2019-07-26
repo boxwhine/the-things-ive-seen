@@ -1,5 +1,6 @@
 const {
   DB_OPTIONS,
+  NODE_ENV,
   POSTGRES_DB,
   POSTGRES_HOST,
   POSTGRES_PASSWORD,
@@ -7,6 +8,8 @@ const {
 } = process.env!;
 
 const config = {
+  isProd: NODE_ENV === 'production',
+  isDev: NODE_ENV !== 'production',
   db: {
     name: POSTGRES_DB!,
     options: !!DB_OPTIONS ? DB_OPTIONS.split('&') : [],
