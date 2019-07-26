@@ -11,8 +11,9 @@ import { buildSchema } from 'type-graphql';
 
 dotenv.config();
 
-import { sequelize } from './db';
 import config from './config';
+import { sequelize } from './db';
+import seedDb from './db/seed';
 import resolvers from './resolvers';
 
 const bootstrap = async () => {
@@ -46,8 +47,10 @@ const bootstrap = async () => {
     port: process.env.PORT || 4000,
   };
 
-  sequelize.sync().then(() => {
-    // seedDevelopmentdB();
+  sequelize.sync({ force: true }).then(() => {
+    if (config.isDev) {
+      seedDb();
+    }
     server.start(opts, () => {
       console.log(`Server is running on http://localhost:${opts.port}`);
     });

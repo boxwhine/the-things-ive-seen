@@ -1,4 +1,4 @@
-import { Table, Column, Model, ForeignKey, BelongsTo, HasMany } from 'sequelize-typescript';
+import { Table, Column, Model, ForeignKey, BelongsTo } from 'sequelize-typescript';
 import { Field, Int, ObjectType } from 'type-graphql';
 import Venue from './Venue';
 
@@ -7,40 +7,43 @@ import Venue from './Venue';
 })
 @ObjectType()
 export default class Event extends Model<Event> {
-  // @Field(type => Date)
-  // date: Date;
+  @Column
+  @Field(type => Date)
+  date: Date;
 
-  // @Field(type => Int)
-  // faceValue: number;
+  @Column
+  @Field(type => Int, { nullable: true })
+  faceValue?: number;
 
   @Column
   @Field({ nullable: true })
   festivalName?: string;
 
-  // @Field()
-  // genre: string = '';
+  @Column
+  @Field({ nullable: true })
+  genre?: string;
 
   @Column
   @Field()
-  name: string = '';
+  name: string;
 
-  // @Field()
-  // subGenre: string = '';
-
-  // @Column
-  // @Field(type => Venue)
-  // venue: Venue;
-
-  @ForeignKey(() => Venue)
   @Column
+  @Field({ nullable: true })
+  subGenre?: string;
+
+  @Column
+  @ForeignKey(() => Venue)
   venueId: number;
   
-  @BelongsTo(() => Venue)
+  @Column
+  @Field({ nullable: true })
+  wasOpener?: boolean;
+
+  /**
+   * Fields only, no db col
+   */
+
+  @Field()
+  @BelongsTo(() => Venue, 'venueId')
   venue: Venue;
-
-  // @HasMany(() => Hobby)
-  // hobbies: Hobby[];
-
-  // @Field()
-  // wasOpener: boolean = false;
 };

@@ -8,29 +8,39 @@ import Event from './Event';
 })
 @ObjectType()
 export default class Venue extends Model<Event> {
-  // @Field()
-  // address: string = '';
-
-  // @Field()
-  // city: string = '';
-
-  // @Field(type => Int)
-  // lat: number = -1;
-
-  // @Field(type => Int)
-  // lng: number = -1;
+  @Column
+  @Field()
+  address: string;
 
   @Column
   @Field()
-  name: string = '';
+  city: string;
 
-  // @Field()
-  // placeId: string = '';
+  @Column
+  @Field(type => Int, { nullable: true })
+  lat: number;
+
+  @Column
+  @Field(type => Int, { nullable: true })
+  lng: number;
 
   @Column
   @Field()
-  state: string = '';
+  name: string;
 
-  @HasMany(() => Event)
+  @Column
+  @Field({ nullable: true })
+  placeId?: string;
+
+  @Column
+  @Field()
+  state: string;
+
+  /**
+   * Fields only, no db col
+   */
+
+  @Field(type => [Event], { nullable: true })
+  @HasMany(() => Event, 'venueId')
   events: Event[];
 };
