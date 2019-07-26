@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize-typescript';
 
 import config from '../config';
-import { Event, Venue } from '../schemas';
+import { Event, Venue } from '../models';
 
 const { db } = config;
 

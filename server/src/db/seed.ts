@@ -1,4 +1,4 @@
-import { Event, Venue } from '../schemas';
+import { Event, Venue } from '../models';
 import { eventData, venueData } from './seed-data';
 
 export default async () => {

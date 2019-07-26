@@ -1,6 +1,6 @@
 import { Op } from 'sequelize';
 import { Arg, Query, Resolver } from 'type-graphql';
-import { Event, Venue } from '../schemas';
+import { Event, Venue } from '../models';
 
 @Resolver(of => Venue)
 export default class VenueResolver {
