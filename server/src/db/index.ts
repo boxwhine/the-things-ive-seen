@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize-typescript';
 
 import config from '../config';
-import { Event, Venue } from '../models';
+import { Event, Genre, Venue } from '../models';
 
 const { db } = config;
 
@@ -15,7 +15,7 @@ const sequelize =  new Sequelize(
   }
 );
 
-sequelize.addModels([Event, Venue]);
+sequelize.addModels([Event, Genre, Venue]);
 
 // const models = {
 //   User: sequelize.import('./user'),

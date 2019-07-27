@@ -1,13 +1,18 @@
-import { Table, Column, Model, HasMany } from 'sequelize-typescript';
+import { Table, Column, Model, HasMany, DefaultScope, Scopes } from 'sequelize-typescript';
 import { Field, Int, ObjectType } from 'type-graphql';
 
 import Event from './Event';
 
+@Scopes({
+  default: {
+    include: [() => Event]
+  },
+})
 @Table({
   timestamps: true,
 })
 @ObjectType()
-export default class Venue extends Model<Event> {
+export default class Venue extends Model<Venue> {
   @Column
   @Field()
   address: string;
@@ -40,7 +45,10 @@ export default class Venue extends Model<Event> {
    * Fields only, no db col
    */
 
+  @Field(type => Int)
+  id: number;
+
   @Field(type => [Event], { nullable: true })
   @HasMany(() => Event, 'venueId')
-  events: Event[];
+  events?: Event[];
 };

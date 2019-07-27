@@ -47,9 +47,9 @@ const bootstrap = async () => {
     port: process.env.PORT || 4000,
   };
 
-  sequelize.sync({ force: true }).then(() => {
+  sequelize.sync({ force: true }).then(async () => {
     if (config.isDev) {
-      seedDb();
+      await seedDb();
     }
     server.start(opts, () => {
       console.log(`Server is running on http://localhost:${opts.port}`);

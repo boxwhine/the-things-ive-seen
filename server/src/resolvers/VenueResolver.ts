@@ -5,17 +5,16 @@ import { Event, Venue } from '../models';
 @Resolver(of => Venue)
 export default class VenueResolver {
   @Query(returns => [Venue])
-  async venues(): Promise<Venue[]> {
-    return await Venue.findAll<Venue>({ include: [Event] });
+  async fetchVenues(): Promise<Venue[]> {
+    return await Venue.scope('default').findAll<Venue>();
   }
 
   @Query(returns => [Venue])
   async searchVenuesByName(@Arg('name') name: string): Promise<Venue[]> {
-    return await Venue.findAll<Venue>({
-      include: [Event],
+    return await Venue.scope('default').findAll<Venue>({
       where: {
         name: {
-          [Op.like]: `%${name}%`,
+          [Op.iLike]: `%${name}%`,
         }
       },
     });
