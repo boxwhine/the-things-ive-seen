@@ -1,5 +1,5 @@
 import { Query, Resolver } from 'type-graphql';
-import { Event, Genre, Venue } from '../models';
+import { Event } from '../models';
 
 @Resolver(of => Event)
 export default class EventResolver {
