@@ -12,10 +12,7 @@
   "license": "MIT",
   "main": "src/index.js",
   "scripts": {
-    "codegen": "graphql-codegen",
     "dev": "ts-node-dev --respawn --transpileOnly ./src/",
-    "predev": "npm run codegen",
-    "prestart": "npm run codegen",
     "start": "tsc && node ./build/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,29 +25,27 @@
     "graphql-tools": "^4.0.5",
     "graphql-yoga": "^1.18.1",
     "lodash": "^4.17.15",
-    "mongodb": "^3.3.0-beta2",
-    "mongoose": "^5.6.4",
     "morgan-body": "^2.4.7",
+    "pg": "^7.11.0",
+    "sequelize": "^5.10.2",
+    "sequelize-typescript": "^1.0.0-beta.3",
     "ts-node-dev": "^1.0.0-pre.40"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^1.4.0",
-    "@graphql-codegen/typescript": "^1.4.0",
-    "@graphql-codegen/typescript-mongodb": "^1.4.0",
-    "@graphql-codegen/typescript-operations": "^1.4.0",
-    "@graphql-codegen/typescript-react-apollo": "^1.4.0",
-    "@graphql-codegen/typescript-resolvers": "^1.4.0",
     "@types/aws-lambda": "^8.10.31",
     "@types/dotenv": "^6.1.1",
     "@types/graphql-iso-date": "^3.3.1",
-    "@types/mongoose": "^5.5.9",
+    "@types/lodash": "^4.14.136",
+    "@types/node": "^12.6.8",
     "@types/ws": "^6.0.1",
     "eslint": "~6.0",
     "eslint-config-prettier": "~6.0",
     "eslint-plugin-prettier": "~3.0",
     "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
+    "reflect-metadata": "^0.1.13",
     "ts-node": "^8.3.0",
+    "type-graphql": "^0.17.4",
     "typescript": "^3.5.3"
   }
 }

@@ -1,41 +1,36 @@
-import mongoose from 'mongoose';
-import querystring from 'querystring';
- 
-// Set up Mongoose Promises.
-mongoose.Promise = global.Promise;
+import { Sequelize } from 'sequelize-typescript';
 
-interface DbArgs {
-  user: string;
-  pwd: string;
-  url: string;
-  db: string;
-  /**
-   * an array of key value pair strings
-   * @example ["foo=bar"]
-   */
-  options: string[];
-}
+import config from '../config';
+import { Event, Genre, Venue } from '../models';
 
-export const startDB = async (args: DbArgs) => {
-  const { user, pwd, url, db, options } = args;
-  const opts = {
-    authSource: 'admin',
-    retryWrites: true,
-    ssl: true,
-    useNewUrlParser: true,
-    ...options.reduce((acc, opt) => {
-      const [k, v] = opt.split('=');
-      return {
-        ...acc,
-        [k]: v,
-      };
-    }, {}),
-  };
+const { db } = config;
 
-  return mongoose.connect(
-      `mongodb+srv://${querystring.escape(user)}:${querystring.escape(pwd)}@${url}/${db}`,
-      opts
-    )
-    .then(() => console.log('MongoDB connected'))
-    .catch(err => console.error(err));
+const sequelize =  new Sequelize(
+  db.name,
+  db.user,
+  db.pwd,
+  {
+    host: db.host,
+    dialect: 'postgres'
+  }
+);
+
+sequelize.addModels([Event, Genre, Venue]);
+
+// const models = {
+//   User: sequelize.import('./user'),
+//   Course: sequelize.import('./course'),
+//   StudentCourses: sequelize.import('./studentCourses')
+// }
+
+// Object.keys(models).forEach(key => {
+//   if('associate' in models[key]) {
+//     models[key].associate(models)
+//   }
+// })
+
+export {
+  sequelize,
 };
+
+// export default models

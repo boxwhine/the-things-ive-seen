@@ -1,50 +1,60 @@
+import dotenv from 'dotenv';
+
+// keep this above all other type/gql imports
+import 'reflect-metadata';
+
+import { GraphQLServer } from 'graphql-yoga';
 import cors from 'cors';
 import morganBody from 'morgan-body';
 import bodyParser from 'body-parser';
-import { GraphQLServer } from 'graphql-yoga';
-import dotenv from 'dotenv';
-
-import { startDB } from './db';
-import models from './db/models';
-import resolvers from './graphql/resolvers';
-import schema from './graphql/schema';
+import { buildSchema } from 'type-graphql';
 
 dotenv.config();
 
-// Constants
-const db = startDB({
-  // Add '!' to let TS know it doesn't need to worry about possible undefined vals here
-  db: process.env.DB_NAME!,
-  options: !!process.env.DB_OPTIONS ? process.env.DB_OPTIONS.split('&') : [],
-  pwd: process.env.DB_PWD!,
-  url: process.env.DB_URL!,
-  user: process.env.DB_USER!,
-});
+import config from './config';
+import { sequelize } from './db';
+import seedDb from './db/seed';
+import resolvers from './resolvers';
 
-const server = new GraphQLServer({
-  typeDefs: schema,
-  resolvers,
-  context: {
-    models,
-    db,
-  },
-});
+const bootstrap = async () => {
+  const schema = await buildSchema({
+    resolvers,
+    emitSchemaFile: true,
+  });
 
-server.express.use(cors());
+  const server = new GraphQLServer({
+    schema,
+    context: {
+      // models,
+      // db: ,
+    },
+  });
 
-// Add logging
+  /**
+   * Add middleware
+   */
 
-// must parse body before morganBody as body will be logged
-server.express.use(bodyParser.json());
-// hook morganBody to express app
-morganBody(server.express);
+  server.express.use(cors());
 
-// options
-const opts = {
-  playground: '/playground',
-  port: process.env.PORT || 4000,
+  // must parse body before morganBody as body will be logged
+  server.express.use(bodyParser.json());
+  // hook morganBody to express app
+  morganBody(server.express);
+
+  // options
+  const opts = {
+    playground: '/playground',
+    port: process.env.PORT || 4000,
+  };
+
+  sequelize.sync({ force: true }).then(async () => {
+    if (config.isDev) {
+      await seedDb();
+    }
+    server.start(opts, () => {
+      console.log(`Server is running on http://localhost:${opts.port}`);
+    });
+  })
 };
 
-server.start(opts, () => {
-  console.log(`Server is running on http://localhost:${opts.port}`);
-});
+bootstrap();
