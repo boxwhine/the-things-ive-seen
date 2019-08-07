@@ -11,8 +11,5 @@ parserOptions:
   ecmaVersion: 2018
   # Allows for the use of imports
   sourceType: module
-# rules:
-#   comma-dangle:
-#     - error
-#     - always
-#   no-empty: warn
+rules:
+  '@typescript-eslint/explicit-member-accessibility': 0
