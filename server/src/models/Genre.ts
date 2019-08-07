@@ -1,4 +1,10 @@
-import { Table, Column, Model, ForeignKey, HasMany } from 'sequelize-typescript';
+import {
+  Column,
+  ForeignKey,
+  HasMany,
+  Model,
+  Table,
+} from 'sequelize-typescript';
 import { Field, Int, ObjectType } from 'type-graphql';
 
 import Event from './Event';
@@ -31,4 +37,4 @@ export default class Genre extends Model<Genre> {
   // @Field(type => [Event], { nullable: true })
   // @HasMany(() => Event, 'venueId')
   // events: Event[];
-};
+}

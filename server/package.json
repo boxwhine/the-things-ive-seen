@@ -13,6 +13,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpileOnly ./src/",
+    "lint": "eslint ./src/**/*.ts",
     "start": "tsc && node ./build/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -38,6 +39,8 @@
     "@types/lodash": "^4.14.136",
     "@types/node": "^12.6.8",
     "@types/ws": "^6.0.1",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
     "eslint": "~6.0",
     "eslint-config-prettier": "~6.0",
     "eslint-plugin-prettier": "~3.0",

@@ -1,11 +1,11 @@
-import { Table, Column, Model, HasMany, DefaultScope, Scopes } from 'sequelize-typescript';
+import { Column, HasMany, Model, Scopes, Table } from 'sequelize-typescript';
 import { Field, Int, ObjectType } from 'type-graphql';
 
 import Event from './Event';
 
 @Scopes({
   default: {
-    include: [() => Event]
+    include: [() => Event],
   },
 })
 @Table({
@@ -51,4 +51,4 @@ export default class Venue extends Model<Venue> {
   @Field(type => [Event], { nullable: true })
   @HasMany(() => Event, 'venueId')
   events?: Event[];
-};
+}

@@ -54,7 +54,7 @@ const bootstrap = async () => {
     server.start(opts, () => {
       console.log(`Server is running on http://localhost:${opts.port}`);
     });
-  })
+  });
 };
 
 bootstrap();

@@ -15,7 +15,7 @@ export default class VenueResolver {
       where: {
         name: {
           [Op.iLike]: `%${name}%`,
-        }
+        },
       },
     });
   }

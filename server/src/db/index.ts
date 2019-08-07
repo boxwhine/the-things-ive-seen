@@ -5,15 +5,10 @@ import { Event, Genre, Venue } from '../models';
 
 const { db } = config;
 
-const sequelize =  new Sequelize(
-  db.name,
-  db.user,
-  db.pwd,
-  {
-    host: db.host,
-    dialect: 'postgres'
-  }
-);
+const sequelize = new Sequelize(db.name, db.user, db.pwd, {
+  host: db.host,
+  dialect: 'postgres',
+});
 
 sequelize.addModels([Event, Genre, Venue]);
 
@@ -29,8 +24,6 @@ sequelize.addModels([Event, Genre, Venue]);
 //   }
 // })
 
-export {
-  sequelize,
-};
+export { sequelize };
 
 // export default models

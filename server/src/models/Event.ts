@@ -1,4 +1,11 @@
-import { Table, Column, Model, ForeignKey, BelongsTo, Scopes } from 'sequelize-typescript';
+import {
+  BelongsTo,
+  Column,
+  ForeignKey,
+  Model,
+  Scopes,
+  Table,
+} from 'sequelize-typescript';
 import { Field, Int, ObjectType } from 'type-graphql';
 
 import Genre from './Genre';
@@ -6,15 +13,19 @@ import Venue from './Venue';
 
 @Scopes({
   default: {
-    include: [{
-      model: () => Venue,
-    }, {
-      as: "genre",
-      model: () => Genre,
-    }, {
-      as: "subGenre",
-      model: () => Genre,
-    }]
+    include: [
+      {
+        model: () => Venue,
+      },
+      {
+        as: 'genre',
+        model: () => Genre,
+      },
+      {
+        as: 'subGenre',
+        model: () => Genre,
+      },
+    ],
   },
 })
 @Table({
@@ -49,7 +60,7 @@ export default class Event extends Model<Event> {
   @Column
   @ForeignKey(() => Venue)
   venueId: number;
-  
+
   @Column
   @Field({ nullable: true })
   wasOpener?: boolean;
@@ -72,4 +83,4 @@ export default class Event extends Model<Event> {
   @Field({ nullable: true })
   @BelongsTo(() => Genre, 'subGenreId')
   subGenre?: Genre;
-};
+}
