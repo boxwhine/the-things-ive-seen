@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "UI for The Things I've Seen",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/boxwhine/the-things-ive-seen.git",
+    "type": "git",
+    "url": "https://github.com/boxwhine/the-things-ive-seen.git",
     "directory": "client/"
   },
   "private": false,
