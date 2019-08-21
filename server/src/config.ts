@@ -1,4 +1,4 @@
-// We're already handling env var vals outside of app code
+// We're already validating env var vals are defined outside of app code
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 const {
   DB_OPTIONS,
@@ -13,11 +13,11 @@ const config = {
   isProd: NODE_ENV === 'production',
   isDev: NODE_ENV !== 'production',
   db: {
-    name: POSTGRES_DB,
+    name: POSTGRES_DB!,
     options: !!DB_OPTIONS ? DB_OPTIONS.split('&') : [],
-    pwd: POSTGRES_PASSWORD,
-    host: POSTGRES_HOST,
-    user: POSTGRES_USER,
+    pwd: POSTGRES_PASSWORD!,
+    host: POSTGRES_HOST!,
+    user: POSTGRES_USER!,
   },
 };
 
