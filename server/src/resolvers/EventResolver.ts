@@ -3,10 +3,15 @@ import { Event, AddEventInput } from '../models';
 
 @Resolver(of => Event)
 export default class EventResolver {
+
+  // Queries
+
   @Query(() => [Event])
   async fetchEvents(): Promise<Event[]> {
     return await Event.scope('default').findAll<Event>();
   }
+
+  // Mutations
 
   @Mutation(() => Event)
   async addEvent(@Arg('event') addEventData: AddEventInput): Promise<Event | null> {
