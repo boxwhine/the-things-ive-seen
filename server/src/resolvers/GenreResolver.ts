@@ -44,7 +44,7 @@ export default class GenreResolver implements ResolverInterface<Genre> {
     // Verify this genre name is unique
     const existingGenre = await Genre.findOne<Genre>({ where: { name: addGenreData.name }});
     if (existingGenre) {
-      throw new Error(`Genre "${addGenreData.name}" already exists.`);
+      throw new Error(`Genre '${addGenreData.name}' already exists.`);
     }
 
     // Verify parent genre exists
