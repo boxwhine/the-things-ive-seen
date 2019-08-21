@@ -34,7 +34,7 @@ import Venue from './Venue';
 @ObjectType()
 export default class Event extends Model<Event> {
   @Column
-  @Field(type => Date)
+  @Field()
   date: Date;
 
   @Column
