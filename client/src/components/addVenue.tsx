@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Mutation } from 'react-apollo';
 import get from 'lodash/get';
 import { Link } from 'react-router-dom';
-import { createStyles, withStyles } from '@material-ui/core/styles';
-import { Theme } from '@material-ui/core/styles/createMuiTheme';
+import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import ArrowBack from '@material-ui/icons/ArrowBack';
@@ -13,25 +12,22 @@ import GET_VENUES, { Response } from '../graphql/queries/getVenues';
 
 import VenueSearch from './venueSearch';
 
-const styles = ({ spacing }: Theme) => createStyles({
-  button: {
-    marginLeft: spacing.unit,
+const useStyles = makeStyles(theme => ({
+  breadcrumb: {
+    alignItems: 'center',
+    display: 'inline-flex',
   },
-});
-
-const formContainerStyle = {
-  width: '600px',
-};
-
-const footerStyle = {
-  display: 'flex',
-  flexDirection: 'row-reverse',
-};
-
-const breadcrumbStyle = {
-  alignItems: 'center',
-  display: 'inline-flex',
-};
+  button: {
+    marginLeft: theme.spacing,
+  },
+  formContainer: {
+    maxWidth: '40%',
+  },
+  footer: {
+    display: 'flex',
+    // flexDirection: 'row-reverse',
+  },
+}));
 
 interface Variables {
   address: string;
@@ -44,6 +40,7 @@ interface Variables {
 };
 
 const AddVenue = ({ classes }) => {
+  const styles = useStyles();
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
@@ -92,7 +89,7 @@ const AddVenue = ({ classes }) => {
 
         return (
           <>
-            <Link to="/venues" style={breadcrumbStyle}><ArrowBack fontSize="inherit" />Back to Venues page</Link>
+            <Link to="/venues" className={styles.breadcrumb}><ArrowBack fontSize="inherit" />Back to Venues page</Link>
 
             <section>
               <header>
@@ -101,22 +98,22 @@ const AddVenue = ({ classes }) => {
 
               <form>
                 <Grid
+                  className={styles.formContainer}
                   container
                   direction="row"
-                  spacing={16}
-                  style={formContainerStyle}
+                  spacing={2}
                 >
                   <Grid item xs={12}>
                     <VenueSearch onVenueSelect={handleVenueSelect} />
                   </Grid>
 
                   <Grid item xs={12}>
-                    <nav style={footerStyle}>
+                    <nav className={styles.footer}>
                       <Button
                         className={classes.button}
                         color="primary"
                         disabled={!(name && city && state)}
-                        onClick={createVenue}
+                        onClick={(e) => createVenue({})}
                         size="small"
                         variant="contained"
                       >
@@ -144,4 +141,4 @@ const AddVenue = ({ classes }) => {
   );
 };
 
-export default withStyles(styles)(AddVenue);
+export default AddVenue;

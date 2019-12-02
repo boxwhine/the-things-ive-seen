@@ -7,7 +7,7 @@ const GOOGLE_API_URL = `https://maps.googleapis.com/maps/api/js?key=${process.en
 export default ({ onVenueSelect }) => {
   const [query, setQuery] = useState('');
 
-  let autocompleteWidget;
+  let autocompleteWidget: google.maps.places.Autocomplete;
 
   const handlePlaceSelect = () => {
     const addressObject = autocompleteWidget.getPlace();
@@ -16,9 +16,8 @@ export default ({ onVenueSelect }) => {
   };
 
   const handleScriptLoad = () => {
-    /* global google */
     autocompleteWidget = new google.maps.places.Autocomplete(
-      document.getElementById('autocomplete'),
+      document.getElementById('autocomplete') as HTMLInputElement,
       {
         componentRestrictions: {
           // Scope search results to USA only
@@ -42,7 +41,7 @@ export default ({ onVenueSelect }) => {
         url={GOOGLE_API_URL}
       />
       <SearchBar
-        id="autocomplete"
+        // id="autocomplete"
         placeholder="Search Venues"
         value={query}
       />

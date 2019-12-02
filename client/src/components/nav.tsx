@@ -1,9 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { withRouter } from 'react-router';
 import Button from '@material-ui/core/Button';
 
-export default withRouter(() => (
+export default () => (
   <header>
     <nav>
       <Button component={NavLink} to="/">
@@ -20,4 +19,4 @@ export default withRouter(() => (
       </Button>
     </nav>
   </header>
-));
+);

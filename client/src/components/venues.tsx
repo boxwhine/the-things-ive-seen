@@ -22,7 +22,7 @@ export default () => (
           <Link to="/venues/new">Add Venue...</Link>
 
           <ul>
-            {data.venues.map(({
+            {data.fetchVenues.map(({
               city, id, name, state,
             }) => (
               <li key={id}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import About from './about';
 import AddEvent from './addEvent';
@@ -10,7 +10,7 @@ import Nav from './nav';
 import Venues from './venues';
 
 const App = () => (
-  <>
+  <div className="app">
     <Nav />
 
     <main>
@@ -23,7 +23,7 @@ const App = () => (
         <Route exact path="/venues/new" component={AddVenue} />
       </Switch>
     </main>
-  </>
+  </div>
 );
 
 export default App;

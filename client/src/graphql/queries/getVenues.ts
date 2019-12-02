@@ -13,7 +13,7 @@ export type Response = {
 
 export default gql`
   query GetVenues {
-    venues {
+    fetchVenues {
       id
       name
       city

@@ -13,15 +13,15 @@ export type Event = {
   name: string;
   subGenre: string;
   venue: Venue;
-}
+};
 
 export type Response = {
-  events: Event[];
+  fetchEvents: Event[];
 };
 
 export default gql`
   query GetEvents {
-    events {
+    fetchEvents {
       id
       name
       date
@@ -30,8 +30,12 @@ export default gql`
         city
         state
       }
-      genre
-      subGenre
+      genre {
+        name
+      }
+      subGenre {
+        name
+      }
     }
   }
 `;

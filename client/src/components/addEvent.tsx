@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Mutation } from 'react-apollo';
 import get from 'lodash/get';
 import { Link } from 'react-router-dom';
-import { createStyles, withStyles } from '@material-ui/core/styles';
-import { Theme } from '@material-ui/core/styles/createMuiTheme';
+import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -12,25 +11,22 @@ import ArrowBack from '@material-ui/icons/ArrowBack';
 import ADD_EVENT from '../graphql/mutations/addEvent';
 import GET_EVENTS, { Response } from '../graphql/queries/getEvents';
 
-const styles = ({ spacing }: Theme) => createStyles({
-  button: {
-    marginLeft: spacing.unit,
+const useStyles = makeStyles(theme => ({
+  breadcrumb: {
+    alignItems: 'center',
+    display: 'inline-flex',
   },
-});
-
-const formContainerStyle = {
-  maxWidth: '40%',
-};
-
-const footerStyle = {
-  display: 'flex',
-  flexDirection: 'row-reverse',
-};
-
-const breadcrumbStyle = {
-  alignItems: 'center',
-  display: 'inline-flex',
-};
+  button: {
+    marginLeft: theme.spacing,
+  },
+  formContainer: {
+    maxWidth: '40%',
+  },
+  footer: {
+    display: 'flex',
+    // flexDirection: 'row-reverse',
+  },
+}));
 
 interface Variables {
   city: string;
@@ -48,7 +44,8 @@ const updateCache = (store, { data: { createVenue: newVenue } }) => {
   });
 };
 
-const AddEvent = ({ classes }) => {
+const AddEvent = () => {
+  const classes = useStyles();
   const [name, setName] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
@@ -56,10 +53,12 @@ const AddEvent = ({ classes }) => {
   return (
     <Mutation<Response, Variables>
       mutation={ADD_EVENT}
-      update={updateCache}
+      // TODO wire this up w/ typings
+      // update={updateCache}
       variables={{ city, name, state }}
     >
       {(createVenue, { loading, error, data }) => {
+
         if (loading) {
           return <h1>Loading...</h1>;
         }
@@ -74,7 +73,7 @@ const AddEvent = ({ classes }) => {
 
         return (
           <>
-            <Link to="/events" style={breadcrumbStyle}><ArrowBack fontSize="inherit" />Back to Events page</Link>
+            <Link to="/events" className={classes.breadcrumb}><ArrowBack fontSize="inherit" />Back to Events page</Link>
 
             <section>
               <header>
@@ -82,9 +81,9 @@ const AddEvent = ({ classes }) => {
               </header>
               <form>
                 <Grid
+                  className={classes.formContainer}
                   container
                   direction="column"
-                  style={formContainerStyle}
                 >
                   <TextField
                     id="venue-name"
@@ -110,12 +109,13 @@ const AddEvent = ({ classes }) => {
                     margin="normal"
                   />
 
-                  <nav style={footerStyle}>
+                  
+                  <nav className={classes.footer}>
                     <Button
                       className={classes.button}
                       color="primary"
                       disabled={!(name && city && state)}
-                      onClick={createVenue}
+                      onClick={(e) => createVenue({})}
                       size="small"
                       variant="contained"
                     >
@@ -142,4 +142,4 @@ const AddEvent = ({ classes }) => {
   );
 };
 
-export default withStyles(styles)(AddEvent);
+export default AddEvent;
