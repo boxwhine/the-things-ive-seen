@@ -1,37 +1,33 @@
 import React from 'react';
-import { Query } from 'react-apollo';
+import { useQuery } from '@apollo/react-hooks';
 import { Link } from 'react-router-dom';
 
-import GET_EVENTS, { Response } from '../graphql/queries/getEvents';
+import GET_EVENTS from '../graphql/queries/getEvents';
 
-export default () => (
-  <Query<Response> query={GET_EVENTS}>
-    {({ loading, error, data = {} }) => {
-      if (loading) {
-        return <h1>Loading...</h1>;
-      }
+export default () => {
+  const { loading, error, data } = useQuery(GET_EVENTS);
 
-      if (error) {
-        return <div>Error</div>;
-      }
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
 
-      return (
-        <section>
-          <h1>Events</h1>
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
-          <Link to="/events/new">Add Event...</Link>
+  return (
+    <section>
+      <h1>Events</h1>
 
-          <ul>
-            {(data.fetchEvents || []).map(
-              ({ name, id }) => (
-                <li key={id}>
-                  <span className="event-name">{name}</span> 
-                </li>
-              )
-            )}
-          </ul>
-        </section>
-      );
-    }}
-  </Query>
-);
+      <Link to="/events/new">Add Event...</Link>
+
+      <ul>
+        {data.fetchEvents.map(({ name, id }) => (
+          <li key={id}>
+            <span className="event-name">{name}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+};

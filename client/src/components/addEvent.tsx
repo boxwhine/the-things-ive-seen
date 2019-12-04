@@ -34,16 +34,6 @@ interface Variables {
   state: string;
 };
 
-// we need to update the apollo client cache after adding a new venue
-const updateCache = (store, { data: { createVenue: newVenue } }) => {
-  const data = store.readQuery({ query: GET_EVENTS });
-  data.venues.push(newVenue);
-  store.writeQuery({
-    query: GET_EVENTS,
-    data,
-  });
-};
-
 const AddEvent = () => {
   const classes = useStyles();
   const [name, setName] = useState('');
@@ -53,8 +43,6 @@ const AddEvent = () => {
   return (
     <Mutation<Response, Variables>
       mutation={ADD_EVENT}
-      // TODO wire this up w/ typings
-      // update={updateCache}
       variables={{ city, name, state }}
     >
       {(createVenue, { loading, error, data }) => {

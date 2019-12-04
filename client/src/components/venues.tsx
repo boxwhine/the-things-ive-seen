@@ -1,38 +1,37 @@
 import React from 'react';
-import { Query } from 'react-apollo';
+import { useQuery } from '@apollo/react-hooks';
 import { Link } from 'react-router-dom';
 
 import GET_VENUES from '../graphql/queries/getVenues';
 
-export default () => (
-  <Query query={GET_VENUES}>
-    {({ loading, error, data }) => {
-      if (loading) {
-        return <h1>Loading...</h1>;
-      }
+export default () => {
+  const { loading, error, data } = useQuery(GET_VENUES);
 
-      if (error) {
-        return <div>Error</div>;
-      }
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
 
-      return (
-        <section>
-          <h1>Venues</h1>
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
-          <Link to="/venues/new">Add Venue...</Link>
+  return (
+    <section>
+      <h1>Venues</h1>
 
-          <ul>
-            {data.fetchVenues.map(({
-              city, id, name, state,
-            }) => (
-              <li key={id}>
-                <span className="venue-name">{name}</span>{' '}
-                (<span className="venue-location">{city}, {state}</span>)
-              </li>
-            ))}
-          </ul>
-        </section>
-      );
-    }}
-  </Query>
-);
+      <Link to="/venues/new">Add Venue...</Link>
+
+      <ul>
+        {data.fetchVenues.map(({ city, id, name, state }) => (
+          <li key={id}>
+            <span className="venue-name">{name}</span> (
+            <span className="venue-location">
+              {city}, {state}
+            </span>
+            )
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+};
