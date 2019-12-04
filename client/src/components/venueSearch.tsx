@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
-import SearchBar from 'material-ui-search-bar';
+import MuiSearchBar, { SearchBarProps } from 'material-ui-search-bar';
 import Script from 'react-load-script';
 
 const GOOGLE_API_URL = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_API_KEY}&libraries=places`;
+
+interface WithId {
+  id: String;
+};
+
+const SearchBar: React.SFC<SearchBarProps | WithId> = (props) => (
+  <MuiSearchBar {...props} />
+);
 
 export default ({ onVenueSelect }) => {
   const [query, setQuery] = useState('');
@@ -36,13 +44,12 @@ export default ({ onVenueSelect }) => {
 
   return (
     <div>
-      <Script
-        onLoad={handleScriptLoad}
-        url={GOOGLE_API_URL}
-      />
+      <Script onLoad={handleScriptLoad} url={GOOGLE_API_URL} />
       <SearchBar
-        // id="autocomplete"
-        placeholder="Search Venues"
+        id="autocomplete"
+        onChange={setQuery}
+        onRequestSearch={() => console.log('on req search', query)}
+        placeholder="Find a venue..."
         value={query}
       />
     </div>

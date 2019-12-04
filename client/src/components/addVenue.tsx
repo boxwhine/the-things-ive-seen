@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mutation } from 'react-apollo';
+import { useMutation } from '@apollo/react-hooks';
 import get from 'lodash/get';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     display: 'inline-flex',
   },
   button: {
-    marginLeft: theme.spacing,
+    marginLeft: theme.spacing(),
   },
   formContainer: {
     maxWidth: '40%',
@@ -39,8 +39,9 @@ interface Variables {
   state: string;
 };
 
-const AddVenue = ({ classes }) => {
-  const styles = useStyles();
+const AddVenue = () => {
+  const classes = useStyles();
+
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
@@ -65,79 +66,80 @@ const AddVenue = ({ classes }) => {
     setState(stateObj.short_name);
   };
 
+  const [addVenue, { data, error, loading }] = useMutation(ADD_VENUE);
+
+  const createVenue = () => {
+    addVenue({ variables: {
+      address,
+      city,
+      lat,
+      lng,
+      name,
+      placeId,
+      state,
+    } });
+  };
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    return <div>Error</div>;
+  }
+
+  if (get(data, 'createVenue.id')) {
+    return <h2>New venue "{get(data, 'createVenue.name')}" created.</h2>;
+  }
+
   return (
-    <Mutation<Response, Variables>
-      mutation={ADD_VENUE}
-      // update venues in client cache, post-mutate
-      refetchQueries={() => [{ query: GET_VENUES }]}
-      variables={{
-        address, city, lat, lng, name, state, placeId,
-      }}
-    >
-      {(createVenue, { loading, error, data }) => {
-        if (loading) {
-          return <h1>Loading...</h1>;
-        }
+    <>
+      <Link to="/venues" className={classes.breadcrumb}><ArrowBack fontSize="inherit" />Back to Venues page</Link>
 
-        if (error) {
-          return <div>Error</div>;
-        }
+      <section>
+        <header>
+          <h1>Add a new venue</h1>
+        </header>
 
-        if (get(data, 'createVenue.id')) {
-          return <h2>New venue "{get(data, 'createVenue.name')}" created.</h2>;
-        }
+        <form>
+          <Grid
+            className={classes.formContainer}
+            container
+            direction="row"
+            spacing={2}
+          >
+            <Grid item xs={12}>
+              <VenueSearch onVenueSelect={handleVenueSelect} />
+            </Grid>
 
-        return (
-          <>
-            <Link to="/venues" className={styles.breadcrumb}><ArrowBack fontSize="inherit" />Back to Venues page</Link>
-
-            <section>
-              <header>
-                <h1>Add a new venue</h1>
-              </header>
-
-              <form>
-                <Grid
-                  className={styles.formContainer}
-                  container
-                  direction="row"
-                  spacing={2}
+            <Grid item xs={12}>
+              <nav className={classes.footer}>
+                <Button
+                  className={classes.button}
+                  color="primary"
+                  disabled={!(name && city && state)}
+                  onClick={createVenue}
+                  size="small"
+                  variant="contained"
                 >
-                  <Grid item xs={12}>
-                    <VenueSearch onVenueSelect={handleVenueSelect} />
-                  </Grid>
+                  Save
+                </Button>
 
-                  <Grid item xs={12}>
-                    <nav className={styles.footer}>
-                      <Button
-                        className={classes.button}
-                        color="primary"
-                        disabled={!(name && city && state)}
-                        onClick={(e) => createVenue({})}
-                        size="small"
-                        variant="contained"
-                      >
-                        Save
-                      </Button>
-
-                      <Button
-                        className={classes.button}
-                        component={Link}
-                        size="small"
-                        to="/venues"
-                        variant="contained"
-                      >
-                        Cancel
-                      </Button>
-                    </nav>
-                  </Grid>
-                </Grid>
-              </form>
-            </section>
-          </>
-        );
-      }}
-    </Mutation>
+                <Button
+                  className={classes.button}
+                  component={Link}
+                  size="small"
+                  to="/venues"
+                  variant="contained"
+                >
+                  Cancel
+                </Button>
+              </nav>
+            </Grid>
+          </Grid>
+        </form>
+      </section>
+    </>
   );
 };
 
