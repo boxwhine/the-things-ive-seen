@@ -1,5 +1,5 @@
 import { Column, HasMany, Model, Scopes, Table } from 'sequelize-typescript';
-import { Field, Int, ObjectType } from 'type-graphql';
+import { Field, Float, Int, ObjectType } from 'type-graphql';
 
 import Event from './Event';
 
@@ -22,11 +22,11 @@ export default class Venue extends Model<Venue> {
   city: string;
 
   @Column
-  @Field(type => Int, { nullable: true })
+  @Field(type => Float, { nullable: true })
   lat: number;
 
   @Column
-  @Field(type => Int, { nullable: true })
+  @Field(type => Float, { nullable: true })
   lng: number;
 
   @Column

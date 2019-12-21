@@ -1,4 +1,4 @@
-import { Field, Int, InputType } from 'type-graphql';
+import { Field, InputType, Float } from 'type-graphql';
 
 import Venue from './Venue';
 
@@ -10,10 +10,10 @@ export default class AddVenueInput implements Partial<Venue> {
   @Field()
   city: string;
 
-  @Field(type => Int, { nullable: true })
+  @Field(type => Float, { nullable: true })
   lat: number;
 
-  @Field(type => Int, { nullable: true })
+  @Field(type => Float, { nullable: true })
   lng: number;
 
   @Field()

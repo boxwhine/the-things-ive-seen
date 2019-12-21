@@ -27,6 +27,9 @@ export default class VenueResolver {
 
   @Mutation(() => Venue)
   async addVenue(@Arg('venue') addVenueData: AddVenueInput): Promise<Venue | null> {
+    console.log('\n### addVenueData ###\n', addVenueData, '\n');
+    
+    
     // Verify this venue hasn't already been defined (just use name, city state for now)
     const existingVenue = await Venue.findOne<Venue>({ where: {
       name: addVenueData.name,

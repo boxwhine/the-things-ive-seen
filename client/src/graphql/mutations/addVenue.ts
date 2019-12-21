@@ -1,5 +1,10 @@
 import gql from 'graphql-tag';
 
+// mutation saveRocket($rocket: RocketInput!) {
+//   saveRocket(rocket: $rocket) {
+//     model
+//   }
+
 export default gql`
   mutation NewVenue(
     $address: String!,
@@ -10,7 +15,7 @@ export default gql`
     $placeId: String!,
     $state: String!
   ) {
-    createVenue(input: {
+    addVenue(venue: {
       address: $address,
       city: $city,
       lat: $lat,

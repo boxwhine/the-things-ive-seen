@@ -48,10 +48,14 @@ export default ({ onVenueSelect }) => {
       <SearchBar
         id="autocomplete"
         onChange={setQuery}
-        onRequestSearch={() => console.log('on req search', query)}
+        onRequestSearch={() => {
+          debugger;
+          console.log('on req search', query);
+        }}
         placeholder="Find a venue..."
         value={query}
       />
+        {/* <input id="autocomplete" /> */}
     </div>
   );
 };

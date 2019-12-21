@@ -1,4 +1,4 @@
-import { Field, Int, InputType } from 'type-graphql';
+import { Field, Float, Int, InputType } from 'type-graphql';
 
 import Event from './Event';
 
@@ -7,7 +7,7 @@ export default class AddEventInput implements Partial<Event> {
   @Field()
   date: Date;
 
-  @Field(type => Int, { nullable: true })
+  @Field(type => Float, { nullable: true })
   faceValue?: number;
 
   @Field({ nullable: true })

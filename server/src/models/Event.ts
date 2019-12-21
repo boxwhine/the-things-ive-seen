@@ -6,7 +6,7 @@ import {
   Scopes,
   Table,
 } from 'sequelize-typescript';
-import { Field, Int, ObjectType } from 'type-graphql';
+import { Field, Float, Int, ObjectType } from 'type-graphql';
 
 import Genre from './Genre';
 import Venue from './Venue';
@@ -38,7 +38,7 @@ export default class Event extends Model<Event> {
   date: Date;
 
   @Column
-  @Field(type => Int, { nullable: true })
+  @Field(type => Float, { nullable: true })
   faceValue?: number;
 
   @Column

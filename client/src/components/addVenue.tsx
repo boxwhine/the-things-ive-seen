@@ -102,6 +102,8 @@ const AddVenue = () => {
         </header>
 
         <form>
+          <VenueSearch onVenueSelect={handleVenueSelect} />
+
           <Grid
             className={classes.formContainer}
             container
@@ -109,7 +111,6 @@ const AddVenue = () => {
             spacing={2}
           >
             <Grid item xs={12}>
-              <VenueSearch onVenueSelect={handleVenueSelect} />
             </Grid>
 
             <Grid item xs={12}>
