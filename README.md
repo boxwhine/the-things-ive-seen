@@ -29,4 +29,4 @@ docker-compose up
 
 Access the web app at `http://localhost:3000/`
 
-Hit the API at `http://localhost:8080/api`
+Hit the local GraphQL API playground at `http://localhost:4000/playground`
