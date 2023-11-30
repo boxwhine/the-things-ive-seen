@@ -1,13 +1,13 @@
-FROM node:10.15.0
+FROM node:16.20.2
 
 WORKDIR /usr/app
 
-COPY package*.json ./
-
-RUN npm install -qy
-
-COPY . .
-
 EXPOSE 3000
+
+ENV PATH /node_modules/.bin:$PATH
+
+COPY package*.json .npmrc ./
+
+RUN npm i -qy
 
 CMD ["npm", "start"]

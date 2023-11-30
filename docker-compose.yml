@@ -1,8 +1,6 @@
-# this compose file is for orchestrating local development stack
 version: '3.1'
 
 services:
-
   ttis-db:
     container_name: db
     image: postgres:11.4-alpine
@@ -40,16 +38,16 @@ services:
       - ttis-api-node-modules:/usr/src/app/node_modules
 
   client:
+    container_name: ui
+    restart: on-failure
     build:
-      context: ./client/
-    command: npm start
+      context: ./client
     volumes:
-      - ./client/:/usr/app
-      - /usr/app/node_modules
+      - ./client:/usr/app
     depends_on:
       - ttis-api
     ports:
-      - "3000:3000"
+      - 3000:3000
 
 volumes:
   ttis-data:
