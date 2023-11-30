@@ -9,7 +9,7 @@ import TextField from '@material-ui/core/TextField';
 import ArrowBack from '@material-ui/icons/ArrowBack';
 
 import ADD_EVENT from '../graphql/mutations/addEvent';
-import GET_EVENTS, { Response } from '../graphql/queries/getEvents';
+import { Response } from '../graphql/queries/getEvents';
 
 const useStyles = makeStyles(theme => ({
   breadcrumb: {
@@ -97,7 +97,7 @@ const AddEvent = () => {
                     margin="normal"
                   />
 
-                  
+
                   <nav className={classes.footer}>
                     <Button
                       className={classes.button}
