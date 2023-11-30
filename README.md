@@ -6,9 +6,9 @@ _Concert/event dashboard and visualization app_
 
 Just a hobby project I've been working on to demo various technologies using the concerts and events I've attended as a dataset.
 
-I've saved the ticket stubs from (almost) every concert I've been to since I was a teenager.  I thought it would be interesting to use this data as a dataset for creating a hobby code project using the latest technologies.
+I've saved the ticket stubs from (almost) every concert I've been to since I was a teenager (or at least the emails and digital tickets since we don't get paper tickets these days).  I thought it would be interesting to use as a dataset for creating a hobby code project using the latest technologies.
 
-So far, it's mainly just a list of events that link to detail pages, but eventually I would like to tie it into third party API's like Spotify, Setlist.fm, Last.fm, Google Maps, et al., to create a more immersive experience.
+So far, it's mainly just a list of events that link to detail pages, but eventually I would like to tie it into third party API's like Spotify, Setlist.fm, Last.fm, Google Maps, et al., to create a more rich experience.
 
 ## Potential features
 
@@ -17,9 +17,13 @@ So far, it's mainly just a list of events that link to detail pages, but eventua
 * Plot venues on interactive map
 * Filter by taxonomies, e.g., genre, venue
 
-Since my primary goal in this is really just to create a hobby code demo to showcase new tech, I may also create a React port of the app.
+## Resources
+
+  * [Trello board for tracking work items](https://trello.com/b/oMusq7vm/the-things-ive-seen)
 
 ## Development
+
+Set your env vars in `./{client,server}/.env` files.  You can copy/paste/rename the `.env.dev` files to `.env` for running dev env quickly.
 
 Fire up the docker containers (one for web app, one for API):
 
@@ -27,6 +31,6 @@ Fire up the docker containers (one for web app, one for API):
 docker-compose up
 ```
 
-Access the web app at `http://localhost:3000/`
+Access the React web app at `http://localhost:3000/`
 
-Hit the local GraphQL API playground at `http://localhost:4000/playground`
+Hit the local [GraphQL Yoga](https://the-guild.dev/graphql/yoga-server/docs) API playground at `http://localhost:4000/playground`
