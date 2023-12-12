@@ -4,8 +4,7 @@
   "description": "GraphQL API for The Things I've Seen",
   "repository": {
     "type": "git",
-    "url": "https://github.com/boxwhine/the-things-ive-seen.git",
-    "directory": "server/"
+    "url": "https://github.com/boxwhine/the-things-ive-seen.git"
   },
   "private": false,
   "author": "Jesse Rinehart",

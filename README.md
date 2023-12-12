@@ -23,7 +23,7 @@ So far, it's mainly just a list of events that link to detail pages, but eventua
 
 ## Development
 
-Set your env vars in `./{ui,server}/.env` files.  You can copy/paste/rename the `.env.dev` files to `.env` for running dev env quickly.
+Set your env vars in `./{ui,api}/.env` files.  You can copy/paste/rename the `.env.dev` files to `.env` for running dev env quickly.
 
 Fire up the docker containers (one for web app, one for API):
 
