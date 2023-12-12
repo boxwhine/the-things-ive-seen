@@ -27,16 +27,16 @@ ui:install:
     expire_in: 1 day
     name: "$CI_COMMIT_REF_NAME"
     paths:
-      - client/node_modules/
+      - ui/node_modules/
   script:
-    - cd client
+    - cd ui
     - npm i
 
 ui:unit_test:
   <<: *master-only
   stage: test
   script:
-    - cd client
+    - cd ui
     - npm test
   # grabs code coverage (% of lines) from jest output
   coverage: /Lines.*\s([\d\.]+)\%/

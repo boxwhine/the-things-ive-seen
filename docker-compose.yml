@@ -37,13 +37,13 @@ services:
       # so we're effectively hiding node_modules from the host (must be in this order)
       - ttis-api-node-modules:/usr/src/app/node_modules
 
-  client:
+  ui:
     container_name: ui
     restart: on-failure
     build:
-      context: ./client
+      context: ./ui
     volumes:
-      - ./client:/usr/app
+      - ./ui:/usr/app
     depends_on:
       - ttis-api
     ports:
