@@ -1,6 +1,13 @@
 version: '3.1'
 
 services:
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
   ttis-db:
     container_name: db
     image: postgres:11.4-alpine
@@ -10,13 +17,6 @@ services:
       - ttis-data:/var/lib/postgresql/data
     ports:
       - 5432:5432
-
-  adminer:
-    container_name: adminer
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
 
   ttis-api:
     container_name: api
@@ -37,7 +37,7 @@ services:
       # so we're effectively hiding node_modules from the host (must be in this order)
       - ttis-api-node-modules:/usr/src/app/node_modules
 
-  ui:
+  ttis-ui:
     container_name: ui
     restart: on-failure
     build:

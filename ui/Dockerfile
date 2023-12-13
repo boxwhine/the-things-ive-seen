@@ -10,4 +10,4 @@ COPY package*.json .npmrc ./
 
 RUN npm i -qy
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
