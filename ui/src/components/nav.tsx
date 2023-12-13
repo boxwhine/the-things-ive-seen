@@ -1,22 +1,25 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
+import Link from 'next/link';
 
-export default () => (
-  <header>
-    <nav>
-      <Button component={NavLink} to="/">
-        Home
-      </Button>
-      <Button component={NavLink} to="/about-us">
-        About
-      </Button>
-      <Button component={NavLink} to="/venues">
-        Venues
-      </Button>
-      <Button component={NavLink} to="/events">
-        Events
-      </Button>
-    </nav>
-  </header>
+const NavLink = ({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) => (
+  <button className="btn">
+    <Link href={href}>{children}</Link>
+  </button>
 );
+
+const Nav = () => (
+  <nav>
+    <NavLink href="/">Home</NavLink>
+    <NavLink href="/about">About</NavLink>
+    <NavLink href="/venues">Venues</NavLink>
+    <NavLink href="/events">Events</NavLink>
+  </nav>
+);
+
+export default Nav;

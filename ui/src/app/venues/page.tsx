@@ -1,10 +1,11 @@
-import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
-import { Link } from 'react-router-dom';
+"use client";
 
-import GET_VENUES from '../graphql/queries/getVenues';
+import { useQuery } from "@apollo/client";
+import Link from "next/link";
 
-export default () => {
+import GET_VENUES from "../../graphql/queries/getVenues";
+
+export default function Venues() {
   const { loading, error, data } = useQuery(GET_VENUES);
 
   if (loading) {
@@ -12,14 +13,14 @@ export default () => {
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div>Error: {error.message}</div>;
   }
 
   return (
     <section>
       <h1>Venues</h1>
 
-      <Link to="/venues/new">Add Venue...</Link>
+      <Link href="/venues/new">Add Venue...</Link>
 
       <ul>
         {data.fetchVenues.map(({ city, id, name, state }) => (
@@ -34,4 +35,4 @@ export default () => {
       </ul>
     </section>
   );
-};
+}
