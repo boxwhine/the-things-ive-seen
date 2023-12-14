@@ -1,5 +1,5 @@
 {
-  "name": "the-things-ive-seen-ui",
+  "name": "@ttis/ui",
   "version": "0.1.0",
   "description": "UI for The Things I've Seen Event Visualization App",
   "repository": {
@@ -14,7 +14,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "vitest",
+    "test": "vitest run",
+    "test:watch": "vitest dev",
     "lint": "next lint"
   },
   "dependencies": {
