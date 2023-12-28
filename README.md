@@ -1,3 +1,6 @@
+> [!NOTE]
+> This project is still in progress, so there might not be much to see yet, but it'll be improved over time.
+
 # The Things I've Seen
 
 _Concert/event dashboard and visualization app_
