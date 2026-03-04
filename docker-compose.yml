@@ -1,5 +1,3 @@
-version: '3.1'
-
 services:
   adminer:
     container_name: adminer
@@ -12,7 +10,7 @@ services:
     container_name: db
     image: postgres:11.4-alpine
     restart: on-failure
-    env_file: ./api/.env
+    env_file: ./packages/api/.env
     volumes:
       - ttis-data:/var/lib/postgresql/data
     ports:
@@ -22,7 +20,7 @@ services:
     container_name: api
     restart: on-failure
     build:
-      context: ./api
+      context: ./packages/api
       dockerfile: Dockerfile.dev
     environment:
       # inject the hostname of the DB container
@@ -32,7 +30,7 @@ services:
     ports:
       - 4000:4000
     volumes:
-      - ./api:/usr/src/app:rw
+      - ./packages/api:/usr/src/app:rw
       # We don't want modules installed on host platform to be used on container,
       # so we're effectively hiding node_modules from the host (must be in this order)
       - ttis-api-node-modules:/usr/src/app/node_modules
@@ -41,9 +39,11 @@ services:
     container_name: ui
     restart: on-failure
     build:
-      context: ./ui
+      context: ./packages/ui
     volumes:
-      - ./ui:/usr/app
+      - ./packages/ui:/usr/app
+      # Prevent host node_modules from overwriting container's installed modules
+      - ttis-ui-node-modules:/usr/app/node_modules
     depends_on:
       - ttis-api
     ports:
@@ -52,3 +52,4 @@ services:
 volumes:
   ttis-data:
   ttis-api-node-modules:
+  ttis-ui-node-modules:
