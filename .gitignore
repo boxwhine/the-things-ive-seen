@@ -3,6 +3,8 @@ node_modules/
 .pnp
 .pnp.js
 .yarn/install-state.gz
+# only using pnpm for deps
+package-lock.json
 
 # Build outputs
 build/

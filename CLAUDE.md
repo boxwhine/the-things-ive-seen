@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A concert/event tracking and visualization app. Monorepo with Lerna/npm workspaces containing two packages:
+A concert/event tracking and visualization app. Monorepo with pnpm workspaces containing two packages:
 - **@ttis/api** - GraphQL backend (GraphQL Yoga, Sequelize, PostgreSQL)
 - **@ttis/ui** - Next.js 14 frontend (React 18, Apollo Client, Tailwind/DaisyUI)
 
@@ -13,32 +13,45 @@ A concert/event tracking and visualization app. Monorepo with Lerna/npm workspac
 ### Development
 ```bash
 docker-compose up          # Start all services (API :4000, UI :3000, PostgreSQL :5432, Adminer :8080)
+pnpm dev                   # Run both API and UI dev servers locally
+pnpm dev:api               # Run API dev server only
+pnpm dev:ui                # Run UI dev server only
 ```
 
 ### Testing
 ```bash
-npx lerna run test         # Run tests across all packages
-npm test                   # Run tests in current package (both use Vitest)
-npm run test:watch         # Watch mode in current package
+pnpm test                  # Run tests across all packages (Vitest)
+pnpm --filter @ttis/ui test  # Run tests in a specific package
 ```
 
 ### Linting
 ```bash
-npx lerna run lint         # Lint all packages
-npm run lint               # Lint current package
+pnpm lint                  # Lint all packages
+pnpm --filter @ttis/api lint # Lint a specific package
+```
+
+### Building
+```bash
+pnpm build                 # Build all packages
 ```
 
 ### Package-Specific
 **API (`packages/api`):**
 ```bash
-npm run dev                # ts-node-dev with hot reload
-npm start                  # Compile and run production
+pnpm --filter @ttis/api dev    # ts-node-dev with hot reload
+pnpm --filter @ttis/api start  # Compile and run production
 ```
 
 **UI (`packages/ui`):**
 ```bash
-npm run dev                # Next.js dev server
-npm run build              # Production build
+pnpm --filter @ttis/ui dev     # Next.js dev server
+pnpm --filter @ttis/ui build   # Production build
+```
+
+### Adding Dependencies
+```bash
+pnpm --filter @ttis/api add <dep>   # Add dep to API package
+pnpm --filter @ttis/ui add <dep>    # Add dep to UI package
 ```
 
 ## Architecture

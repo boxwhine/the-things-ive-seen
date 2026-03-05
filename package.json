@@ -1,11 +1,14 @@
 {
   "name": "@ttis/root",
-  "private": false,
-  "workspaces": [
-    "packages/*"
-  ],
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter @ttis/api dev & pnpm --filter @ttis/ui dev",
+    "dev:api": "pnpm --filter @ttis/api dev",
+    "dev:ui": "pnpm --filter @ttis/ui dev",
+    "test": "pnpm -r run test",
+    "lint": "pnpm -r run lint",
+    "build": "pnpm -r run build"
+  },
   "dependencies": {},
-  "devDependencies": {
-    "lerna": "^8.0.0"
-  }
+  "devDependencies": {}
 }
