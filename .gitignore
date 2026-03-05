@@ -48,3 +48,6 @@ Thumbs.db
 # Misc
 *.pem
 *.local
+
+# AI
+.claude/worktrees
