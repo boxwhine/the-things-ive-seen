@@ -1,21 +1,21 @@
 # Dev docker build file
 
-FROM node:10.15.3-slim
+FROM node:22-slim
 
 # Set app directory
 WORKDIR /usr/src/app
 
 EXPOSE 4000
 
-# Since `node_modules` dir is in root and our app lives under `/src`
-# we need to add `/usr/src/app/node_modules/.bin` to $PATH
 ENV PATH /node_modules/.bin:$PATH
 
 ENV NODE_ENV development
 
+RUN corepack enable
+
 # Install app dependencies
-COPY package*.json ./
+COPY package.json ./
 
-RUN npm i
+RUN pnpm install
 
-CMD [ "npm", "run", "dev" ]
+CMD [ "pnpm", "dev" ]

@@ -3,7 +3,6 @@ import { Event, AddEventInput } from '../models';
 
 @Resolver(of => Event)
 export default class EventResolver {
-
   // Queries
 
   @Query(() => [Event])
@@ -14,16 +13,19 @@ export default class EventResolver {
   // Mutations
 
   @Mutation(() => Event)
-  async addEvent(@Arg('event') addEventData: AddEventInput): Promise<Event | null> {
+  async addEvent(
+    @Arg('event') addEventData: AddEventInput
+  ): Promise<Event | null> {
     let event;
     try {
       // @TODO see if we can set 'include' options for create to avoid follow-up findOne call
       event = await Event.create(addEventData);
     } catch (err) {
-      console.error('Failed to create new Event.', err.message);
+      console.error('Failed to create new Event.', (err as Error).message);
       return null;
     }
-    return await Event.scope('default').findOne({ where: { id: event.get('id') } });
+    return await Event.scope('default').findOne({
+      where: { id: event.get('id') },
+    });
   }
-
 }
