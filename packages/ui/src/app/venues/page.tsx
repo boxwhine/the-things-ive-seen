@@ -1,38 +1,45 @@
 "use client";
 
-import { useQuery } from "@apollo/client";
-import Link from "next/link";
-
-import GET_VENUES from "../../graphql/queries/getVenues";
+import { useQuery } from "@apollo/client/react";
+import GET_VENUES, { type Response, type Venue } from "@/graphql/queries/getVenues";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 export default function Venues() {
-  const { loading, error, data } = useQuery(GET_VENUES);
+  const { loading, error, data } = useQuery<Response>(GET_VENUES);
 
-  if (loading) {
-    return <h1>Loading...</h1>;
-  }
+  if (loading) return <p className="text-muted-foreground">Loading venues...</p>;
+  if (error) return <p className="text-destructive">Error: {error.message}</p>;
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
+  const venues = data?.fetchVenues ?? [];
 
   return (
-    <section>
-      <h1>Venues</h1>
-
-      <Link href="/venues/new">Add Venue...</Link>
-
-      <ul>
-        {data.fetchVenues.map(({ city, id, name, state }) => (
-          <li key={id}>
-            <span className="venue-name">{name}</span> (
-            <span className="venue-location">
-              {city}, {state}
-            </span>
-            )
-          </li>
-        ))}
-      </ul>
-    </section>
+    <div className="max-w-4xl mx-auto">
+      <h1 className="text-2xl font-semibold mb-6">Venues</h1>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Name</TableHead>
+            <TableHead>City</TableHead>
+            <TableHead>State</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {venues.map((venue: Venue) => (
+            <TableRow key={venue.id}>
+              <TableCell className="font-medium">{venue.name}</TableCell>
+              <TableCell>{venue.city}</TableCell>
+              <TableCell>{venue.state}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
   );
 }

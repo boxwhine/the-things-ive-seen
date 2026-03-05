@@ -1,4 +1,4 @@
-import {gql} from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export type Venue = {
   name: string;
@@ -6,13 +6,17 @@ export type Venue = {
   state: string;
 };
 
+export type Genre = {
+  name: string;
+};
+
 export type Event = {
-  date: string;
-  genre: string;
   id: string;
   name: string;
-  subGenre: string;
+  date: string;
   venue: Venue;
+  genre: Genre;
+  subGenre: Genre | null;
 };
 
 export type Response = {

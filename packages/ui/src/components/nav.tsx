@@ -1,25 +1,33 @@
-import React from 'react';
-import Link from 'next/link';
+"use client";
 
-const NavLink = ({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) => (
-  <button className="btn">
-    <Link href={href}>{children}</Link>
-  </button>
-);
+import Link from "next/link";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 
-const Nav = () => (
-  <nav>
-    <NavLink href="/">Home</NavLink>
-    <NavLink href="/about">About</NavLink>
-    <NavLink href="/venues">Venues</NavLink>
-    <NavLink href="/events">Events</NavLink>
-  </nav>
-);
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/events", label: "Events" },
+  { href: "/venues", label: "Venues" },
+];
 
-export default Nav;
+export default function Nav() {
+  return (
+    <NavigationMenu>
+      <NavigationMenuList>
+        {links.map((link) => (
+          <NavigationMenuItem key={link.href}>
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <Link href={link.href}>{link.label}</Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        ))}
+      </NavigationMenuList>
+    </NavigationMenu>
+  );
+}

@@ -1,40 +1,39 @@
-import React from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
-
-import Nav from "../components/nav";
 import Providers from "./providers";
-import {isDev} from '../utils';
+import Nav from "@/components/nav";
 
-// Adds messages only in a dev environment
-if (isDev()) {
-  loadDevMessages();
-  loadErrorMessages();
-}
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
 
-const inter = Inter({ subsets: ["latin"] });
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "The Things I've Seen",
-  description: "An event visualization app",
+  description: "Concert and event tracking and visualization",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
+      >
         <Providers>
-          <header>
+          <header className="border-b px-6 py-3">
             <Nav />
           </header>
-
-          <main>{children}</main>
+          <main className="px-6 py-8">{children}</main>
         </Providers>
       </body>
     </html>

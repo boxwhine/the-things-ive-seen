@@ -1,19 +1,13 @@
 "use client";
 
-import React from "react";
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import {isDev} from '../utils';
+import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client/react";
 
-const apolloClient = new ApolloClient({
+const client = new ApolloClient({
+  link: new HttpLink({ uri: "http://localhost:4000" }),
   cache: new InMemoryCache(),
-  connectToDevTools: isDev(),
-  uri: "http://localhost:4000",
 });
 
-const RootLayout = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => <ApolloProvider client={apolloClient}>{children}</ApolloProvider>;
-
-export default RootLayout;
+export default function Providers({ children }: { children: React.ReactNode }) {
+  return <ApolloProvider client={client}>{children}</ApolloProvider>;
+}

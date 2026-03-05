@@ -1,58 +1,35 @@
 {
   "name": "@ttis/ui",
   "version": "0.1.0",
-  "description": "UI for The Things I've Seen Event Visualization App",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/boxwhine/the-things-ive-seen.git",
-    "directory": "ui/"
-  },
-  "private": false,
-  "author": "Jesse Rinehart",
-  "license": "MIT",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "vitest run",
-    "test:watch": "vitest dev",
-    "lint": "next lint"
+    "lint": "eslint"
   },
   "dependencies": {
-    "@apollo/client": "^3.8.8",
-    "graphql": "^16.8.1",
-    "next": "14.0.4",
-    "react": "^18",
-    "react-dom": "^18"
+    "@apollo/client": "^4.1.6",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "graphql": "^16.13.1",
+    "lucide-react": "^0.577.0",
+    "next": "16.1.6",
+    "radix-ui": "^1.4.3",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
-    "@testing-library/react": "^14.1.2",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "@vitejs/plugin-react": "^4.2.1",
-    "autoprefixer": "^10.0.1",
-    "daisyui": "^4.4.19",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.4",
-    "jsdom": "^23.0.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5",
-    "vitest": "^1.0.4"
-  },
-  "proxy": "http://api:8080",
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "shadcn": "^3.8.5",
+    "tailwindcss": "^4",
+    "tw-animate-css": "^1.4.0",
+    "typescript": "^5"
   }
 }

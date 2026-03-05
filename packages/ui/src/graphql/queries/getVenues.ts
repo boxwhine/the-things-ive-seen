@@ -1,4 +1,4 @@
-import {gql} from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export type Venue = {
   id: string;
@@ -8,7 +8,7 @@ export type Venue = {
 };
 
 export type Response = {
-  venues: Venue[];
+  fetchVenues: Venue[];
 };
 
 export default gql`
