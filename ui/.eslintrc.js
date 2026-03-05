@@ -1,5 +1,6 @@
 module.exports = {
-  extends: 'airbnb',
+  extends: 'next/core-web-vitals',
+  // extends: 'airbnb',
   env: {
     browser: true,
     jest: true,
