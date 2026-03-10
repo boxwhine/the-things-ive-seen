@@ -1,40 +1,16 @@
-import {
-  Column,
-  ForeignKey,
-  HasMany,
-  Model,
-  Table,
-} from 'sequelize-typescript';
 import { Field, Int, ObjectType } from 'type-graphql';
 
-import Event from './Event';
-
-@Table({
-  timestamps: true,
-})
 @ObjectType()
-export default class Genre extends Model<Genre> {
-  @Column
-  @Field()
-  name: string;
-
-  @Column
-  @Field(type => Int, { nullable: true })
-  @ForeignKey(() => Genre)
-  parentId?: number;
-
-  /**
-   * Fields only, no db col
-   */
-
+export default class Genre {
   @Field(type => Int)
   id: number;
 
-  @Field(type => [Genre], { nullable: true })
-  @HasMany(() => Genre, 'parentId')
-  subGenres?: Genre[];
+  @Field()
+  name: string;
 
-  // @Field(type => [Event], { nullable: true })
-  // @HasMany(() => Event, 'venueId')
-  // events: Event[];
+  @Field(type => Int, { nullable: true })
+  parentId?: number;
+
+  @Field(type => [Genre], { nullable: true })
+  subGenres?: Genre[];
 }

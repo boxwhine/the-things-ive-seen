@@ -19,8 +19,7 @@
     "test:watch": "vitest dev"
   },
   "dependencies": {
-    "@types/bluebird": "^3.5.29",
-    "@types/validator": "^10.11.3",
+    "@prisma/client": "^7.4.2",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
@@ -30,9 +29,7 @@
     "graphql-yoga": "^1.18.3",
     "lodash": "^4.17.15",
     "morgan-body": "^2.4.8",
-    "pg": "^7.14.0",
-    "sequelize": "^5.21.2",
-    "sequelize-typescript": "^1.0.0",
+    "prisma": "^7.4.2",
     "ts-node-dev": "^1.0.0-pre.44"
   },
   "devDependencies": {
@@ -49,6 +46,8 @@
     "eslint-plugin-prettier": "~3.0",
     "nodemon": "^1.19.4",
     "prettier": "^1.19.1",
+    "prisma-dbml-generator": "^0.12.0",
+    "prisma-erd-generator": "^2.4.2",
     "reflect-metadata": "^0.1.14",
     "ts-node": "^8.5.4",
     "type-graphql": "^0.17.5",

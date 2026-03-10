@@ -2,6 +2,9 @@
 
 FROM node:22-slim
 
+# Required for Prisma
+RUN apt-get update -y && apt-get install -y openssl && rm -rf /var/lib/apt/lists/*
+
 # Set app directory
 WORKDIR /usr/src/app
 
@@ -18,7 +21,8 @@ COPY package.json pnpm-lock.yaml ./
 
 RUN pnpm install --frozen-lockfile
 
-# this won't work currently since it's going to try to run `tsc` which
-# shouldn't exist on a node-slim image.  Maybe do a 2 stage build: #1 transpile
-# typescript then #2 host JS files?
+# Generate Prisma client
+COPY prisma ./prisma/
+RUN npx prisma generate
+
 CMD [ "pnpm", "start" ]

@@ -23,8 +23,7 @@ services:
       context: ./packages/api
       dockerfile: Dockerfile.dev
     environment:
-      # inject the hostname of the DB container
-      POSTGRES_HOST: ttis-db
+      DATABASE_URL: postgresql://postgres:password@ttis-db:5432/postgres
     depends_on:
       - ttis-db
     ports:

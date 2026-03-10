@@ -1,5 +1,5 @@
-import { Op } from 'sequelize';
 import { Arg, Mutation, Query, Resolver } from 'type-graphql';
+import { prisma } from '../db/prisma';
 import { AddVenueInput, Venue } from '../models';
 
 @Resolver(of => Venue)
@@ -8,18 +8,15 @@ export default class VenueResolver {
 
   @Query(() => [Venue])
   async fetchVenues(): Promise<Venue[]> {
-    return await Venue.scope('default').findAll<Venue>();
+    return await prisma.venue.findMany({ include: { events: true } }) as any;
   }
 
   @Query(() => [Venue])
   async searchVenuesByName(@Arg('name') name: string): Promise<Venue[]> {
-    return await Venue.scope('default').findAll<Venue>({
-      where: {
-        name: {
-          [Op.iLike]: `%${name}%`,
-        },
-      },
-    });
+    return await prisma.venue.findMany({
+      where: { name: { contains: name, mode: 'insensitive' } },
+      include: { events: true },
+    }) as any;
   }
 
   // Mutations
@@ -29,7 +26,7 @@ export default class VenueResolver {
     @Arg('venue') addVenueData: AddVenueInput
   ): Promise<Venue | null> {
     // Verify this venue hasn't already been defined (just use name, city state for now)
-    const existingVenue = await Venue.findOne<Venue>({
+    const existingVenue = await prisma.venue.findFirst({
       where: {
         name: addVenueData.name,
         city: addVenueData.city,
@@ -42,13 +39,11 @@ export default class VenueResolver {
       );
     }
 
-    let venue;
     try {
-      venue = await Venue.create(addVenueData);
+      return await prisma.venue.create({ data: addVenueData }) as any;
     } catch (err) {
       console.error('Failed to create new Venue.', (err as Error).message);
       return null;
     }
-    return venue;
   }
 }

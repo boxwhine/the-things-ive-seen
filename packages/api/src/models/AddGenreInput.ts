@@ -1,9 +1,7 @@
 import { Field, Int, InputType } from 'type-graphql';
 
-import Genre from './Genre';
-
 @InputType({ description: 'New genre data' })
-export default class AddGenreInput implements Partial<Genre> {
+export default class AddGenreInput {
   @Field()
   name: string;
 

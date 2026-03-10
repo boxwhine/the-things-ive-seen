@@ -1,5 +1,8 @@
 import { Mutation, Query, Resolver, Arg } from 'type-graphql';
+import { prisma } from '../db/prisma';
 import { Event, AddEventInput } from '../models';
+
+const eventIncludes = { venue: true, genre: true, subGenre: true };
 
 @Resolver(of => Event)
 export default class EventResolver {
@@ -7,7 +10,7 @@ export default class EventResolver {
 
   @Query(() => [Event])
   async fetchEvents(): Promise<Event[]> {
-    return await Event.scope('default').findAll<Event>();
+    return await prisma.event.findMany({ include: eventIncludes }) as any;
   }
 
   // Mutations
@@ -16,16 +19,14 @@ export default class EventResolver {
   async addEvent(
     @Arg('event') addEventData: AddEventInput
   ): Promise<Event | null> {
-    let event;
     try {
-      // @TODO see if we can set 'include' options for create to avoid follow-up findOne call
-      event = await Event.create(addEventData);
+      return await prisma.event.create({
+        data: addEventData,
+        include: eventIncludes,
+      }) as any;
     } catch (err) {
       console.error('Failed to create new Event.', (err as Error).message);
       return null;
     }
-    return await Event.scope('default').findOne({
-      where: { id: event.get('id') },
-    });
   }
 }

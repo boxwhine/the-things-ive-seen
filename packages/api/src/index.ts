@@ -12,11 +12,18 @@ import { buildSchema } from 'type-graphql';
 dotenv.config();
 
 import config from './config';
-import { sequelize } from './db';
+import { prisma } from './db/prisma';
 import seedDb from './db/seed';
 import resolvers from './resolvers';
 
 const bootstrap = async () => {
+  // Connect to database
+  await prisma.$connect();
+
+  if (config.isDev) {
+    await seedDb();
+  }
+
   const schema = await buildSchema({
     resolvers,
     emitSchemaFile: true,
@@ -25,8 +32,7 @@ const bootstrap = async () => {
   const server = new GraphQLServer({
     schema: schema as any,
     context: {
-      // models,
-      // db: ,
+      prisma,
     },
   });
 
@@ -47,13 +53,8 @@ const bootstrap = async () => {
     port: process.env.PORT || 4000,
   };
 
-  sequelize.sync({ force: true }).then(async () => {
-    if (config.isDev) {
-      await seedDb();
-    }
-    server.start(opts, () => {
-      console.log(`Server is running on http://localhost:${opts.port}`);
-    });
+  server.start(opts, () => {
+    console.log(`Server is running on http://localhost:${opts.port}`);
   });
 };
 

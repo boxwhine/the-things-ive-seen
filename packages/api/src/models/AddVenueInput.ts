@@ -1,9 +1,7 @@
 import { Field, Int, InputType } from 'type-graphql';
 
-import Venue from './Venue';
-
 @InputType({ description: 'New venue data' })
-export default class AddVenueInput implements Partial<Venue> {
+export default class AddVenueInput {
   @Field()
   address: string;
 

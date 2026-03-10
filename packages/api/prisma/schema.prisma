@@ -1,0 +1,66 @@
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator erd {
+  provider = "prisma-erd-generator"
+  output   = "../docs/schema.md"
+}
+
+generator dbml {
+  provider = "prisma-dbml-generator"
+  output   = "../docs"
+}
+
+model Venue {
+  id        Int      @id @default(autoincrement())
+  name      String
+  address   String
+  city      String
+  state     String
+  lat       Float?
+  lng       Float?
+  placeId   String?
+  events    Event[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("Venues")
+}
+
+model Event {
+  id           Int      @id @default(autoincrement())
+  name         String
+  date         DateTime
+  faceValue    Int?
+  festivalName String?
+  wasOpener    Boolean?
+  venue        Venue    @relation(fields: [venueId], references: [id])
+  venueId      Int
+  genre        Genre    @relation("EventGenre", fields: [genreId], references: [id])
+  genreId      Int
+  subGenre     Genre?   @relation("EventSubGenre", fields: [subGenreId], references: [id])
+  subGenreId   Int?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("Events")
+}
+
+model Genre {
+  id            Int     @id @default(autoincrement())
+  name          String
+  parent        Genre?  @relation("GenreHierarchy", fields: [parentId], references: [id])
+  parentId      Int?
+  subGenres     Genre[] @relation("GenreHierarchy")
+  eventsAsGenre Event[] @relation("EventGenre")
+  eventsAsSub   Event[] @relation("EventSubGenre")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("Genres")
+}

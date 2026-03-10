@@ -1,9 +1,7 @@
 import { Field, Int, InputType } from 'type-graphql';
 
-import Event from './Event';
-
 @InputType({ description: 'New event data' })
-export default class AddEventInput implements Partial<Event> {
+export default class AddEventInput {
   @Field()
   date: Date;
 
