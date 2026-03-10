@@ -10,16 +10,27 @@
     "build": "pnpm -r run build",
     "parse-csv": "tsx data/scripts/parse-csv.ts"
   },
-  "dependencies": {},
   "devDependencies": {
     "csv-parse": "^6.1.0",
     "tsx": "^4.21.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "prisma",
       "@prisma/engines",
-      "esbuild"
+      "esbuild",
+      "prisma",
+      "type-graphql"
+    ],
+    "ignoredBuiltDependencies": [
+      "aws-sdk",
+      "core-js",
+      "es5-ext",
+      "fsevents",
+      "msw",
+      "nodemon",
+      "puppeteer",
+      "sharp",
+      "unrs-resolver"
     ]
   }
 }
