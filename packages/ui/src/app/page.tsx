@@ -12,9 +12,7 @@ export default function Home() {
       <Card>
         <CardHeader>
           <CardTitle className="text-3xl">The Things I&apos;ve Seen</CardTitle>
-          <CardDescription>
-            A concert and event tracking app
-          </CardDescription>
+          <CardDescription>A concert and event tracking app</CardDescription>
         </CardHeader>
         <CardContent>
           <p className="text-muted-foreground">

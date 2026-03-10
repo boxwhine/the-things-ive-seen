@@ -1,10 +1,10 @@
-import { Field, Int, InputType } from 'type-graphql';
+import { Field, Int, InputType } from "type-graphql";
 
-@InputType({ description: 'New genre data' })
+@InputType({ description: "New genre data" })
 export default class AddGenreInput {
   @Field()
   name: string;
 
-  @Field(type => Int, { nullable: true })
+  @Field((type) => Int, { nullable: true })
   parentId?: number;
 }

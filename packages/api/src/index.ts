@@ -1,20 +1,20 @@
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 
 // keep this above all other type/gql imports
-import 'reflect-metadata';
+import "reflect-metadata";
 
-import { GraphQLServer } from 'graphql-yoga';
-import cors from 'cors';
-import morganBody from 'morgan-body';
-import bodyParser from 'body-parser';
-import { buildSchema } from 'type-graphql';
+import { GraphQLServer } from "graphql-yoga";
+import cors from "cors";
+import morganBody from "morgan-body";
+import bodyParser from "body-parser";
+import { buildSchema } from "type-graphql";
 
 dotenv.config();
 
-import config from './config';
-import { prisma } from './db/prisma';
-import seedDb from './db/seed';
-import resolvers from './resolvers';
+import config from "./config";
+import { prisma } from "./db/prisma";
+import seedDb from "./db/seed";
+import resolvers from "./resolvers";
 
 const bootstrap = async () => {
   // Connect to database
@@ -49,7 +49,7 @@ const bootstrap = async () => {
 
   // options
   const opts = {
-    playground: '/playground',
+    playground: "/playground",
     port: process.env.PORT || 4000,
   };
 

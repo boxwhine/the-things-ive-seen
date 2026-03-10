@@ -1,16 +1,16 @@
-import { Field, Int, ObjectType } from 'type-graphql';
+import { Field, Int, ObjectType } from "type-graphql";
 
 @ObjectType()
 export default class Genre {
-  @Field(type => Int)
+  @Field((type) => Int)
   id: number;
 
   @Field()
   name: string;
 
-  @Field(type => Int, { nullable: true })
+  @Field((type) => Int, { nullable: true })
   parentId?: number;
 
-  @Field(type => [Genre], { nullable: true })
+  @Field((type) => [Genre], { nullable: true })
   subGenres?: Genre[];
 }

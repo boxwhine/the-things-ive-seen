@@ -1,7 +1,10 @@
 "use client";
 
 import { useQuery } from "@apollo/client/react";
-import GET_EVENTS, { type Response, type Event } from "@/graphql/queries/getEvents";
+import GET_EVENTS, {
+  type Response,
+  type Event,
+} from "@/graphql/queries/getEvents";
 import {
   Table,
   TableBody,
@@ -15,7 +18,8 @@ import { Badge } from "@/components/ui/badge";
 export default function Events() {
   const { loading, error, data } = useQuery<Response>(GET_EVENTS);
 
-  if (loading) return <p className="text-muted-foreground">Loading events...</p>;
+  if (loading)
+    return <p className="text-muted-foreground">Loading events...</p>;
   if (error) return <p className="text-destructive">Error: {error.message}</p>;
 
   const events = data?.fetchEvents ?? [];
@@ -36,9 +40,7 @@ export default function Events() {
           {events.map((event: Event) => (
             <TableRow key={event.id}>
               <TableCell className="font-medium">{event.name}</TableCell>
-              <TableCell>
-                {new Date(event.date).toLocaleDateString()}
-              </TableCell>
+              <TableCell>{new Date(event.date).toLocaleDateString()}</TableCell>
               <TableCell>
                 <div>{event.venue.name}</div>
                 <div className="text-sm text-muted-foreground">

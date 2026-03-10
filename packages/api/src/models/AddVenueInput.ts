@@ -1,6 +1,6 @@
-import { Field, Int, InputType } from 'type-graphql';
+import { Field, Int, InputType } from "type-graphql";
 
-@InputType({ description: 'New venue data' })
+@InputType({ description: "New venue data" })
 export default class AddVenueInput {
   @Field()
   address: string;
@@ -8,10 +8,10 @@ export default class AddVenueInput {
   @Field()
   city: string;
 
-  @Field(type => Int, { nullable: true })
+  @Field((type) => Int, { nullable: true })
   lat: number;
 
-  @Field(type => Int, { nullable: true })
+  @Field((type) => Int, { nullable: true })
   lng: number;
 
   @Field()

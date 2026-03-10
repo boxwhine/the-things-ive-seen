@@ -1,11 +1,11 @@
-import { Field, Int, ObjectType } from 'type-graphql';
+import { Field, Int, ObjectType } from "type-graphql";
 
-import Genre from './Genre';
-import Venue from './Venue';
+import Genre from "./Genre";
+import Venue from "./Venue";
 
 @ObjectType()
 export default class Event {
-  @Field(type => Int)
+  @Field((type) => Int)
   id: number;
 
   @Field()
@@ -14,7 +14,7 @@ export default class Event {
   @Field()
   date: Date;
 
-  @Field(type => Int, { nullable: true })
+  @Field((type) => Int, { nullable: true })
   faceValue?: number;
 
   @Field({ nullable: true })
@@ -23,13 +23,13 @@ export default class Event {
   @Field({ nullable: true })
   wasOpener?: boolean;
 
-  @Field(type => Int)
+  @Field((type) => Int)
   venueId: number;
 
-  @Field(type => Int)
+  @Field((type) => Int)
   genreId: number;
 
-  @Field(type => Int, { nullable: true })
+  @Field((type) => Int, { nullable: true })
   subGenreId?: number;
 
   @Field()
