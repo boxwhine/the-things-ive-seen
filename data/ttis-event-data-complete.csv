@@ -98,8 +98,8 @@ event_date,event_performer_name,event_title,event_openers,event_addl_desc,event_
 5/3/2008,Devotchka,,,,concert,World,$19.00,Showbox SoDo,Seattle,WA
 5/15/2008,The Kills,,,,concert,Alternative,$12.00,Neumos,Seattle,WA
 6/5/2008,Erykah Badu,,The Roots,,concert,R&B,$38.50,Marymoor Park,Redmond,WA
-7/25/2008,Capitol Hill Block Party,,,,concert,Festival,$17.00,,Seattle,WA
-7/26/2008,Capitol Hill Block Party,,,,concert,Festival,$17.00,,Seattle,WA
+7/25/2008,Capitol Hill Block Party,,,,concert,Festival,$17.00,Capitol Hill - Pike/Pine Corridor,Seattle,WA
+7/26/2008,Capitol Hill Block Party,,,,concert,Festival,$17.00,Capitol Hill - Pike/Pine Corridor,Seattle,WA
 9/6/2008,TV On The Radio,,,,concert,Alternative,$11.50,Showbox SoDo,Seattle,WA
 11/12/2008,Digable Planets,,,,concert,Hip-hop,$18.00,Neumos,Seattle,WA
 1/7/2009,Rebirth Brass Band,,,,concert,Jazz,$17.00,Tractor Tavern,Seattle,WA
@@ -168,8 +168,8 @@ event_date,event_performer_name,event_title,event_openers,event_addl_desc,event_
 9/18/2013,Neko Case,,,,concert,,$33.25,Paramount Theatre,Seattle,WA
 10/2/2013,Comedy Bang! Bang! Live!,,,,comedy,Standup,$23.50,Neptune Theatre,Seattle,WA
 10/4/2013,Dave Chappelle,,,,comedy,Standup,$55.00,Moore Theatre,Seattle,WA
-10/22/2013,SuicideGirls,Blackheart Burlesque,,,theater,,$20.00,El Corazon,Seattle,WA
 10/22/2013,Suicide Girls Tour,,,,dance,Burlesque,$20.00,El Corazon,Seattle,WA
+10/22/2013,SuicideGirls,Blackheart Burlesque,,,theater,,$20.00,El Corazon,Seattle,WA
 11/4/2013,Mazzy Star,,,,concert,Alternative,$33.50,Neptune Theatre,Seattle,WA
 12/14/2013,Rufus Wainwright,,,,concert,,$25.00,Moore Theatre,Seattle,WA
 1/17/2014,Justin Timberlake,,,,concert,Pop,$45.00,Key Arena,Seattle,WA
@@ -237,7 +237,7 @@ event_date,event_performer_name,event_title,event_openers,event_addl_desc,event_
 12/9/2018,Indianapolis Colts at Houston Texans,,,,sports,Football,$81.07,NRG Stadium,Houston,TX
 1/5/2019,Seattle Seahawks at Dallas Cowboys,,,,sports,Football,$93.00,AT&T Stadium,Arlington,TX
 1/12/2019,The Murder City Devils,,,,concert,,$27.65,Mohawk,Austin,TX
-1/23/2019,Built To Spill,,XETAS,,concert,,$30.39,Antone's,Austin,TX
+1/23/2019,Built To Spill,,XETAS,,concert,,$30.39,Antone's Nightclub,Austin,TX
 1/30/2019,High On Fire,,"Toke, Year of the Cobra",,concert,,$24.25,Barracuda,Austin,TX
 1/31/2019,Waterbed Comedy Party 2019,,,,comedy,,$5.00,Spider House Ballroom,Austin,TX
 2/2/2019,DeVotchKa,,Neyla Pekarek,,concert,,$23.00,Scoot Inn,Austin,TX
@@ -273,7 +273,7 @@ event_date,event_performer_name,event_title,event_openers,event_addl_desc,event_
 10/27/2021,The Sword,,"Starcrawler, Here Lies Man, Enumclaw",,concert,,$30.00,Empire Control Room & Garage,Austin,TX
 12/4/2021,George Strait,,,,concert,,$206.00,T-Mobile Arena,Las Vegas,NV
 12/12/2021,Seattle Seahawks at Houston Texans,,,,sports,Football,$110.42,NRG Stadium,Houston,TX
-12/28/2021,Billy Gibbs,The Jungle Show,"Jimmie Vaughn, Sue Foley",,concert,,$83.00,Antone's,Austin,TX
+12/28/2021,Billy Gibbs,The Jungle Show,"Jimmie Vaughn, Sue Foley",,concert,,$83.00,Antone's Nightclub,Austin,TX
 1/9/2022,Seattle Seahawks at Arizona Cardinals,,,,sports,Football,$130.00,State Farm Stadium,Glendale,AZ
 4/15/2022,Terminator: The Musical,,,,theater,,$30.00,York Rite of Austin,Austin,TX
 4/24/2022,Moontower Comedy Festival 2022,,,,comedy,,$99.00,The Paramount & Stateside Theatres,Austin,TX

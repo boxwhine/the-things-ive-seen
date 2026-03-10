@@ -1,0 +1,644 @@
+[
+  {
+    "key": "29th Street Ballroom|Austin|TX",
+    "name": "29th Street Ballroom",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Acrisure Stadium|Pittsburgh|PA",
+    "name": "Acrisure Stadium",
+    "city": "Pittsburgh",
+    "state": "PA"
+  },
+  {
+    "key": "Antone's Nightclub|Austin|TX",
+    "name": "Antone's Nightclub",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "AT&T Stadium|Arlington|TX",
+    "name": "AT&T Stadium",
+    "city": "Arlington",
+    "state": "TX"
+  },
+  {
+    "key": "Barboza|Seattle|WA",
+    "name": "Barboza",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Barracuda|Austin|TX",
+    "name": "Barracuda",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Benaroya Hall|Seattle|WA",
+    "name": "Benaroya Hall",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Big Cypress Seminole Indian Reservation|Seminole Indian Reservation|FL",
+    "name": "Big Cypress Seminole Indian Reservation",
+    "city": "Seminole Indian Reservation",
+    "state": "FL"
+  },
+  {
+    "key": "Black Rock City|Gerlach|NV",
+    "name": "Black Rock City",
+    "city": "Gerlach",
+    "state": "NV"
+  },
+  {
+    "key": "Capitol Hill - Pike/Pine Corridor|Seattle|WA",
+    "name": "Capitol Hill - Pike/Pine Corridor",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Central Cinema|Seattle|WA",
+    "name": "Central Cinema",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "CenturyLink Field|Seattle|WA",
+    "name": "CenturyLink Field",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Chop Suey|Seattle|WA",
+    "name": "Chop Suey",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Circuit of The Americas|Austin|TX",
+    "name": "Circuit of The Americas",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Columbia City Theater|Seattle|WA",
+    "name": "Columbia City Theater",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Come and Take It Live|Austin|TX",
+    "name": "Come and Take It Live",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "DV8|Seattle|WA",
+    "name": "DV8",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Eagles Hall|Olympia|WA",
+    "name": "Eagles Hall",
+    "city": "Olympia",
+    "state": "WA"
+  },
+  {
+    "key": "El Corazon|Seattle|WA",
+    "name": "El Corazon",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Emerald Queen Casino|Tacoma|WA",
+    "name": "Emerald Queen Casino",
+    "city": "Tacoma",
+    "state": "WA"
+  },
+  {
+    "key": "Empire Control Room & Garage|Austin|TX",
+    "name": "Empire Control Room & Garage",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Fallout Theater|Austin|TX",
+    "name": "Fallout Theater",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Fenix Underground|Seattle|WA",
+    "name": "Fenix Underground",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Funhouse|Seattle|WA",
+    "name": "Funhouse",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Graceland|Seattle|WA",
+    "name": "Graceland",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Hec Ed Pavilion @ UW|Seattle|WA",
+    "name": "Hec Ed Pavilion @ UW",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Highline|Seattle|WA",
+    "name": "Highline",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Hotel Vegas|Austin|TX",
+    "name": "Hotel Vegas",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "HUB Ballroom @ UW|Seattle|WA",
+    "name": "HUB Ballroom @ UW",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Independence Brewing Co.|Austin|TX",
+    "name": "Independence Brewing Co.",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Key Arena|Seattle|WA",
+    "name": "Key Arena",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "King Cat Theatre|Seattle|WA",
+    "name": "King Cat Theatre",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Laugh's Comedy Spot|Kirkland|WA",
+    "name": "Laugh's Comedy Spot",
+    "city": "Kirkland",
+    "state": "WA"
+  },
+  {
+    "key": "Les Schwab Amphitheater|Bend|OR",
+    "name": "Les Schwab Amphitheater",
+    "city": "Bend",
+    "state": "OR"
+  },
+  {
+    "key": "M&T Bank Stadium|Baltimore|MD",
+    "name": "M&T Bank Stadium",
+    "city": "Baltimore",
+    "state": "MD"
+  },
+  {
+    "key": "Madison Square Garden|New York|NY",
+    "name": "Madison Square Garden",
+    "city": "New York",
+    "state": "NY"
+  },
+  {
+    "key": "Marymoor Park|Redmond|WA",
+    "name": "Marymoor Park",
+    "city": "Redmond",
+    "state": "WA"
+  },
+  {
+    "key": "McCaw Hall|Seattle|WA",
+    "name": "McCaw Hall",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Memorial Stadium|Seattle|WA",
+    "name": "Memorial Stadium",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Mercer Arena|Seattle|WA",
+    "name": "Mercer Arena",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Mohawk - Outdoor|Austin|TX",
+    "name": "Mohawk - Outdoor",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Mohawk|Austin|TX",
+    "name": "Mohawk",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Moody Amphitheater|Austin|TX",
+    "name": "Moody Amphitheater",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Moody Center|Austin|TX",
+    "name": "Moody Center",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Moore Theatre|Seattle|WA",
+    "name": "Moore Theatre",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Nectar Lounge|Seattle|WA",
+    "name": "Nectar Lounge",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Neptune Theatre|Seattle|WA",
+    "name": "Neptune Theatre",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Neumos|Seattle|WA",
+    "name": "Neumos",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "NRG Stadium|Houston|TX",
+    "name": "NRG Stadium",
+    "city": "Houston",
+    "state": "TX"
+  },
+  {
+    "key": "Pacific Northwest Ballet|Seattle|WA",
+    "name": "Pacific Northwest Ballet",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Paramount Theatre|Austin|TX",
+    "name": "Paramount Theatre",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Paramount Theatre|Seattle|WA",
+    "name": "Paramount Theatre",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Parish|Austin|TX",
+    "name": "Parish",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Pepsi Center WTC|México|DF",
+    "name": "Pepsi Center WTC",
+    "city": "México",
+    "state": "DF"
+  },
+  {
+    "key": "Pier 62/63 on Alaskan Way|Seattle|WA",
+    "name": "Pier 62/63 on Alaskan Way",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Portland Meadows|Portland|OR",
+    "name": "Portland Meadows",
+    "city": "Portland",
+    "state": "OR"
+  },
+  {
+    "key": "Puyallup Fair|Puyallup|WA",
+    "name": "Puyallup Fair",
+    "city": "Puyallup",
+    "state": "WA"
+  },
+  {
+    "key": "Q2 Stadium|Austin|TX",
+    "name": "Q2 Stadium",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Qwest Field|Seattle|WA",
+    "name": "Qwest Field",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Rebar|Seattle|WA",
+    "name": "Rebar",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Red Rocks Amphitheatre|Morrison|CO",
+    "name": "Red Rocks Amphitheatre",
+    "city": "Morrison",
+    "state": "CO"
+  },
+  {
+    "key": "Revival Cycles|Austin|TX",
+    "name": "Revival Cycles",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Rose Garden Arena|Portland|OR",
+    "name": "Rose Garden Arena",
+    "city": "Portland",
+    "state": "OR"
+  },
+  {
+    "key": "Safeco Field|Seattle|WA",
+    "name": "Safeco Field",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Scoot Inn|Austin|TX",
+    "name": "Scoot Inn",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Seattle Center|Seattle|WA",
+    "name": "Seattle Center",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Segway|Seattle|WA",
+    "name": "Segway",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Shoreline Amphitheatre|San Francisco|CA",
+    "name": "Shoreline Amphitheatre",
+    "city": "San Francisco",
+    "state": "CA"
+  },
+  {
+    "key": "Showbox SoDo|Seattle|WA",
+    "name": "Showbox SoDo",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Slim's Last Chance Saloon|Seattle|WA",
+    "name": "Slim's Last Chance Saloon",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Sons of Hermann Hall|Dallas|TX",
+    "name": "Sons of Hermann Hall",
+    "city": "Dallas",
+    "state": "TX"
+  },
+  {
+    "key": "Spider House Ballroom|Austin|TX",
+    "name": "Spider House Ballroom",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Stadium Exhibition Center|Seattle|WA",
+    "name": "Stadium Exhibition Center",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "State Farm Stadium|Glendale|AZ",
+    "name": "State Farm Stadium",
+    "city": "Glendale",
+    "state": "AZ"
+  },
+  {
+    "key": "Stateside at the Paramount|Austin|TX",
+    "name": "Stateside at the Paramount",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Stubb's|Austin|TX",
+    "name": "Stubb's",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Studio 7|Seattle|WA",
+    "name": "Studio 7",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Sunset Tavern|Seattle|WA",
+    "name": "Sunset Tavern",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "T-Mobile Arena|Las Vegas|NV",
+    "name": "T-Mobile Arena",
+    "city": "Las Vegas",
+    "state": "NV"
+  },
+  {
+    "key": "Tacoma Comedy Club|Tacoma|WA",
+    "name": "Tacoma Comedy Club",
+    "city": "Tacoma",
+    "state": "WA"
+  },
+  {
+    "key": "Tacoma Dome|Tacoma|WA",
+    "name": "Tacoma Dome",
+    "city": "Tacoma",
+    "state": "WA"
+  },
+  {
+    "key": "Teatro Zinzanni|Seattle|WA",
+    "name": "Teatro Zinzanni",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "The 13th Floor|Austin|TX",
+    "name": "The 13th Floor",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "The Austin Motocross Park|Del Valle|TX",
+    "name": "The Austin Motocross Park",
+    "city": "Del Valle",
+    "state": "TX"
+  },
+  {
+    "key": "The Comedy Store|Hollywood|CA",
+    "name": "The Comedy Store",
+    "city": "Hollywood",
+    "state": "CA"
+  },
+  {
+    "key": "The Crocodile|Seattle|WA",
+    "name": "The Crocodile",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "The Fenix|Seattle|WA",
+    "name": "The Fenix",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "The Gorge Amphitheatre|George|WA",
+    "name": "The Gorge Amphitheatre",
+    "city": "George",
+    "state": "WA"
+  },
+  {
+    "key": "The Manium|Olympia|WA",
+    "name": "The Manium",
+    "city": "Olympia",
+    "state": "WA"
+  },
+  {
+    "key": "The Moody Theater|Austin|TX",
+    "name": "The Moody Theater",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "The North Door|Austin|TX",
+    "name": "The North Door",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "The Paramount & State Theatres|Austin|TX",
+    "name": "The Paramount & State Theatres",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "The Paramount & Stateside Theatres|Austin|TX",
+    "name": "The Paramount & Stateside Theatres",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "The Parish|Austin|TX",
+    "name": "The Parish",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "The Parlor Live|Bellevue|WA",
+    "name": "The Parlor Live",
+    "city": "Bellevue",
+    "state": "WA"
+  },
+  {
+    "key": "The Showbox|Seattle|WA",
+    "name": "The Showbox",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "The Townsend|Austin|TX",
+    "name": "The Townsend",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "The Triple Door|Seattle|WA",
+    "name": "The Triple Door",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "The White Horse|Austin|TX",
+    "name": "The White Horse",
+    "city": "Austin",
+    "state": "TX"
+  },
+  {
+    "key": "Theatre Off Jackson|Seattle|WA",
+    "name": "Theatre Off Jackson",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Tractor Tavern|Seattle|WA",
+    "name": "Tractor Tavern",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "University Book Store|Seattle|WA",
+    "name": "University Book Store",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Village Books|Bellingham|WA",
+    "name": "Village Books",
+    "city": "Bellingham",
+    "state": "WA"
+  },
+  {
+    "key": "WaMu Theatre|Seattle|WA",
+    "name": "WaMu Theatre",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Woodland Park Zoo|Seattle|WA",
+    "name": "Woodland Park Zoo",
+    "city": "Seattle",
+    "state": "WA"
+  },
+  {
+    "key": "Wrigley Field|Chicago|IL",
+    "name": "Wrigley Field",
+    "city": "Chicago",
+    "state": "IL"
+  },
+  {
+    "key": "York Rite of Austin|Austin|TX",
+    "name": "York Rite of Austin",
+    "city": "Austin",
+    "state": "TX"
+  }
+]

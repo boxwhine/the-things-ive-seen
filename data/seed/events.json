@@ -1,0 +1,3119 @@
+[
+  {
+    "date": "1995-09-03",
+    "title": "Bumbershoot",
+    "performerKey": "The Ramones",
+    "openerKeys": [],
+    "faceValue": 1,
+    "genreKey": "Music",
+    "subGenreKey": "Punk",
+    "venueKey": "Memorial Stadium|Seattle|WA"
+  },
+  {
+    "date": "1996-08-15",
+    "title": null,
+    "performerKey": "Smashing Pumpkins",
+    "openerKeys": [],
+    "faceValue": 2500,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Key Arena|Seattle|WA"
+  },
+  {
+    "date": "1996-12-17",
+    "title": null,
+    "performerKey": "Soundgarden",
+    "openerKeys": [],
+    "faceValue": 1800,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Mercer Arena|Seattle|WA"
+  },
+  {
+    "date": "1997-07-13",
+    "title": null,
+    "performerKey": "H.O.R.D.E. Festival",
+    "openerKeys": [
+      "Neil Young",
+      "Ben Folds Five",
+      "Primus",
+      "Squirrel Nut Zippers"
+    ],
+    "faceValue": 3000,
+    "genreKey": "Festival",
+    "subGenreKey": null,
+    "venueKey": "Portland Meadows|Portland|OR"
+  },
+  {
+    "date": "1997-07-15",
+    "title": null,
+    "performerKey": "Weezer",
+    "openerKeys": [],
+    "faceValue": 1,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "DV8|Seattle|WA"
+  },
+  {
+    "date": "1997-08-29",
+    "title": "Bumbershoot",
+    "performerKey": null,
+    "openerKeys": [],
+    "faceValue": 900,
+    "genreKey": "Music",
+    "subGenreKey": "Festival",
+    "venueKey": "Seattle Center|Seattle|WA"
+  },
+  {
+    "date": "1997-08-30",
+    "title": "Bumbershoot",
+    "performerKey": null,
+    "openerKeys": [],
+    "faceValue": 800,
+    "genreKey": "Music",
+    "subGenreKey": "Festival",
+    "venueKey": "Seattle Center|Seattle|WA"
+  },
+  {
+    "date": "1997-09-12",
+    "title": null,
+    "performerKey": "Rage Against The Machine",
+    "openerKeys": [],
+    "faceValue": 2500,
+    "genreKey": "Music",
+    "subGenreKey": "Rock",
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "1997-12-08",
+    "title": null,
+    "performerKey": "Jane's Addiction",
+    "openerKeys": [],
+    "faceValue": 2500,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Key Arena|Seattle|WA"
+  },
+  {
+    "date": "1998-02-05",
+    "title": null,
+    "performerKey": "Ben Folds Five",
+    "openerKeys": [],
+    "faceValue": 1550,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "DV8|Seattle|WA"
+  },
+  {
+    "date": "1998-04-21",
+    "title": null,
+    "performerKey": "America",
+    "openerKeys": [],
+    "faceValue": 0,
+    "genreKey": "Music",
+    "subGenreKey": "Folk",
+    "venueKey": "Tacoma Dome|Tacoma|WA"
+  },
+  {
+    "date": "1998-07-15",
+    "title": null,
+    "performerKey": "Phish",
+    "openerKeys": [],
+    "faceValue": 2600,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "Portland Meadows|Portland|OR"
+  },
+  {
+    "date": "1998-07-16",
+    "title": null,
+    "performerKey": "Phish",
+    "openerKeys": [],
+    "faceValue": 2700,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "1998-07-17",
+    "title": null,
+    "performerKey": "Phish",
+    "openerKeys": [],
+    "faceValue": 2700,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "1998-07-18",
+    "title": null,
+    "performerKey": "Pearl Jam",
+    "openerKeys": [],
+    "faceValue": 2300,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Rose Garden Arena|Portland|OR"
+  },
+  {
+    "date": "1998-09-04",
+    "title": "Bumbershoot",
+    "performerKey": null,
+    "openerKeys": [],
+    "faceValue": 900,
+    "genreKey": "Music",
+    "subGenreKey": "Festival",
+    "venueKey": "Seattle Center|Seattle|WA"
+  },
+  {
+    "date": "1998-09-05",
+    "title": "Bumbershoot",
+    "performerKey": null,
+    "openerKeys": [],
+    "faceValue": 900,
+    "genreKey": "Music",
+    "subGenreKey": "Festival",
+    "venueKey": "Seattle Center|Seattle|WA"
+  },
+  {
+    "date": "1998-09-11",
+    "title": null,
+    "performerKey": "Tori Amos",
+    "openerKeys": [],
+    "faceValue": 2750,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Key Arena|Seattle|WA"
+  },
+  {
+    "date": "1999-04-01",
+    "title": null,
+    "performerKey": "Medeski, Martin & Wood",
+    "openerKeys": [],
+    "faceValue": 1900,
+    "genreKey": "Music",
+    "subGenreKey": "Jazz",
+    "venueKey": "Moore Theatre|Seattle|WA"
+  },
+  {
+    "date": "1999-04-26",
+    "title": null,
+    "performerKey": "Sunny Day Real Estate",
+    "openerKeys": [],
+    "faceValue": 1000,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "HUB Ballroom @ UW|Seattle|WA"
+  },
+  {
+    "date": "1999-05-09",
+    "title": null,
+    "performerKey": "Sky Cries Mary",
+    "openerKeys": [],
+    "faceValue": 1000,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "The Fenix|Seattle|WA"
+  },
+  {
+    "date": "1999-06-13",
+    "title": null,
+    "performerKey": "Bob Dylan",
+    "openerKeys": [
+      "Paul Simon"
+    ],
+    "faceValue": 7430,
+    "genreKey": "Music",
+    "subGenreKey": "Folk",
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "1999-09-10",
+    "title": null,
+    "performerKey": "Phish",
+    "openerKeys": [],
+    "faceValue": 2875,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "1999-09-11",
+    "title": null,
+    "performerKey": "Phish",
+    "openerKeys": [],
+    "faceValue": 2875,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "1999-11-19",
+    "title": null,
+    "performerKey": "Modest Mouse",
+    "openerKeys": [],
+    "faceValue": 800,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "HUB Ballroom @ UW|Seattle|WA"
+  },
+  {
+    "date": "1999-12-03",
+    "title": null,
+    "performerKey": "Sky Cries Mary",
+    "openerKeys": [],
+    "faceValue": 1000,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "The Fenix|Seattle|WA"
+  },
+  {
+    "date": "1999-12-31",
+    "title": null,
+    "performerKey": "Phish",
+    "openerKeys": [],
+    "faceValue": 15000,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "Big Cypress Seminole Indian Reservation|Seminole Indian Reservation|FL"
+  },
+  {
+    "date": "2000-05-06",
+    "title": null,
+    "performerKey": "Violent Femmes",
+    "openerKeys": [],
+    "faceValue": 1950,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Moore Theatre|Seattle|WA"
+  },
+  {
+    "date": "2000-05-15",
+    "title": null,
+    "performerKey": "Eric Idle Exploits Monty Python",
+    "openerKeys": [],
+    "faceValue": 3800,
+    "genreKey": "Comedy",
+    "subGenreKey": "Musical",
+    "venueKey": "Paramount Theatre|Seattle|WA"
+  },
+  {
+    "date": "2000-06-01",
+    "title": null,
+    "performerKey": "Medeski, Martin & Wood",
+    "openerKeys": [],
+    "faceValue": 2250,
+    "genreKey": "Music",
+    "subGenreKey": "Jazz",
+    "venueKey": "Moore Theatre|Seattle|WA"
+  },
+  {
+    "date": "2000-06-03",
+    "title": null,
+    "performerKey": "USC 4 Year Anniversary",
+    "openerKeys": [],
+    "faceValue": 3300,
+    "genreKey": "Music",
+    "subGenreKey": "Dance",
+    "venueKey": "Stadium Exhibition Center|Seattle|WA"
+  },
+  {
+    "date": "2000-11-19",
+    "title": null,
+    "performerKey": "Dark Star Orchestra",
+    "openerKeys": [],
+    "faceValue": 2000,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "King Cat Theatre|Seattle|WA"
+  },
+  {
+    "date": "2001-04-12",
+    "title": null,
+    "performerKey": "Medeski, Martin & Wood",
+    "openerKeys": [],
+    "faceValue": 2600,
+    "genreKey": "Music",
+    "subGenreKey": "Jazz",
+    "venueKey": "Paramount Theatre|Seattle|WA"
+  },
+  {
+    "date": "2001-08-31",
+    "title": "Bumbershoot",
+    "performerKey": null,
+    "openerKeys": [],
+    "faceValue": 1200,
+    "genreKey": "Music",
+    "subGenreKey": "Festival",
+    "venueKey": "Seattle Center|Seattle|WA"
+  },
+  {
+    "date": "2001-09-01",
+    "title": "Bumbershoot",
+    "performerKey": null,
+    "openerKeys": [],
+    "faceValue": 1200,
+    "genreKey": "Music",
+    "subGenreKey": "Festival",
+    "venueKey": "Seattle Center|Seattle|WA"
+  },
+  {
+    "date": "2001-11-08",
+    "title": null,
+    "performerKey": "Tool",
+    "openerKeys": [],
+    "faceValue": 3850,
+    "genreKey": "Music",
+    "subGenreKey": "Rock",
+    "venueKey": "Tacoma Dome|Tacoma|WA"
+  },
+  {
+    "date": "2002-04-30",
+    "title": null,
+    "performerKey": "Reverend Horton Heat",
+    "openerKeys": [],
+    "faceValue": 1750,
+    "genreKey": "Music",
+    "subGenreKey": "Rockabilly",
+    "venueKey": "The Showbox|Seattle|WA"
+  },
+  {
+    "date": "2002-05-21",
+    "title": null,
+    "performerKey": "Trey Anastasio",
+    "openerKeys": [],
+    "faceValue": 3300,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "Paramount Theatre|Seattle|WA"
+  },
+  {
+    "date": "2002-08-04",
+    "title": null,
+    "performerKey": "The Flaming Lips",
+    "openerKeys": [
+      "Cake",
+      "De la Soul"
+    ],
+    "faceValue": 3600,
+    "genreKey": "Music",
+    "subGenreKey": "Festival",
+    "venueKey": "Pier 62/63 on Alaskan Way|Seattle|WA"
+  },
+  {
+    "date": "2002-09-27",
+    "title": null,
+    "performerKey": "Dave Chappelle",
+    "openerKeys": [
+      "Lewis Black"
+    ],
+    "faceValue": 3250,
+    "genreKey": "Comedy",
+    "subGenreKey": "Standup",
+    "venueKey": "Benaroya Hall|Seattle|WA"
+  },
+  {
+    "date": "2002-12-21",
+    "title": null,
+    "performerKey": "Modest Mouse",
+    "openerKeys": [],
+    "faceValue": 1750,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "The Showbox|Seattle|WA"
+  },
+  {
+    "date": "2003-07-12",
+    "title": null,
+    "performerKey": "Phish",
+    "openerKeys": [],
+    "faceValue": 4375,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "2003-07-13",
+    "title": null,
+    "performerKey": "Phish",
+    "openerKeys": [],
+    "faceValue": 4375,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "2003-07-28",
+    "title": null,
+    "performerKey": "The Mars Volta",
+    "openerKeys": [],
+    "faceValue": 1350,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "The Showbox|Seattle|WA"
+  },
+  {
+    "date": "2003-08-30",
+    "title": "Burning Man",
+    "performerKey": null,
+    "openerKeys": [],
+    "faceValue": 22500,
+    "genreKey": "Festival",
+    "subGenreKey": null,
+    "venueKey": "Black Rock City|Gerlach|NV"
+  },
+  {
+    "date": "2003-12-13",
+    "title": null,
+    "performerKey": "Sleater-Kinney/Cat Power",
+    "openerKeys": [],
+    "faceValue": 1750,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "The Showbox|Seattle|WA"
+  },
+  {
+    "date": "2003-12-21",
+    "title": null,
+    "performerKey": "Supersuckers",
+    "openerKeys": [],
+    "faceValue": 1200,
+    "genreKey": "Music",
+    "subGenreKey": "Rock",
+    "venueKey": "Tractor Tavern|Seattle|WA"
+  },
+  {
+    "date": "2004-05-29",
+    "title": null,
+    "performerKey": "Sasquatch! Festival",
+    "openerKeys": [],
+    "faceValue": 4950,
+    "genreKey": "Music",
+    "subGenreKey": "Festival",
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "2004-05-31",
+    "title": null,
+    "performerKey": "Tim Robbins",
+    "openerKeys": [],
+    "faceValue": 0,
+    "genreKey": "Literary",
+    "subGenreKey": "Book Signing",
+    "venueKey": "Village Books|Bellingham|WA"
+  },
+  {
+    "date": "2004-07-21",
+    "title": null,
+    "performerKey": "The Aquabats",
+    "openerKeys": [],
+    "faceValue": 1300,
+    "genreKey": "Music",
+    "subGenreKey": "Ska",
+    "venueKey": "Graceland|Seattle|WA"
+  },
+  {
+    "date": "2004-08-07",
+    "title": null,
+    "performerKey": "Sky Cries Mary",
+    "openerKeys": [],
+    "faceValue": 1200,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Fenix Underground|Seattle|WA"
+  },
+  {
+    "date": "2004-09-10",
+    "title": "Yeah! Fest",
+    "performerKey": "C Average",
+    "openerKeys": [],
+    "faceValue": 0,
+    "genreKey": "Music",
+    "subGenreKey": "Festival",
+    "venueKey": "The Manium|Olympia|WA"
+  },
+  {
+    "date": "2004-09-10",
+    "title": "Yeah! Fest",
+    "performerKey": null,
+    "openerKeys": [],
+    "faceValue": 5000,
+    "genreKey": "Music",
+    "subGenreKey": "Festival",
+    "venueKey": "Eagles Hall|Olympia|WA"
+  },
+  {
+    "date": "2004-10-02",
+    "title": null,
+    "performerKey": "Cheap Trick",
+    "openerKeys": [],
+    "faceValue": 4500,
+    "genreKey": "Music",
+    "subGenreKey": "Rock",
+    "venueKey": "Emerald Queen Casino|Tacoma|WA"
+  },
+  {
+    "date": "2004-11-12",
+    "title": null,
+    "performerKey": "Blonde Redhead",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "The Showbox|Seattle|WA"
+  },
+  {
+    "date": "2004-11-13",
+    "title": null,
+    "performerKey": "SeaCompression 2k4: Tranquility Bass",
+    "openerKeys": [],
+    "faceValue": 1200,
+    "genreKey": "Music",
+    "subGenreKey": "Dance",
+    "venueKey": "Segway|Seattle|WA"
+  },
+  {
+    "date": "2005-03-26",
+    "title": null,
+    "performerKey": "Blue Oyster Cult",
+    "openerKeys": [],
+    "faceValue": 2250,
+    "genreKey": "Music",
+    "subGenreKey": "Rock",
+    "venueKey": "Emerald Queen Casino|Tacoma|WA"
+  },
+  {
+    "date": "2005-05-21",
+    "title": null,
+    "performerKey": "MC Chris",
+    "openerKeys": [],
+    "faceValue": 1000,
+    "genreKey": "Music",
+    "subGenreKey": "Hip-hop",
+    "venueKey": "El Corazon|Seattle|WA"
+  },
+  {
+    "date": "2005-09-03",
+    "title": "Burning Man",
+    "performerKey": null,
+    "openerKeys": [],
+    "faceValue": 17500,
+    "genreKey": "Festival",
+    "subGenreKey": null,
+    "venueKey": "Black Rock City|Gerlach|NV"
+  },
+  {
+    "date": "2005-10-15",
+    "title": null,
+    "performerKey": "Teatro Zinzanni",
+    "openerKeys": [],
+    "faceValue": 10900,
+    "genreKey": "Theater",
+    "subGenreKey": null,
+    "venueKey": "Teatro Zinzanni|Seattle|WA"
+  },
+  {
+    "date": "2005-11-04",
+    "title": null,
+    "performerKey": "My Morning Jacket",
+    "openerKeys": [],
+    "faceValue": 1800,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "The Showbox|Seattle|WA"
+  },
+  {
+    "date": "2005-11-05",
+    "title": null,
+    "performerKey": "Citizen Cope",
+    "openerKeys": [],
+    "faceValue": 0,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Showbox SoDo|Seattle|WA"
+  },
+  {
+    "date": "2005-11-11",
+    "title": null,
+    "performerKey": "MC Chris",
+    "openerKeys": [],
+    "faceValue": 1250,
+    "genreKey": "Music",
+    "subGenreKey": "Hip-hop",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2005-11-23",
+    "title": null,
+    "performerKey": "Fiona Apple",
+    "openerKeys": [],
+    "faceValue": 4000,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Moore Theatre|Seattle|WA"
+  },
+  {
+    "date": "2005-11-29",
+    "title": null,
+    "performerKey": "Trey Anastasio",
+    "openerKeys": [],
+    "faceValue": 3550,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "Paramount Theatre|Seattle|WA"
+  },
+  {
+    "date": "2006-03-10",
+    "title": null,
+    "performerKey": "Sky Cries Mary",
+    "openerKeys": [],
+    "faceValue": 1000,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2006-04-20",
+    "title": null,
+    "performerKey": "Mates of State",
+    "openerKeys": [],
+    "faceValue": 1300,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2006-09-02",
+    "title": "Bumbershoot",
+    "performerKey": null,
+    "openerKeys": [],
+    "faceValue": 3000,
+    "genreKey": "Music",
+    "subGenreKey": "Festival",
+    "venueKey": "Seattle Center|Seattle|WA"
+  },
+  {
+    "date": "2006-09-04",
+    "title": "Bumbershoot",
+    "performerKey": "Kanye West",
+    "openerKeys": [],
+    "faceValue": 1,
+    "genreKey": "Music",
+    "subGenreKey": "Hip-hop",
+    "venueKey": "Memorial Stadium|Seattle|WA"
+  },
+  {
+    "date": "2006-09-18",
+    "title": null,
+    "performerKey": "Suicide Girls",
+    "openerKeys": [],
+    "faceValue": 1300,
+    "genreKey": "Dance",
+    "subGenreKey": "Burlesque",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2006-09-20",
+    "title": null,
+    "performerKey": "DJ Shadow",
+    "openerKeys": [],
+    "faceValue": 3000,
+    "genreKey": "Music",
+    "subGenreKey": "Dance",
+    "venueKey": "The Showbox|Seattle|WA"
+  },
+  {
+    "date": "2006-10-15",
+    "title": null,
+    "performerKey": "Sufjan Stevens",
+    "openerKeys": [],
+    "faceValue": 0,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Paramount Theatre|Seattle|WA"
+  },
+  {
+    "date": "2006-11-14",
+    "title": null,
+    "performerKey": "Hot Chip",
+    "openerKeys": [],
+    "faceValue": 1200,
+    "genreKey": "Music",
+    "subGenreKey": "Dance",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2006-11-29",
+    "title": null,
+    "performerKey": "Sonics vs. Orlando Magic",
+    "openerKeys": [],
+    "faceValue": 0,
+    "genreKey": "Sports",
+    "subGenreKey": "Basketball",
+    "venueKey": "Key Arena|Seattle|WA"
+  },
+  {
+    "date": "2006-12-13",
+    "title": null,
+    "performerKey": "The Nutcracker",
+    "openerKeys": [],
+    "faceValue": 1,
+    "genreKey": "Dance",
+    "subGenreKey": "Ballet",
+    "venueKey": "Pacific Northwest Ballet|Seattle|WA"
+  },
+  {
+    "date": "2006-12-21",
+    "title": null,
+    "performerKey": "Dina Martina Christmas Show",
+    "openerKeys": [],
+    "faceValue": 2000,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Rebar|Seattle|WA"
+  },
+  {
+    "date": "2007-01-27",
+    "title": null,
+    "performerKey": "Girl Talk",
+    "openerKeys": [],
+    "faceValue": 800,
+    "genreKey": "Music",
+    "subGenreKey": "Dance",
+    "venueKey": "Chop Suey|Seattle|WA"
+  },
+  {
+    "date": "2007-05-02",
+    "title": null,
+    "performerKey": "Kings of Leon",
+    "openerKeys": [],
+    "faceValue": 2450,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Moore Theatre|Seattle|WA"
+  },
+  {
+    "date": "2007-05-18",
+    "title": null,
+    "performerKey": "The Heavenly States",
+    "openerKeys": [],
+    "faceValue": 1000,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "The Crocodile|Seattle|WA"
+  },
+  {
+    "date": "2007-05-26",
+    "title": null,
+    "performerKey": "Sasquatch! Festival",
+    "openerKeys": [],
+    "faceValue": 5000,
+    "genreKey": "Music",
+    "subGenreKey": "Festival",
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "2007-05-27",
+    "title": null,
+    "performerKey": "Sasquatch! Festival",
+    "openerKeys": [],
+    "faceValue": 5000,
+    "genreKey": "Music",
+    "subGenreKey": "Festival",
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "2007-06-29",
+    "title": null,
+    "performerKey": "3 Inches of Blood",
+    "openerKeys": [],
+    "faceValue": 1200,
+    "genreKey": "Music",
+    "subGenreKey": "Metal",
+    "venueKey": "El Corazon|Seattle|WA"
+  },
+  {
+    "date": "2007-07-20",
+    "title": null,
+    "performerKey": "Wolves In The Throne Room",
+    "openerKeys": [],
+    "faceValue": 700,
+    "genreKey": "Music",
+    "subGenreKey": "Metal",
+    "venueKey": "Studio 7|Seattle|WA"
+  },
+  {
+    "date": "2007-08-04",
+    "title": null,
+    "performerKey": "Sounders",
+    "openerKeys": [],
+    "faceValue": 0,
+    "genreKey": "Sports",
+    "subGenreKey": "Soccer",
+    "venueKey": "Qwest Field|Seattle|WA"
+  },
+  {
+    "date": "2007-08-24",
+    "title": null,
+    "performerKey": "Mickey Avalon",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Music",
+    "subGenreKey": "Hip-hop",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2007-08-30",
+    "title": null,
+    "performerKey": "Seahawks",
+    "openerKeys": [],
+    "faceValue": 1,
+    "genreKey": "Sports",
+    "subGenreKey": "Football",
+    "venueKey": "CenturyLink Field|Seattle|WA"
+  },
+  {
+    "date": "2007-09-12",
+    "title": null,
+    "performerKey": "Mariners",
+    "openerKeys": [],
+    "faceValue": 3700,
+    "genreKey": "Sports",
+    "subGenreKey": "Baseball",
+    "venueKey": "Safeco Field|Seattle|WA"
+  },
+  {
+    "date": "2007-09-24",
+    "title": null,
+    "performerKey": "Arcade Fire",
+    "openerKeys": [
+      "LCD Soundsystem"
+    ],
+    "faceValue": 3950,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Hec Ed Pavilion @ UW|Seattle|WA"
+  },
+  {
+    "date": "2007-09-29",
+    "title": null,
+    "performerKey": "Clap Your Hands Say Yeah",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2007-10-25",
+    "title": null,
+    "performerKey": "High On Fire",
+    "openerKeys": [],
+    "faceValue": 1600,
+    "genreKey": "Music",
+    "subGenreKey": "Metal",
+    "venueKey": "The Crocodile|Seattle|WA"
+  },
+  {
+    "date": "2007-10-29",
+    "title": null,
+    "performerKey": "Caribou",
+    "openerKeys": [
+      "Born Ruffians"
+    ],
+    "faceValue": 1000,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2007-11-20",
+    "title": null,
+    "performerKey": "Band of Horses",
+    "openerKeys": [],
+    "faceValue": 1600,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "The Showbox|Seattle|WA"
+  },
+  {
+    "date": "2007-12-18",
+    "title": null,
+    "performerKey": "Queens of the Stone Age",
+    "openerKeys": [],
+    "faceValue": 2700,
+    "genreKey": "Music",
+    "subGenreKey": "Rock",
+    "venueKey": "Paramount Theatre|Seattle|WA"
+  },
+  {
+    "date": "2008-02-04",
+    "title": null,
+    "performerKey": "3 Inches of Blood",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Music",
+    "subGenreKey": "Metal",
+    "venueKey": "El Corazon|Seattle|WA"
+  },
+  {
+    "date": "2008-02-09",
+    "title": null,
+    "performerKey": "KNDD Presents Lonely Hearts Valentine's Party",
+    "openerKeys": [],
+    "faceValue": 0,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2008-04-22",
+    "title": null,
+    "performerKey": "The Sword",
+    "openerKeys": [],
+    "faceValue": 1000,
+    "genreKey": "Music",
+    "subGenreKey": "Metal",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2008-05-03",
+    "title": null,
+    "performerKey": "Devotchka",
+    "openerKeys": [],
+    "faceValue": 1900,
+    "genreKey": "Music",
+    "subGenreKey": "World",
+    "venueKey": "Showbox SoDo|Seattle|WA"
+  },
+  {
+    "date": "2008-05-15",
+    "title": null,
+    "performerKey": "The Kills",
+    "openerKeys": [],
+    "faceValue": 1200,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2008-06-05",
+    "title": null,
+    "performerKey": "Erykah Badu",
+    "openerKeys": [
+      "The Roots"
+    ],
+    "faceValue": 3850,
+    "genreKey": "Music",
+    "subGenreKey": "R&B",
+    "venueKey": "Marymoor Park|Redmond|WA"
+  },
+  {
+    "date": "2008-07-25",
+    "title": null,
+    "performerKey": "Capitol Hill Block Party",
+    "openerKeys": [],
+    "faceValue": 1700,
+    "genreKey": "Music",
+    "subGenreKey": "Festival",
+    "venueKey": "Capitol Hill - Pike/Pine Corridor|Seattle|WA"
+  },
+  {
+    "date": "2008-07-26",
+    "title": null,
+    "performerKey": "Capitol Hill Block Party",
+    "openerKeys": [],
+    "faceValue": 1700,
+    "genreKey": "Music",
+    "subGenreKey": "Festival",
+    "venueKey": "Capitol Hill - Pike/Pine Corridor|Seattle|WA"
+  },
+  {
+    "date": "2008-09-06",
+    "title": null,
+    "performerKey": "TV On The Radio",
+    "openerKeys": [],
+    "faceValue": 1150,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Showbox SoDo|Seattle|WA"
+  },
+  {
+    "date": "2008-11-12",
+    "title": null,
+    "performerKey": "Digable Planets",
+    "openerKeys": [],
+    "faceValue": 1800,
+    "genreKey": "Music",
+    "subGenreKey": "Hip-hop",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2009-01-07",
+    "title": null,
+    "performerKey": "Rebirth Brass Band",
+    "openerKeys": [],
+    "faceValue": 1700,
+    "genreKey": "Music",
+    "subGenreKey": "Jazz",
+    "venueKey": "Tractor Tavern|Seattle|WA"
+  },
+  {
+    "date": "2009-01-12",
+    "title": null,
+    "performerKey": "Tim and Eric Awesome Show Great Job! Tour",
+    "openerKeys": [],
+    "faceValue": 2500,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Showbox SoDo|Seattle|WA"
+  },
+  {
+    "date": "2009-04-22",
+    "title": null,
+    "performerKey": "Mastodon",
+    "openerKeys": [],
+    "faceValue": 2000,
+    "genreKey": "Music",
+    "subGenreKey": "Metal",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2009-04-28",
+    "title": null,
+    "performerKey": "Yann Tiersen",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2009-05-23",
+    "title": null,
+    "performerKey": "Sasquatch! Festival",
+    "openerKeys": [],
+    "faceValue": 5650,
+    "genreKey": "Music",
+    "subGenreKey": "Festival",
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "2009-05-24",
+    "title": null,
+    "performerKey": "Big Business",
+    "openerKeys": [],
+    "faceValue": 1300,
+    "genreKey": "Music",
+    "subGenreKey": "Metal",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2009-05-29",
+    "title": null,
+    "performerKey": "U.S.E. (United States of Electronica)",
+    "openerKeys": [],
+    "faceValue": 1800,
+    "genreKey": "Music",
+    "subGenreKey": "Dance",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2009-06-18",
+    "title": null,
+    "performerKey": "The Helio Sequence",
+    "openerKeys": [],
+    "faceValue": 0,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2009-07-10",
+    "title": null,
+    "performerKey": "Reverend Horton Heat",
+    "openerKeys": [],
+    "faceValue": 2200,
+    "genreKey": "Music",
+    "subGenreKey": "Rockabilly",
+    "venueKey": "The Showbox|Seattle|WA"
+  },
+  {
+    "date": "2009-08-05",
+    "title": null,
+    "performerKey": "Phish",
+    "openerKeys": [],
+    "faceValue": 6235,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "Shoreline Amphitheatre|San Francisco|CA"
+  },
+  {
+    "date": "2009-08-07",
+    "title": null,
+    "performerKey": "Phish",
+    "openerKeys": [],
+    "faceValue": 4950,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "2009-08-08",
+    "title": null,
+    "performerKey": "Phish",
+    "openerKeys": [],
+    "faceValue": 4950,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "2009-09-18",
+    "title": null,
+    "performerKey": "Girl Talk",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Music",
+    "subGenreKey": "Dance",
+    "venueKey": "Showbox SoDo|Seattle|WA"
+  },
+  {
+    "date": "2009-12-28",
+    "title": null,
+    "performerKey": "Squirrel Nut Zippers",
+    "openerKeys": [],
+    "faceValue": 3000,
+    "genreKey": "Music",
+    "subGenreKey": "Jazz",
+    "venueKey": "The Triple Door|Seattle|WA"
+  },
+  {
+    "date": "2010-04-16",
+    "title": null,
+    "performerKey": "Brian Regan",
+    "openerKeys": [],
+    "faceValue": 3950,
+    "genreKey": "Comedy",
+    "subGenreKey": "Standup",
+    "venueKey": "Paramount Theatre|Seattle|WA"
+  },
+  {
+    "date": "2010-04-18",
+    "title": null,
+    "performerKey": "Conan O'Brian: The Legally Prohibited from Being Funny on Television Tour",
+    "openerKeys": [],
+    "faceValue": 5750,
+    "genreKey": "Comedy",
+    "subGenreKey": "Variety",
+    "venueKey": "McCaw Hall|Seattle|WA"
+  },
+  {
+    "date": "2010-05-21",
+    "title": null,
+    "performerKey": "Adam Carolla",
+    "openerKeys": [],
+    "faceValue": 3500,
+    "genreKey": "Comedy",
+    "subGenreKey": "Standup",
+    "venueKey": "Laugh's Comedy Spot|Kirkland|WA"
+  },
+  {
+    "date": "2010-05-30",
+    "title": null,
+    "performerKey": "Band of Horses",
+    "openerKeys": [
+      "She & Him"
+    ],
+    "faceValue": 3500,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Les Schwab Amphitheater|Bend|OR"
+  },
+  {
+    "date": "2010-08-12",
+    "title": null,
+    "performerKey": "Doug Benson: Trifecta Tour",
+    "openerKeys": [],
+    "faceValue": 2500,
+    "genreKey": "Comedy",
+    "subGenreKey": "Standup",
+    "venueKey": "The Parlor Live|Bellevue|WA"
+  },
+  {
+    "date": "2010-08-21",
+    "title": null,
+    "performerKey": "Lady Gaga",
+    "openerKeys": [],
+    "faceValue": 8500,
+    "genreKey": "Music",
+    "subGenreKey": "Pop",
+    "venueKey": "Tacoma Dome|Tacoma|WA"
+  },
+  {
+    "date": "2010-09-22",
+    "title": null,
+    "performerKey": "Hall & Oates",
+    "openerKeys": [],
+    "faceValue": 3000,
+    "genreKey": "Music",
+    "subGenreKey": "Pop",
+    "venueKey": "Puyallup Fair|Puyallup|WA"
+  },
+  {
+    "date": "2010-10-17",
+    "title": null,
+    "performerKey": "M.I.A.",
+    "openerKeys": [],
+    "faceValue": 2950,
+    "genreKey": "Music",
+    "subGenreKey": "Electronic",
+    "venueKey": "The Showbox|Seattle|WA"
+  },
+  {
+    "date": "2010-10-23",
+    "title": null,
+    "performerKey": "Big Boi",
+    "openerKeys": [],
+    "faceValue": 2950,
+    "genreKey": "Music",
+    "subGenreKey": "Hip-hop",
+    "venueKey": "Showbox SoDo|Seattle|WA"
+  },
+  {
+    "date": "2010-11-02",
+    "title": null,
+    "performerKey": "Gorillaz",
+    "openerKeys": [],
+    "faceValue": 6400,
+    "genreKey": "Music",
+    "subGenreKey": "Electronic",
+    "venueKey": "Key Arena|Seattle|WA"
+  },
+  {
+    "date": "2010-11-30",
+    "title": null,
+    "performerKey": "Passion Pit",
+    "openerKeys": [],
+    "faceValue": 2750,
+    "genreKey": "Music",
+    "subGenreKey": "Pop",
+    "venueKey": "Moore Theatre|Seattle|WA"
+  },
+  {
+    "date": "2011-02-11",
+    "title": null,
+    "performerKey": "David Alan Grier",
+    "openerKeys": [],
+    "faceValue": 2500,
+    "genreKey": "Comedy",
+    "subGenreKey": "Standup",
+    "venueKey": "The Parlor Live|Bellevue|WA"
+  },
+  {
+    "date": "2011-03-25",
+    "title": null,
+    "performerKey": "Sounders vs. Houston Dynamo",
+    "openerKeys": [],
+    "faceValue": 1,
+    "genreKey": "Sports",
+    "subGenreKey": "Soccer",
+    "venueKey": "Qwest Field|Seattle|WA"
+  },
+  {
+    "date": "2011-05-10",
+    "title": null,
+    "performerKey": "Peter Bjorn & John",
+    "openerKeys": [],
+    "faceValue": 2000,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2011-05-11",
+    "title": null,
+    "performerKey": "Of Montreal",
+    "openerKeys": [],
+    "faceValue": 2350,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "The Showbox|Seattle|WA"
+  },
+  {
+    "date": "2011-05-19",
+    "title": null,
+    "performerKey": "James Blake",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Music",
+    "subGenreKey": "Electronic",
+    "venueKey": "Tractor Tavern|Seattle|WA"
+  },
+  {
+    "date": "2011-08-05",
+    "title": null,
+    "performerKey": "Phish",
+    "openerKeys": [],
+    "faceValue": 5000,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "2011-08-06",
+    "title": null,
+    "performerKey": "Phish",
+    "openerKeys": [],
+    "faceValue": 5000,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "2011-08-20",
+    "title": null,
+    "performerKey": "Chicago Cubs vs. St Louis Cardinals",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Sports",
+    "subGenreKey": "Baseball",
+    "venueKey": "Wrigley Field|Chicago|IL"
+  },
+  {
+    "date": "2011-08-21",
+    "title": null,
+    "performerKey": "Chicago Cubs vs. St Louis Cardinals",
+    "openerKeys": [],
+    "faceValue": 2700,
+    "genreKey": "Sports",
+    "subGenreKey": "Baseball",
+    "venueKey": "Wrigley Field|Chicago|IL"
+  },
+  {
+    "date": "2011-09-03",
+    "title": "Burning Man",
+    "performerKey": null,
+    "openerKeys": [],
+    "faceValue": 32000,
+    "genreKey": "Festival",
+    "subGenreKey": null,
+    "venueKey": "Black Rock City|Gerlach|NV"
+  },
+  {
+    "date": "2011-10-23",
+    "title": null,
+    "performerKey": "Portishead",
+    "openerKeys": [],
+    "faceValue": 4800,
+    "genreKey": "Music",
+    "subGenreKey": "Trip-hop",
+    "venueKey": "WaMu Theatre|Seattle|WA"
+  },
+  {
+    "date": "2011-10-27",
+    "title": null,
+    "performerKey": "Spank Rock",
+    "openerKeys": [],
+    "faceValue": 1800,
+    "genreKey": "Music",
+    "subGenreKey": "Hip-hop",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2011-10-28",
+    "title": null,
+    "performerKey": "Doug Benson",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Comedy",
+    "subGenreKey": "Standup",
+    "venueKey": "Neptune Theatre|Seattle|WA"
+  },
+  {
+    "date": "2012-02-10",
+    "title": null,
+    "performerKey": "Everything Is Terrible: Doggie Woggiez! Poochie Woochie!",
+    "openerKeys": [],
+    "faceValue": 1,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Central Cinema|Seattle|WA"
+  },
+  {
+    "date": "2012-02-20",
+    "title": null,
+    "performerKey": "Die Antwoord",
+    "openerKeys": [],
+    "faceValue": 2000,
+    "genreKey": "Music",
+    "subGenreKey": "Dance",
+    "venueKey": "The Showbox|Seattle|WA"
+  },
+  {
+    "date": "2012-04-18",
+    "title": null,
+    "performerKey": "Laff Hole! F. James Adomian",
+    "openerKeys": [],
+    "faceValue": 1000,
+    "genreKey": "Comedy",
+    "subGenreKey": "Standup",
+    "venueKey": "Chop Suey|Seattle|WA"
+  },
+  {
+    "date": "2012-04-19",
+    "title": null,
+    "performerKey": "Perfume Genius",
+    "openerKeys": [],
+    "faceValue": 1000,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "The Crocodile|Seattle|WA"
+  },
+  {
+    "date": "2012-04-28",
+    "title": null,
+    "performerKey": "Jon Benjamin Has A Tour",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Barboza|Seattle|WA"
+  },
+  {
+    "date": "2012-04-28",
+    "title": null,
+    "performerKey": "Jon Benjamin Has a Tour",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Comedy",
+    "subGenreKey": "Variety",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2012-05-02",
+    "title": null,
+    "performerKey": "Washed Out",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Music",
+    "subGenreKey": "Electronic",
+    "venueKey": "Neptune Theatre|Seattle|WA"
+  },
+  {
+    "date": "2012-06-02",
+    "title": null,
+    "performerKey": "LMFAO",
+    "openerKeys": [],
+    "faceValue": 6200,
+    "genreKey": "Music",
+    "subGenreKey": "Electronic",
+    "venueKey": "Key Arena|Seattle|WA"
+  },
+  {
+    "date": "2012-06-15",
+    "title": null,
+    "performerKey": "3 Inches of Blood",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Music",
+    "subGenreKey": "Metal",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2012-06-15",
+    "title": null,
+    "performerKey": "Municipal Waste",
+    "openerKeys": [
+      "3 Inches of Blood",
+      "Black Tusk"
+    ],
+    "faceValue": 1500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2012-08-01",
+    "title": null,
+    "performerKey": "Comedy Bang! Bang! Live!",
+    "openerKeys": [],
+    "faceValue": 1900,
+    "genreKey": "Comedy",
+    "subGenreKey": "Standup",
+    "venueKey": "Neptune Theatre|Seattle|WA"
+  },
+  {
+    "date": "2012-08-30",
+    "title": null,
+    "performerKey": "Yeasayer",
+    "openerKeys": [],
+    "faceValue": 2900,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Neptune Theatre|Seattle|WA"
+  },
+  {
+    "date": "2012-09-15",
+    "title": null,
+    "performerKey": "Edward Sharpe & The Magnetic Zeros",
+    "openerKeys": [],
+    "faceValue": 3500,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Marymoor Park|Redmond|WA"
+  },
+  {
+    "date": "2012-10-05",
+    "title": null,
+    "performerKey": "Grizzly Bear",
+    "openerKeys": [],
+    "faceValue": 2900,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Paramount Theatre|Seattle|WA"
+  },
+  {
+    "date": "2012-11-03",
+    "title": null,
+    "performerKey": "Chelsea Peretti",
+    "openerKeys": [],
+    "faceValue": 2752,
+    "genreKey": "Comedy",
+    "subGenreKey": "Standup",
+    "venueKey": "Tacoma Comedy Club|Tacoma|WA"
+  },
+  {
+    "date": "2012-12-08",
+    "title": null,
+    "performerKey": "Sufjan Stevens",
+    "openerKeys": [],
+    "faceValue": 1900,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Neptune Theatre|Seattle|WA"
+  },
+  {
+    "date": "2012-12-13",
+    "title": null,
+    "performerKey": "Everything Is Terrible: Holiday Tour 2012",
+    "openerKeys": [],
+    "faceValue": 1,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Central Cinema|Seattle|WA"
+  },
+  {
+    "date": "2013-04-12",
+    "title": null,
+    "performerKey": "Jesse Cook",
+    "openerKeys": [],
+    "faceValue": 3700,
+    "genreKey": "Music",
+    "subGenreKey": "World",
+    "venueKey": "Moore Theatre|Seattle|WA"
+  },
+  {
+    "date": "2013-04-20",
+    "title": null,
+    "performerKey": "AMA Supercross",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Sports",
+    "subGenreKey": "Motorcycle",
+    "venueKey": "CenturyLink Field|Seattle|WA"
+  },
+  {
+    "date": "2013-07-26",
+    "title": null,
+    "performerKey": "Phish",
+    "openerKeys": [],
+    "faceValue": 5000,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "2013-07-27",
+    "title": null,
+    "performerKey": "Phish",
+    "openerKeys": [],
+    "faceValue": 5000,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "2013-09-02",
+    "title": "Bumbershoot",
+    "performerKey": null,
+    "openerKeys": [],
+    "faceValue": 6200,
+    "genreKey": "Music",
+    "subGenreKey": "Festival",
+    "venueKey": "Seattle Center|Seattle|WA"
+  },
+  {
+    "date": "2013-09-12",
+    "title": null,
+    "performerKey": "Everything Is Terrible Live!",
+    "openerKeys": [],
+    "faceValue": 1,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Central Cinema|Seattle|WA"
+  },
+  {
+    "date": "2013-09-18",
+    "title": null,
+    "performerKey": "Neko Case",
+    "openerKeys": [],
+    "faceValue": 3325,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Paramount Theatre|Seattle|WA"
+  },
+  {
+    "date": "2013-10-02",
+    "title": null,
+    "performerKey": "Comedy Bang! Bang! Live!",
+    "openerKeys": [],
+    "faceValue": 2350,
+    "genreKey": "Comedy",
+    "subGenreKey": "Standup",
+    "venueKey": "Neptune Theatre|Seattle|WA"
+  },
+  {
+    "date": "2013-10-04",
+    "title": null,
+    "performerKey": "Dave Chappelle",
+    "openerKeys": [],
+    "faceValue": 5500,
+    "genreKey": "Comedy",
+    "subGenreKey": "Standup",
+    "venueKey": "Moore Theatre|Seattle|WA"
+  },
+  {
+    "date": "2013-10-22",
+    "title": null,
+    "performerKey": "Suicide Girls Tour",
+    "openerKeys": [],
+    "faceValue": 2000,
+    "genreKey": "Dance",
+    "subGenreKey": "Burlesque",
+    "venueKey": "El Corazon|Seattle|WA"
+  },
+  {
+    "date": "2013-10-22",
+    "title": "Blackheart Burlesque",
+    "performerKey": "SuicideGirls",
+    "openerKeys": [],
+    "faceValue": 2000,
+    "genreKey": "Theater",
+    "subGenreKey": null,
+    "venueKey": "El Corazon|Seattle|WA"
+  },
+  {
+    "date": "2013-11-04",
+    "title": null,
+    "performerKey": "Mazzy Star",
+    "openerKeys": [],
+    "faceValue": 3350,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Neptune Theatre|Seattle|WA"
+  },
+  {
+    "date": "2013-12-14",
+    "title": null,
+    "performerKey": "Rufus Wainwright",
+    "openerKeys": [],
+    "faceValue": 2500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Moore Theatre|Seattle|WA"
+  },
+  {
+    "date": "2014-01-17",
+    "title": null,
+    "performerKey": "Justin Timberlake",
+    "openerKeys": [],
+    "faceValue": 4500,
+    "genreKey": "Music",
+    "subGenreKey": "Pop",
+    "venueKey": "Key Arena|Seattle|WA"
+  },
+  {
+    "date": "2014-03-12",
+    "title": null,
+    "performerKey": "T-Pain",
+    "openerKeys": [],
+    "faceValue": 3000,
+    "genreKey": "Music",
+    "subGenreKey": "Hip-hop",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2014-04-26",
+    "title": null,
+    "performerKey": "Zach Deputy",
+    "openerKeys": [
+      "Tubaluba"
+    ],
+    "faceValue": 1000,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Nectar Lounge|Seattle|WA"
+  },
+  {
+    "date": "2014-05-02",
+    "title": null,
+    "performerKey": "C Average",
+    "openerKeys": [],
+    "faceValue": 1300,
+    "genreKey": "Music",
+    "subGenreKey": "Metal",
+    "venueKey": "Highline|Seattle|WA"
+  },
+  {
+    "date": "2014-05-10",
+    "title": null,
+    "performerKey": "Childish Gambino",
+    "openerKeys": [],
+    "faceValue": 3125,
+    "genreKey": "Music",
+    "subGenreKey": "Hip-hop",
+    "venueKey": "Paramount Theatre|Seattle|WA"
+  },
+  {
+    "date": "2014-05-14",
+    "title": null,
+    "performerKey": "Mariners vs. Tampa Bay Rays",
+    "openerKeys": [],
+    "faceValue": 700,
+    "genreKey": "Sports",
+    "subGenreKey": "Baseball",
+    "venueKey": "Safeco Field|Seattle|WA"
+  },
+  {
+    "date": "2014-06-10",
+    "title": null,
+    "performerKey": "Jungle",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Music",
+    "subGenreKey": "Dance",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2014-06-26",
+    "title": null,
+    "performerKey": "Robyn + Royksopp",
+    "openerKeys": [],
+    "faceValue": 3950,
+    "genreKey": "Music",
+    "subGenreKey": "Dance",
+    "venueKey": "Marymoor Park|Redmond|WA"
+  },
+  {
+    "date": "2014-07-09",
+    "title": null,
+    "performerKey": "The Antlers",
+    "openerKeys": [],
+    "faceValue": 1800,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2014-08-22",
+    "title": null,
+    "performerKey": "Seahawks",
+    "openerKeys": [],
+    "faceValue": 5500,
+    "genreKey": "Sports",
+    "subGenreKey": "Football",
+    "venueKey": "CenturyLink Field|Seattle|WA"
+  },
+  {
+    "date": "2014-10-18",
+    "title": null,
+    "performerKey": "Phish",
+    "openerKeys": [],
+    "faceValue": 6000,
+    "genreKey": "Music",
+    "subGenreKey": "Jam",
+    "venueKey": "Key Arena|Seattle|WA"
+  },
+  {
+    "date": "2014-11-19",
+    "title": null,
+    "performerKey": "Death From Above 1979",
+    "openerKeys": [],
+    "faceValue": 2850,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2014-12-12",
+    "title": null,
+    "performerKey": "Critters Buggin",
+    "openerKeys": [
+      "Master Musicians of Bukkake"
+    ],
+    "faceValue": 1500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Nectar Lounge|Seattle|WA"
+  },
+  {
+    "date": "2015-05-08",
+    "title": null,
+    "performerKey": "Griz",
+    "openerKeys": [],
+    "faceValue": 2500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Showbox SoDo|Seattle|WA"
+  },
+  {
+    "date": "2015-05-08",
+    "title": null,
+    "performerKey": "Seattle Mariners vs. Oakland Athletics",
+    "openerKeys": [],
+    "faceValue": 3000,
+    "genreKey": "Sports",
+    "subGenreKey": "Baseball",
+    "venueKey": "Safeco Field|Seattle|WA"
+  },
+  {
+    "date": "2015-09-23",
+    "title": "Revenge of the Naughty Farmer",
+    "performerKey": "Turquoise Jeep",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Tractor Tavern|Seattle|WA"
+  },
+  {
+    "date": "2015-10-24",
+    "title": null,
+    "performerKey": "Sky Cries Mary",
+    "openerKeys": [],
+    "faceValue": 2100,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Neumos|Seattle|WA"
+  },
+  {
+    "date": "2016-02-25",
+    "title": null,
+    "performerKey": "Michael Che",
+    "openerKeys": [],
+    "faceValue": 2000,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Columbia City Theater|Seattle|WA"
+  },
+  {
+    "date": "2016-03-03",
+    "title": null,
+    "performerKey": "Shabazz Palaces",
+    "openerKeys": [],
+    "faceValue": 1000,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Tractor Tavern|Seattle|WA"
+  },
+  {
+    "date": "2016-04-22",
+    "title": null,
+    "performerKey": "Black Mountain",
+    "openerKeys": [],
+    "faceValue": 1800,
+    "genreKey": "Music",
+    "subGenreKey": "Alternative",
+    "venueKey": "Tractor Tavern|Seattle|WA"
+  },
+  {
+    "date": "2016-06-08",
+    "title": null,
+    "performerKey": "At The Drive-In",
+    "openerKeys": [],
+    "faceValue": 3950,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Showbox SoDo|Seattle|WA"
+  },
+  {
+    "date": "2016-07-27",
+    "title": null,
+    "performerKey": "Weird Al Yankovic",
+    "openerKeys": [],
+    "faceValue": 3500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Woodland Park Zoo|Seattle|WA"
+  },
+  {
+    "date": "2016-09-29",
+    "title": "Nostalgic For The Present Tour",
+    "performerKey": "Sia",
+    "openerKeys": [],
+    "faceValue": 13500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Key Arena|Seattle|WA"
+  },
+  {
+    "date": "2016-10-17",
+    "title": null,
+    "performerKey": "Purity Ring",
+    "openerKeys": [],
+    "faceValue": 2775,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Showbox SoDo|Seattle|WA"
+  },
+  {
+    "date": "2016-11-30",
+    "title": null,
+    "performerKey": "The Dwarves",
+    "openerKeys": [],
+    "faceValue": 1400,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Highline|Seattle|WA"
+  },
+  {
+    "date": "2017-03-16",
+    "title": null,
+    "performerKey": "Big Business",
+    "openerKeys": [
+      "Helms Alee"
+    ],
+    "faceValue": 3378,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "The Crocodile|Seattle|WA"
+  },
+  {
+    "date": "2017-03-21",
+    "title": null,
+    "performerKey": "Xenia Rubinos",
+    "openerKeys": [],
+    "faceValue": 1000,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Barboza|Seattle|WA"
+  },
+  {
+    "date": "2017-03-31",
+    "title": "Fine Avec Me",
+    "performerKey": "Dina Martina",
+    "openerKeys": [],
+    "faceValue": 2200,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Rebar|Seattle|WA"
+  },
+  {
+    "date": "2017-04-08",
+    "title": null,
+    "performerKey": "Radiohead",
+    "openerKeys": [],
+    "faceValue": 10500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Key Arena|Seattle|WA"
+  },
+  {
+    "date": "2017-04-28",
+    "title": null,
+    "performerKey": "Vaudeville Etiquette",
+    "openerKeys": [
+      "Bart Budwig",
+      "Marshall Mclean Band"
+    ],
+    "faceValue": 1000,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Sunset Tavern|Seattle|WA"
+  },
+  {
+    "date": "2017-04-30",
+    "title": "\"The Real Deal\" Backyard BBQ Starring Texas Legends",
+    "performerKey": "Reverend Horton Heat",
+    "openerKeys": [
+      "Dale Watson"
+    ],
+    "faceValue": 6500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Slim's Last Chance Saloon|Seattle|WA"
+  },
+  {
+    "date": "2017-05-06",
+    "title": null,
+    "performerKey": "Point Break Live!",
+    "openerKeys": [],
+    "faceValue": 4000,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "The Showbox|Seattle|WA"
+  },
+  {
+    "date": "2017-06-09",
+    "title": null,
+    "performerKey": "Supersuckers",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Tractor Tavern|Seattle|WA"
+  },
+  {
+    "date": "2017-08-08",
+    "title": null,
+    "performerKey": "Bomba Estereo",
+    "openerKeys": [],
+    "faceValue": 2750,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "The Showbox|Seattle|WA"
+  },
+  {
+    "date": "2017-09-05",
+    "title": null,
+    "performerKey": "Nathan For You - Sneak Peak And Q&A",
+    "openerKeys": [],
+    "faceValue": 9500,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Neptune Theatre|Seattle|WA"
+  },
+  {
+    "date": "2017-09-08",
+    "title": null,
+    "performerKey": "Reverend Horton Heat",
+    "openerKeys": [],
+    "faceValue": 2500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "The Showbox|Seattle|WA"
+  },
+  {
+    "date": "2017-10-04",
+    "title": null,
+    "performerKey": "The Maldives",
+    "openerKeys": [],
+    "faceValue": 0,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Nectar Lounge|Seattle|WA"
+  },
+  {
+    "date": "2017-10-06",
+    "title": null,
+    "performerKey": "Vaudeville Etiquette",
+    "openerKeys": [
+      "Cedar Teeth",
+      "Stucky Jackson and the Boys"
+    ],
+    "faceValue": 1200,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Sunset Tavern|Seattle|WA"
+  },
+  {
+    "date": "2017-10-07",
+    "title": null,
+    "performerKey": "The Moondoggies",
+    "openerKeys": [
+      "LAKE",
+      "Corespondents"
+    ],
+    "faceValue": 3025,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Tractor Tavern|Seattle|WA"
+  },
+  {
+    "date": "2017-10-09",
+    "title": null,
+    "performerKey": "Colter Wall",
+    "openerKeys": [
+      "Ian Noe"
+    ],
+    "faceValue": 2625,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Tractor Tavern|Seattle|WA"
+  },
+  {
+    "date": "2017-11-12",
+    "title": null,
+    "performerKey": "Dwarves",
+    "openerKeys": [
+      "The Accused AD",
+      "Acid Teeth",
+      "Raw Dogs"
+    ],
+    "faceValue": 1300,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Funhouse|Seattle|WA"
+  },
+  {
+    "date": "2017-11-14",
+    "title": null,
+    "performerKey": "Salon of Shame #79",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Theatre Off Jackson|Seattle|WA"
+  },
+  {
+    "date": "2017-11-24",
+    "title": null,
+    "performerKey": "Seattle's Tribute To The Last Waltz",
+    "openerKeys": [],
+    "faceValue": 2500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Neptune Theatre|Seattle|WA"
+  },
+  {
+    "date": "2017-12-01",
+    "title": "Christmas Show 2017",
+    "performerKey": "Dina Martina",
+    "openerKeys": [],
+    "faceValue": 2500,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Rebar|Seattle|WA"
+  },
+  {
+    "date": "2017-12-07",
+    "title": null,
+    "performerKey": "Dan Rather",
+    "openerKeys": [],
+    "faceValue": 2300,
+    "genreKey": "Literary",
+    "subGenreKey": "Book Signing",
+    "venueKey": "University Book Store|Seattle|WA"
+  },
+  {
+    "date": "2017-12-13",
+    "title": "Kid Gorgeous",
+    "performerKey": "John Mulaney",
+    "openerKeys": [],
+    "faceValue": 4000,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Paramount Theatre|Seattle|WA"
+  },
+  {
+    "date": "2017-12-15",
+    "title": null,
+    "performerKey": "Scott Bradlee's Postmodern Jukebox",
+    "openerKeys": [],
+    "faceValue": 11000,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Paramount Theatre|Seattle|WA"
+  },
+  {
+    "date": "2018-01-28",
+    "title": null,
+    "performerKey": "Bon Iver",
+    "openerKeys": [],
+    "faceValue": 8500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Pepsi Center WTC|México|DF"
+  },
+  {
+    "date": "2018-04-21",
+    "title": null,
+    "performerKey": "Wyclef Jean",
+    "openerKeys": [],
+    "faceValue": 3400,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "The Showbox|Seattle|WA"
+  },
+  {
+    "date": "2018-04-23",
+    "title": null,
+    "performerKey": "Twin Shadow",
+    "openerKeys": [],
+    "faceValue": 2500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "The Crocodile|Seattle|WA"
+  },
+  {
+    "date": "2018-04-26",
+    "title": null,
+    "performerKey": "Lapalux",
+    "openerKeys": [
+      "FKL",
+      "Raica"
+    ],
+    "faceValue": 1500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "The Crocodile|Seattle|WA"
+  },
+  {
+    "date": "2018-05-07",
+    "title": null,
+    "performerKey": "Born Ruffians",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Barboza|Seattle|WA"
+  },
+  {
+    "date": "2018-05-31",
+    "title": null,
+    "performerKey": "Puddles Pity Party",
+    "openerKeys": [],
+    "faceValue": 3500,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "The Showbox|Seattle|WA"
+  },
+  {
+    "date": "2018-06-03",
+    "title": null,
+    "performerKey": "Godspeed You! Black Emperor",
+    "openerKeys": [],
+    "faceValue": 3000,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Neptune Theatre|Seattle|WA"
+  },
+  {
+    "date": "2018-07-11",
+    "title": null,
+    "performerKey": "Sparta",
+    "openerKeys": [],
+    "faceValue": 1600,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "The Crocodile|Seattle|WA"
+  },
+  {
+    "date": "2018-08-10",
+    "title": null,
+    "performerKey": "Pearl Jam",
+    "openerKeys": [],
+    "faceValue": 12000,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Safeco Field|Seattle|WA"
+  },
+  {
+    "date": "2018-12-09",
+    "title": null,
+    "performerKey": "Indianapolis Colts at Houston Texans",
+    "openerKeys": [],
+    "faceValue": 8107,
+    "genreKey": "Sports",
+    "subGenreKey": "Football",
+    "venueKey": "NRG Stadium|Houston|TX"
+  },
+  {
+    "date": "2019-01-05",
+    "title": null,
+    "performerKey": "Seattle Seahawks at Dallas Cowboys",
+    "openerKeys": [],
+    "faceValue": 9300,
+    "genreKey": "Sports",
+    "subGenreKey": "Football",
+    "venueKey": "AT&T Stadium|Arlington|TX"
+  },
+  {
+    "date": "2019-01-12",
+    "title": null,
+    "performerKey": "The Murder City Devils",
+    "openerKeys": [],
+    "faceValue": 2765,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Mohawk|Austin|TX"
+  },
+  {
+    "date": "2019-01-23",
+    "title": null,
+    "performerKey": "Built To Spill",
+    "openerKeys": [
+      "XETAS"
+    ],
+    "faceValue": 3039,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Antone's Nightclub|Austin|TX"
+  },
+  {
+    "date": "2019-01-30",
+    "title": null,
+    "performerKey": "High On Fire",
+    "openerKeys": [
+      "Toke",
+      "Year of the Cobra"
+    ],
+    "faceValue": 2425,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Barracuda|Austin|TX"
+  },
+  {
+    "date": "2019-01-31",
+    "title": null,
+    "performerKey": "Waterbed Comedy Party 2019",
+    "openerKeys": [],
+    "faceValue": 500,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Spider House Ballroom|Austin|TX"
+  },
+  {
+    "date": "2019-02-02",
+    "title": null,
+    "performerKey": "DeVotchKa",
+    "openerKeys": [
+      "Neyla Pekarek"
+    ],
+    "faceValue": 2300,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Scoot Inn|Austin|TX"
+  },
+  {
+    "date": "2019-02-07",
+    "title": "Creme de la Dregs",
+    "performerKey": "Dina Martina",
+    "openerKeys": [],
+    "faceValue": 2000,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "The North Door|Austin|TX"
+  },
+  {
+    "date": "2019-03-01",
+    "title": "30th Anniversary The Big Show Tour",
+    "performerKey": "Supersuckers",
+    "openerKeys": [],
+    "faceValue": 1500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "The Parish|Austin|TX"
+  },
+  {
+    "date": "2019-03-20",
+    "title": null,
+    "performerKey": "Pentagram",
+    "openerKeys": [],
+    "faceValue": 2901,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Come and Take It Live|Austin|TX"
+  },
+  {
+    "date": "2019-03-22",
+    "title": null,
+    "performerKey": "Puddles Pity Party",
+    "openerKeys": [],
+    "faceValue": 4500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Paramount Theatre|Austin|TX"
+  },
+  {
+    "date": "2019-04-03",
+    "title": null,
+    "performerKey": "PROF",
+    "openerKeys": [],
+    "faceValue": 1300,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Antone's Nightclub|Austin|TX"
+  },
+  {
+    "date": "2019-04-12",
+    "title": null,
+    "performerKey": "The Handbuilt Motorcycle Show 2019",
+    "openerKeys": [],
+    "faceValue": 1800,
+    "genreKey": "Festival",
+    "subGenreKey": null,
+    "venueKey": "Revival Cycles|Austin|TX"
+  },
+  {
+    "date": "2019-04-14",
+    "title": null,
+    "performerKey": "MotoGP Red Bull Grand Prix of The Americas",
+    "openerKeys": [],
+    "faceValue": 9444,
+    "genreKey": "Sports",
+    "subGenreKey": "Racing",
+    "venueKey": "Circuit of The Americas|Austin|TX"
+  },
+  {
+    "date": "2019-04-24",
+    "title": null,
+    "performerKey": "Moontower Comedy Festival 2019",
+    "openerKeys": [],
+    "faceValue": 9900,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "The Paramount & Stateside Theatres|Austin|TX"
+  },
+  {
+    "date": "2019-05-07",
+    "title": null,
+    "performerKey": "Dave Chappelle",
+    "openerKeys": [],
+    "faceValue": 10350,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "The Townsend|Austin|TX"
+  },
+  {
+    "date": "2019-06-27",
+    "title": null,
+    "performerKey": "Theo Von",
+    "openerKeys": [],
+    "faceValue": 3300,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Paramount Theatre|Austin|TX"
+  },
+  {
+    "date": "2019-07-12",
+    "title": null,
+    "performerKey": "Amyl and the Sniffers",
+    "openerKeys": [],
+    "faceValue": 2044,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Barracuda|Austin|TX"
+  },
+  {
+    "date": "2019-08-21",
+    "title": "Flynt Flossy",
+    "performerKey": "Turquoise Jeep",
+    "openerKeys": [],
+    "faceValue": 1897,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Hotel Vegas|Austin|TX"
+  },
+  {
+    "date": "2019-10-26",
+    "title": null,
+    "performerKey": "Oh Sees",
+    "openerKeys": [
+      "Prettiest Eyes",
+      "Nolan Potter's Nightmare Band"
+    ],
+    "faceValue": 2500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Hotel Vegas|Austin|TX"
+  },
+  {
+    "date": "2019-11-07",
+    "title": null,
+    "performerKey": "High On Fire",
+    "openerKeys": [
+      "Power Trip"
+    ],
+    "faceValue": 3663,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Mohawk - Outdoor|Austin|TX"
+  },
+  {
+    "date": "2019-11-08",
+    "title": null,
+    "performerKey": "The Flaming Lips",
+    "openerKeys": [
+      "Mercury Rev",
+      "Holy Wave"
+    ],
+    "faceValue": 5900,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Stubb's|Austin|TX"
+  },
+  {
+    "date": "2019-11-25",
+    "title": null,
+    "performerKey": "George Strait",
+    "openerKeys": [],
+    "faceValue": 22500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "The Moody Theater|Austin|TX"
+  },
+  {
+    "date": "2019-11-30",
+    "title": null,
+    "performerKey": "The Best of The Store",
+    "openerKeys": [],
+    "faceValue": 2400,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "The Comedy Store|Hollywood|CA"
+  },
+  {
+    "date": "2020-01-23",
+    "title": "20th Anniversary of \"Evil Powers\"",
+    "performerKey": "Supersuckers",
+    "openerKeys": [],
+    "faceValue": 1750,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Empire Control Room & Garage|Austin|TX"
+  },
+  {
+    "date": "2020-02-07",
+    "title": null,
+    "performerKey": "High & Mighty Podcast Live",
+    "openerKeys": [],
+    "faceValue": 1885,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "The North Door|Austin|TX"
+  },
+  {
+    "date": "2020-02-08",
+    "title": "ActionBoyz Podcast Live",
+    "performerKey": "ActionBoyz",
+    "openerKeys": [],
+    "faceValue": 1885,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Sons of Hermann Hall|Dallas|TX"
+  },
+  {
+    "date": "2021-04-30",
+    "title": null,
+    "performerKey": "JFL Showcase",
+    "openerKeys": [],
+    "faceValue": 2000,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Stateside at the Paramount|Austin|TX"
+  },
+  {
+    "date": "2021-06-19",
+    "title": null,
+    "performerKey": "High On Fire",
+    "openerKeys": [
+      "Duel",
+      "Greenbeard"
+    ],
+    "faceValue": 3000,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "The Austin Motocross Park|Del Valle|TX"
+  },
+  {
+    "date": "2021-07-11",
+    "title": null,
+    "performerKey": "The Avett Brothers",
+    "openerKeys": [],
+    "faceValue": 11300,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Red Rocks Amphitheatre|Morrison|CO"
+  },
+  {
+    "date": "2021-08-14",
+    "title": null,
+    "performerKey": "Summer Sesh III",
+    "openerKeys": [],
+    "faceValue": 0,
+    "genreKey": "Festival",
+    "subGenreKey": null,
+    "venueKey": "Independence Brewing Co.|Austin|TX"
+  },
+  {
+    "date": "2021-08-29",
+    "title": null,
+    "performerKey": "Phish",
+    "openerKeys": [],
+    "faceValue": 7500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "The Gorge Amphitheatre|George|WA"
+  },
+  {
+    "date": "2021-09-26",
+    "title": null,
+    "performerKey": "Moontower Comedy Festival 2021",
+    "openerKeys": [],
+    "faceValue": 9900,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Paramount Theatre|Austin|TX"
+  },
+  {
+    "date": "2021-10-02",
+    "title": null,
+    "performerKey": "OSEES",
+    "openerKeys": [
+      "Mr. Elevator"
+    ],
+    "faceValue": 3000,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Hotel Vegas|Austin|TX"
+  },
+  {
+    "date": "2021-10-08",
+    "title": null,
+    "performerKey": "Natalie Cuomo",
+    "openerKeys": [],
+    "faceValue": 1785,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Fallout Theater|Austin|TX"
+  },
+  {
+    "date": "2021-10-23",
+    "title": null,
+    "performerKey": "Mt. Joy",
+    "openerKeys": [],
+    "faceValue": 0,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "The Moody Theater|Austin|TX"
+  },
+  {
+    "date": "2021-10-27",
+    "title": null,
+    "performerKey": "The Sword",
+    "openerKeys": [
+      "Starcrawler",
+      "Here Lies Man",
+      "Enumclaw"
+    ],
+    "faceValue": 3000,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Empire Control Room & Garage|Austin|TX"
+  },
+  {
+    "date": "2021-12-04",
+    "title": null,
+    "performerKey": "George Strait",
+    "openerKeys": [],
+    "faceValue": 20600,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "T-Mobile Arena|Las Vegas|NV"
+  },
+  {
+    "date": "2021-12-12",
+    "title": null,
+    "performerKey": "Seattle Seahawks at Houston Texans",
+    "openerKeys": [],
+    "faceValue": 11042,
+    "genreKey": "Sports",
+    "subGenreKey": "Football",
+    "venueKey": "NRG Stadium|Houston|TX"
+  },
+  {
+    "date": "2021-12-28",
+    "title": "The Jungle Show",
+    "performerKey": "Billy Gibbs",
+    "openerKeys": [
+      "Jimmie Vaughn",
+      "Sue Foley"
+    ],
+    "faceValue": 8300,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Antone's Nightclub|Austin|TX"
+  },
+  {
+    "date": "2022-01-09",
+    "title": null,
+    "performerKey": "Seattle Seahawks at Arizona Cardinals",
+    "openerKeys": [],
+    "faceValue": 13000,
+    "genreKey": "Sports",
+    "subGenreKey": "Football",
+    "venueKey": "State Farm Stadium|Glendale|AZ"
+  },
+  {
+    "date": "2022-04-15",
+    "title": null,
+    "performerKey": "Terminator: The Musical",
+    "openerKeys": [],
+    "faceValue": 3000,
+    "genreKey": "Theater",
+    "subGenreKey": null,
+    "venueKey": "York Rite of Austin|Austin|TX"
+  },
+  {
+    "date": "2022-04-24",
+    "title": null,
+    "performerKey": "Moontower Comedy Festival 2022",
+    "openerKeys": [],
+    "faceValue": 9900,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "The Paramount & Stateside Theatres|Austin|TX"
+  },
+  {
+    "date": "2022-07-24",
+    "title": null,
+    "performerKey": "New York Red Bulls at Austin FC",
+    "openerKeys": [],
+    "faceValue": 0,
+    "genreKey": "Sports",
+    "subGenreKey": "Soccer",
+    "venueKey": "Q2 Stadium|Austin|TX"
+  },
+  {
+    "date": "2022-08-06",
+    "title": null,
+    "performerKey": "Comedy Bang! Bang! LIVE",
+    "openerKeys": [],
+    "faceValue": 10975,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Paramount Theatre|Austin|TX"
+  },
+  {
+    "date": "2022-09-18",
+    "title": null,
+    "performerKey": "The Sword",
+    "openerKeys": [],
+    "faceValue": 4800,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "The White Horse|Austin|TX"
+  },
+  {
+    "date": "2022-10-06",
+    "title": "This Is Not a Drill",
+    "performerKey": "Roger Waters",
+    "openerKeys": [],
+    "faceValue": 23000,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Moody Center|Austin|TX"
+  },
+  {
+    "date": "2022-11-20",
+    "title": null,
+    "performerKey": "No Age",
+    "openerKeys": [
+      "John Wiese",
+      "Chalk"
+    ],
+    "faceValue": 1500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Antone's Nightclub|Austin|TX"
+  },
+  {
+    "date": "2022-12-05",
+    "title": "The Lonesome Crowded West Tour",
+    "performerKey": "Modest Mouse",
+    "openerKeys": [],
+    "faceValue": 5000,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "The Moody Theater|Austin|TX"
+  },
+  {
+    "date": "2023-04-22",
+    "title": null,
+    "performerKey": "Ben Schwartz & Friends",
+    "openerKeys": [],
+    "faceValue": 7450,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Paramount Theatre|Austin|TX"
+  },
+  {
+    "date": "2023-04-23",
+    "title": null,
+    "performerKey": "Monster Jam",
+    "openerKeys": [],
+    "faceValue": 5000,
+    "genreKey": "Sports",
+    "subGenreKey": "Monster Truck",
+    "venueKey": "Moody Center|Austin|TX"
+  },
+  {
+    "date": "2023-04-24",
+    "title": null,
+    "performerKey": "Moontower Comedy Festival 2023",
+    "openerKeys": [],
+    "faceValue": 12500,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Paramount Theatre|Austin|TX"
+  },
+  {
+    "date": "2023-06-01",
+    "title": null,
+    "performerKey": "Theo Von",
+    "openerKeys": [],
+    "faceValue": 9696,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Paramount Theatre|Austin|TX"
+  },
+  {
+    "date": "2023-06-03",
+    "title": null,
+    "performerKey": "All Them Witches",
+    "openerKeys": [],
+    "faceValue": 4000,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Antone's Nightclub|Austin|TX"
+  },
+  {
+    "date": "2023-06-09",
+    "title": null,
+    "performerKey": "Djunah",
+    "openerKeys": [
+      "Bridge Farmers",
+      "The Grasshopper Lies Heavy"
+    ],
+    "faceValue": 1354,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "The 13th Floor|Austin|TX"
+  },
+  {
+    "date": "2023-06-25",
+    "title": null,
+    "performerKey": "The Smile",
+    "openerKeys": [],
+    "faceValue": 7500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "The Moody Theater|Austin|TX"
+  },
+  {
+    "date": "2023-09-29",
+    "title": null,
+    "performerKey": "Wilco",
+    "openerKeys": [],
+    "faceValue": 9500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Moody Amphitheater|Austin|TX"
+  },
+  {
+    "date": "2023-10-09",
+    "title": "The Magical Dead Cat Tour",
+    "performerKey": "Aunty Donna",
+    "openerKeys": [],
+    "faceValue": 4300,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Paramount Theatre|Austin|TX"
+  },
+  {
+    "date": "2023-10-22",
+    "title": null,
+    "performerKey": "Jonathan Van Ness",
+    "openerKeys": [],
+    "faceValue": 5500,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Paramount Theatre|Austin|TX"
+  },
+  {
+    "date": "2023-11-05",
+    "title": null,
+    "performerKey": "Seattle Seahawks at Baltimore Ravens",
+    "openerKeys": [],
+    "faceValue": 13900,
+    "genreKey": "Sports",
+    "subGenreKey": "Football",
+    "venueKey": "M&T Bank Stadium|Baltimore|MD"
+  },
+  {
+    "date": "2024-05-24",
+    "title": null,
+    "performerKey": "Lightning Bolt",
+    "openerKeys": [
+      "Big Business",
+      "Porcelain"
+    ],
+    "faceValue": 7238,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Mohawk|Austin|TX"
+  },
+  {
+    "date": "2024-06-12",
+    "title": "The Triple Moon Tour",
+    "performerKey": "Alanis Morissette",
+    "openerKeys": [],
+    "faceValue": 12933,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Moody Center|Austin|TX"
+  },
+  {
+    "date": "2024-07-25",
+    "title": null,
+    "performerKey": "Comedy Bang! Bang! LIVE",
+    "openerKeys": [],
+    "faceValue": 5975,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Paramount Theatre|Austin|TX"
+  },
+  {
+    "date": "2024-08-18",
+    "title": null,
+    "performerKey": "Digable Planets",
+    "openerKeys": [],
+    "faceValue": 3750,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Empire Control Room & Garage|Austin|TX"
+  },
+  {
+    "date": "2024-10-18",
+    "title": null,
+    "performerKey": "Sunset Rubdown",
+    "openerKeys": [],
+    "faceValue": 2500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Parish|Austin|TX"
+  },
+  {
+    "date": "2024-11-03",
+    "title": null,
+    "performerKey": "The Sword",
+    "openerKeys": [
+      "Pentagram"
+    ],
+    "faceValue": 4000,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Stubb's|Austin|TX"
+  },
+  {
+    "date": "2024-11-08",
+    "title": null,
+    "performerKey": "Twin Shadow",
+    "openerKeys": [],
+    "faceValue": 2300,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Mohawk|Austin|TX"
+  },
+  {
+    "date": "2024-11-14",
+    "title": null,
+    "performerKey": "Jack White",
+    "openerKeys": [],
+    "faceValue": 11600,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Mohawk|Austin|TX"
+  },
+  {
+    "date": "2025-04-20",
+    "title": null,
+    "performerKey": "Moontower Comedy Festival 2025",
+    "openerKeys": [],
+    "faceValue": 12500,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "The Paramount & State Theatres|Austin|TX"
+  },
+  {
+    "date": "2025-06-28",
+    "title": null,
+    "performerKey": "Phish",
+    "openerKeys": [],
+    "faceValue": 21000,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Moody Center|Austin|TX"
+  },
+  {
+    "date": "2025-09-05",
+    "title": null,
+    "performerKey": "Brown Sabbath",
+    "openerKeys": [],
+    "faceValue": 3050,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Mohawk - Outdoor|Austin|TX"
+  },
+  {
+    "date": "2025-09-10",
+    "title": null,
+    "performerKey": "Buena Vista Social Orchestra",
+    "openerKeys": [],
+    "faceValue": 8000,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Paramount Theatre|Austin|TX"
+  },
+  {
+    "date": "2025-09-14",
+    "title": null,
+    "performerKey": "Seattle Seahawks at Pittsburgh Steelers",
+    "openerKeys": [],
+    "faceValue": 37900,
+    "genreKey": "Sports",
+    "subGenreKey": "Football",
+    "venueKey": "Acrisure Stadium|Pittsburgh|PA"
+  },
+  {
+    "date": "2025-11-18",
+    "title": null,
+    "performerKey": "They Are Gutting a Body of Water",
+    "openerKeys": [],
+    "faceValue": 2500,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "29th Street Ballroom|Austin|TX"
+  },
+  {
+    "date": "2026-03-19",
+    "title": null,
+    "performerKey": "Lady Gaga",
+    "openerKeys": [],
+    "faceValue": 121600,
+    "genreKey": "Music",
+    "subGenreKey": null,
+    "venueKey": "Madison Square Garden|New York|NY"
+  },
+  {
+    "date": "2026-04-20",
+    "title": null,
+    "performerKey": "Moontower Comedy Festival 2026",
+    "openerKeys": [],
+    "faceValue": 12500,
+    "genreKey": "Comedy",
+    "subGenreKey": null,
+    "venueKey": "Paramount Theatre|Austin|TX"
+  }
+]

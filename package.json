@@ -7,8 +7,11 @@
     "dev:ui": "pnpm --filter @ttis/ui dev",
     "test": "pnpm -r run test",
     "lint": "pnpm -r run lint",
-    "build": "pnpm -r run build"
+    "build": "pnpm -r run build",
+    "parse-csv": "tsx data/scripts/parse-csv.ts"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "csv-parse": "^6.1.0",
+    "tsx": "^4.21.0"
+  }
 }

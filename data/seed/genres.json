@@ -1,0 +1,184 @@
+{
+  "parents": [
+    {
+      "key": "Comedy",
+      "name": "Comedy"
+    },
+    {
+      "key": "Dance",
+      "name": "Dance"
+    },
+    {
+      "key": "Festival",
+      "name": "Festival"
+    },
+    {
+      "key": "Literary",
+      "name": "Literary"
+    },
+    {
+      "key": "Music",
+      "name": "Music"
+    },
+    {
+      "key": "Sports",
+      "name": "Sports"
+    },
+    {
+      "key": "Theater",
+      "name": "Theater"
+    }
+  ],
+  "subGenres": [
+    {
+      "key": "Alternative",
+      "name": "Alternative",
+      "parentKey": "Music"
+    },
+    {
+      "key": "Ballet",
+      "name": "Ballet",
+      "parentKey": "Dance"
+    },
+    {
+      "key": "Baseball",
+      "name": "Baseball",
+      "parentKey": "Sports"
+    },
+    {
+      "key": "Basketball",
+      "name": "Basketball",
+      "parentKey": "Sports"
+    },
+    {
+      "key": "Book Signing",
+      "name": "Book Signing",
+      "parentKey": "Literary"
+    },
+    {
+      "key": "Burlesque",
+      "name": "Burlesque",
+      "parentKey": "Dance"
+    },
+    {
+      "key": "Dance",
+      "name": "Dance",
+      "parentKey": "Music"
+    },
+    {
+      "key": "Electronic",
+      "name": "Electronic",
+      "parentKey": "Music"
+    },
+    {
+      "key": "Festival",
+      "name": "Festival",
+      "parentKey": "Music"
+    },
+    {
+      "key": "Folk",
+      "name": "Folk",
+      "parentKey": "Music"
+    },
+    {
+      "key": "Football",
+      "name": "Football",
+      "parentKey": "Sports"
+    },
+    {
+      "key": "Hip-hop",
+      "name": "Hip-hop",
+      "parentKey": "Music"
+    },
+    {
+      "key": "Jam",
+      "name": "Jam",
+      "parentKey": "Music"
+    },
+    {
+      "key": "Jazz",
+      "name": "Jazz",
+      "parentKey": "Music"
+    },
+    {
+      "key": "Metal",
+      "name": "Metal",
+      "parentKey": "Music"
+    },
+    {
+      "key": "Monster Truck",
+      "name": "Monster Truck",
+      "parentKey": "Sports"
+    },
+    {
+      "key": "Motorcycle",
+      "name": "Motorcycle",
+      "parentKey": "Sports"
+    },
+    {
+      "key": "Musical",
+      "name": "Musical",
+      "parentKey": "Comedy"
+    },
+    {
+      "key": "Pop",
+      "name": "Pop",
+      "parentKey": "Music"
+    },
+    {
+      "key": "Punk",
+      "name": "Punk",
+      "parentKey": "Music"
+    },
+    {
+      "key": "R&B",
+      "name": "R&B",
+      "parentKey": "Music"
+    },
+    {
+      "key": "Racing",
+      "name": "Racing",
+      "parentKey": "Sports"
+    },
+    {
+      "key": "Rock",
+      "name": "Rock",
+      "parentKey": "Music"
+    },
+    {
+      "key": "Rockabilly",
+      "name": "Rockabilly",
+      "parentKey": "Music"
+    },
+    {
+      "key": "Ska",
+      "name": "Ska",
+      "parentKey": "Music"
+    },
+    {
+      "key": "Soccer",
+      "name": "Soccer",
+      "parentKey": "Sports"
+    },
+    {
+      "key": "Standup",
+      "name": "Standup",
+      "parentKey": "Comedy"
+    },
+    {
+      "key": "Trip-hop",
+      "name": "Trip-hop",
+      "parentKey": "Music"
+    },
+    {
+      "key": "Variety",
+      "name": "Variety",
+      "parentKey": "Comedy"
+    },
+    {
+      "key": "World",
+      "name": "World",
+      "parentKey": "Music"
+    }
+  ]
+}
