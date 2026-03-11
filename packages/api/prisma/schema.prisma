@@ -6,6 +6,10 @@ generator client {
   provider = "prisma-client-js"
 }
 
+generator pothos {
+  provider     = "prisma-pothos-types"
+}
+
 generator erd {
   provider = "prisma-erd-generator"
   output   = "../docs/schema.md"
