@@ -9,10 +9,13 @@
     "format": "pnpm -r run format",
     "lint": "pnpm -r run lint",
     "build": "pnpm -r run build",
-    "parse-csv": "tsx data/scripts/parse-csv.ts"
+    "parse-csv": "tsx data/scripts/parse-csv.ts",
+    "prepare": "husky"
   },
   "devDependencies": {
     "csv-parse": "^6.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.3.3",
     "tsx": "^4.21.0"
   },
   "pnpm": {
