@@ -1,2 +1,5 @@
 packages:
   - "packages/*"
+
+# Hoist all dependencies so tools like Next.js and ts-node-dev can resolve them
+shamefullyHoist: true

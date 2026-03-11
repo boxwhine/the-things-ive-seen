@@ -1,6 +1,7 @@
 {
   "name": "@ttis/root",
   "private": true,
+  "packageManager": "pnpm@10.30.3",
   "scripts": {
     "dev": "pnpm --filter @ttis/api dev & pnpm --filter @ttis/ui dev",
     "dev:api": "pnpm --filter @ttis/api dev",
