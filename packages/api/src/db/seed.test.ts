@@ -1,8 +1,7 @@
-import { expect, test, vi } from "vitest";
-// import generateSeedData from './seed';
+import { expect, test } from "vitest";
 
 // @TODO dummy test to prevent '0 tests' failure
-test("DB/Seed", async () => {
+test("DB/Seed", () => {
   // const data = await generateSeedData();
   expect(true).toBe(true);
 });

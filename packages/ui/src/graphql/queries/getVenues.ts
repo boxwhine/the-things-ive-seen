@@ -1,15 +1,15 @@
 import { gql } from "@apollo/client";
 
-export type Venue = {
+export interface Venue {
   id: string;
   name: string;
   city: string;
   state: string;
-};
+}
 
-export type Response = {
+export interface Response {
   fetchVenues: Venue[];
-};
+}
 
 export default gql`
   query GetVenues {

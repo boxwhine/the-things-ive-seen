@@ -21,12 +21,15 @@ const bootstrap = async () => {
     graphiql: config.isDev,
   });
 
-  const server = createServer(yoga);
-  const port = process.env.PORT || 4000;
+  const server = createServer((req, res) => {
+    void yoga(req, res);
+  });
+
+  const port = process.env.PORT ?? "4000";
 
   server.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}/graphql`);
   });
 };
 
-bootstrap();
+void bootstrap();

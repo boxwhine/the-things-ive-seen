@@ -2,6 +2,7 @@
   "name": "@ttis/api",
   "version": "0.1.0",
   "description": "GraphQL API for The Things I've Seen",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/boxwhine/the-things-ive-seen.git"
@@ -12,8 +13,9 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpileOnly ./src/",
-    "lint": "tsc --noEmit && eslint --quiet --fix",
+    "lint": "tsc --noEmit && eslint ./src/ --quiet --fix",
     "start": "tsc && node ./build/",
+    "generate": "prisma generate",
     "format": "prettier --write .",
     "test": "vitest run",
     "test:watch": "vitest dev"
@@ -29,6 +31,7 @@
     "ts-node-dev": "^1.0.0-pre.44"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.4",
     "@types/node": "^20.0.0",
     "eslint": "^9.39.4",
     "eslint-config-prettier": "^10.1.8",

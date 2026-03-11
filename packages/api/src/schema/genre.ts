@@ -69,7 +69,7 @@ builder.mutationField("addGenre", (t) =>
         })) === null
       ) {
         throw new Error(
-          `No parent genre exists with ID ${args.genre.parentId}.`,
+          `No parent genre exists with ID ${args.genre.parentId.toString()}.`,
         );
       }
 

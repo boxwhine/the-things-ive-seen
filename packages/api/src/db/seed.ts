@@ -44,6 +44,7 @@ export default async () => {
       },
     }),
   ]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [vFunhouse, vAcropolis, vSuperstarArena, vHDCenter] = venues;
 
   // Root genres
@@ -53,6 +54,7 @@ export default async () => {
     prisma.genre.create({ data: { name: "Movie" } }),
     prisma.genre.create({ data: { name: "Sports" } }),
   ]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [gMusic, gComedy, gMovie, gSports] = rootGenres;
 
   // Sub-genres
@@ -65,6 +67,7 @@ export default async () => {
     prisma.genre.create({ data: { name: "Yoga", parentId: gSports.id } }),
     prisma.genre.create({ data: { name: "Motor/Auto", parentId: gSports.id } }),
   ]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [sgRock, sgEdm, sgHoliday, sgStandup, sgFootball, sgYoga, sgMotorAuto] =
     subGenres;
 

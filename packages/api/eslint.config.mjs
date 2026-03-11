@@ -1,19 +1,26 @@
+// @ts-check
 import { defineConfig } from "eslint/config";
+import eslint from "@eslint/js";
 import tseslint from "typescript-eslint";
-import eslintConfigPrettier from "eslint-config-prettier";
-import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
+import eslintConfigPrettier from "eslint-config-prettier/flat";
 
-export default defineConfig([
-  ...tseslint.configs.recommended,
+export default defineConfig(
+  eslint.configs.recommended,
+  ...tseslint.configs.strictTypeChecked,
+  ...tseslint.configs.stylisticTypeChecked,
   eslintConfigPrettier,
-  eslintPluginPrettier,
   {
-    files: ["src/**/*.ts"],
-    rules: {
-      "@typescript-eslint/no-explicit-any": "off",
+    languageOptions: {
+      parserOptions: {
+        projectService: {
+          allowDefaultProject: ["vitest.config.ts"],
+        },
+        tsconfigRootDir: import.meta.dirname,
+      },
     },
   },
   {
-    ignores: ["build/**", "node_modules/**"],
+    files: ["**/*.mjs"],
+    ...tseslint.configs.disableTypeChecked,
   },
-]);
+);
