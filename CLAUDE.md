@@ -103,3 +103,4 @@ When editing or creating Markdown documents in this repo:
 - Do not use horizontal rules (`---`) before section headers. Let headings stand on their own.
 - Use `<br/>` for line breaks inside Mermaid node labels, not `\n`.
 - Diagrams should use Mermaid (` ```mermaid `) rather than ASCII art.
+- After creating or editing any `*.md` file, run `pnpm format` (or `npx prettier --write <file>`) to ensure consistent formatting.

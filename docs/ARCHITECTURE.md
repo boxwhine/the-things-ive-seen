@@ -178,53 +178,19 @@ Failed enrichment attempts are retried via RabbitMQ dead letter queue with expon
 
 ## 3. Module Roadmap
 
-| Module | Focus                                | Status         | Target Outcome                                                          |
-| ------ | ------------------------------------ | -------------- | ----------------------------------------------------------------------- |
-| 1      | Containerization & Local Kubernetes  | 🟡 In Progress | Full stack running in local k8s with probes and resource limits         |
-| 2      | Build System & CI/CD Foundation      | ⬜ Not Started | Turborepo build cache, GitHub Actions CI, images published to ghcr.io   |
-| 3      | Cloud Infrastructure & Terraform     | ⬜ Not Started | EKS cluster + RDS provisioned via Terraform, app accessible at real URL |
-| 4      | Service Extraction & Message Queue   | ⬜ Not Started | Enrichment service deployed, RabbitMQ running, async flow end-to-end    |
-| 5      | Observability — Metrics & Dashboards | ⬜ Not Started | Prometheus + Grafana, RED method dashboards per service                 |
-| 6      | Observability — Logging & Tracing    | ⬜ Not Started | Loki + Tempo via OTel, SLO compliance dashboards                        |
-| 7      | Alerting & Incident Response         | ⬜ Not Started | SLO-based alerts, runbooks, chaos day postmortem                        |
-| 8      | GitOps & Advanced Deployment         | ⬜ Not Started | ArgoCD, canary deployments, Terraform in CI, image scanning             |
-| 9      | Chaos Engineering & Polish           | ⬜ Not Started | Automated chaos experiments, architecture diagram, portfolio polish     |
+Full acceptance criteria, implementation checklists, and per-module notes live in [`docs/modules/`](./modules/README.md). This table is the high-level overview.
 
-### Module 1 Detail — Containerization & Local Kubernetes
-
-**Prerequisite blockers to resolve first:**
-
-- [ ] Wire Prisma client to database and verify end-to-end queries
-- [ ] Get seed data working via Prisma against live DB
-- [ ] Upgrade PostgreSQL from 11.4 → 16 in docker-compose
-- [ ] Move Apollo Client URI to environment variable
-
-**Kubernetes targets:**
-
-- [ ] Install k3s or enable Kubernetes in Docker Desktop
-- [ ] Write Deployment manifests for API, UI, PostgreSQL
-- [ ] Add liveness and readiness probes to all Deployments
-- [ ] Set resource requests and limits
-- [ ] Verify full stack running in local cluster
-
-### Module 4 Detail — Service Extraction & Message Queue
-
-**Extracted service:** Data Enrichment Service (TypeScript)
-
-Responsibilities:
-
-- Consume `event.created` messages from RabbitMQ
-- Query Spotify API for artist metadata (genres, popularity, related artists)
-- Query Setlist.fm API for setlist data (songs played, tour name)
-- Write enriched data back to PostgreSQL
-- Handle retries via dead letter queue
-
-**Message broker:** RabbitMQ
-
-- Exchange: `ttis.events` (topic exchange)
-- Routing key: `event.created`
-- Dead letter exchange: `ttis.events.dlx`
-- Retry policy: exponential backoff, max 3 attempts
+| Module                                            | Focus                                | Status         | Target Outcome                                                          |
+| ------------------------------------------------- | ------------------------------------ | -------------- | ----------------------------------------------------------------------- |
+| [01](./modules/module-01-containerization.md)     | Containerization & Local Kubernetes  | 🟡 In Progress | Full stack running in local k8s with probes and resource limits         |
+| [02](./modules/module-02-cicd.md)                 | Build System & CI/CD Foundation      | ⬜ Not Started | Turborepo build cache, GitHub Actions CI, images published to ghcr.io   |
+| [03](./modules/module-03-cloud-infrastructure.md) | Cloud Infrastructure & Terraform     | ⬜ Not Started | EKS cluster + RDS provisioned via Terraform, app accessible at real URL |
+| [04](./modules/module-04-service-extraction.md)   | Service Extraction & Message Queue   | ⬜ Not Started | Enrichment service deployed, RabbitMQ running, async flow end-to-end    |
+| [05](./modules/module-05-metrics-dashboards.md)   | Observability — Metrics & Dashboards | ⬜ Not Started | Prometheus + Grafana, RED method dashboards per service                 |
+| [06](./modules/module-06-logging-tracing.md)      | Observability — Logging & Tracing    | ⬜ Not Started | Loki + Tempo via OTel, SLO compliance dashboards                        |
+| [07](./modules/module-07-alerting.md)             | Alerting & Incident Response         | ⬜ Not Started | SLO-based alerts, runbooks, chaos day postmortem                        |
+| [08](./modules/module-08-gitops.md)               | GitOps & Advanced Deployment         | ⬜ Not Started | ArgoCD, canary deployments, Terraform in CI, image scanning             |
+| [09](./modules/module-09-chaos.md)                | Chaos Engineering & Polish           | ⬜ Not Started | Automated chaos experiments, cost optimization, portfolio polish        |
 
 ## 4. Technology Decisions
 

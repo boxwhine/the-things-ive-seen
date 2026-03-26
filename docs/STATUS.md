@@ -9,17 +9,19 @@
 
 ## Module Progress
 
-| Module | Focus                                | Status         | Start Date | End Date |
-| ------ | ------------------------------------ | -------------- | ---------- | -------- |
-| 1      | Containerization & Local Kubernetes  | 🟡 In Progress | 2026-03-03 |          |
-| 2      | Build System & CI/CD Foundation      | ⬜ Not Started |            |          |
-| 3      | Cloud Infrastructure & Terraform     | ⬜ Not Started |            |          |
-| 4      | Service Extraction & Message Queue   | ⬜ Not Started |            |          |
-| 5      | Observability — Metrics & Dashboards | ⬜ Not Started |            |          |
-| 6      | Observability — Logging & Tracing    | ⬜ Not Started |            |          |
-| 7      | Alerting & Incident Response         | ⬜ Not Started |            |          |
-| 8      | GitOps & Advanced Deployment         | ⬜ Not Started |            |          |
-| 9      | Chaos Engineering & Polish           | ⬜ Not Started |            |          |
+For full acceptance criteria, implementation checklists, and per-module notes, see [`docs/modules/`](./modules/README.md).
+
+| Module                                            | Focus                                | Status         | Start Date | End Date |
+| ------------------------------------------------- | ------------------------------------ | -------------- | ---------- | -------- |
+| [01](./modules/module-01-containerization.md)     | Containerization & Local Kubernetes  | 🟡 In Progress | 2026-03-03 |          |
+| [02](./modules/module-02-cicd.md)                 | Build System & CI/CD Foundation      | ⬜ Not Started |            |          |
+| [03](./modules/module-03-cloud-infrastructure.md) | Cloud Infrastructure & Terraform     | ⬜ Not Started |            |          |
+| [04](./modules/module-04-service-extraction.md)   | Service Extraction & Message Queue   | ⬜ Not Started |            |          |
+| [05](./modules/module-05-metrics-dashboards.md)   | Observability — Metrics & Dashboards | ⬜ Not Started |            |          |
+| [06](./modules/module-06-logging-tracing.md)      | Observability — Logging & Tracing    | ⬜ Not Started |            |          |
+| [07](./modules/module-07-alerting.md)             | Alerting & Incident Response         | ⬜ Not Started |            |          |
+| [08](./modules/module-08-gitops.md)               | GitOps & Advanced Deployment         | ⬜ Not Started |            |          |
+| [09](./modules/module-09-chaos.md)                | Chaos Engineering & Polish           | ⬜ Not Started |            |          |
 
 ## Current Stack
 
@@ -53,38 +55,6 @@ These must be resolved before Module 2 work begins. They reflect the cost of mod
 | Hardcoded Apollo URI    | UI points to `http://localhost:4000` — no environment-based config                   | 1      |
 | PostgreSQL 11.4 EOL     | Running an end-of-life database version; upgrading to 16                             | 1      |
 
-## Module 1 Checklist
+## Active Module Detail
 
-### Prerequisites
-
-- [ ] Wire Prisma client to database and verify end-to-end queries
-- [ ] Get seed data working via Prisma against live DB
-- [ ] Upgrade PostgreSQL from 11.4 → 16 in docker-compose
-- [ ] Move Apollo Client URI to environment variable
-
-### Docker
-
-- [ ] Verify API container builds and runs
-- [ ] Verify UI container builds and runs
-- [ ] Verify full stack works via docker-compose
-
-### Kubernetes
-
-- [ ] Install k3s or enable Kubernetes in Docker Desktop
-- [ ] Write Deployment manifests for API, UI, PostgreSQL
-- [ ] Add liveness and readiness probes to all Deployments
-- [ ] Set resource requests and limits
-- [ ] Verify full stack running in local cluster
-- [ ] Verify services can communicate
-
-### Hardening
-
-- [ ] Document all dependencies (Node version, DB, env vars)
-- [ ] Update README with local setup instructions
-
-## Notes & Discoveries
-
-> [!TIP]
-> Use this section to capture anything unexpected, decisions made on the fly, or context that doesn't warrant a full ADR. Append entries as you go.
-
-- **2026-03-25** — Modernizing the app and planning production hardening simultaneously created significant churn not accounted for in the original module timeline. The prerequisite blockers above are a direct result. This is expected and documented intentionally — it reflects real-world project conditions.
+See [Module 01](./modules/module-01-containerization.md) for the full acceptance criteria checklist and in-progress notes.
