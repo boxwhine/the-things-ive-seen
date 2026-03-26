@@ -22,6 +22,16 @@ So far, it's mainly just a list of events that link to detail pages, but eventua
 - Plot venues on interactive map
 - Filter by taxonomies, e.g., genre, venue
 
+## Architecture
+
+This project is being systematically production-hardened as a hands-on SRE/DevOps learning exercise — covering containerization, CI/CD, cloud infrastructure (AWS EKS), observability, alerting, chaos engineering, and GitOps across a 9-module roadmap.
+
+| Document                                     | Description                                                                    |
+| -------------------------------------------- | ------------------------------------------------------------------------------ |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Full target architecture, system diagrams, technology decisions, and ADR index |
+| [docs/STATUS.md](docs/STATUS.md)             | Current implementation state, active blockers, and module progress             |
+| [docs/adr/](docs/adr/README.md)              | Individual Architecture Decision Records                                       |
+
 ## Resources
 
 - [Trello board for tracking work items](https://trello.com/b/oMusq7vm/the-things-ive-seen)
