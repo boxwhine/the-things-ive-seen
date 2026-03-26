@@ -1,4 +1,4 @@
-# Module 09: Chaos Engineering & Polish
+# Module 10: Chaos Engineering & Polish
 
 **Status:** ⬜ Not Started
 

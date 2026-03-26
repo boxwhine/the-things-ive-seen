@@ -1,4 +1,4 @@
-# Module 05: Observability — Metrics & Dashboards
+# Module 06: Observability — Metrics & Dashboards
 
 **Status:** ⬜ Not Started
 
@@ -40,7 +40,7 @@ Instrument all services with Prometheus metrics and build Grafana dashboards tha
 
 - [ ] Add resource utilization dashboards (CPU, memory, disk, network)
 - [ ] Set up Prometheus recording rules for expensive or frequently-used queries
-- [ ] Review dashboards for blind spots before moving to Module 06
+- [ ] Review dashboards for blind spots before moving to Module 07
 
 ## Related ADRs
 

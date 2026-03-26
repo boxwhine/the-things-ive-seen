@@ -1,4 +1,4 @@
-# Module 08: GitOps & Advanced Deployment
+# Module 09: GitOps & Advanced Deployment
 
 **Status:** ⬜ Not Started
 

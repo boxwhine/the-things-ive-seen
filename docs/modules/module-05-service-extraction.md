@@ -1,4 +1,4 @@
-# Module 04: Service Extraction & Message Queue
+# Module 05: Service Extraction & Message Queue
 
 **Status:** ⬜ Not Started
 
