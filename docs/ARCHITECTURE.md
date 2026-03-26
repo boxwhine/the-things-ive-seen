@@ -42,6 +42,8 @@ The target system consists of three application services, a message broker, a pr
 ```mermaid
 graph TD
     Browser([Browser])
+    Mobile([Android App])
+    Auth["Auth.js<br/>Google OAuth · JWT"]
     UI["Next.js UI :3000<br/>React 19 · Apollo Client · shadcn/ui"]
     API["GraphQL API :4000<br/>GraphQL Yoga · Pothos · Prisma · TypeScript"]
     DB[("PostgreSQL<br/>Primary Database")]
@@ -49,9 +51,14 @@ graph TD
     ES["Enrichment Service<br/>TypeScript · async"]
     Spotify([Spotify API])
     Setlist([Setlist.fm])
+    Google([Google OAuth])
 
     Browser -->|HTTPS| UI
-    UI -->|GraphQL| API
+    UI -->|Auth flow| Auth
+    Mobile -->|Auth flow| Auth
+    Auth -->|OAuth| Google
+    UI -->|GraphQL + JWT| API
+    Mobile -->|GraphQL + JWT| API
     API -->|Prisma| DB
     API -->|Publish event| MQ
     MQ -->|Consume| ES
@@ -180,17 +187,18 @@ Failed enrichment attempts are retried via RabbitMQ dead letter queue with expon
 
 Full acceptance criteria, implementation checklists, and per-module notes live in [`docs/modules/`](./modules/README.md). This table is the high-level overview.
 
-| Module                                            | Focus                                | Status         | Target Outcome                                                          |
-| ------------------------------------------------- | ------------------------------------ | -------------- | ----------------------------------------------------------------------- |
-| [01](./modules/module-01-containerization.md)     | Containerization & Local Kubernetes  | 🟡 In Progress | Full stack running in local k8s with probes and resource limits         |
-| [02](./modules/module-02-cicd.md)                 | Build System & CI/CD Foundation      | ⬜ Not Started | Turborepo build cache, GitHub Actions CI, images published to ghcr.io   |
-| [03](./modules/module-03-cloud-infrastructure.md) | Cloud Infrastructure & Terraform     | ⬜ Not Started | EKS cluster + RDS provisioned via Terraform, app accessible at real URL |
-| [04](./modules/module-04-service-extraction.md)   | Service Extraction & Message Queue   | ⬜ Not Started | Enrichment service deployed, RabbitMQ running, async flow end-to-end    |
-| [05](./modules/module-05-metrics-dashboards.md)   | Observability — Metrics & Dashboards | ⬜ Not Started | Prometheus + Grafana, RED method dashboards per service                 |
-| [06](./modules/module-06-logging-tracing.md)      | Observability — Logging & Tracing    | ⬜ Not Started | Loki + Tempo via OTel, SLO compliance dashboards                        |
-| [07](./modules/module-07-alerting.md)             | Alerting & Incident Response         | ⬜ Not Started | SLO-based alerts, runbooks, chaos day postmortem                        |
-| [08](./modules/module-08-gitops.md)               | GitOps & Advanced Deployment         | ⬜ Not Started | ArgoCD, canary deployments, Terraform in CI, image scanning             |
-| [09](./modules/module-09-chaos.md)                | Chaos Engineering & Polish           | ⬜ Not Started | Automated chaos experiments, cost optimization, portfolio polish        |
+| Module                                            | Focus                                | Status         | Target Outcome                                                           |
+| ------------------------------------------------- | ------------------------------------ | -------------- | ------------------------------------------------------------------------ |
+| [01](./modules/module-01-containerization.md)     | Containerization & Local Kubernetes  | 🟡 In Progress | Full stack running in local k8s with probes and resource limits          |
+| [02](./modules/module-02-cicd.md)                 | Build System & CI/CD Foundation      | ⬜ Not Started | Turborepo build cache, GitHub Actions CI, images published to ghcr.io    |
+| [03](./modules/module-03-cloud-infrastructure.md) | Cloud Infrastructure & Terraform     | ⬜ Not Started | EKS cluster + RDS provisioned via Terraform, app accessible at real URL  |
+| [04](./modules/module-04-auth.md)                 | Authentication & Authorization       | ⬜ Not Started | Auth.js with Google OAuth, JWT-protected GraphQL API, session management |
+| [05](./modules/module-05-service-extraction.md)   | Service Extraction & Message Queue   | ⬜ Not Started | Enrichment service deployed, RabbitMQ running, async flow end-to-end     |
+| [06](./modules/module-06-metrics-dashboards.md)   | Observability — Metrics & Dashboards | ⬜ Not Started | Prometheus + Grafana, RED method dashboards per service                  |
+| [07](./modules/module-07-logging-tracing.md)      | Observability — Logging & Tracing    | ⬜ Not Started | Loki + Tempo via OTel, SLO compliance dashboards                         |
+| [08](./modules/module-08-alerting.md)             | Alerting & Incident Response         | ⬜ Not Started | SLO-based alerts, runbooks, chaos day postmortem                         |
+| [09](./modules/module-09-gitops.md)               | GitOps & Advanced Deployment         | ⬜ Not Started | ArgoCD, canary deployments, Terraform in CI, image scanning              |
+| [10](./modules/module-10-chaos.md)                | Chaos Engineering & Polish           | ⬜ Not Started | Automated chaos experiments, cost optimization, portfolio polish         |
 
 ## 4. Technology Decisions
 
@@ -202,6 +210,7 @@ Full acceptance criteria, implementation checklists, and per-module notes live i
 | GraphQL server             | GraphQL Yoga            | Lighter than Apollo Server; standards-compliant; better performance                                                                                                                    |
 | ORM                        | Prisma                  | Type-safe queries, better DX than Sequelize, native Pothos plugin, migration tooling                                                                                                   |
 | Frontend framework         | Next.js 16 (App Router) | Industry standard; SSR/SSG flexibility; strong ecosystem                                                                                                                               |
+| Authentication             | Auth.js + Google OAuth  | Free, native Next.js integration, JWT-based sessions; demonstrates SSO without third-party dashboard dependency                                                                        |
 | Component library          | shadcn/ui + Radix UI    | Accessible primitives; copy-into-repo model avoids dependency lock-in                                                                                                                  |
 | Extracted service language | TypeScript              | Consistent with existing codebase; avoids context-switching overhead. Go is documented as a future rewrite candidate — see [ADR-0008](./adr/0008-typescript-for-enrichment-service.md) |
 
@@ -249,6 +258,10 @@ The data model has a placeholder for performer/artist tracking that has not yet 
 ### Google Maps Integration
 
 Venue records include `lat`, `lng`, and `placeId` fields already in the schema. A map view showing concert locations over time is a natural UI feature once the geolocation data is populated.
+
+### Android Mobile App (React Native + Expo)
+
+A companion Android app that connects to the same GraphQL API as the web UI, living in the monorepo as `packages/mobile`. This demonstrates how a monorepo can serve multiple platforms (web + mobile) sharing TypeScript types, GraphQL queries, and authentication against a single backend. Built with React Native and Expo to minimize native toolchain overhead. Depends on Module 04 (Authentication) being complete so both clients authenticate via the same Auth.js / Google OAuth flow with shared JWT verification on the API.
 
 ### Kafka Migration (at scale)
 

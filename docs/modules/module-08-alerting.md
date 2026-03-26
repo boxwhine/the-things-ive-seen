@@ -1,4 +1,4 @@
-# Module 07: Alerting & Incident Response
+# Module 08: Alerting & Incident Response
 
 **Status:** ⬜ Not Started
 

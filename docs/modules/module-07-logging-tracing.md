@@ -1,4 +1,4 @@
-# Module 06: Observability — Logging & Tracing
+# Module 07: Observability — Logging & Tracing
 
 **Status:** ⬜ Not Started
 
