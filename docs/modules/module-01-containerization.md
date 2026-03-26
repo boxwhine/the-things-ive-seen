@@ -58,4 +58,14 @@ Get the full application stack running in a local Kubernetes cluster with produc
 
 > Capture decisions made on the fly, unexpected findings, or context that doesn't warrant a full ADR. Append entries as you go.
 
+- **2026-03-04** — Deleted unused files, migrated UI from DaisyUI to shadcn/ui + Tailwind, bumped packages to latest, migrated from Lerna to pnpm, bumped Dockerfiles to recent Node version. (4 hrs)
+
+- **2026-03-10** — Migrated old deps up to latest, got linting/formatting/pre-commit hooks running, got UI app up again, and migrated API from Sequelize to Prisma for ORM and auto-generated schemas and types. Used git worktrees with Claude Code for the first time to concurrently execute sizable refactoring across packages. (10 hrs)
+
+- **2026-03-10** — Key learnings: Prisma's autogen workflow is slick — define the DB schema and it generates DB code, GraphQL schema, and types. Working heavily with Claude Code is proving beneficial, but much of the value comes from learning how to ask for what you want and knowing what you can just do with a command/script (lesson carried over from Apex).
+
+- **2026-03-10** — Technical decisions: Chose pnpm as monorepo manager since it was already familiar from Apex. Worth looking into TurboRepo or Nx as possible embellishments or replacements. Migrated to Prisma per Claude's recommendation — want to move away from decorators but unclear if type-graphql can be fully dropped yet. (Resolved: type-graphql was replaced by Pothos per ADR-0002.)
+
+- **2026-03-10** — Blockers: When you don't touch an app for a while, it always takes longer than expected to shake off the cobwebs and get everything running again. Even with only a few pages and a couple read-only GraphQL fetches, getting to a workable, compilable, lintable state took several long sessions.
+
 - **2026-03-25** — Modernizing the app (ORM migration, framework upgrades, package manager migration) concurrently with production planning created significant churn not accounted for in the original module timeline. The prerequisite checklist above is a direct result. This is expected and documented intentionally.
