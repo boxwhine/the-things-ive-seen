@@ -30,7 +30,8 @@ const AddVenueInput = builder.inputType("AddVenueInput", {
 builder.queryField("fetchVenues", (t) =>
   t.prismaField({
     type: ["Venue"],
-    resolve: (query) => prisma.venue.findMany({ ...query, include: { events: true } }),
+    resolve: (query) =>
+      prisma.venue.findMany({ ...query, include: { events: true } }),
   }),
 );
 

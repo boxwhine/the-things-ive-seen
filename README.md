@@ -38,13 +38,59 @@ This project is being systematically production-hardened as a hands-on SRE/DevOp
 
 ## Development
 
-### Quick Start
+### Prerequisites
+
+| Dependency | Version | Notes                                  |
+| ---------- | ------- | -------------------------------------- |
+| Node.js    | 22+     | Dockerfiles pin 22; local dev ≥ 24     |
+| pnpm       | 10.30+  | Enforced via `packageManager`          |
+| Docker     | 20+     | For containerized workflow             |
+| PostgreSQL | 16      | Provided via Docker or install locally |
+
+### Environment Variables
+
+Copy the sample env files before starting:
 
 ```bash
-docker-compose up    # All services via Docker
-# or
-pnpm dev             # Run API + UI locally
+cp packages/api/.env.sample packages/api/.env
+cp packages/ui/.env.sample packages/ui/.env
 ```
+
+**API** (`packages/api/.env`):
+
+| Variable            | Description                                | Example                                                 |
+| ------------------- | ------------------------------------------ | ------------------------------------------------------- |
+| `POSTGRES_DB`       | Database name (used by Postgres image)     | `ttis_db`                                               |
+| `POSTGRES_USER`     | Database user (used by Postgres image)     | `postgres`                                              |
+| `POSTGRES_PASSWORD` | Database password (used by Postgres image) | `password`                                              |
+| `DATABASE_URL`      | Prisma connection string                   | `postgresql://postgres:password@localhost:5432/ttis_db` |
+
+**UI** (`packages/ui/.env`):
+
+| Variable              | Description              | Default                         |
+| --------------------- | ------------------------ | ------------------------------- |
+| `NEXT_PUBLIC_API_URL` | GraphQL API endpoint URL | `http://localhost:4000/graphql` |
+
+### Quick Start (Docker)
+
+```bash
+docker-compose up        # Starts API (:4000), UI (:3000), PostgreSQL (:5432), Adminer (:8080)
+```
+
+### Quick Start (Local)
+
+```bash
+pnpm install             # Install all dependencies
+docker-compose up ttis-db  # Start PostgreSQL only
+pnpm --filter @ttis/api exec prisma migrate dev  # Run database migrations
+pnpm dev                 # Start API + UI dev servers
+```
+
+### Verify It Works
+
+- UI: http://localhost:3000
+- GraphQL Playground: http://localhost:4000/playground
+- Adminer (DB GUI): http://localhost:8080
 
 ### Packages
 

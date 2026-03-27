@@ -17,18 +17,18 @@ Get the full application stack running in a local Kubernetes cluster with produc
 - [x] Audit current repo, get it running locally
 - [x] Reboot UI to use latest Next.js, TypeScript, Tailwind, and shadcn/ui
 - [x] Migrate API ORM from Sequelize to Prisma
-- [ ] Wire Prisma client to database and verify end-to-end queries
-- [ ] Get real initial data seeding working via Prisma
-- [ ] Upgrade PostgreSQL from 11.4 → 16 in docker-compose
-- [ ] Move Apollo Client URI to environment variable
-- [ ] Document all dependencies (Node version, DB version, env vars)
+- [x] Wire Prisma client to database and verify end-to-end queries
+- [x] Get real initial data seeding working via Prisma
+- [x] Upgrade PostgreSQL from 11.4 → 16 in docker-compose
+- [x] Move Apollo Client URI to environment variable
+- [x] Document all dependencies (Node version, DB version, env vars)
 
 ### Docker
 
-- [ ] Verify API container builds and runs
-- [ ] Verify UI container builds and runs
-- [ ] Verify full stack works via docker-compose
-- [ ] Update README with local setup instructions
+- [x] Verify API container builds and runs
+- [x] Verify UI container builds and runs
+- [x] Verify full stack works via docker-compose
+- [x] Update README with local setup instructions
 
 ### Kubernetes
 
