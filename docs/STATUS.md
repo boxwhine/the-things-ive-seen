@@ -1,6 +1,6 @@
 # Project Status
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-03-27
 
 **Active Module:** 1 — Containerization & Local Kubernetes
 
@@ -31,7 +31,7 @@ For full acceptance criteria, implementation checklists, and per-module notes, s
 | Frontend         | Next.js 16, React 19, Apollo Client, Tailwind v4 |                                  |
 | API              | GraphQL Yoga v5, Pothos v4, TypeScript           |                                  |
 | ORM              | Prisma v7                                        | Recently migrated from Sequelize |
-| Database         | PostgreSQL 11.4                                  | Upgrading to 16 (ADR-009)        |
+| Database         | PostgreSQL 16                                    | Upgraded from 11.4 (ADR-009)     |
 | Package Manager  | pnpm v10 (workspaces)                            |                                  |
 | Containerization | Docker + Docker Compose                          |                                  |
 
@@ -47,14 +47,12 @@ For full acceptance criteria, implementation checklists, and per-module notes, s
 
 ## Active Blockers
 
-These must be resolved before Module 2 work begins. They reflect the cost of modernizing the app (ORM migration, framework upgrades, package manager migration) concurrently with production planning.
+None — all Module 1 prerequisite blockers have been resolved:
 
-| Blocker                 | Description                                                                          | Module |
-| ----------------------- | ------------------------------------------------------------------------------------ | ------ |
-| Prisma client not wired | Schema defined but client not fully connected to DB; queries not verified end-to-end | 1      |
-| Seeding not working     | Prisma-based seed script exists but not verified against live DB                     | 1      |
-| Hardcoded Apollo URI    | UI points to `http://localhost:4000` — no environment-based config                   | 1      |
-| PostgreSQL 11.4 EOL     | Running an end-of-life database version; upgrading to 16                             | 1      |
+- ~~Prisma client not wired~~ — resolved; end-to-end queries verified
+- ~~Seeding not working~~ — resolved; Prisma seed script runs against live DB
+- ~~Hardcoded Apollo URI~~ — resolved; moved to `NEXT_PUBLIC_API_URL` env var
+- ~~PostgreSQL 11.4 EOL~~ — resolved; upgraded to PostgreSQL 16 (ADR-009)
 
 ## Active Module Detail
 
