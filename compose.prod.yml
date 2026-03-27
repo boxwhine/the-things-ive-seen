@@ -1,6 +1,6 @@
 # TODO: don't worry about this yet
 
-version: '2'
+version: "2"
 services:
   web:
     build: .

@@ -1,5 +1,5 @@
 # dependencies
-node_modules
+node_modules/
 
 npm-debug.log*
 
@@ -8,5 +8,5 @@ npm-debug.log*
 build/
 
 # ignore generated files
+lib/
 **/*.gen.*
-/schema.gql

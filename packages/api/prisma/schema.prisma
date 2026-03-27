@@ -3,21 +3,24 @@ datasource db {
 }
 
 generator client {
-  provider = "prisma-client-js"
-}
-
-generator pothos {
-  provider     = "prisma-pothos-types"
+  provider = "prisma-client"
+  output   = "../lib/prisma"
 }
 
 generator erd {
   provider = "prisma-erd-generator"
-  output   = "../docs/schema.md"
+  output   = "../lib/schema.md"
 }
 
 generator dbml {
   provider = "prisma-dbml-generator"
-  output   = "../docs"
+  output   = "../lib"
+}
+
+generator pothos {
+  provider     = "prisma-pothos-types"
+  clientOutput = "./prisma" // relative path from pothos output to prisma client
+  output = "../lib/pothos-prisma-types.ts"
 }
 
 model Venue {
