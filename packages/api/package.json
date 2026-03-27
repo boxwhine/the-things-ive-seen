@@ -24,19 +24,19 @@
     "test:watch": "vitest dev"
   },
   "dependencies": {
-    "@pothos/core": "^4.6.0",
-    "@pothos/plugin-prisma": "^4.3.0",
-    "@prisma/adapter-pg": "^7.4.2",
-    "@prisma/client": "^7.4.2",
-    "dotenv": "^16.4.0",
-    "graphql": "^16.10.0",
-    "graphql-yoga": "^5.12.0",
+    "@pothos/core": "^4.12.0",
+    "@pothos/plugin-prisma": "^4.14.2",
+    "@prisma/adapter-pg": "^7.6.0",
+    "@prisma/client": "^7.6.0",
+    "dotenv": "^16.6.1",
+    "graphql": "^16.13.2",
+    "graphql-yoga": "^5.18.1",
     "pg": "^8.20.0",
-    "prisma": "^7.4.2"
+    "prisma": "^7.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
-    "@types/node": "^20.0.0",
+    "@types/node": "^20.19.37",
     "eslint": "^9.39.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
@@ -45,8 +45,8 @@
     "prisma-dbml-generator": "^0.12.0",
     "prisma-erd-generator": "^2.4.2",
     "tsx": "^4.21.0",
-    "typescript": "^5.5.4",
-    "typescript-eslint": "^8.57.0",
-    "vitest": "^1.0.4"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.57.2",
+    "vitest": "^1.6.1"
   }
 }
