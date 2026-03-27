@@ -23,7 +23,7 @@ services:
       context: ./packages/api
       dockerfile: Dockerfile.dev
     environment:
-      DATABASE_URL: postgresql://postgres:password@ttis-db:5432/postgres
+      DATABASE_URL: postgresql://postgres:password@ttis-db:5432/ttis_db
     depends_on:
       - ttis-db
     ports:
@@ -39,6 +39,7 @@ services:
     restart: on-failure
     build:
       context: ./packages/ui
+    env_file: ./packages/ui/.env
     volumes:
       - ./packages/ui:/usr/app
       # Prevent host node_modules from overwriting container's installed modules

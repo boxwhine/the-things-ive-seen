@@ -23,6 +23,6 @@ RUN pnpm install
 
 # Generate Prisma client
 COPY prisma ./prisma/
-RUN npx prisma generate
+RUN pnpm run generate
 
 CMD [ "pnpm", "dev" ]

@@ -23,6 +23,6 @@ RUN pnpm install --frozen-lockfile
 
 # Generate Prisma client
 COPY prisma ./prisma/
-RUN npx prisma generate
+RUN pnpm run generate
 
 CMD [ "pnpm", "start" ]
