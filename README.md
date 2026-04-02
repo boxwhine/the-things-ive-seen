@@ -5,8 +5,6 @@
 
 _Concert/event dashboard and visualization app_
 
-<img src="repo-icon.jpg" alt="Joey Ramone" title="Joey Ramone" width="225" align="left" />
-
 Just a hobby project I've been working on to demo various technologies using the concerts and events I've attended as a dataset.
 
 I've saved the ticket stubs from (almost) every concert I've been to since I was a teenager (or at least the emails and digital tickets since we don't get paper tickets these days). I thought it would be interesting to use as a dataset for creating a hobby code project using the latest technologies.
@@ -31,10 +29,6 @@ This project is being systematically production-hardened as a hands-on SRE/DevOp
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Full target architecture, system diagrams, technology decisions, and ADR index |
 | [docs/STATUS.md](docs/STATUS.md)             | Current implementation state, active blockers, and module progress             |
 | [docs/adr/](docs/adr/README.md)              | Individual Architecture Decision Records                                       |
-
-## Resources
-
-- [Trello board for tracking work items](https://trello.com/b/oMusq7vm/the-things-ive-seen)
 
 ## Development
 
