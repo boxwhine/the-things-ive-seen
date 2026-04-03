@@ -2,9 +2,9 @@ import SchemaBuilder from "@pothos/core";
 import PrismaPlugin from "@pothos/plugin-prisma";
 
 // path to generated types, specified in your prisma.schema
-import type PrismaTypes from "../../lib/pothos-prisma-types";
-import { getDatamodel } from "../../lib/pothos-prisma-types";
-import { prisma } from "../db/prisma";
+import type PrismaTypes from "../../lib/pothos-prisma-types.js";
+import { getDatamodel } from "../../lib/pothos-prisma-types.js";
+import { prisma } from "../db/prisma.js";
 
 const builder = new SchemaBuilder<{
   // This gives the builder all the type information about your prisma schema

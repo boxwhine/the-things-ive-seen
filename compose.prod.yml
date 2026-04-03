@@ -1,13 +1,52 @@
-# TODO: don't worry about this yet
-
-version: "2"
 services:
-  web:
-    build: .
-    ports:
-      - "80:8000"
+  adminer:
+    container_name: adminer
+    image: adminer
     restart: always
-    # env_file: ./api/.env # TODO - uncomment this to auto-load your .env file!
+    ports:
+      - 8080:8080
+
+  ttis-db:
+    container_name: db
+    image: postgres:16-alpine
+    restart: on-failure
     environment:
-      NODE_ENV: production
-      PORT: 8000
+      POSTGRES_DB: ttis_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ttis-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  ttis-api:
+    container_name: api
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: api
+    environment:
+      DATABASE_URL: postgresql://postgres:password@ttis-db:5432/ttis_db
+    depends_on:
+      - ttis-db
+    ports:
+      - 4000:4000
+
+  ttis-ui:
+    container_name: ui
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: ui
+    environment:
+      HOSTNAME: "0.0.0.0"
+      PORT: "3000"
+    depends_on:
+      - ttis-api
+    ports:
+      - 3000:3000
+
+volumes:
+  ttis-data:

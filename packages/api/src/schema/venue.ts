@@ -1,5 +1,5 @@
-import { prisma } from "../db/prisma";
-import builder from "./builder";
+import { prisma } from "../db/prisma.js";
+import builder from "./builder.js";
 
 builder.prismaObject("Venue", {
   fields: (t) => ({

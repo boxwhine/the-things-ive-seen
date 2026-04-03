@@ -3,9 +3,9 @@ import "dotenv/config";
 import { createServer } from "node:http";
 import { createYoga } from "graphql-yoga";
 
-import config from "./config";
-import { prisma } from "./db/prisma";
-import { schema } from "./schema";
+import config from "./config.js";
+import { prisma } from "./db/prisma.js";
+import { schema } from "./schema/index.js";
 
 const bootstrap = async () => {
   await prisma.$connect();

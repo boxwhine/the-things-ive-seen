@@ -1,0 +1,20 @@
+services:
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  ttis-db:
+    container_name: db
+    image: postgres:16-alpine
+    restart: on-failure
+    env_file: ./packages/api/.env
+    volumes:
+      - ttis-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+volumes:
+  ttis-data:

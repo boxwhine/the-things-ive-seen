@@ -65,19 +65,26 @@ cp packages/ui/.env.sample packages/ui/.env
 | --------------------- | ------------------------ | ------------------------------- |
 | `NEXT_PUBLIC_API_URL` | GraphQL API endpoint URL | `http://localhost:4000/graphql` |
 
-### Quick Start (Docker)
-
-```bash
-docker-compose up        # Starts API (:4000), UI (:3000), PostgreSQL (:5432), Adminer (:8080)
-```
-
-### Quick Start (Local)
+### Quick Start
 
 ```bash
 pnpm install             # Install all dependencies
-docker-compose up ttis-db  # Start PostgreSQL only
-pnpm --filter @ttis/api exec prisma migrate dev  # Run database migrations
-pnpm dev                 # Start API + UI dev servers
+pnpm dev                 # Start DB (Docker) + API and UI locally with hot reload
+```
+
+This starts PostgreSQL and Adminer in Docker, then runs the API and UI dev servers locally for fast iteration and hot reload.
+
+On first run, you'll also need to run database migrations:
+
+```bash
+pnpm --filter @ttis/api exec prisma migrate dev
+```
+
+### Production (Local Testing)
+
+```bash
+pnpm prod                # Build and run full stack in Docker (DB, API, UI, Adminer)
+pnpm prod:down           # Stop everything
 ```
 
 ### Verify It Works

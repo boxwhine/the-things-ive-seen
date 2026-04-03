@@ -1,4 +1,4 @@
-import builder from "./builder";
+import builder from "./builder.js";
 
 // Register the DateTime scalar
 builder.scalarType("DateTime", {
@@ -7,8 +7,8 @@ builder.scalarType("DateTime", {
 });
 
 // Import type/field definitions (side effects register them on the builder)
-import "./venue";
-import "./genre";
-import "./event";
+import "./venue.js";
+import "./genre.js";
+import "./event.js";
 
 export const schema = builder.toSchema();

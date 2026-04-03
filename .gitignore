@@ -1,10 +1,13 @@
 # Dependencies
 node_modules/
+.pnpm-store/
 .pnp
 .pnp.js
 .yarn/install-state.gz
 # only using pnpm for deps
 package-lock.json
+# per-package lockfiles are artifacts from Docker builds; root lockfile is the source of truth
+packages/*/pnpm-lock.yaml
 
 # Build outputs
 build/
