@@ -105,6 +105,11 @@ UI (Apollo Client) → GraphQL API (GraphQL Yoga + Pothos) → Prisma ORM → Po
 - UI: http://localhost:3000
 - Adminer (DB GUI): http://localhost:8080
 
+## Git Workflow
+
+- **Never commit directly to `main`.** Always ensure you are on a feature branch before committing changes.
+- If currently on `main`, create a new branch before making any commits.
+
 ## Document Styling Preferences
 
 When editing or creating Markdown documents in this repo:
