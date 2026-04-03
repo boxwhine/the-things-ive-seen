@@ -1,10 +1,10 @@
 # Module 01: Containerization & Local Kubernetes
 
-**Status:** 🟡 In Progress
+**Status:** ✅ Complete
 
 **Start Date:** 2026-03-03
 
-**End Date:** —
+**End Date:** 2026-04-03
 
 ## Goal
 
@@ -43,9 +43,9 @@ Get the full application stack running in a local Kubernetes cluster with produc
 
 ### Hardening
 
-- [ ] Add liveness and readiness probes to all Deployments
+- [x] Add liveness and readiness probes to all Deployments
 - [x] Set CPU and memory requests and limits on all Deployments
-- [ ] Debug any remaining connectivity or config issues
+- [x] Debug any remaining connectivity or config issues
 
 ## Related ADRs
 

@@ -1,8 +1,8 @@
 # Project Status
 
-**Last Updated:** 2026-03-27
+**Last Updated:** 2026-04-03
 
-**Active Module:** 1 — Containerization & Local Kubernetes
+**Active Module:** 2 — Build System & CI/CD Foundation
 
 > [!NOTE]
 > This document tracks current implementation state, active blockers, and in-progress work. It is expected to change frequently. For the stable target architecture, see [ARCHITECTURE.md](./ARCHITECTURE.md).
@@ -13,8 +13,8 @@ For full acceptance criteria, implementation checklists, and per-module notes, s
 
 | Module                                            | Focus                                | Status         | Start Date | End Date |
 | ------------------------------------------------- | ------------------------------------ | -------------- | ---------- | -------- |
-| [01](./modules/module-01-containerization.md)     | Containerization & Local Kubernetes  | 🟡 In Progress | 2026-03-03 |          |
-| [02](./modules/module-02-cicd.md)                 | Build System & CI/CD Foundation      | ⬜ Not Started |            |          |
+| [01](./modules/module-01-containerization.md)     | Containerization & Local Kubernetes  | ✅ Complete    | 2026-03-03 | 2026-04-03 |
+| [02](./modules/module-02-cicd.md)                 | Build System & CI/CD Foundation      | 🟡 In Progress |            |          |
 | [03](./modules/module-03-cloud-infrastructure.md) | Cloud Infrastructure & Terraform     | ⬜ Not Started |            |          |
 | [04](./modules/module-04-auth.md)                 | Authentication & Authorization       | ⬜ Not Started |            |          |
 | [05](./modules/module-05-service-extraction.md)   | Service Extraction & Message Queue   | ⬜ Not Started |            |          |
@@ -34,6 +34,7 @@ For full acceptance criteria, implementation checklists, and per-module notes, s
 | Database         | PostgreSQL 16                                    | Upgraded from 11.4 (ADR-009)     |
 | Package Manager  | pnpm v10 (workspaces)                            |                                  |
 | Containerization | Docker + Docker Compose                          |                                  |
+| Orchestration    | k3d (k3s in Docker)                              | Local 3-node cluster             |
 
 ## What Is Working
 
@@ -43,6 +44,9 @@ For full acceptance criteria, implementation checklists, and per-module notes, s
 - Docker Compose dev environment (API, UI, PostgreSQL, Adminer)
 - Husky + lint-staged pre-commit hooks (ESLint + Prettier)
 - Production Dockerfiles (multi-stage builds) for API and UI
+- Local Kubernetes cluster (k3d) with API, UI, and PostgreSQL deployments
+- Liveness/readiness probes and resource limits on all K8s deployments
+- Prisma migration Job for database schema deployment in K8s
 - Seed data pipeline: CSV → JSON → Prisma seed script (~500 concert records)
 
 ## Active Blockers

@@ -21,6 +21,18 @@ spec:
           imagePullPolicy: Never
           ports:
             - containerPort: 4000
+          livenessProbe:
+            httpGet:
+              path: /graphql
+              port: 4000
+            initialDelaySeconds: 10
+            periodSeconds: 15
+          readinessProbe:
+            httpGet:
+              path: /graphql
+              port: 4000
+            initialDelaySeconds: 5
+            periodSeconds: 10
           resources:
             requests:
               cpu: 100m
