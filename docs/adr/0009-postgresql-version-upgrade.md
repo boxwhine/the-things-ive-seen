@@ -1,6 +1,7 @@
 # ADR-0009: Upgrade PostgreSQL from 11.4 to 16
 
 Date: 2026-03-25
+
 Status: Accepted
 
 ## Context

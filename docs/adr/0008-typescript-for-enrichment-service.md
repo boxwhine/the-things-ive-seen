@@ -1,6 +1,7 @@
 # ADR-0008: Use TypeScript for the Enrichment Service (Go Deferred)
 
 Date: 2026-03-25
+
 Status: Accepted
 
 ## Context

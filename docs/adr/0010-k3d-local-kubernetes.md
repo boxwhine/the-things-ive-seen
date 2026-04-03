@@ -1,6 +1,7 @@
 # ADR-0010: Use k3d for Local Kubernetes Development
 
 Date: 2026-04-03
+
 Status: Accepted
 
 ## Context

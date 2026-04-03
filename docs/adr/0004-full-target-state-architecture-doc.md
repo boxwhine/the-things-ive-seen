@@ -1,6 +1,7 @@
 # ADR-0004: Document Full Target Architecture Upfront
 
 Date: 2026-03-25
+
 Status: Accepted
 
 ## Context

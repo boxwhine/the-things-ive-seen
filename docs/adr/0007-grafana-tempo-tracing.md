@@ -1,6 +1,7 @@
 # ADR-0007: Use Grafana Tempo for Distributed Tracing
 
 Date: 2026-03-25
+
 Status: Accepted
 
 ## Context
