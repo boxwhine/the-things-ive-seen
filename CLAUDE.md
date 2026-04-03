@@ -110,6 +110,15 @@ UI (Apollo Client) → GraphQL API (GraphQL Yoga + Pothos) → Prisma ORM → Po
 - **Never commit directly to `main`.** Always ensure you are on a feature branch before committing changes.
 - If currently on `main`, create a new branch before making any commits.
 
+## Documentation Maintenance
+
+When committing changes, always review whether project documentation needs updates to reflect the work done. Documentation updates should be included in the same commit as the code changes they describe.
+
+- **`docs/STATUS.md`** — Keep module progress, "What Is Working", and "Active Blockers" sections current. When work changes the state of a feature or resolves a blocker, update this file.
+- **`docs/modules/*.md`** — When work completes acceptance criteria items or changes their scope, update the relevant module file's checklists and notes.
+- **`docs/ARCHITECTURE.md`** — If a change introduces or revises an architectural decision, add or update the appropriate ADR entry.
+- **`README.md` files** — When adding, removing, or renaming npm scripts, CLI commands, or setup steps, update any README that documents them to keep instructions accurate.
+
 ## Document Styling Preferences
 
 When editing or creating Markdown documents in this repo:

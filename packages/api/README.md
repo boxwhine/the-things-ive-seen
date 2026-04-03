@@ -4,9 +4,9 @@ GraphQL API for The Things I've Seen. Built with GraphQL Yoga, Pothos, Prisma, a
 
 ## Prerequisites
 
-- Node.js 20+
-- pnpm
-- PostgreSQL (or Docker)
+- Node.js 22+
+- pnpm 10.30+
+- PostgreSQL 16 (or Docker)
 
 ## Setup
 
@@ -33,7 +33,9 @@ GraphQL API for The Things I've Seen. Built with GraphQL Yoga, Pothos, Prisma, a
 4. **Start the database** (if using Docker):
 
    ```bash
-   docker-compose up ttis-db
+   # From repo root
+   pnpm dev:infra          # Start DB + Adminer containers
+   pnpm dev:infra:down     # Stop them
    ```
 
 ## Running
@@ -54,16 +56,23 @@ The GraphQL API will be available at http://localhost:4000 with the playground a
 
 ```bash
 # From repo root — starts DB, API, UI, and Adminer
-docker-compose up
+pnpm prod
 ```
 
 ### Production build
 
 ```bash
-pnpm start
+pnpm build         # Generate Prisma client + compile TypeScript
+pnpm start         # Run compiled production build
 ```
 
-Compiles TypeScript and runs the built output.
+### Database Commands
+
+```bash
+pnpm prisma <cmd>        # Run any Prisma CLI command (uses prisma.config.ts)
+pnpm db:reset            # Reset database and rerun migrations
+pnpm db:seed             # Seed database with concert data
+```
 
 ## Testing
 
@@ -84,12 +93,14 @@ pnpm format        # Prettier
 ```
 src/
 ├── index.ts        # GraphQL Yoga server entry point
-├── models/         # Sequelize-TypeScript models
-├── resolvers/      # GraphQL resolvers (Pothos schema builder)
-└── db/             # Database instance and seeding
+├── schema/         # Pothos schema builders (event, venue, genre)
+├── db/             # Prisma client instance
+└── config.ts       # Server configuration
 prisma/
 ├── schema.prisma   # Prisma schema
-└── prisma.config.ts
+├── prisma.config.ts
+├── seed.ts         # Database seed script
+└── migrations/     # Prisma migrations
 ```
 
 ## Useful URLs

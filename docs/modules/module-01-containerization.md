@@ -53,6 +53,7 @@ Get the full application stack running in a local Kubernetes cluster with produc
 - [ADR-0002](../adr/0002-migrate-to-pothos.md) — Migrated schema builder from Type-GraphQL to Pothos
 - [ADR-0003](../adr/0003-migrate-to-pnpm-workspaces.md) — Migrated package manager from npm to pnpm workspaces
 - [ADR-0009](../adr/0009-postgresql-version-upgrade.md) — Upgrading PostgreSQL from 11.4 to 16
+- [ADR-0010](../adr/0010-k3d-local-kubernetes.md) — Use k3d for local Kubernetes development
 
 ## Notes & Discoveries
 
@@ -69,5 +70,3 @@ Get the full application stack running in a local Kubernetes cluster with produc
 - **2026-03-10** — Blockers: When you don't touch an app for a while, it always takes longer than expected to shake off the cobwebs and get everything running again. Even with only a few pages and a couple read-only GraphQL fetches, getting to a workable, compilable, lintable state took several long sessions.
 
 - **2026-03-25** — Modernizing the app (ORM migration, framework upgrades, package manager migration) concurrently with production planning created significant churn not accounted for in the original module timeline. The prerequisite checklist above is a direct result. This is expected and documented intentionally.
-
-- **2026-04-03** — Chose k3d over Docker Desktop Kubernetes and minikube for local K8s. k3d runs k3s in Docker containers, supports multi-node clusters with minimal overhead, and includes a built-in load balancer and Traefik ingress. Created a 3-node cluster (`k3d cluster create ttis --agents 2 -p "80:80@loadbalancer" -p "443:443@loadbalancer"`).
