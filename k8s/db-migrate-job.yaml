@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: db-migrate
+  namespace: ttis
+spec:
+  backoffLimit: 3
+  template:
+    metadata:
+      labels:
+        app: db-migrate
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrate
+          image: ttis-api:latest
+          imagePullPolicy: Never
+          command:
+            [
+              "npx",
+              "prisma",
+              "migrate",
+              "deploy",
+              "--config",
+              "/app/build/prisma/prisma.config.js",
+            ]
+          env:
+            - name: DATABASE_URL
+              value: postgresql://postgres:password@db:5432/ttis_db

@@ -20,6 +20,8 @@ WORKDIR /app
 COPY --from=build /prod/api/node_modules ./node_modules
 COPY --from=build /prod/api/package.json ./package.json
 COPY --from=build /app/packages/api/build ./build
+COPY --from=build /app/packages/api/prisma/schema.prisma ./build/prisma/schema.prisma
+COPY --from=build /app/packages/api/prisma/migrations ./build/prisma/migrations
 EXPOSE 4000
 CMD ["node", "./build/src/index.js"]
 

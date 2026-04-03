@@ -32,19 +32,19 @@ Get the full application stack running in a local Kubernetes cluster with produc
 
 ### Kubernetes
 
-- [ ] Install k3s or enable Kubernetes in Docker Desktop
-- [ ] Learn basic kubectl commands (get, describe, logs, exec)
-- [ ] Understand pods, deployments, services, namespaces
-- [ ] Write Deployment manifest for GraphQL API
-- [ ] Write Deployment manifest for Next.js UI
-- [ ] Deploy PostgreSQL in Kubernetes (or use external connection)
-- [ ] Get full stack running in local Kubernetes
-- [ ] Verify services can communicate
+- [x] Install k3s or enable Kubernetes in Docker Desktop
+- [x] Learn basic kubectl commands (get, describe, logs, exec)
+- [x] Understand pods, deployments, services, namespaces
+- [x] Write Deployment manifest for GraphQL API
+- [x] Write Deployment manifest for Next.js UI
+- [x] Deploy PostgreSQL in Kubernetes (or use external connection)
+- [x] Get full stack running in local Kubernetes
+- [x] Verify services can communicate
 
 ### Hardening
 
 - [ ] Add liveness and readiness probes to all Deployments
-- [ ] Set CPU and memory requests and limits on all Deployments
+- [x] Set CPU and memory requests and limits on all Deployments
 - [ ] Debug any remaining connectivity or config issues
 
 ## Related ADRs
@@ -69,3 +69,5 @@ Get the full application stack running in a local Kubernetes cluster with produc
 - **2026-03-10** — Blockers: When you don't touch an app for a while, it always takes longer than expected to shake off the cobwebs and get everything running again. Even with only a few pages and a couple read-only GraphQL fetches, getting to a workable, compilable, lintable state took several long sessions.
 
 - **2026-03-25** — Modernizing the app (ORM migration, framework upgrades, package manager migration) concurrently with production planning created significant churn not accounted for in the original module timeline. The prerequisite checklist above is a direct result. This is expected and documented intentionally.
+
+- **2026-04-03** — Chose k3d over Docker Desktop Kubernetes and minikube for local K8s. k3d runs k3s in Docker containers, supports multi-node clusters with minimal overhead, and includes a built-in load balancer and Traefik ingress. Created a 3-node cluster (`k3d cluster create ttis --agents 2 -p "80:80@loadbalancer" -p "443:443@loadbalancer"`).
