@@ -27,6 +27,6 @@ CMD ["node", "./build/src/index.js"]
 FROM base AS ui
 WORKDIR /app
 COPY --from=build /app/packages/ui/.next/standalone ./
-COPY --from=build /app/packages/ui/.next/static ./.next/static
+COPY --from=build /app/packages/ui/.next/static ./packages/ui/.next/static
 EXPOSE 3000
 CMD ["node", "packages/ui/server.js"]
