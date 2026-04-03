@@ -14,7 +14,8 @@
   "scripts": {
     "dev": "tsx watch ./src/",
     "lint": "tsc --noEmit && eslint ./src/ --quiet --fix",
-    "start": "tsc && node ./build/",
+    "build": "pnpm run generate && tsc",
+    "start": "node ./build/src/index.js",
     "generate": "prisma generate",
     "format": "prettier --write .",
     "prisma": "prisma  --config ./prisma/prisma.config.ts",

@@ -2,4 +2,11 @@
 .git
 .gitignore
 .prettierrc
+.husky
 **/node_modules
+**/.next
+**/build
+packages/api/lib
+**/.pnpm-store
+docs
+data

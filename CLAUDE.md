@@ -17,10 +17,18 @@ See `docs/STATUS.md` for current implementation state and active blockers.
 ### Development
 
 ```bash
-docker-compose up          # Start all services (API :4000, UI :3000, PostgreSQL :5432, Adminer :8080)
-pnpm dev                   # Run both API and UI dev servers locally
-pnpm dev:api               # Run API dev server only
+pnpm dev                   # Start DB in Docker + run API and UI locally with hot reload
+pnpm dev:api               # Run API dev server only (assumes DB is running)
 pnpm dev:ui                # Run UI dev server only
+pnpm dev:infra             # Start just the DB + Adminer containers
+pnpm dev:infra:down        # Stop the DB + Adminer containers
+```
+
+### Production (local testing)
+
+```bash
+pnpm prod                  # Build and run full stack in Docker (DB, API, UI, Adminer)
+pnpm prod:down             # Stop the production stack
 ```
 
 ### Testing
@@ -49,7 +57,8 @@ pnpm build                 # Build all packages
 
 ```bash
 pnpm --filter @ttis/api dev    # tsx with hot reload
-pnpm --filter @ttis/api start  # Compile and run production
+pnpm --filter @ttis/api build  # Generate Prisma client + compile TypeScript
+pnpm --filter @ttis/api start  # Run compiled production build
 ```
 
 **UI (`packages/ui`):**
