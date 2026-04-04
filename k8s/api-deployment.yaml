@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+  namespace: ttis
+  labels:
+    app: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+        - name: api
+          image: ttis-api:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 4000
+          livenessProbe:
+            httpGet:
+              path: /graphql
+              port: 4000
+            initialDelaySeconds: 10
+            periodSeconds: 15
+          readinessProbe:
+            httpGet:
+              path: /graphql
+              port: 4000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+          env:
+            - name: DATABASE_URL
+              value: postgresql://postgres:password@db:5432/ttis_db
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api
+  namespace: ttis
+  labels:
+    app: api
+spec:
+  type: NodePort
+  selector:
+    app: api
+  ports:
+    - port: 4000
+      targetPort: 4000
+      nodePort: 4000

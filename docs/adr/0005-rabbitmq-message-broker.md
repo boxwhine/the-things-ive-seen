@@ -1,6 +1,7 @@
 # ADR-0005: Use RabbitMQ as Message Broker
 
 Date: 2026-03-25
+
 Status: Accepted
 
 ## Context

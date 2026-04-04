@@ -1,6 +1,7 @@
 # ADR-0003: Migrate Package Manager from npm to pnpm Workspaces
 
 Date: 2025-03
+
 Status: Accepted
 
 ## Context

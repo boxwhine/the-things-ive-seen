@@ -1,10 +1,10 @@
 # Module 01: Containerization & Local Kubernetes
 
-**Status:** 🟡 In Progress
+**Status:** ✅ Complete
 
 **Start Date:** 2026-03-03
 
-**End Date:** —
+**End Date:** 2026-04-03
 
 ## Goal
 
@@ -32,20 +32,20 @@ Get the full application stack running in a local Kubernetes cluster with produc
 
 ### Kubernetes
 
-- [ ] Install k3s or enable Kubernetes in Docker Desktop
-- [ ] Learn basic kubectl commands (get, describe, logs, exec)
-- [ ] Understand pods, deployments, services, namespaces
-- [ ] Write Deployment manifest for GraphQL API
-- [ ] Write Deployment manifest for Next.js UI
-- [ ] Deploy PostgreSQL in Kubernetes (or use external connection)
-- [ ] Get full stack running in local Kubernetes
-- [ ] Verify services can communicate
+- [x] Install k3s or enable Kubernetes in Docker Desktop
+- [x] Learn basic kubectl commands (get, describe, logs, exec)
+- [x] Understand pods, deployments, services, namespaces
+- [x] Write Deployment manifest for GraphQL API
+- [x] Write Deployment manifest for Next.js UI
+- [x] Deploy PostgreSQL in Kubernetes (or use external connection)
+- [x] Get full stack running in local Kubernetes
+- [x] Verify services can communicate
 
 ### Hardening
 
-- [ ] Add liveness and readiness probes to all Deployments
-- [ ] Set CPU and memory requests and limits on all Deployments
-- [ ] Debug any remaining connectivity or config issues
+- [x] Add liveness and readiness probes to all Deployments
+- [x] Set CPU and memory requests and limits on all Deployments
+- [x] Debug any remaining connectivity or config issues
 
 ## Related ADRs
 
@@ -53,6 +53,7 @@ Get the full application stack running in a local Kubernetes cluster with produc
 - [ADR-0002](../adr/0002-migrate-to-pothos.md) — Migrated schema builder from Type-GraphQL to Pothos
 - [ADR-0003](../adr/0003-migrate-to-pnpm-workspaces.md) — Migrated package manager from npm to pnpm workspaces
 - [ADR-0009](../adr/0009-postgresql-version-upgrade.md) — Upgrading PostgreSQL from 11.4 to 16
+- [ADR-0010](../adr/0010-k3d-local-kubernetes.md) — Use k3d for local Kubernetes development
 
 ## Notes & Discoveries
 

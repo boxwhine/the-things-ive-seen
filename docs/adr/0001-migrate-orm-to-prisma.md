@@ -1,6 +1,7 @@
 # ADR-0001: Migrate ORM from Sequelize to Prisma
 
 Date: 2025-02
+
 Status: Accepted
 
 ## Context

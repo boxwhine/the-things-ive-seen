@@ -11,8 +11,6 @@ I've saved the ticket stubs from (almost) every concert I've been to since I was
 
 So far, it's mainly just a list of events that link to detail pages, but eventually I would like to tie it into third party API's like Spotify, Setlist.fm, Last.fm, Google Maps, et al., to create a more rich experience.
 
-<br clear="left" />
-
 ## Potential features
 
 - "Play this artist" on Spotify
@@ -80,11 +78,38 @@ On first run, you'll also need to run database migrations:
 pnpm --filter @ttis/api exec prisma migrate dev
 ```
 
-### Production (Local Testing)
+### Production (Docker Compose)
 
 ```bash
 pnpm prod                # Build and run full stack in Docker (DB, API, UI, Adminer)
 pnpm prod:down           # Stop everything
+```
+
+### Kubernetes (Local k3d)
+
+```bash
+kubectl apply -f k8s/namespace.yaml
+kubectl apply -f k8s/db-deployment.yaml
+kubectl apply -f k8s/api-deployment.yaml
+kubectl apply -f k8s/ui-deployment.yaml
+kubectl apply -f k8s/db-migrate-job.yaml    # Run Prisma migrations
+```
+
+Access services via port-forward:
+
+```bash
+kubectl port-forward -n ttis svc/api 4000:4000
+kubectl port-forward -n ttis svc/ui 3000:3000
+```
+
+### Other Commands
+
+```bash
+pnpm test                # Run tests across all packages (Vitest)
+pnpm lint                # Lint all packages
+pnpm format              # Format all packages (Prettier)
+pnpm build               # Build all packages
+pnpm parse-csv           # Parse CSV data into JSON for seeding
 ```
 
 ### Verify It Works

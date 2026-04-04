@@ -1,11 +1,11 @@
 # @ttis/ui
 
-Next.js 14 frontend for The Things I've Seen. Built with React 18, Apollo Client, Tailwind CSS, and Radix UI.
+Next.js 16 frontend for The Things I've Seen. Built with React 19, Apollo Client, Tailwind CSS v4, and shadcn/ui.
 
 ## Prerequisites
 
-- Node.js 20+
-- pnpm
+- Node.js 22+
+- pnpm 10.30+
 - Running instance of `@ttis/api` (GraphQL backend)
 
 ## Setup
@@ -16,7 +16,13 @@ Next.js 14 frontend for The Things I've Seen. Built with React 18, Apollo Client
    pnpm install
    ```
 
-2. **Ensure the API is running** — the UI connects to the GraphQL API at `http://localhost:4000` via Apollo Client.
+2. **Configure environment variables:**
+
+   ```bash
+   cp .env.sample .env
+   ```
+
+3. **Ensure the API is running** — the UI connects to the GraphQL API at the URL specified by `NEXT_PUBLIC_API_URL` (defaults to `http://localhost:4000/graphql`).
 
 ## Running
 
@@ -36,7 +42,7 @@ The app will be available at http://localhost:3000.
 
 ```bash
 # From repo root — starts DB, API, UI, and Adminer
-docker-compose up
+pnpm prod
 ```
 
 ### Production build
@@ -67,8 +73,9 @@ src/
 ## Key Details
 
 - **Data fetching**: Apollo Client queries/mutations defined in `src/graphql/`
-- **Styling**: Tailwind CSS v4 with shadcn/ui components
+- **Styling**: Tailwind CSS v4 with shadcn/ui components (Radix UI primitives)
 - **Fonts**: Geist font family via `next/font`
+- **Output**: Standalone mode for containerized deployment
 
 ## Useful URLs
 

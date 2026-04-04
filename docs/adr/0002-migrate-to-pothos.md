@@ -1,6 +1,7 @@
 # ADR-0002: Migrate GraphQL Schema Builder from Type-GraphQL to Pothos
 
 Date: 2025-02
+
 Status: Accepted
 
 ## Context

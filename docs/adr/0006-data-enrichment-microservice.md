@@ -1,6 +1,7 @@
 # ADR-0006: Extract Data Enrichment Service as the First Microservice
 
 Date: 2026-03-25
+
 Status: Accepted
 
 ## Context
