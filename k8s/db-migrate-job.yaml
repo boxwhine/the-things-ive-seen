@@ -11,6 +11,13 @@ spec:
         app: db-migrate
     spec:
       restartPolicy: Never
+      initContainers:
+        - name: wait-for-db
+          image: postgres:16-alpine
+          command:
+            - sh
+            - -c
+            - until pg_isready -h db -U postgres; do echo "waiting for db..."; sleep 2; done
       containers:
         - name: migrate
           image: ttis-api:latest

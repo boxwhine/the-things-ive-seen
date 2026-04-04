@@ -19,10 +19,20 @@ The project's target architecture calls for AWS EKS in production (Module 3). Th
 Use k3d as the local Kubernetes environment. The cluster is created with:
 
 ```bash
-k3d cluster create ttis --agents 2 -p "80:80@loadbalancer" -p "443:443@loadbalancer"
+k3d cluster create ttis --agents 2 \
+  -p "80:80@loadbalancer" \
+  -p "3000:3000@loadbalancer" \
+  -p "4000:4000@loadbalancer" \
+  -p "8080:8080@loadbalancer" \
+  --k3s-arg "--service-node-port-range=3000-32767@server:0"
 ```
 
-This provides a 3-node cluster (1 server + 2 agents) with ports 80 and 443 mapped through k3d's load balancer for ingress.
+This provides a 3-node cluster (1 server + 2 agents) with four port mappings through k3d's load balancer:
+
+- **Port 80** — Traefik Ingress for production-like HTTP routing
+- **Ports 3000/4000/8080** — NodePort services for direct access to UI, API, and Adminer on their standard dev ports, avoiding the need for `kubectl port-forward` on every cluster start
+
+The `--service-node-port-range` flag expands the allowed NodePort range (default 30000-32767) down to 3000 so the services can use their natural ports.
 
 ## Consequences
 
