@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: db-seed
+  namespace: ttis
+spec:
+  backoffLimit: 3
+  template:
+    metadata:
+      labels:
+        app: db-seed
+    spec:
+      restartPolicy: Never
+      initContainers:
+        - name: wait-for-db
+          image: postgres:16-alpine
+          command:
+            - sh
+            - -c
+            - until pg_isready -h db -U postgres; do echo "waiting for db..."; sleep 2; done
+      containers:
+        - name: seed
+          image: ttis-api:latest
+          imagePullPolicy: Never
+          command: ["node", "/app/build/prisma/seed.js"]
+          env:
+            - name: DATABASE_URL
+              value: postgresql://postgres:password@db:5432/ttis_db
