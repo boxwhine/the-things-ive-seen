@@ -72,4 +72,4 @@ _None yet. Add links here as decisions are made during this module._
 
 - Sourcing the Node version from `.nvmrc` via `actions/setup-node`'s `node-version-file` so CI, Docker, and dev all stay in lockstep from a single pin.
 - `TURBO_TOKEN` lives in repo secrets; `TURBO_TEAM` lives in repo variables (the team slug isn't sensitive).
-- Heads-up: GitHub Actions is deprecating Node 20 for action runtimes (June 2026). `checkout@v4`, `setup-node@v4`, and `pnpm/action-setup@v4` currently run on Node 20. Revisit before the deadline; not urgent.
+- Pinned `actions/checkout`, `actions/setup-node`, and `pnpm/action-setup` to `@v5` so the action runtimes sit on Node 24 ahead of the June 2026 Node 20 deprecation. Held off on `setup-node@v6` because it drops automatic pnpm caching, which would force a manual `actions/cache` step.
