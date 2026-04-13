@@ -54,3 +54,6 @@ Thumbs.db
 
 # AI
 .claude/worktrees
+
+# Turborepo
+.turbo

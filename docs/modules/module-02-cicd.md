@@ -1,8 +1,8 @@
 # Module 02: Build System & CI/CD Foundation
 
-**Status:** ⬜ Not Started
+**Status:** 🟡 In Progress
 
-**Start Date:** —
+**Start Date:** 2026-04-13
 
 **End Date:** —
 
@@ -14,11 +14,11 @@ Establish a fast, reliable CI pipeline using Turborepo for monorepo-aware build 
 
 ### Turborepo
 
-- [ ] Install Turborepo (`pnpm add -Dw turbo`)
-- [ ] Create `turbo.json` with task pipelines (build, lint, test, dev)
-- [ ] Verify `turbo run build` respects package dependency order
-- [ ] Set up remote caching (Vercel free tier or self-hosted)
-- [ ] Update root `package.json` scripts to use `turbo run`
+- [x] Install Turborepo (`pnpm add -Dw turbo`)
+- [x] Create `turbo.json` with task pipelines (build, lint, test, types, dev)
+- [x] Verify `turbo run build` respects package dependency order
+- [x] Set up remote caching (Vercel free tier or self-hosted)
+- [x] Update root `package.json` scripts to use `turbo run`
 
 ### Production Dockerfiles
 
@@ -54,3 +54,8 @@ _None yet. Add links here as decisions are made during this module._
 ## Notes & Discoveries
 
 > Capture decisions made on the fly, unexpected findings, or context that doesn't warrant a full ADR. Append entries as you go.
+
+### 2026-04-13 — Turborepo setup
+
+- Remote caching uses the Vercel free tier; CI will need `TURBO_TOKEN` and `TURBO_TEAM` as GitHub Actions secrets when we wire up the CI Pipeline section.
+- Split `tsc --noEmit` out of the API `lint` script into a dedicated `types` task (with a matching script on `@ttis/ui`) so type checks can run independently of linting in CI.

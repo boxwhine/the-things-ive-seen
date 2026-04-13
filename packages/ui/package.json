@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "format": "prettier --write .",
-    "lint": "eslint"
+    "lint": "eslint",
+    "types": "tsc --noEmit"
   },
   "dependencies": {
     "@apollo/client": "^4.1.6",

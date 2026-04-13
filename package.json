@@ -10,10 +10,11 @@
     "dev:infra:down": "docker compose -f compose.dev.yml down",
     "prod": "docker compose -f compose.prod.yml up --build",
     "prod:down": "docker compose -f compose.prod.yml down",
-    "test": "pnpm -r run test",
+    "test": "turbo run test",
     "format": "pnpm -r run format",
-    "lint": "pnpm -r run lint",
-    "build": "pnpm -r run build",
+    "lint": "turbo run lint",
+    "types": "turbo run types",
+    "build": "turbo run build",
     "parse-csv": "tsx data/scripts/parse-csv.ts",
     "prepare": "husky"
   },
@@ -21,7 +22,8 @@
     "csv-parse": "^6.1.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.3.3",
-    "tsx": "^4.21.0"
+    "tsx": "^4.21.0",
+    "turbo": "^2.9.6"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

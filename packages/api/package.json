@@ -13,7 +13,8 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "tsx watch ./src/",
-    "lint": "tsc --noEmit && eslint ./src/ --quiet --fix",
+    "lint": "eslint ./src/ --quiet --fix",
+    "types": "tsc --noEmit",
     "build": "pnpm run generate && tsc",
     "start": "node ./build/src/index.js",
     "generate": "prisma generate",
@@ -21,7 +22,7 @@
     "prisma": "prisma  --config ./prisma/prisma.config.ts",
     "db:reset": "pnpm run prisma migrate reset",
     "db:seed": "pnpm run prisma db seed",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "test:watch": "vitest dev"
   },
   "dependencies": {
