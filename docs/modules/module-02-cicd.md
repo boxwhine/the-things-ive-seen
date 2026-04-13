@@ -33,10 +33,10 @@ Establish a fast, reliable CI pipeline using Turborepo for monorepo-aware build 
 
 ### CI Pipeline (GitHub Actions)
 
-- [ ] Create `.github/workflows/ci.yml` for PR checks
-- [ ] Add stages: install, lint, typecheck, test, build
-- [ ] Configure Turborepo remote caching in CI to skip unchanged packages
-- [ ] Verify pipeline runs on every PR and push to main
+- [x] Create `.github/workflows/ci.yml` for PR checks
+- [x] Add stages: install, lint, typecheck, test, build
+- [x] Configure Turborepo remote caching in CI to skip unchanged packages
+- [x] Verify pipeline runs on every PR and push to main
 
 ### Container Registry
 
@@ -66,3 +66,10 @@ _None yet. Add links here as decisions are made during this module._
 ### 2026-04-13 — Production Dockerfiles audit
 
 - Section scope revised: the original checklist assumed per-package Dockerfiles, but the monorepo uses a single root `Dockerfile` with targeted stages (`--target api`, `--target ui`) — that work landed in Module 01 (`9582946`). Keeping this pattern because it shares the install + build steps across both targets, which is well-suited to a pnpm monorepo.
+- Pinned the Docker base image and `.nvmrc` to `node:24.14.0-slim` / `24.14.0` so CI, prod containers, and local dev all resolve to the same Node version.
+
+### 2026-04-13 — CI workflow
+
+- Sourcing the Node version from `.nvmrc` via `actions/setup-node`'s `node-version-file` so CI, Docker, and dev all stay in lockstep from a single pin.
+- `TURBO_TOKEN` lives in repo secrets; `TURBO_TEAM` lives in repo variables (the team slug isn't sensitive).
+- Heads-up: GitHub Actions is deprecating Node 20 for action runtimes (June 2026). `checkout@v4`, `setup-node@v4`, and `pnpm/action-setup@v4` currently run on Node 20. Revisit before the deadline; not urgent.
