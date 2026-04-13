@@ -105,10 +105,11 @@ kubectl port-forward -n ttis svc/ui 3000:3000
 ### Other Commands
 
 ```bash
-pnpm test                # Run tests across all packages (Vitest)
-pnpm lint                # Lint all packages
+pnpm test                # Run tests across all packages (Vitest, via Turbo)
+pnpm lint                # Lint all packages (via Turbo)
+pnpm types               # Type-check all packages with `tsc --noEmit` (via Turbo)
 pnpm format              # Format all packages (Prettier)
-pnpm build               # Build all packages
+pnpm build               # Build all packages (via Turbo, with remote cache)
 pnpm parse-csv           # Parse CSV data into JSON for seeding
 ```
 
