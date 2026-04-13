@@ -22,18 +22,21 @@ Establish a fast, reliable CI pipeline using Turborepo for monorepo-aware build 
 
 ### Production Dockerfiles
 
-- [ ] Rewrite API Dockerfile with multi-stage build (builder + runner stages)
-- [ ] Add `.dockerignore` files to both packages
-- [ ] Create production UI Dockerfile (Next.js standalone output + nginx or node)
-- [ ] Verify both containers build and run independently
-- [ ] Test full stack via updated docker-compose
+> [!NOTE]
+> This work landed in Module 01 (commit `9582946 Split dev/prod Docker workflows with pnpm deploy`). The monorepo uses a single root `Dockerfile` with multi-stage builds and `--target api` / `--target ui` rather than per-package Dockerfiles — the `build` stage installs deps and builds both packages once, and `pnpm deploy` prunes a per-package `node_modules` for each runner stage. This section is an audit-and-verify pass on what already exists.
+
+- [x] Audit root `Dockerfile` multi-stage structure (`base` → `build` → `api`/`ui`)
+- [x] Audit root `.dockerignore` (per-package files intentionally skipped — the single root build context makes them redundant)
+- [x] Verify API image builds and runs independently (`docker build --target api` + smoke test)
+- [x] Verify UI image builds and runs independently (`docker build --target ui` + smoke test; uses Next.js standalone output)
+- [x] Verify full stack via `compose.prod.yml` (`pnpm prod`)
 
 ### CI Pipeline (GitHub Actions)
 
-- [ ] Create `.github/workflows/ci.yml` for PR checks
-- [ ] Add stages: install, lint, typecheck, test, build
-- [ ] Configure Turborepo remote caching in CI to skip unchanged packages
-- [ ] Verify pipeline runs on every PR and push to main
+- [x] Create `.github/workflows/ci.yml` for PR checks
+- [x] Add stages: install, lint, typecheck, test, build
+- [x] Configure Turborepo remote caching in CI to skip unchanged packages
+- [x] Verify pipeline runs on every PR and push to main
 
 ### Container Registry
 
@@ -59,3 +62,14 @@ _None yet. Add links here as decisions are made during this module._
 
 - Remote caching uses the Vercel free tier; CI will need `TURBO_TOKEN` and `TURBO_TEAM` as GitHub Actions secrets when we wire up the CI Pipeline section.
 - Split `tsc --noEmit` out of the API `lint` script into a dedicated `types` task (with a matching script on `@ttis/ui`) so type checks can run independently of linting in CI.
+
+### 2026-04-13 — Production Dockerfiles audit
+
+- Section scope revised: the original checklist assumed per-package Dockerfiles, but the monorepo uses a single root `Dockerfile` with targeted stages (`--target api`, `--target ui`) — that work landed in Module 01 (`9582946`). Keeping this pattern because it shares the install + build steps across both targets, which is well-suited to a pnpm monorepo.
+- Pinned the Docker base image and `.nvmrc` to `node:24.14.0-slim` / `24.14.0` so CI, prod containers, and local dev all resolve to the same Node version.
+
+### 2026-04-13 — CI workflow
+
+- Sourcing the Node version from `.nvmrc` via `actions/setup-node`'s `node-version-file` so CI, Docker, and dev all stay in lockstep from a single pin.
+- `TURBO_TOKEN` lives in repo secrets; `TURBO_TEAM` lives in repo variables (the team slug isn't sensitive).
+- Pinned `actions/checkout`, `actions/setup-node`, and `pnpm/action-setup` to `@v5` so the action runtimes sit on Node 24 ahead of the June 2026 Node 20 deprecation. Held off on `setup-node@v6` because it drops automatic pnpm caching, which would force a manual `actions/cache` step.
