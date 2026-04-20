@@ -20,3 +20,4 @@ To add a new ADR, create a file named `NNNN-short-title.md` using the next avail
 | [0008](./0008-typescript-for-enrichment-service.md)  | Use TypeScript for the Enrichment Service (Go Deferred)    | 2026-03-25 | Accepted |
 | [0009](./0009-postgresql-version-upgrade.md)         | Upgrade PostgreSQL from 11.4 to 16                         | 2026-03-25 | Accepted |
 | [0010](./0010-k3d-local-kubernetes.md)               | Use k3d for Local Kubernetes Development                   | 2026-04-03 | Accepted |
+| [0011](./0011-ecr-over-ghcr.md)                      | Use AWS ECR as the Single Container Registry               | 2026-04-20 | Accepted |
