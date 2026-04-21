@@ -110,7 +110,7 @@ graph TD
 
 - **Compute:** AWS EKS (Elastic Kubernetes Service)
 - **Database:** AWS RDS (PostgreSQL 16)
-- **Container Registry:** GitHub Container Registry (ghcr.io) for dev; AWS ECR for production
+- **Container Registry:** AWS ECR (single registry for all environments; OIDC auth from CI; native EKS IAM pulls)
 - **DNS:** AWS Route53
 - **Ingress:** nginx-ingress controller via Helm
 - **Secrets:** Kubernetes Secrets or AWS Secrets Manager
@@ -123,7 +123,7 @@ graph TD
     PR([PR Opened])
     CI["GitHub Actions<br/>install · lint · typecheck · test · build<br/>Turborepo cache"]
     Merge([Merge to main])
-    Push["Build & push Docker images<br/>ghcr.io / ECR<br/>tagged: git SHA + latest"]
+    Push["Build & push Docker images<br/>AWS ECR<br/>tagged: git SHA + latest"]
     Argo[ArgoCD detects<br/>manifest change]
     Deploy["Deploy to EKS<br/>canary → full rollout"]
     Smoke{Smoke tests}
@@ -187,18 +187,18 @@ Failed enrichment attempts are retried via RabbitMQ dead letter queue with expon
 
 Full acceptance criteria, implementation checklists, and per-module notes live in [`docs/modules/`](./modules/README.md). This table is the high-level overview.
 
-| Module                                            | Focus                                | Status         | Target Outcome                                                           |
-| ------------------------------------------------- | ------------------------------------ | -------------- | ------------------------------------------------------------------------ |
-| [01](./modules/module-01-containerization.md)     | Containerization & Local Kubernetes  | 🟡 In Progress | Full stack running in local k8s with probes and resource limits          |
-| [02](./modules/module-02-cicd.md)                 | Build System & CI/CD Foundation      | ⬜ Not Started | Turborepo build cache, GitHub Actions CI, images published to ghcr.io    |
-| [03](./modules/module-03-cloud-infrastructure.md) | Cloud Infrastructure & Terraform     | ⬜ Not Started | EKS cluster + RDS provisioned via Terraform, app accessible at real URL  |
-| [04](./modules/module-04-auth.md)                 | Authentication & Authorization       | ⬜ Not Started | Auth.js with Google OAuth, JWT-protected GraphQL API, session management |
-| [05](./modules/module-05-service-extraction.md)   | Service Extraction & Message Queue   | ⬜ Not Started | Enrichment service deployed, RabbitMQ running, async flow end-to-end     |
-| [06](./modules/module-06-metrics-dashboards.md)   | Observability — Metrics & Dashboards | ⬜ Not Started | Prometheus + Grafana, RED method dashboards per service                  |
-| [07](./modules/module-07-logging-tracing.md)      | Observability — Logging & Tracing    | ⬜ Not Started | Loki + Tempo via OTel, SLO compliance dashboards                         |
-| [08](./modules/module-08-alerting.md)             | Alerting & Incident Response         | ⬜ Not Started | SLO-based alerts, runbooks, chaos day postmortem                         |
-| [09](./modules/module-09-gitops.md)               | GitOps & Advanced Deployment         | ⬜ Not Started | ArgoCD, canary deployments, Terraform in CI, image scanning              |
-| [10](./modules/module-10-chaos.md)                | Chaos Engineering & Polish           | ⬜ Not Started | Automated chaos experiments, cost optimization, portfolio polish         |
+| Module                                            | Focus                                | Target Outcome                                                           |
+| ------------------------------------------------- | ------------------------------------ | ------------------------------------------------------------------------ |
+| [01](./modules/module-01-containerization.md)     | Containerization & Local Kubernetes  | Full stack running in local k8s with probes and resource limits          |
+| [02](./modules/module-02-cicd.md)                 | Build System & CI/CD Foundation      | Turborepo build cache, GitHub Actions CI, images published to ECR        |
+| [03](./modules/module-03-cloud-infrastructure.md) | Cloud Infrastructure & Terraform     | EKS cluster + RDS provisioned via Terraform, app accessible at real URL  |
+| [04](./modules/module-04-auth.md)                 | Authentication & Authorization       | Auth.js with Google OAuth, JWT-protected GraphQL API, session management |
+| [05](./modules/module-05-service-extraction.md)   | Service Extraction & Message Queue   | Enrichment service deployed, RabbitMQ running, async flow end-to-end     |
+| [06](./modules/module-06-metrics-dashboards.md)   | Observability — Metrics & Dashboards | Prometheus + Grafana, RED method dashboards per service                  |
+| [07](./modules/module-07-logging-tracing.md)      | Observability — Logging & Tracing    | Loki + Tempo via OTel, SLO compliance dashboards                         |
+| [08](./modules/module-08-alerting.md)             | Alerting & Incident Response         | SLO-based alerts, runbooks, chaos day postmortem                         |
+| [09](./modules/module-09-gitops.md)               | GitOps & Advanced Deployment         | ArgoCD, canary deployments, Terraform in CI, image scanning              |
+| [10](./modules/module-10-chaos.md)                | Chaos Engineering & Polish           | Automated chaos experiments, cost optimization, portfolio polish         |
 
 ## 4. Technology Decisions
 
@@ -227,7 +227,7 @@ Full acceptance criteria, implementation checklists, and per-module notes live i
 | CI/CD               | GitHub Actions                | Native to existing GitHub repo; no additional tooling required                                                                       |
 | GitOps              | ArgoCD                        | CNCF graduated; declarative; pairs cleanly with Kubernetes manifests                                                                 |
 | Build orchestration | Turborepo                     | Monorepo-aware build caching; reduces CI time as package count grows                                                                 |
-| Container registry  | ghcr.io (dev) → ECR (prod)    | GitHub-native for development; ECR integrates with EKS IAM for production                                                            |
+| Container registry  | AWS ECR                       | Single registry for all environments; OIDC auth from CI; native EKS IAM integration for pulls                                        |
 
 ## 5. ADR Log
 

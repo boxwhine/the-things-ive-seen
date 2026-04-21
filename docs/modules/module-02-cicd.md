@@ -8,7 +8,7 @@
 
 ## Goal
 
-Establish a fast, reliable CI pipeline using Turborepo for monorepo-aware build caching and GitHub Actions for automated lint, test, and build checks. On merge to main, Docker images are built and published to GitHub Container Registry, ready for deployment.
+Establish a fast, reliable CI pipeline using Turborepo for monorepo-aware build caching and GitHub Actions for automated lint, test, and build checks. On merge to main, Docker images are built and published to AWS ECR, ready for deployment to EKS.
 
 ## Acceptance Criteria
 
@@ -40,19 +40,20 @@ Establish a fast, reliable CI pipeline using Turborepo for monorepo-aware build 
 
 ### Container Registry
 
-- [ ] Set up GitHub Container Registry (ghcr.io)
-- [ ] Add CI step to build and push Docker images on merge to main
+- [ ] Set up AWS ECR repositories (ttis-api, ttis-ui) with lifecycle policies
+- [ ] Configure GitHub OIDC for AWS IAM role assumption
+- [ ] Add CI step to build and push Docker images to ECR on merge to main
 - [ ] Tag images with git SHA and `latest`
-- [ ] Verify images are pullable from the registry
+- [ ] Verify images are pullable from ECR
 
 ### Verification
 
-- [ ] End-to-end: open PR → CI passes → merge → images published to ghcr.io
+- [ ] End-to-end: open PR → CI passes → merge → images published to ECR
 - [ ] Document pipeline architecture and caching strategy
 
 ## Related ADRs
 
-_None yet. Add links here as decisions are made during this module._
+- [ADR-0011](../adr/0011-ecr-over-ghcr.md) — Use AWS ECR as the single container registry
 
 ## Notes & Discoveries
 
@@ -73,3 +74,11 @@ _None yet. Add links here as decisions are made during this module._
 - Sourcing the Node version from `.nvmrc` via `actions/setup-node`'s `node-version-file` so CI, Docker, and dev all stay in lockstep from a single pin.
 - `TURBO_TOKEN` lives in repo secrets; `TURBO_TEAM` lives in repo variables (the team slug isn't sensitive).
 - Pinned `actions/checkout`, `actions/setup-node`, and `pnpm/action-setup` to `@v5` so the action runtimes sit on Node 24 ahead of the June 2026 Node 20 deprecation. Held off on `setup-node@v6` because it drops automatic pnpm caching, which would force a manual `actions/cache` step.
+
+### 2026-04-20 — Container registry: ECR over ghcr.io
+
+- Switched target container registry from ghcr.io to AWS ECR (see [ADR-0011](../adr/0011-ecr-over-ghcr.md)). Rationale: production targets EKS, and ECR integrates natively with EKS node IAM roles for image pulls — no `imagePullSecret` wiring. Using ECR from the start avoids a mid-project registry migration.
+- GitHub Actions authenticates to AWS via OIDC (no long-lived credentials). The `publish` job requests an `id-token` from GitHub's OIDC provider and exchanges it with AWS STS for temporary credentials scoped to ECR push only.
+- Lifecycle policies keep only the last 5 tagged images per repo (plus 1-day expiry for untagged) to stay within the Free Tier 500MB storage limit.
+- Docker layer caching uses the GitHub Actions cache backend (`type=gha`) rather than ECR inline cache — simpler, free, and avoids consuming ECR storage for cache layers.
+- One-time AWS setup is scripted: run `./scripts/setup-ecr-repos.sh` then `./scripts/setup-github-oidc.sh` (requires AWS CLI configured with admin access). After running, add the outputted secrets/variables to the GitHub repo settings.
