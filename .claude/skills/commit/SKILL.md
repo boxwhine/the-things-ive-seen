@@ -1,6 +1,8 @@
 ---
 name: commit
 description: Commit staged changes
+model: sonnet
+effort: medium
 ---
 
 1. Review `git status` and `git diff --staged`. Do not include any unstaged changes without asking permission.
