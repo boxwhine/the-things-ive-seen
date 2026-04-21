@@ -22,14 +22,12 @@ Establish a fast, reliable CI pipeline using Turborepo for monorepo-aware build 
 
 ### Production Dockerfiles
 
-> [!NOTE]
-> This work landed in Module 01 (commit `9582946 Split dev/prod Docker workflows with pnpm deploy`). The monorepo uses a single root `Dockerfile` with multi-stage builds and `--target api` / `--target ui` rather than per-package Dockerfiles — the `build` stage installs deps and builds both packages once, and `pnpm deploy` prunes a per-package `node_modules` for each runner stage. This section is an audit-and-verify pass on what already exists.
-
-- [x] Audit root `Dockerfile` multi-stage structure (`base` → `build` → `api`/`ui`)
-- [x] Audit root `.dockerignore` (per-package files intentionally skipped — the single root build context makes them redundant)
-- [x] Verify API image builds and runs independently (`docker build --target api` + smoke test)
-- [x] Verify UI image builds and runs independently (`docker build --target ui` + smoke test; uses Next.js standalone output)
+- [x] Split production Dockerfiles per package (`packages/api/Dockerfile`, `packages/ui/Dockerfile`)
+- [x] Each Dockerfile installs only its own workspace-filtered deps (`pnpm install --filter <pkg>...`)
+- [x] Verify API image builds and runs independently (`docker build -f packages/api/Dockerfile .` + smoke test)
+- [x] Verify UI image builds and runs independently (`docker build -f packages/ui/Dockerfile .` + smoke test; uses Next.js standalone output)
 - [x] Verify full stack via `compose.prod.yml` (`pnpm prod`)
+- [x] Verify `pnpm dev` is unaffected (native processes + DB-only compose)
 
 ### CI Pipeline (GitHub Actions)
 
@@ -68,6 +66,13 @@ Establish a fast, reliable CI pipeline using Turborepo for monorepo-aware build 
 
 - Section scope revised: the original checklist assumed per-package Dockerfiles, but the monorepo uses a single root `Dockerfile` with targeted stages (`--target api`, `--target ui`) — that work landed in Module 01 (`9582946`). Keeping this pattern because it shares the install + build steps across both targets, which is well-suited to a pnpm monorepo.
 - Pinned the Docker base image and `.nvmrc` to `node:24.14.0-slim` / `24.14.0` so CI, prod containers, and local dev all resolve to the same Node version.
+
+### 2026-04-20 — Split Dockerfiles per package (revisiting the 04-13 decision)
+
+- Reversed the earlier decision to keep a single root `Dockerfile`. The shared `build` stage looked like reuse, but `@ttis/api` and `@ttis/ui` share only `graphql` at runtime and no workspace-internal deps. Every `docker build` was installing both packages' deps, running `prisma generate` + `tsc` + `next build`, then pruning 80% of the work away via `pnpm deploy`. That's false coupling disguised as sharing.
+- New layout: `packages/api/Dockerfile` and `packages/ui/Dockerfile`. Each uses `pnpm install --filter <pkg>...` so only that package's deps (and its workspace transitives) land in `node_modules`. Each CI matrix job now builds only its own image.
+- The UI Dockerfile is notably simpler: no `pnpm deploy` step, because `next build` with `output: 'standalone'` produces a self-contained runtime tree. Added `outputFileTracingRoot: path.join(__dirname, '../../')` to `next.config.mjs` so the Next.js tracer resolves symlinked pnpm deps correctly when the build context is the repo root.
+- `compose.prod.yml` now references each package's Dockerfile directly (no `target:` field needed). `pnpm dev` is unchanged — it uses `compose.dev.yml` (DB only) plus native hot-reload processes.
 
 ### 2026-04-13 — CI workflow
 

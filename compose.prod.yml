@@ -24,8 +24,7 @@ services:
     restart: on-failure
     build:
       context: .
-      dockerfile: Dockerfile
-      target: api
+      dockerfile: packages/api/Dockerfile
     environment:
       DATABASE_URL: postgresql://postgres:password@ttis-db:5432/ttis_db
     depends_on:
@@ -38,8 +37,7 @@ services:
     restart: on-failure
     build:
       context: .
-      dockerfile: Dockerfile
-      target: ui
+      dockerfile: packages/ui/Dockerfile
     environment:
       HOSTNAME: "0.0.0.0"
       PORT: "3000"
