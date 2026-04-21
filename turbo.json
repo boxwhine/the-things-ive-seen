@@ -1,18 +1,22 @@
 {
   "$schema": "https://turborepo.com/schema.json",
   "tasks": {
+    "generate": {
+      "inputs": ["prisma/**"],
+      "outputs": ["lib/**"]
+    },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["build/**", ".next/**", "!.next/cache/**", "src/generated/**"]
+      "outputs": ["build/**", ".next/**", "!.next/cache/**", "lib/**"]
     },
     "lint": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["generate", "^build"]
     },
     "types": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["generate", "^build"]
     },
     "test": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["generate", "^build"]
     },
     "dev": {
       "cache": false,
