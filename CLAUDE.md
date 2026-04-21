@@ -101,7 +101,7 @@ UI (Apollo Client) → GraphQL API (GraphQL Yoga + Pothos) → Prisma ORM → Po
 
 ## Development URLs
 
-- GraphQL Playground: http://localhost:4000/playground
+- GraphQL endpoint (GraphiQL UI): http://localhost:4000/graphql
 - UI: http://localhost:3000
 - Adminer (DB GUI): http://localhost:8080
 
