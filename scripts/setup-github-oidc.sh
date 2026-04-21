@@ -3,7 +3,7 @@ set -euo pipefail
 
 REGION="${AWS_REGION:-us-east-1}"
 ROLE_NAME="github-actions-ecr-push"
-GITHUB_REPO="${GITHUB_REPO:-jrinehart/the-things-ive-seen}"
+GITHUB_REPO="${GITHUB_REPO:-boxwhine/the-things-ive-seen}"
 
 ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
 OIDC_PROVIDER_URL="https://token.actions.githubusercontent.com"
