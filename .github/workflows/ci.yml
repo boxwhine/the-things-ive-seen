@@ -49,7 +49,7 @@ jobs:
         run: pnpm build
 
   publish:
-    name: Publish ${{ matrix.target }} to ECR
+    name: Publish ${{ matrix.package }} to ECR
     if: github.event_name == 'push'
     needs: ci
     runs-on: ubuntu-latest
