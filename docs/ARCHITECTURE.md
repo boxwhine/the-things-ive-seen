@@ -1,8 +1,8 @@
 # Architecture Design Document
 
-**Status:** 🟡 In Progress — Module 1 (Containerization & Local Kubernetes)
+**Status:** 🟡 In Progress — Module 3 (Cloud Infrastructure & Terraform)
 
-**Last Updated:** 2026-03-25
+**Last Updated:** 2026-04-21
 
 **Author:** Jesse Rinehart
 

@@ -1,8 +1,8 @@
 # Project Status
 
-**Last Updated:** 2026-04-13
+**Last Updated:** 2026-04-21
 
-**Active Module:** 2 — Build System & CI/CD Foundation
+**Active Module:** 3 — Cloud Infrastructure & Terraform
 
 > [!NOTE]
 > This document tracks current implementation state, active blockers, and in-progress work. It is expected to change frequently. For the stable target architecture, see [ARCHITECTURE.md](./ARCHITECTURE.md).
@@ -14,8 +14,8 @@ For full acceptance criteria, implementation checklists, and per-module notes, s
 | Module                                            | Focus                                | Status         | Start Date | End Date   |
 | ------------------------------------------------- | ------------------------------------ | -------------- | ---------- | ---------- |
 | [01](./modules/module-01-containerization.md)     | Containerization & Local Kubernetes  | ✅ Complete    | 2026-03-03 | 2026-04-03 |
-| [02](./modules/module-02-cicd.md)                 | Build System & CI/CD Foundation      | 🟡 In Progress | 2026-04-13 |            |
-| [03](./modules/module-03-cloud-infrastructure.md) | Cloud Infrastructure & Terraform     | ⬜ Not Started |            |            |
+| [02](./modules/module-02-cicd.md)                 | Build System & CI/CD Foundation      | ✅ Complete    | 2026-04-13 | 2026-04-21 |
+| [03](./modules/module-03-cloud-infrastructure.md) | Cloud Infrastructure & Terraform     | 🟡 In Progress | 2026-04-21 |            |
 | [04](./modules/module-04-auth.md)                 | Authentication & Authorization       | ⬜ Not Started |            |            |
 | [05](./modules/module-05-service-extraction.md)   | Service Extraction & Message Queue   | ⬜ Not Started |            |            |
 | [06](./modules/module-06-metrics-dashboards.md)   | Observability — Metrics & Dashboards | ⬜ Not Started |            |            |
@@ -49,6 +49,10 @@ For full acceptance criteria, implementation checklists, and per-module notes, s
 - Prisma migration Job for database schema deployment in K8s
 - Seed data pipeline: CSV → JSON → Prisma seed script (~500 concert records)
 - Turborepo task pipelines (build, lint, test, types) with Vercel remote caching
+- GitHub Actions CI pipeline (lint, types, test, build) on every PR and push to `main`
+- Per-package production Dockerfiles (`packages/api/Dockerfile`, `packages/ui/Dockerfile`) with workspace-filtered installs
+- Automated ECR publish on merge to `main`: OIDC-authenticated push of `ttis-api` and `ttis-ui` images tagged with short git SHA and `latest`
+- AWS setup scripted via `scripts/setup-ecr-repos.sh` and `scripts/setup-github-oidc.sh` (ECR lifecycle policies retain last 5 tagged images)
 
 ## Active Blockers
 
@@ -61,4 +65,4 @@ None — all Module 1 prerequisite blockers have been resolved:
 
 ## Active Module Detail
 
-See [Module 02](./modules/module-02-cicd.md) for the full acceptance criteria checklist and in-progress notes.
+Module 02 is complete. Module 03 (Cloud Infrastructure & Terraform) started 2026-04-21 — the AWS account and CLI setup checklist items were picked up during Module 02's ECR publish work. See [Module 03](./modules/module-03-cloud-infrastructure.md) for the in-progress checklist and [Module 02](./modules/module-02-cicd.md) for the just-finished phase's wrap-up notes.

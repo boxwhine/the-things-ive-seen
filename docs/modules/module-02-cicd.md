@@ -1,10 +1,10 @@
 # Module 02: Build System & CI/CD Foundation
 
-**Status:** 🟡 In Progress
+**Status:** ✅ Complete
 
 **Start Date:** 2026-04-13
 
-**End Date:** —
+**End Date:** 2026-04-21
 
 ## Goal
 
@@ -38,16 +38,16 @@ Establish a fast, reliable CI pipeline using Turborepo for monorepo-aware build 
 
 ### Container Registry
 
-- [ ] Set up AWS ECR repositories (ttis-api, ttis-ui) with lifecycle policies
-- [ ] Configure GitHub OIDC for AWS IAM role assumption
-- [ ] Add CI step to build and push Docker images to ECR on merge to main
-- [ ] Tag images with git SHA and `latest`
-- [ ] Verify images are pullable from ECR
+- [x] Set up AWS ECR repositories (ttis-api, ttis-ui) with lifecycle policies
+- [x] Configure GitHub OIDC for AWS IAM role assumption
+- [x] Add CI step to build and push Docker images to ECR on merge to main
+- [x] Tag images with git SHA and `latest`
+- [x] Verify images are pullable from ECR
 
 ### Verification
 
-- [ ] End-to-end: open PR → CI passes → merge → images published to ECR
-- [ ] Document pipeline architecture and caching strategy
+- [x] End-to-end: open PR → CI passes → merge → images published to ECR
+- [x] Document pipeline architecture and caching strategy
 
 ## Related ADRs
 

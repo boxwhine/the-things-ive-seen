@@ -1,8 +1,8 @@
 # Module 03: Cloud Infrastructure & Terraform
 
-**Status:** ⬜ Not Started
+**Status:** 🟡 In Progress
 
-**Start Date:** —
+**Start Date:** 2026-04-21
 
 **End Date:** —
 
@@ -14,8 +14,8 @@ Provision all cloud infrastructure via Terraform and deploy the application to A
 
 ### Setup
 
-- [ ] Set up AWS account (or use existing)
-- [ ] Install AWS CLI and configure credentials
+- [x] Set up AWS account (or use existing)
+- [x] Install AWS CLI and configure credentials
 - [ ] Install Terraform
 - [ ] Complete a basic Terraform tutorial (provision an S3 bucket, then destroy it)
 
@@ -53,3 +53,7 @@ _None yet. Add links here as decisions are made during this module._
 ## Notes & Discoveries
 
 > Capture decisions made on the fly, unexpected findings, or context that doesn't warrant a full ADR. Append entries as you go.
+
+### 2026-04-21 — AWS account and CLI already configured from Module 02
+
+- The AWS account and local AWS CLI setup were prerequisites for Module 02's ECR publish work — `scripts/setup-ecr-repos.sh` and `scripts/setup-github-oidc.sh` both require an AWS CLI configured with admin access. Those prerequisites spilled into this module's "Setup" checklist and were completed during Module 02.
