@@ -116,7 +116,7 @@ pnpm parse-csv           # Parse CSV data into JSON for seeding
 ### Verify It Works
 
 - UI: http://localhost:3000
-- GraphQL Playground: http://localhost:4000/playground
+- GraphQL Playground: http://localhost:4000/graphql
 - Adminer (DB GUI): http://localhost:8080
 
 ### Packages

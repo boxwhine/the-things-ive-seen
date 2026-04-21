@@ -50,7 +50,7 @@ pnpm dev:api
 pnpm dev
 ```
 
-The GraphQL API will be available at http://localhost:4000 with the playground at http://localhost:4000/playground.
+The GraphQL API will be available at http://localhost:4000 with the playground at http://localhost:4000/graphql.
 
 ### Via Docker Compose
 
@@ -105,8 +105,8 @@ prisma/
 
 ## Useful URLs
 
-| Service            | URL                              |
-| ------------------ | -------------------------------- |
-| GraphQL API        | http://localhost:4000            |
-| GraphQL Playground | http://localhost:4000/playground |
-| Adminer (DB GUI)   | http://localhost:8080            |
+| Service            | URL                           |
+| ------------------ | ----------------------------- |
+| GraphQL API        | http://localhost:4000         |
+| GraphQL Playground | http://localhost:4000/graphql |
+| Adminer (DB GUI)   | http://localhost:8080         |
