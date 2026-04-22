@@ -16,8 +16,8 @@ Provision all cloud infrastructure via Terraform and deploy the application to A
 
 - [x] Set up AWS account (or use existing)
 - [x] Install AWS CLI and configure credentials
-- [ ] Install Terraform
-- [ ] Complete a basic Terraform tutorial (provision an S3 bucket, then destroy it)
+- [x] Install Terraform
+- [x] Complete a basic Terraform tutorial (provision an S3 bucket, then destroy it)
 
 ### Infrastructure
 
@@ -52,8 +52,17 @@ _None yet. Add links here as decisions are made during this module._
 
 ## Notes & Discoveries
 
-> Capture decisions made on the fly, unexpected findings, or context that doesn't warrant a full ADR. Append entries as you go.
+<!-- Capture decisions made on the fly, unexpected findings, or context that doesn't warrant a full ADR. Append entries as you go. -->
 
 ### 2026-04-21 — AWS account and CLI already configured from Module 02
 
 - The AWS account and local AWS CLI setup were prerequisites for Module 02's ECR publish work — `scripts/setup-ecr-repos.sh` and `scripts/setup-github-oidc.sh` both require an AWS CLI configured with admin access. Those prerequisites spilled into this module's "Setup" checklist and were completed during Module 02.
+
+### 2026-04-22 — Terraform installed via tfenv; S3 tutorial complete
+
+- **Terraform install path:** `tfenv` over `brew install terraform`. Reason: `tfenv` is version-managed (reads `.terraform-version`), matching the `.nvmrc` pattern already used for Node. Installed Terraform `1.14.9`; AWS provider `6.41.0` pulled in by the tutorial.
+- **Non-obvious lesson — Identity Center account instance vs. organization instance:** first attempt enabled IAM Identity Center as an **account instance**. Account instances are purpose-built for AWS-managed application identities (Amazon Q, QuickSight) and do **not** support permission sets or AWS account federation — so the "Permission sets" and "AWS accounts" navigation items were missing entirely. Fix: deleted the account instance, created an AWS Organization (single-account org, this account is the management account), re-enabled Identity Center (auto-detected the org and provisioned as an Organization instance), then created the `AdminAccess` permission set and assigned a user. Takeaway: for any use case involving `aws configure sso` against an AWS account, you need an Organization instance. Account instances only cover SaaS-style app identity.
+- **Local AWS profile:** named profile `ttis` via `aws configure sso`, session name `ttis`. Used `AWS_PROFILE=ttis` per-command rather than exporting globally, to scope blast radius when multiple AWS accounts are configured on the same machine.
+- **Module 02 continuity confirmed:** `aws sts get-caller-identity --profile ttis` returned the same account ID that owns the `ttis-api` / `ttis-ui` ECR repos and the `github-actions-ecr-push` OIDC role from Module 02. So Module 03 continues in the same account with no reconciliation work.
+- **Tutorial artifact:** ran the full `init → plan → apply → destroy` loop against a single `aws_s3_bucket` resource from a throwaway scratch dir (`~/scratch/tf-tutorial/`), not committed to the repo. Three-way verification on teardown (grep against `aws s3 ls`, `aws s3api head-bucket` → 404, `terraform state list` empty) confirmed the bucket was actually gone on both AWS and local-state sides.
+- **Conventions to carry into the Infrastructure section:** pin `required_version` in the `terraform` block and `~> N.0` on the AWS provider; commit `.terraform.lock.hcl`, ignore `.terraform/`, `*.tfstate*`, `*.tfvars`; plan with `-out=tfplan` for anything non-trivial; `terraform fmt -recursive` before commits; run with `AWS_PROFILE=ttis` scoped per-invocation.

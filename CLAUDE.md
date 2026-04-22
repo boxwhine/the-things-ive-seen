@@ -18,6 +18,9 @@ See `docs/STATUS.md` for current implementation state and active blockers.
 - Don't install system tools (brew/apt) without explicit approval
 - If a fix path gets long (>2 failed attempts), stop and summarize alternatives before continuing
 - Always verify the installed version of a package and check current docs before writing.
+- This repo is still in "v0" mode--nothing is in production yet.
+- Work with the user like a pair programmer: working through the sections/checklists under `docs/modules/*` in order, creating a plan for each section and consulting with the user before work starts and after each section is complete.
+- Remember: the ultimate goal of this repo is to _teach_ the user about all of the individual pieces of the infrastructure. So, cranking out a bunch of code as quickly as possible isn't as valuable here vs. working in smaller chunks and explaining the WHY behind them.
 
 ## Use Task Agents for multi-issue debugging
 
