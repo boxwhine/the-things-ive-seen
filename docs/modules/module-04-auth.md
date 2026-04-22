@@ -10,6 +10,8 @@
 
 Add authentication and authorization to the application using Auth.js (formerly NextAuth.js) with Google OAuth as the identity provider. The UI requires login before access, and the GraphQL API validates JWT tokens on every request. This module establishes the auth contract that all current and future clients (web, mobile) authenticate against.
 
+This module is also where the app first becomes **publicly reachable** on the internet. Route53 DNS, nginx-ingress, and TLS termination land here, in front of the now-authenticated API. Public exposure was deliberately deferred from Module 03 so it coincides with auth — see Module 03's 2026-04-22 "Scope reorder" Notes entry for the reasoning.
+
 ## Architecture
 
 Auth.js runs inside the Next.js UI as a server-side auth handler. On login, the user authenticates via Google OAuth and receives a signed JWT. The UI attaches this token to all outgoing GraphQL requests. The API validates the JWT signature and extracts the user identity before processing any resolver.
@@ -41,6 +43,8 @@ sequenceDiagram
 - [ ] The GraphQL playground remains accessible in development (bypass or dev token)
 - [ ] Environment variables for OAuth client ID/secret are documented and managed via Kubernetes Secrets
 - [ ] Auth works locally via Docker Compose and in the Kubernetes deployment from Module 01/03
+- [ ] App is publicly reachable at a stable URL with TLS termination (first public exposure — gated by auth from this module)
+- [ ] GraphQL API has production hardening in place: restricted CORS, introspection disabled in prod, query depth/complexity limits, safe error responses
 
 ## Implementation Checklist
 
@@ -71,6 +75,29 @@ sequenceDiagram
 - [ ] Update Docker Compose to pass auth-related environment variables
 - [ ] Update Kubernetes manifests to include auth secrets
 
+### Networking & DNS
+
+_Moved from Module 03 so public exposure coincides with auth landing._
+
+- [ ] Set up Route53 domain (or use a free subdomain)
+- [ ] Install nginx-ingress controller via Helm
+- [ ] Configure ingress rules for all services
+- [ ] Verify app is accessible via a real URL
+
+### Pre-Exposure API Hardening
+
+_Concerns whose only reason to exist is the app becoming publicly reachable. Must land before or in the same deploy as the public ingress above._
+
+- [ ] Configure CORS in GraphQL Yoga — restrict `origin` to the UI domain(s), not `*`
+- [ ] Disable GraphQL introspection in production (keep enabled in dev for GraphiQL)
+- [ ] Add query depth limit (e.g., via `@escape.tech/graphql-armor-max-depth` or `@envelop/depth-limit`)
+- [ ] Add query complexity/cost limit
+- [ ] Structured error handling — suppress Prisma internals and stack traces in production responses; log full detail server-side only
+
 ## Notes
 
-_No notes yet — this module has not been started._
+### 2026-04-22 — Scope injection from Module 03 security review
+
+- The "Networking & DNS" and "Pre-Exposure API Hardening" sections above were added before this module began. They originated during Module 03 Phase 3b planning, when a security review found the app had no authentication, no CORS, no query limits, and introspection enabled — and Module 03's original scope would have put all of that on the public internet before Module 04 landed.
+- See Module 03's 2026-04-22 "Scope reorder" Notes entry for the full reasoning and the alternatives considered (infra-layer auth stopgaps like basic auth, Cloudflare Access, or IP allowlists — all rejected as throwaway work).
+- Practical consequence for this module: the Networking & DNS work should happen _after_ auth enforcement is live in the API, and the Pre-Exposure API Hardening items should land in the same deploy as the ingress — not before and not after.

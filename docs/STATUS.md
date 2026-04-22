@@ -1,6 +1,6 @@
 # Project Status
 
-**Last Updated:** 2026-04-21
+**Last Updated:** 2026-04-22
 
 **Active Module:** 3 — Cloud Infrastructure & Terraform
 
@@ -66,3 +66,5 @@ None — all Module 1 prerequisite blockers have been resolved:
 ## Active Module Detail
 
 Module 02 is complete. Module 03 (Cloud Infrastructure & Terraform) started 2026-04-21 — the AWS account and CLI setup checklist items were picked up during Module 02's ECR publish work. See [Module 03](./modules/module-03-cloud-infrastructure.md) for the in-progress checklist and [Module 02](./modules/module-02-cicd.md) for the just-finished phase's wrap-up notes.
+
+**Scope reorder (2026-04-22):** Module 03's original "Networking & DNS" section (public Route53/ingress/URL) was moved to Module 04 so the app's first public exposure coincides with auth landing. A new "Pre-Exposure API Hardening" section (CORS, introspection-off-in-prod, query depth/complexity limits, safe error responses) was also injected into Module 04. See the 2026-04-22 "Scope reorder" Notes entry in [Module 03](./modules/module-03-cloud-infrastructure.md) for the full reasoning.

@@ -8,7 +8,7 @@
 
 ## Goal
 
-Provision all cloud infrastructure via Terraform and deploy the application to AWS EKS. The app should be accessible at a real URL with a managed PostgreSQL database (RDS), proper secrets management, and DNS configured via Route53.
+Provision all cloud infrastructure via Terraform and deploy the application to AWS EKS with a managed PostgreSQL database (RDS) and proper secrets management. The app should be deployed to EKS and reachable from within the VPC (e.g., via `kubectl port-forward`). Public exposure (Route53, ingress, DNS) is deferred to Module 04 so it coincides with authentication landing — see the 2026-04-22 "Scope reorder" Notes entry below.
 
 ## Acceptance Criteria
 
@@ -38,13 +38,6 @@ Provision all cloud infrastructure via Terraform and deploy the application to A
 - [ ] Configure application to connect to RDS
 - [ ] Set up secrets management (Kubernetes Secrets or AWS Secrets Manager)
 - [ ] Run database migrations against cloud DB
-
-### Networking & DNS
-
-- [ ] Set up Route53 domain (or use a free subdomain)
-- [ ] Install nginx-ingress controller via Helm
-- [ ] Configure ingress rules for all services
-- [ ] Verify app is accessible via a real URL
 
 ## Related ADRs
 
@@ -77,3 +70,11 @@ _None yet. Add links here as decisions are made during this module._
 - **`default_tags` on the AWS provider** in `terraform/providers.tf` applies `Project`/`ManagedBy`/`Module`/`Environment` to every taggable resource created by that provider — saves per-resource tagging in every file we write next.
 - **Verification of backend end-to-end:** `terraform state pull` confirms read path; `terraform apply` with zero resources writes a header-only state object (181 bytes) to `s3://ttis-tf-state-478335820689/terraform.tfstate`, confirming write path.
 - **Gotcha worth noting for 3b/3c:** the main config's state will grow fast once VPC + EKS land. Plan with `-out=tfplan` and review before apply is going to matter much more than it did for the empty skeleton.
+
+### 2026-04-22 — Scope reorder: Networking & DNS moved to Module 04
+
+- **Trigger:** a security review during Phase 3b planning. The app has no authentication (`packages/api/src/index.ts` has no auth middleware; `addEvent`/`addVenue`/`addGenre` mutations accept anonymous writes), introspection is on, and there's no CORS / rate limit / query depth protection. Module 03 as originally written would have finished with the app at a real URL — i.e., unauthenticated mutations reachable from the public internet before Module 04's auth lands.
+- **Decision:** keep all of Module 03's _infrastructure_ work (VPC, EKS, ECR wiring, RDS, secrets) but move the final "Networking & DNS" section (Route53 + nginx-ingress + ingress rules + public URL verification) to Module 04. Module 03's new "done" state is "app deployed to EKS, reachable via `kubectl port-forward`," not "app at https://...". The first time anything public points at this app, auth will already gate it.
+- **Alternative rejected:** infra-layer auth stopgap (basic auth annotation on ingress, Cloudflare Access in front of the ALB, or IP allowlist). Rejected because Module 04 is next — building throwaway auth to bridge one module's gap is more work than just resequencing.
+- **Items also injected into Module 04:** alongside the moved Networking & DNS section, a new "Pre-Exposure API Hardening" section was added (CORS, introspection-off-in-prod, query depth limit, query complexity limit, structured error handling). These are all concerns whose _only_ reason to exist is that the app is about to become publicly reachable, so Module 04 is the right home.
+- **Production-hardening debt to revisit later:** single-NAT tradeoff (cost vs AZ resilience), VPC flow logs (deferred to Module 07), VPC endpoints for S3/ECR (deferred).
