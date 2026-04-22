@@ -1,0 +1,23 @@
+# Local Terraform download cache and plugins
+.terraform/
+
+# Local state files (remote state is in S3, but a stray local copy could be created)
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Sensitive variable files
+*.tfvars
+*.tfvars.json
+
+# Plan outputs
+*.tfplan
+tfplan
+
+# Local lock info (transient; the repo-committed lock is `.terraform.lock.hcl`)
+.terraform.tfstate.lock.info
+
+# Bootstrap's local state lives on disk by design — don't commit it
+bootstrap/terraform.tfstate
+bootstrap/terraform.tfstate.backup
+bootstrap/.terraform/
