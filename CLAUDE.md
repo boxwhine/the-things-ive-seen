@@ -22,6 +22,27 @@ See `docs/STATUS.md` for current implementation state and active blockers.
 - Work with the user like a pair programmer: working through the sections/checklists under `docs/modules/*` in order, creating a plan for each section and consulting with the user before work starts and after each section is complete.
 - Remember: the ultimate goal of this repo is to _teach_ the user about all of the individual pieces of the infrastructure. So, cranking out a bunch of code as quickly as possible isn't as valuable here vs. working in smaller chunks and explaining the WHY behind them.
 
+## AWS Cost Guardrails
+
+**Goal:** Run this project in AWS as close to $0/month as possible. The user is learning cloud infra on a personal budget — unexpected charges are not acceptable.
+
+**Authorization required before implementing any AWS change that could incur charges.** This includes, but is not limited to:
+
+- Provisioning or scaling any resource outside the AWS Free Tier (e.g., non-`t4g.micro`/`t3.micro` compute, RDS instance classes above free tier, Aurora, NAT Gateways, ALB/NLB, ElastiCache, OpenSearch, Fargate tasks beyond free tier).
+- Enabling paid services or features (CloudWatch custom metrics/dashboards beyond free tier, GuardDuty, Config, WAF, Secrets Manager secrets, KMS CMKs beyond AWS-managed, VPC endpoints, Route 53 hosted zones).
+- Data-transfer-heavy designs (cross-AZ traffic, NAT egress, CloudFront beyond free tier, inter-region replication).
+- Storage that accrues cost (EBS volumes beyond free tier, S3 classes other than Standard within free-tier limits, snapshots retained long-term).
+- Raising account-level limits, reserved capacity purchases, Savings Plans, or anything that commits spend.
+- Running `terraform apply`, `aws ... create/update/put`, CDK deploy, SAM deploy, or any other command that mutates live AWS state, when the change touches resources in the categories above.
+
+**Before proposing or applying such a change, you must:**
+
+1. Call it out explicitly: name the resource, the expected monthly cost (or "free tier eligible — with these limits…"), and the conditions under which it would start billing.
+2. Offer a free-tier-compatible alternative when one exists (e.g., SQLite/Neon/Supabase free tier instead of RDS; single-AZ public subnet instead of NAT; GitHub Actions instead of CodeBuild).
+3. Wait for the user to authorize the specific change. Prior approval for one resource is not blanket approval for the category.
+
+`terraform plan`, `aws ... describe/list/get`, and other read-only or dry-run commands do **not** require authorization and should be used freely to inform proposals.
+
 ## Use Task Agents for multi-issue debugging
 
 When a session has multiple independent bugs or tasks that can be run in parallel, use a separate Task agent to investigate each one in parallel in its own scope, then report findings before making any fixes.
