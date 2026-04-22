@@ -12,6 +12,17 @@ A concert/event tracking and visualization app. Monorepo with pnpm workspaces co
 See `docs/ARCHITECTURE.md` for the full target architecture and ADR log.
 See `docs/STATUS.md` for current implementation state and active blockers.
 
+## Approach Before Action
+
+- For Docker/infra changes, propose the approach (e.g., Dockerfile edit vs compose.yml env_file) BEFORE editing files
+- Don't install system tools (brew/apt) without explicit approval
+- If a fix path gets long (>2 failed attempts), stop and summarize alternatives before continuing
+- Always verify the installed version of a package and check current docs before writing.
+
+## Use Task Agents for multi-issue debugging
+
+When a session has multiple independent bugs or tasks that can be run in parallel, use a separate Task agent to investigate each one in parallel in its own scope, then report findings before making any fixes.
+
 ## Common Commands
 
 ### Development
@@ -35,7 +46,7 @@ pnpm prod:down             # Stop the production stack
 
 ```bash
 pnpm test                  # Run tests across all packages (Vitest)
-pnpm --filter @ttis/ui test  # Run tests in a specific package
+pnpm --filter @ttis/api test # Run tests in a specific package
 ```
 
 ### Linting
@@ -45,10 +56,28 @@ pnpm lint                  # Lint all packages
 pnpm --filter @ttis/api lint # Lint a specific package
 ```
 
+### Type Checking
+
+```bash
+pnpm types                 # Type-check all packages
+```
+
+### Formatting
+
+```bash
+pnpm format                # Run Prettier across all packages
+```
+
 ### Building
 
 ```bash
 pnpm build                 # Build all packages
+```
+
+### Data Scripts
+
+```bash
+pnpm parse-csv             # Parse source CSV data (data/scripts/parse-csv.ts)
 ```
 
 ### Package-Specific
@@ -81,17 +110,20 @@ pnpm --filter @ttis/ui add <dep>    # Add dep to UI package
 
 UI (Apollo Client) → GraphQL API (GraphQL Yoga + Pothos) → Prisma ORM → PostgreSQL
 
-### API Package (`packages/api/src`)
+### API Package (`packages/api`)
 
-- **schema/** - Pothos schema builders (event.ts, venue.ts, genre.ts)
+- **src/schema/** - Pothos schema builders (builder.ts, event.ts, venue.ts, genre.ts, index.ts)
+- **src/db/** - Prisma client instance (prisma.ts)
+- **src/config.ts** - Environment/config loading
+- **src/index.ts** - GraphQL Yoga server entry point
 - **prisma/** - Prisma schema, migrations, generated client
-- **index.ts** - GraphQL Yoga server entry point
 
 ### UI Package (`packages/ui/src`)
 
 - **app/** - Next.js App Router pages (home, about, events, venues)
 - **components/** - React components and shadcn/ui primitives
 - **graphql/** - Apollo queries and mutations
+- **lib/** - Shared utilities (e.g., shadcn `cn` helper)
 
 ### Key Patterns
 
@@ -110,6 +142,13 @@ UI (Apollo Client) → GraphQL API (GraphQL Yoga + Pothos) → Prisma ORM → Po
 - **Never commit directly to `main`.** Always ensure you are on a feature branch before committing changes.
 - If currently on `main`, create a new branch before making any commits.
 
+## Stack Conventions
+
+- Prisma 7 config syntax (not legacy seed config)
+- ESM imports require explicit `.js` extensions
+- Next.js standalone output requires manual static file copying
+- Turborepo: ensure `prisma generate` is declared as a task dependency
+
 ## Documentation Maintenance
 
 When committing changes, always review whether project documentation needs updates to reflect the work done. Documentation updates should be included in the same commit as the code changes they describe.
@@ -118,6 +157,8 @@ When committing changes, always review whether project documentation needs updat
 - **`docs/modules/*.md`** — When work completes acceptance criteria items or changes their scope, update the relevant module file's checklists and notes.
 - **`docs/ARCHITECTURE.md`** — If a change introduces or revises an architectural decision, add or update the appropriate ADR entry.
 - **`README.md` files** — When adding, removing, or renaming npm scripts, CLI commands, or setup steps, update any README that documents them to keep instructions accurate.
+
+Verify checklist items against actual code/config before marking complete.
 
 ## Document Styling Preferences
 
