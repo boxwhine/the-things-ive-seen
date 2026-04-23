@@ -43,6 +43,35 @@ See `docs/STATUS.md` for current implementation state and active blockers.
 
 `terraform plan`, `aws ... describe/list/get`, and other read-only or dry-run commands do **not** require authorization and should be used freely to inform proposals.
 
+## Public Repo: Secret Hygiene
+
+**This repository is public by design** (intended as a portfolio/learning artifact). Every commit is visible to the world and indexed by GitHub search, scrapers, and credential-scanning bots within minutes of being pushed. The project's AWS account is the user's personal account — anything that enables exploitation of it is a personal-financial risk, not just a hygiene issue.
+
+**Never commit the following, under any circumstances:**
+
+- AWS credentials of any kind: access key IDs (`AKIA...`, `ASIA...`), secret access keys, session tokens, SSO refresh tokens, EC2 instance metadata responses, `~/.aws/credentials` contents.
+- API keys, OAuth client secrets, JWT signing keys, database passwords, private keys (`-----BEGIN ...PRIVATE KEY-----`), webhook signing secrets, or any other credential material.
+- `.env`, `.env.local`, `*.tfvars`, kubeconfigs with embedded tokens, Terraform state files (which contain resolved secret values).
+- Personal data: home address, phone number, government IDs.
+- Internal URLs, hostnames, or paths that suggest non-public infrastructure (e.g., a private dashboard URL).
+
+**Treat as low-sensitivity but minimize new exposure:**
+
+- AWS account ID (`478335820689`). Already in committed files since phase 3a (`backend.tf`, `bootstrap/README.md`, module-03 notes). AWS classifies this as not-a-secret, but it's a useful targeting input for attackers and we shouldn't add it to net-new files unless required (e.g., backend config). When a placeholder works (e.g., docs prose), prefer `<account-id>`.
+- The user's email address. Already in every commit's author metadata, so additional refs in repo files don't materially change exposure — but don't introduce new ones in code or docs.
+
+**Enforcement and verification:**
+
+- The `.gitignore` files in `terraform/` and project root are the primary defense. New sensitive-by-class file types (e.g., a new `*.pem` convention) require a `.gitignore` update in the same commit.
+- Before any `git commit`, scan the staged diff for the patterns above. `git diff --staged | grep -iE 'AKIA|ASIA|aws_secret|password|token|sk_|api_key|BEGIN.*PRIVATE'` is a useful sanity check.
+- If a secret is committed, even briefly, it must be considered compromised. Rotate it immediately (revoke the IAM credential, regenerate the API key) — a force-push to remove the commit does **not** unleak it from caches, mirrors, or scraper databases.
+
+**For long-lived secrets the project legitimately needs (DB passwords, third-party API keys):**
+
+- AWS Secrets Manager or Kubernetes Secrets at runtime. Reference by ARN/name in code; never inline the value.
+- For Terraform variables that hold secrets, use environment variables (`TF_VAR_*`) or a gitignored `terraform.tfvars`. Never put the literal value in any committed `.tf` file.
+- For local development, `.env.local` (gitignored) with `.env.example` (committed, placeholder values only) as the documented template.
+
 ## Use Task Agents for multi-issue debugging
 
 When a session has multiple independent bugs or tasks that can be run in parallel, use a separate Task agent to investigate each one in parallel in its own scope, then report findings before making any fixes.
