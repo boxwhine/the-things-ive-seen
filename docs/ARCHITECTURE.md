@@ -2,7 +2,7 @@
 
 **Status:** 🟡 In Progress — Module 3 (Cloud Infrastructure & Terraform)
 
-**Last Updated:** 2026-04-21
+**Last Updated:** 2026-04-22
 
 **Author:** Jesse Rinehart
 
@@ -115,6 +115,10 @@ graph TD
 - **Ingress:** nginx-ingress controller via Helm
 - **Secrets:** Kubernetes Secrets or AWS Secrets Manager
 - **IaC:** Terraform (VPC, subnets, security groups, EKS cluster, RDS)
+
+#### Cost Posture
+
+The cluster is **bursty by design** — created at the start of an active session, destroyed at the end, not run continuously. Estimated runtime ~16 hr/month; estimated all-in cost ~$3.50/mo. Always-on guardrails (AWS Budget at $5/mo + Cost Anomaly Detection) live in `terraform/bootstrap/` so they keep watching when the main config is destroyed. Full reasoning and the destroy-recreate workflow are documented in [ADR-0012](./adr/0012-bursty-by-design-infra.md).
 
 #### CI/CD Pipeline (Module 2–3)
 
