@@ -57,3 +57,12 @@ Thumbs.db
 
 # Turborepo
 .turbo
+
+# Terraform (redundant with terraform/.gitignore, but catches stray nesting elsewhere)
+**/.terraform/
+**/*.tfstate
+**/*.tfstate.*
+**/*.tfvars
+**/*.tfvars.json
+**/*.tfplan
+**/.terraform.tfstate.lock.info
