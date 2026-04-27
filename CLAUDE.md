@@ -207,7 +207,7 @@ UI (Apollo Client) → GraphQL API (GraphQL Yoga + Pothos) → Prisma ORM → Po
 When committing changes, always review whether project documentation needs updates to reflect the work done. Documentation updates should be included in the same commit as the code changes they describe.
 
 - **`docs/STATUS.md`** — Keep module progress, "What Is Working", and "Active Blockers" sections current. When work changes the state of a feature or resolves a blocker, update this file.
-- **`docs/modules/*.md`** — When work completes acceptance criteria items or changes their scope, update the relevant module file's checklists and notes.
+- **`docs/modules/*.md`** — When work completes acceptance criteria items or changes their scope, update the relevant module file's checklists and notes. **Keep the "Notes & Discoveries" section high-level — a few bullets capturing genuine discoveries, gotchas, or decisions made during implementation. It is not a line-by-line changelog.** Push detailed reasoning into ADRs (`docs/adr/`) and operational details into the relevant `README.md`. The git log itself is the changelog of record. A good Notes entry teaches a future agent something they couldn't derive from the code, ADRs, or commit history; if a bullet doesn't pass that bar, it doesn't belong.
 - **`docs/ARCHITECTURE.md`** — If a change introduces or revises an architectural decision, add or update the appropriate ADR entry.
 - **`README.md` files** — When adding, removing, or renaming npm scripts, CLI commands, or setup steps, update any README that documents them to keep instructions accurate.
 
