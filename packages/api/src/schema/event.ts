@@ -65,7 +65,10 @@ builder.mutationField("addEvent", (t) =>
           include: eventIncludes,
         });
       } catch (err) {
-        console.error("Failed to create new Event.", (err as Error).message);
+        console.error(
+          "Failed to create new Event.",
+          err instanceof Error ? err.message : String(err),
+        );
         return null;
       }
     },

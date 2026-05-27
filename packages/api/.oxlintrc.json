@@ -3,8 +3,11 @@
   "plugins": ["typescript", "unicorn"],
   "categories": {
     "correctness": "error",
-    "suspicious": "warn",
+    "suspicious": "error",
     "pedantic": "warn"
+  },
+  "rules": {
+    "eslint/capitalized-comments": "off"
   },
   "env": {
     "builtin": true

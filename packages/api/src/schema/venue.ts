@@ -85,7 +85,10 @@ builder.mutationField("addVenue", (t) =>
           },
         });
       } catch (err) {
-        console.error("Failed to create new Venue.", (err as Error).message);
+        console.error(
+          "Failed to create new Venue.",
+          err instanceof Error ? err.message : String(err),
+        );
         return null;
       }
     },

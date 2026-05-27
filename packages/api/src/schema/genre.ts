@@ -82,7 +82,10 @@ builder.mutationField("addGenre", (t) =>
           },
         });
       } catch (err) {
-        console.error("Failed to create new Genre.", (err as Error).message);
+        console.error(
+          "Failed to create new Genre.",
+          err instanceof Error ? err.message : String(err),
+        );
         return null;
       }
     },
