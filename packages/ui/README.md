@@ -55,7 +55,7 @@ pnpm start    # Serve production build
 ## Linting & Formatting
 
 ```bash
-pnpm lint          # ESLint
+pnpm lint          # Oxlint (type-aware)
 pnpm format        # Prettier
 ```
 

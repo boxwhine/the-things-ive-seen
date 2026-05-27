@@ -84,7 +84,7 @@ pnpm test:watch    # Watch mode
 ## Linting & Formatting
 
 ```bash
-pnpm lint          # TypeScript type-check + ESLint (auto-fix)
+pnpm lint          # Oxlint (type-aware)
 pnpm format        # Prettier
 ```
 

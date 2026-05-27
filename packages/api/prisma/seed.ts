@@ -32,15 +32,15 @@ async function main() {
     data: { name: "Country" },
   });
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // oxlint-disable-next-line no-unused-vars
   const jazz = await prisma.genre.create({
     data: { name: "Jazz" },
   });
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // oxlint-disable-next-line no-unused-vars
   const metal = await prisma.genre.create({
     data: { name: "Metal", parentId: rock.id },
   });
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // oxlint-disable-next-line no-unused-vars
   const techno = await prisma.genre.create({
     data: { name: "Techno", parentId: electronic.id },
   });

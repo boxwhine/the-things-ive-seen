@@ -42,7 +42,7 @@ For full acceptance criteria, implementation checklists, and per-module notes, s
 - GraphQL Yoga server with Pothos schema builder and auto-generated schema
 - Next.js frontend with Apollo Client, Radix UI primitives, and shadcn/ui components
 - Docker Compose dev environment (API, UI, PostgreSQL, Adminer)
-- Husky + lint-staged pre-commit hooks (ESLint + Prettier)
+- Husky + lint-staged pre-commit hooks (Oxlint + Prettier)
 - Production Dockerfiles (multi-stage builds) for API and UI
 - Local Kubernetes cluster (k3d) with API, UI, and PostgreSQL deployments
 - Liveness/readiness probes and resource limits on all K8s deployments
