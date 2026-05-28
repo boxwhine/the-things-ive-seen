@@ -1,15 +1,15 @@
 {
   "name": "@ttis/api",
   "version": "0.1.0",
+  "private": false,
   "description": "GraphQL API for The Things I've Seen",
-  "type": "module",
+  "license": "MIT",
+  "author": "Jesse Rinehart",
   "repository": {
     "type": "git",
     "url": "https://github.com/boxwhine/the-things-ive-seen.git"
   },
-  "private": false,
-  "author": "Jesse Rinehart",
-  "license": "MIT",
+  "type": "module",
   "main": "src/index.js",
   "scripts": {
     "dev": "tsx watch ./src/",
@@ -18,7 +18,7 @@
     "build": "pnpm run generate && tsc",
     "start": "node ./build/src/index.js",
     "generate": "prisma generate",
-    "format": "prettier --write .",
+    "format": "oxfmt",
     "prisma": "prisma  --config ./prisma/prisma.config.ts",
     "db:reset": "pnpm run prisma migrate reset",
     "db:seed": "pnpm run prisma db seed",
@@ -39,9 +39,9 @@
   "devDependencies": {
     "@types/node": "^20.19.37",
     "nodemon": "^1.19.4",
+    "oxfmt": "^0.52.0",
     "oxlint": "^1.66.0",
     "oxlint-tsgolint": "^0.23.0",
-    "prettier": "^3.8.1",
     "prisma-dbml-generator": "^0.12.0",
     "prisma-erd-generator": "^2.4.2",
     "tsx": "^4.21.0",

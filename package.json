@@ -1,7 +1,6 @@
 {
   "name": "@ttis/root",
   "private": true,
-  "packageManager": "pnpm@10.30.3",
   "scripts": {
     "dev": "docker compose -f compose.dev.yml up -d && (pnpm --filter @ttis/api dev & pnpm --filter @ttis/ui dev)",
     "dev:api": "pnpm --filter @ttis/api dev",
@@ -22,9 +21,11 @@
     "csv-parse": "^6.2.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
+    "oxfmt": "^0.52.0",
     "tsx": "^4.21.0",
     "turbo": "^2.9.6"
   },
+  "packageManager": "pnpm@10.30.3",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@prisma/engines",
