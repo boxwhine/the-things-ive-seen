@@ -9,8 +9,8 @@ export default function About() {
         </CardHeader>
         <CardContent>
           <p className="text-muted-foreground">
-            The Things I&apos;ve Seen is an app for tracking and visualizing the
-            concerts, shows, and events you&apos;ve attended over the years.
+            The Things I&apos;ve Seen is an app for tracking and visualizing the concerts, shows,
+            and events you&apos;ve attended over the years.
           </p>
         </CardContent>
       </Card>

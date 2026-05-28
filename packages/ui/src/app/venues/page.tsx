@@ -1,10 +1,7 @@
 "use client";
 
 import { useQuery } from "@apollo/client/react";
-import GET_VENUES, {
-  type Response,
-  type Venue,
-} from "@/graphql/queries/getVenues";
+import GET_VENUES, { type Response, type Venue } from "@/graphql/queries/getVenues";
 import {
   Table,
   TableBody,
@@ -17,8 +14,7 @@ import {
 export default function Venues() {
   const { loading, error, data } = useQuery<Response>(GET_VENUES);
 
-  if (loading)
-    return <p className="text-muted-foreground">Loading venues...</p>;
+  if (loading) return <p className="text-muted-foreground">Loading venues...</p>;
   if (error) return <p className="text-destructive">Error: {error.message}</p>;
 
   const venues = data?.fetchVenues ?? [];

@@ -10,10 +10,7 @@
     "eslint/capitalized-comments": "off",
     "react/react-in-jsx-scope": "off",
     "import/no-unassigned-import": ["error", { "allow": ["**/*.css"] }],
-    "eslint/no-underscore-dangle": [
-      "error",
-      { "allow": ["__dirname", "__filename"] }
-    ]
+    "eslint/no-underscore-dangle": ["error", { "allow": ["__dirname", "__filename"] }]
   },
   "env": {
     "builtin": true,

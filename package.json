@@ -10,7 +10,7 @@
     "prod": "docker compose -f compose.prod.yml up --build",
     "prod:down": "docker compose -f compose.prod.yml down",
     "test": "turbo run test",
-    "format": "pnpm -r run format",
+    "format": "oxfmt",
     "lint": "turbo run lint",
     "types": "turbo run types",
     "build": "turbo run build",

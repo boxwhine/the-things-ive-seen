@@ -1,10 +1,7 @@
 "use client";
 
 import { useQuery } from "@apollo/client/react";
-import GET_EVENTS, {
-  type Response,
-  type Event,
-} from "@/graphql/queries/getEvents";
+import GET_EVENTS, { type Response, type Event } from "@/graphql/queries/getEvents";
 import {
   Table,
   TableBody,
@@ -18,8 +15,7 @@ import { Badge } from "@/components/ui/badge";
 export default function Events() {
   const { loading, error, data } = useQuery<Response>(GET_EVENTS);
 
-  if (loading)
-    return <p className="text-muted-foreground">Loading events...</p>;
+  if (loading) return <p className="text-muted-foreground">Loading events...</p>;
   if (error) return <p className="text-destructive">Error: {error.message}</p>;
 
   const events = data?.fetchEvents ?? [];
@@ -50,9 +46,7 @@ export default function Events() {
               <TableCell>
                 <div className="flex items-center gap-2">
                   {event.genre.name}
-                  {event.subGenre && (
-                    <Badge variant="secondary">{event.subGenre.name}</Badge>
-                  )}
+                  {event.subGenre && <Badge variant="secondary">{event.subGenre.name}</Badge>}
                 </div>
               </TableCell>
             </TableRow>

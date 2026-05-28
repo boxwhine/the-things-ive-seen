@@ -22,10 +22,7 @@ export default function Nav() {
       <NavigationMenuList>
         {links.map((link) => (
           <NavigationMenuItem key={link.href}>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
               <Link href={link.href}>{link.label}</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>

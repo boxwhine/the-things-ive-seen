@@ -36,8 +36,7 @@ const AddEventInput = builder.inputType("AddEventInput", {
 builder.queryField("fetchEvents", (t) =>
   t.prismaField({
     type: ["Event"],
-    resolve: (query) =>
-      prisma.event.findMany({ ...query, include: eventIncludes }),
+    resolve: (query) => prisma.event.findMany({ ...query, include: eventIncludes }),
   }),
 );
 

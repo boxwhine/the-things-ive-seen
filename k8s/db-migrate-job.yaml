@@ -23,14 +23,7 @@ spec:
           image: ttis-api:latest
           imagePullPolicy: Never
           command:
-            [
-              "npx",
-              "prisma",
-              "migrate",
-              "deploy",
-              "--config",
-              "/app/build/prisma/prisma.config.js",
-            ]
+            ["npx", "prisma", "migrate", "deploy", "--config", "/app/build/prisma/prisma.config.js"]
           env:
             - name: DATABASE_URL
               value: postgresql://postgres:password@db:5432/ttis_db
