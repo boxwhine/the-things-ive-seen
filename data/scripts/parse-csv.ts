@@ -155,9 +155,7 @@ for (const row of rows) {
   }
 }
 
-const venues: Venue[] = Array.from(venueMap.values()).sort((a, b) =>
-  a.key.localeCompare(b.key)
-);
+const venues: Venue[] = Array.from(venueMap.values()).sort((a, b) => a.key.localeCompare(b.key));
 
 // ── Collect genres ─────────────────────────────────────────────────────────────
 const parentGenreSet = new Set<string>();
@@ -221,9 +219,7 @@ for (const row of rows) {
 }
 
 const duplicateCount = rows.length - eventDedupMap.size;
-console.log(
-  `Found ${duplicateCount} duplicate rows, ${eventDedupMap.size} unique events`
-);
+console.log(`Found ${duplicateCount} duplicate rows, ${eventDedupMap.size} unique events`);
 
 const events: EventRecord[] = [];
 
@@ -246,8 +242,7 @@ for (const { row } of eventDedupMap.values()) {
   const venueName = row.venue_name || "";
   const city = row.venue_location_city || "";
   const state = row.venue_location_state || "";
-  const venueKey =
-    venueName || city || state ? `${venueName}|${city}|${state}` : null;
+  const venueKey = venueName || city || state ? `${venueName}|${city}|${state}` : null;
 
   events.push({
     date,
@@ -281,6 +276,6 @@ console.log(`\nSummary:`);
 console.log(`  Performers: ${performers.length}`);
 console.log(`  Venues:     ${venues.length}`);
 console.log(
-  `  Genres:     ${genres.parents.length} parents, ${genres.subGenres.length} sub-genres`
+  `  Genres:     ${genres.parents.length} parents, ${genres.subGenres.length} sub-genres`,
 );
 console.log(`  Events:     ${events.length}`);

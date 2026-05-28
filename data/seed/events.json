@@ -33,12 +33,7 @@
     "date": "1997-07-13",
     "title": null,
     "performerKey": "H.O.R.D.E. Festival",
-    "openerKeys": [
-      "Neil Young",
-      "Ben Folds Five",
-      "Primus",
-      "Squirrel Nut Zippers"
-    ],
+    "openerKeys": ["Neil Young", "Ben Folds Five", "Primus", "Squirrel Nut Zippers"],
     "faceValue": 3000,
     "genreKey": "Festival",
     "subGenreKey": null,
@@ -218,9 +213,7 @@
     "date": "1999-06-13",
     "title": null,
     "performerKey": "Bob Dylan",
-    "openerKeys": [
-      "Paul Simon"
-    ],
+    "openerKeys": ["Paul Simon"],
     "faceValue": 7430,
     "genreKey": "Music",
     "subGenreKey": "Folk",
@@ -390,10 +383,7 @@
     "date": "2002-08-04",
     "title": null,
     "performerKey": "The Flaming Lips",
-    "openerKeys": [
-      "Cake",
-      "De la Soul"
-    ],
+    "openerKeys": ["Cake", "De la Soul"],
     "faceValue": 3600,
     "genreKey": "Music",
     "subGenreKey": "Festival",
@@ -403,9 +393,7 @@
     "date": "2002-09-27",
     "title": null,
     "performerKey": "Dave Chappelle",
-    "openerKeys": [
-      "Lewis Black"
-    ],
+    "openerKeys": ["Lewis Black"],
     "faceValue": 3250,
     "genreKey": "Comedy",
     "subGenreKey": "Standup",
@@ -885,9 +873,7 @@
     "date": "2007-09-24",
     "title": null,
     "performerKey": "Arcade Fire",
-    "openerKeys": [
-      "LCD Soundsystem"
-    ],
+    "openerKeys": ["LCD Soundsystem"],
     "faceValue": 3950,
     "genreKey": "Music",
     "subGenreKey": "Alternative",
@@ -917,9 +903,7 @@
     "date": "2007-10-29",
     "title": null,
     "performerKey": "Caribou",
-    "openerKeys": [
-      "Born Ruffians"
-    ],
+    "openerKeys": ["Born Ruffians"],
     "faceValue": 1000,
     "genreKey": "Music",
     "subGenreKey": "Alternative",
@@ -999,9 +983,7 @@
     "date": "2008-06-05",
     "title": null,
     "performerKey": "Erykah Badu",
-    "openerKeys": [
-      "The Roots"
-    ],
+    "openerKeys": ["The Roots"],
     "faceValue": 3850,
     "genreKey": "Music",
     "subGenreKey": "R&B",
@@ -1221,9 +1203,7 @@
     "date": "2010-05-30",
     "title": null,
     "performerKey": "Band of Horses",
-    "openerKeys": [
-      "She & Him"
-    ],
+    "openerKeys": ["She & Him"],
     "faceValue": 3500,
     "genreKey": "Music",
     "subGenreKey": "Alternative",
@@ -1523,10 +1503,7 @@
     "date": "2012-06-15",
     "title": null,
     "performerKey": "Municipal Waste",
-    "openerKeys": [
-      "3 Inches of Blood",
-      "Black Tusk"
-    ],
+    "openerKeys": ["3 Inches of Blood", "Black Tusk"],
     "faceValue": 1500,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -1756,9 +1733,7 @@
     "date": "2014-04-26",
     "title": null,
     "performerKey": "Zach Deputy",
-    "openerKeys": [
-      "Tubaluba"
-    ],
+    "openerKeys": ["Tubaluba"],
     "faceValue": 1000,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -1858,9 +1833,7 @@
     "date": "2014-12-12",
     "title": null,
     "performerKey": "Critters Buggin",
-    "openerKeys": [
-      "Master Musicians of Bukkake"
-    ],
+    "openerKeys": ["Master Musicians of Bukkake"],
     "faceValue": 1500,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -1990,9 +1963,7 @@
     "date": "2017-03-16",
     "title": null,
     "performerKey": "Big Business",
-    "openerKeys": [
-      "Helms Alee"
-    ],
+    "openerKeys": ["Helms Alee"],
     "faceValue": 3378,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2032,10 +2003,7 @@
     "date": "2017-04-28",
     "title": null,
     "performerKey": "Vaudeville Etiquette",
-    "openerKeys": [
-      "Bart Budwig",
-      "Marshall Mclean Band"
-    ],
+    "openerKeys": ["Bart Budwig", "Marshall Mclean Band"],
     "faceValue": 1000,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2045,9 +2013,7 @@
     "date": "2017-04-30",
     "title": "\"The Real Deal\" Backyard BBQ Starring Texas Legends",
     "performerKey": "Reverend Horton Heat",
-    "openerKeys": [
-      "Dale Watson"
-    ],
+    "openerKeys": ["Dale Watson"],
     "faceValue": 6500,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2117,10 +2083,7 @@
     "date": "2017-10-06",
     "title": null,
     "performerKey": "Vaudeville Etiquette",
-    "openerKeys": [
-      "Cedar Teeth",
-      "Stucky Jackson and the Boys"
-    ],
+    "openerKeys": ["Cedar Teeth", "Stucky Jackson and the Boys"],
     "faceValue": 1200,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2130,10 +2093,7 @@
     "date": "2017-10-07",
     "title": null,
     "performerKey": "The Moondoggies",
-    "openerKeys": [
-      "LAKE",
-      "Corespondents"
-    ],
+    "openerKeys": ["LAKE", "Corespondents"],
     "faceValue": 3025,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2143,9 +2103,7 @@
     "date": "2017-10-09",
     "title": null,
     "performerKey": "Colter Wall",
-    "openerKeys": [
-      "Ian Noe"
-    ],
+    "openerKeys": ["Ian Noe"],
     "faceValue": 2625,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2155,11 +2113,7 @@
     "date": "2017-11-12",
     "title": null,
     "performerKey": "Dwarves",
-    "openerKeys": [
-      "The Accused AD",
-      "Acid Teeth",
-      "Raw Dogs"
-    ],
+    "openerKeys": ["The Accused AD", "Acid Teeth", "Raw Dogs"],
     "faceValue": 1300,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2259,10 +2213,7 @@
     "date": "2018-04-26",
     "title": null,
     "performerKey": "Lapalux",
-    "openerKeys": [
-      "FKL",
-      "Raica"
-    ],
+    "openerKeys": ["FKL", "Raica"],
     "faceValue": 1500,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2352,9 +2303,7 @@
     "date": "2019-01-23",
     "title": null,
     "performerKey": "Built To Spill",
-    "openerKeys": [
-      "XETAS"
-    ],
+    "openerKeys": ["XETAS"],
     "faceValue": 3039,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2364,10 +2313,7 @@
     "date": "2019-01-30",
     "title": null,
     "performerKey": "High On Fire",
-    "openerKeys": [
-      "Toke",
-      "Year of the Cobra"
-    ],
+    "openerKeys": ["Toke", "Year of the Cobra"],
     "faceValue": 2425,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2387,9 +2333,7 @@
     "date": "2019-02-02",
     "title": null,
     "performerKey": "DeVotchKa",
-    "openerKeys": [
-      "Neyla Pekarek"
-    ],
+    "openerKeys": ["Neyla Pekarek"],
     "faceValue": 2300,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2519,10 +2463,7 @@
     "date": "2019-10-26",
     "title": null,
     "performerKey": "Oh Sees",
-    "openerKeys": [
-      "Prettiest Eyes",
-      "Nolan Potter's Nightmare Band"
-    ],
+    "openerKeys": ["Prettiest Eyes", "Nolan Potter's Nightmare Band"],
     "faceValue": 2500,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2532,9 +2473,7 @@
     "date": "2019-11-07",
     "title": null,
     "performerKey": "High On Fire",
-    "openerKeys": [
-      "Power Trip"
-    ],
+    "openerKeys": ["Power Trip"],
     "faceValue": 3663,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2544,10 +2483,7 @@
     "date": "2019-11-08",
     "title": null,
     "performerKey": "The Flaming Lips",
-    "openerKeys": [
-      "Mercury Rev",
-      "Holy Wave"
-    ],
+    "openerKeys": ["Mercury Rev", "Holy Wave"],
     "faceValue": 5900,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2617,10 +2553,7 @@
     "date": "2021-06-19",
     "title": null,
     "performerKey": "High On Fire",
-    "openerKeys": [
-      "Duel",
-      "Greenbeard"
-    ],
+    "openerKeys": ["Duel", "Greenbeard"],
     "faceValue": 3000,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2670,9 +2603,7 @@
     "date": "2021-10-02",
     "title": null,
     "performerKey": "OSEES",
-    "openerKeys": [
-      "Mr. Elevator"
-    ],
+    "openerKeys": ["Mr. Elevator"],
     "faceValue": 3000,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2702,11 +2633,7 @@
     "date": "2021-10-27",
     "title": null,
     "performerKey": "The Sword",
-    "openerKeys": [
-      "Starcrawler",
-      "Here Lies Man",
-      "Enumclaw"
-    ],
+    "openerKeys": ["Starcrawler", "Here Lies Man", "Enumclaw"],
     "faceValue": 3000,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2736,10 +2663,7 @@
     "date": "2021-12-28",
     "title": "The Jungle Show",
     "performerKey": "Billy Gibbs",
-    "openerKeys": [
-      "Jimmie Vaughn",
-      "Sue Foley"
-    ],
+    "openerKeys": ["Jimmie Vaughn", "Sue Foley"],
     "faceValue": 8300,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2819,10 +2743,7 @@
     "date": "2022-11-20",
     "title": null,
     "performerKey": "No Age",
-    "openerKeys": [
-      "John Wiese",
-      "Chalk"
-    ],
+    "openerKeys": ["John Wiese", "Chalk"],
     "faceValue": 1500,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2892,10 +2813,7 @@
     "date": "2023-06-09",
     "title": null,
     "performerKey": "Djunah",
-    "openerKeys": [
-      "Bridge Farmers",
-      "The Grasshopper Lies Heavy"
-    ],
+    "openerKeys": ["Bridge Farmers", "The Grasshopper Lies Heavy"],
     "faceValue": 1354,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -2955,10 +2873,7 @@
     "date": "2024-05-24",
     "title": null,
     "performerKey": "Lightning Bolt",
-    "openerKeys": [
-      "Big Business",
-      "Porcelain"
-    ],
+    "openerKeys": ["Big Business", "Porcelain"],
     "faceValue": 7238,
     "genreKey": "Music",
     "subGenreKey": null,
@@ -3008,9 +2923,7 @@
     "date": "2024-11-03",
     "title": null,
     "performerKey": "The Sword",
-    "openerKeys": [
-      "Pentagram"
-    ],
+    "openerKeys": ["Pentagram"],
     "faceValue": 4000,
     "genreKey": "Music",
     "subGenreKey": null,

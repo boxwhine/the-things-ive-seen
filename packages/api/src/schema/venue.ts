@@ -30,8 +30,7 @@ const AddVenueInput = builder.inputType("AddVenueInput", {
 builder.queryField("fetchVenues", (t) =>
   t.prismaField({
     type: ["Venue"],
-    resolve: (query) =>
-      prisma.venue.findMany({ ...query, include: { events: true } }),
+    resolve: (query) => prisma.venue.findMany({ ...query, include: { events: true } }),
   }),
 );
 
@@ -85,7 +84,10 @@ builder.mutationField("addVenue", (t) =>
           },
         });
       } catch (err) {
-        console.error("Failed to create new Venue.", (err as Error).message);
+        console.error(
+          "Failed to create new Venue.",
+          err instanceof Error ? err.message : String(err),
+        );
         return null;
       }
     },

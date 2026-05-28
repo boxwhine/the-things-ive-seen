@@ -20,16 +20,14 @@ const AddGenreInput = builder.inputType("AddGenreInput", {
 builder.queryField("fetchGenres", (t) =>
   t.prismaField({
     type: ["Genre"],
-    resolve: (query) =>
-      prisma.genre.findMany({ ...query, where: { parentId: null } }),
+    resolve: (query) => prisma.genre.findMany({ ...query, where: { parentId: null } }),
   }),
 );
 
 builder.queryField("fetchSubGenres", (t) =>
   t.prismaField({
     type: ["Genre"],
-    resolve: (query) =>
-      prisma.genre.findMany({ ...query, where: { parentId: { not: null } } }),
+    resolve: (query) => prisma.genre.findMany({ ...query, where: { parentId: { not: null } } }),
   }),
 );
 
@@ -68,9 +66,7 @@ builder.mutationField("addGenre", (t) =>
           where: { id: args.genre.parentId },
         })) === null
       ) {
-        throw new Error(
-          `No parent genre exists with ID ${args.genre.parentId.toString()}.`,
-        );
+        throw new Error(`No parent genre exists with ID ${args.genre.parentId.toString()}.`);
       }
 
       try {
@@ -82,7 +78,10 @@ builder.mutationField("addGenre", (t) =>
           },
         });
       } catch (err) {
-        console.error("Failed to create new Genre.", (err as Error).message);
+        console.error(
+          "Failed to create new Genre.",
+          err instanceof Error ? err.message : String(err),
+        );
         return null;
       }
     },

@@ -1,7 +1,7 @@
 {
   "name": "@ttis/root",
   "private": true,
-  "packageManager": "pnpm@10.30.3",
+  "type": "module",
   "scripts": {
     "dev": "docker compose -f compose.dev.yml up -d && (pnpm --filter @ttis/api dev & pnpm --filter @ttis/ui dev)",
     "dev:api": "pnpm --filter @ttis/api dev",
@@ -11,7 +11,7 @@
     "prod": "docker compose -f compose.prod.yml up --build",
     "prod:down": "docker compose -f compose.prod.yml down",
     "test": "turbo run test",
-    "format": "pnpm -r run format",
+    "format": "oxfmt",
     "lint": "turbo run lint",
     "types": "turbo run types",
     "build": "turbo run build",
@@ -22,9 +22,12 @@
     "csv-parse": "^6.2.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
+    "oxfmt": "^0.52.0",
+    "oxlint": "^1.66.0",
     "tsx": "^4.21.0",
     "turbo": "^2.9.6"
   },
+  "packageManager": "pnpm@10.30.3",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@prisma/engines",

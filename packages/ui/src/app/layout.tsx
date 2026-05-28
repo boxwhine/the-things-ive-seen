@@ -17,9 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${GeistSans.variable} ${GeistMono.variable} antialiased min-h-screen`}
-      >
+      <body className={`${GeistSans.variable} ${GeistMono.variable} antialiased min-h-screen`}>
         <Providers>
           <header className="border-b px-6 py-3">
             <Nav />

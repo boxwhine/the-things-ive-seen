@@ -118,7 +118,7 @@ pnpm types                 # Type-check all packages
 ### Formatting
 
 ```bash
-pnpm format                # Run Prettier across all packages
+pnpm format                # Run oxfmt across the whole tree
 ```
 
 ### Building
@@ -220,4 +220,4 @@ When editing or creating Markdown documents in this repo:
 - Do not use horizontal rules (`---`) before section headers. Let headings stand on their own.
 - Use `<br/>` for line breaks inside Mermaid node labels, not `\n`.
 - Diagrams should use Mermaid (` ```mermaid `) rather than ASCII art.
-- After creating or editing any `*.md` file, run `pnpm format` (or `npx prettier --write <file>`) to ensure consistent formatting.
+- After creating or editing any `*.md` file, run `pnpm format` (or `pnpm exec oxfmt <file>`) to ensure consistent formatting.
