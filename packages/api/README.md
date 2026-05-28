@@ -85,7 +85,7 @@ pnpm test:watch    # Watch mode
 
 ```bash
 pnpm lint          # Oxlint (type-aware)
-pnpm format        # Prettier
+pnpm format        # oxfmt
 ```
 
 ## Project Structure

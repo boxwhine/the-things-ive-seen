@@ -1,7 +1,6 @@
 .dockerignore
 .git
 .gitignore
-.prettierrc
 .husky
 **/node_modules
 **/.next

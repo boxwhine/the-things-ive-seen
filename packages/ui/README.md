@@ -56,7 +56,7 @@ pnpm start    # Serve production build
 
 ```bash
 pnpm lint          # Oxlint (type-aware)
-pnpm format        # Prettier
+pnpm format        # oxfmt
 ```
 
 ## Project Structure
