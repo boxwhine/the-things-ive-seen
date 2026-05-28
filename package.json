@@ -1,6 +1,7 @@
 {
   "name": "@ttis/root",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "docker compose -f compose.dev.yml up -d && (pnpm --filter @ttis/api dev & pnpm --filter @ttis/ui dev)",
     "dev:api": "pnpm --filter @ttis/api dev",
