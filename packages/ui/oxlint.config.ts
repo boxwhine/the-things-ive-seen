@@ -1,0 +1,18 @@
+import { defineConfig } from "oxlint";
+
+export default defineConfig({
+  plugins: ["typescript", "nextjs", "unicorn", "react", "import", "jsx-a11y"],
+  categories: {
+    correctness: "error",
+    suspicious: "error",
+    pedantic: "warn",
+  },
+  rules: {
+    "eslint/capitalized-comments": "off",
+    "react/react-in-jsx-scope": "off",
+    "import/no-unassigned-import": ["error", { allow: ["**/*.css"] }],
+    "eslint/no-underscore-dangle": ["error", { allow: ["__dirname", "__filename"] }],
+  },
+  env: { builtin: true, browser: true, node: true },
+  ignorePatterns: [".next/**", "out/**", "build/**", "next-env.d.ts"],
+});
